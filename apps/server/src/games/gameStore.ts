@@ -1,4 +1,7 @@
 import type { GameStatus } from '@recto/shared';
+import { and, eq, inArray, lt } from 'drizzle-orm';
+import type { Database } from '../db/client';
+import { games, lastDraws } from '../db/schema';
 import type { GameRecord } from './types';
 
 export interface GameStore {
@@ -14,43 +17,45 @@ export interface GameStore {
   setLastDraw(key: string, imageIds: readonly string[]): Promise<void>;
 }
 
-/** Magasin du lot 1. Les copies à l'entrée et à la sortie reproduisent le comportement d'une base. */
-export class InMemoryGameStore implements GameStore {
-  private readonly games = new Map<string, GameRecord>();
-  private readonly draws = new Map<string, string[]>();
+export class SqlGameStore implements GameStore {
+  constructor(private readonly db: Database) {}
 
   async insert(game: GameRecord): Promise<void> {
-    this.games.set(game.id, structuredClone(game));
+    await this.db.insert(games).values(game);
   }
 
   async get(id: string): Promise<GameRecord | undefined> {
-    const game = this.games.get(id);
-    return game && structuredClone(game);
+    return this.db.select().from(games).where(eq(games.id, id)).get();
   }
 
   async updateIf(game: GameRecord, expected: GameStatus): Promise<boolean> {
-    if (this.games.get(game.id)?.status !== expected) return false;
-    this.games.set(game.id, structuredClone(game));
-    return true;
+    const { id, ...fields } = game;
+    const result = await this.db
+      .update(games)
+      .set(fields)
+      .where(and(eq(games.id, id), eq(games.status, expected)));
+    return result.rowsAffected > 0;
   }
 
   async lastDraw(key: string): Promise<string[] | undefined> {
-    return this.draws.get(key)?.slice();
+    const row = await this.db.select().from(lastDraws).where(eq(lastDraws.drawKey, key)).get();
+    return row?.imageIds;
   }
 
   async setLastDraw(key: string, imageIds: readonly string[]): Promise<void> {
-    this.draws.set(key, [...imageIds]);
+    const values = { drawKey: key, imageIds: [...imageIds], updatedAt: Date.now() };
+    await this.db
+      .insert(lastDraws)
+      .values(values)
+      .onConflictDoUpdate({ target: lastDraws.drawKey, set: { imageIds: values.imageIds, updatedAt: values.updatedAt } });
   }
 
-  /** Supprime les parties créées avant `timestamp` ; renvoie le nombre de parties supprimées. */
-  purgeCreatedBefore(timestamp: number): number {
-    let removed = 0;
-    for (const [id, game] of this.games) {
-      if (game.createdAt < timestamp) {
-        this.games.delete(id);
-        removed++;
-      }
-    }
-    return removed;
+  /** Les parties laissées en plan sont classées abandonnées (EF-1.6) ; renvoie leur nombre. */
+  async expireUnfinished(createdBefore: number): Promise<number> {
+    const result = await this.db
+      .update(games)
+      .set({ status: 'abandonnee', finishedAt: Date.now() })
+      .where(and(inArray(games.status, ['preparee', 'en_cours']), lt(games.createdAt, createdBefore)));
+    return result.rowsAffected;
   }
 }

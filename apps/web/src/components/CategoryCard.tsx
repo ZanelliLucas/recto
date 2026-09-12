@@ -4,6 +4,7 @@ import { getRecord } from '../game/records';
 import { difficultyLabel, t } from '../i18n';
 import { formatDuration } from '../lib/format';
 import styles from './CategoryCard.module.css';
+import { Picture } from './Picture';
 
 interface CategoryCardProps {
   category: CategorySummary;
@@ -17,7 +18,7 @@ export function CategoryCard({ category, pending, onPlay }: CategoryCardProps) {
   return (
     <article className={styles.card}>
       <Link to={`/jouer/${category.slug}`} className={styles.head}>
-        <img className={styles.thumb} src={category.thumbnailUrl} alt="" width={64} height={64} />
+        <Picture className={styles.thumb} sources={category.thumbnail} size={200} alt="" />
         <span className={styles.heading}>
           <h3 className={styles.name}>{category.name}</h3>
           <span className={styles.count}>{t('categories.images', { count: category.imageCount })}</span>

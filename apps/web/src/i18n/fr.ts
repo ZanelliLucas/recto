@@ -9,6 +9,15 @@ export const fr = {
   'nav.skip': 'Aller au contenu',
   'nav.home': 'RECTO, accueil',
   'nav.categories': 'Catégories',
+  'nav.credits': 'Crédits',
+
+  'credits.title': 'Crédits iconographiques',
+  'credits.intro':
+    'Chaque image de RECTO relève du domaine public ou d’une licence libre. Pour chacune : son auteur, sa licence et sa source.',
+  'credits.loading': 'Chargement des crédits…',
+  'credits.error': 'Impossible de charger les crédits. Réessayez dans un instant.',
+  'credits.source': 'source',
+  'credits.retrieved': 'récupérée le {date}',
 
   'home.replay': 'Rejouer',
   'home.replayHint': '{category} · {difficulty}',

@@ -16,8 +16,10 @@ import {
   type Move,
   type StartGameResponse,
 } from '@recto/shared';
-import { mediaUrl, type CategoryRepository } from '../content/types';
+import type { CategoryRepository } from '../content/types';
 import { HttpError } from '../http/httpError';
+import { imageSources } from '../media/sources';
+import type { MediaStorage } from '../media/storage';
 import type { GameStore } from './gameStore';
 import type { GameRecord } from './types';
 
@@ -40,6 +42,7 @@ export class GameService {
   constructor(
     private readonly categories: CategoryRepository,
     private readonly games: GameStore,
+    private readonly media: MediaStorage,
     options: GameServiceOptions = {},
   ) {
     this.now = options.now ?? Date.now;
@@ -52,12 +55,12 @@ export class GameService {
     if (!category) throw new HttpError(404, 'categorie_introuvable', 'Catégorie introuvable.');
 
     const pool = category.images.map(({ id, visualGroup }) => ({ id, visualGroup }));
-    if (!playableDifficulties(pool).includes(difficulty)) {
+    if (!playableDifficulties(pool, category.maxDifficulty).includes(difficulty)) {
       throw new HttpError(400, 'difficulte_indisponible', 'Cette difficulté n’est pas proposée pour cette catégorie.');
     }
 
     const { pairs } = DIFFICULTIES[difficulty];
-    const drawKey = `${playerKey}:${slug}:${difficulty}`;
+    const drawKey = `${playerKey}:${category.id}:${difficulty}`;
     const seed = this.randomSeed();
     const rng = mulberry32(seed);
     const imageIds = drawImages(pool, pairs, rng, await this.games.lastDraw(drawKey));
@@ -68,7 +71,7 @@ export class GameService {
       token: randomBytes(24).toString('base64url'),
       playerKey,
       userId: null,
-      categorySlug: slug,
+      categoryId: category.id,
       difficulty,
       seed,
       imageIds,
@@ -95,7 +98,7 @@ export class GameService {
       deck,
       images: imageIds.map((id) => {
         const image = imagesById.get(id)!;
-        return { id, url: mediaUrl(slug, image.file), title: image.title };
+        return { id, title: image.title, sources: imageSources(this.media, image.kind, image.storageKey) };
       }),
     };
   }

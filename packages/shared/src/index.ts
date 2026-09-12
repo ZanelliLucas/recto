@@ -1,6 +1,7 @@
 export * from './api';
 export * from './difficulty';
 export * from './draw';
+export * from './images';
 export * from './random';
 export * from './replay';
 export * from './score';

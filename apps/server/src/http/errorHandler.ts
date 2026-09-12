@@ -1,12 +1,23 @@
 import type { ApiErrorBody } from '@recto/shared';
 import type { ErrorRequestHandler } from 'express';
+import { ImageRejectedError } from '../media/pipeline';
 import { HttpError } from './httpError';
 
-const body = (code: string, message: string): ApiErrorBody => ({ error: { code, message } });
+const body = (code: string, message: string, details?: unknown): ApiErrorBody => ({
+  error: details === undefined ? { code, message } : { code, message, details },
+});
 
 export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   if (err instanceof HttpError) {
-    res.status(err.status).json(body(err.code, err.message));
+    res.status(err.status).json(body(err.code, err.message, err.details));
+    return;
+  }
+  if (err instanceof ImageRejectedError) {
+    res.status(422).json(body('image_refusee', err.message));
+    return;
+  }
+  if (err instanceof Error && err.name === 'MulterError') {
+    res.status(400).json(body('fichier_invalide', 'Fichier refusé : 10 Mo au plus, un seul fichier.'));
     return;
   }
   // Erreurs levées par les middlewares Express (corps illisible, trop volumineux…).

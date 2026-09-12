@@ -37,6 +37,9 @@ export function Layout() {
           {t('app.name')} · {t('app.tagline')}
         </span>
         <span>{t('app.guestNotice')}</span>
+        <Link to="/credits" className={styles.footerLink}>
+          {t('nav.credits')}
+        </Link>
       </footer>
     </>
   );

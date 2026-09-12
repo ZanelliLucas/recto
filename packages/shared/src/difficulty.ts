@@ -20,6 +20,11 @@ export type Difficulty = keyof typeof DIFFICULTIES;
 
 export const DIFFICULTY_ORDER = ['facile', 'normal', 'difficile'] as const satisfies readonly Difficulty[];
 
+/** Difficultés proposées par une catégorie qui monte jusqu'à `max`. */
+export function difficultiesUpTo(max: Difficulty): Difficulty[] {
+  return DIFFICULTY_ORDER.slice(0, DIFFICULTY_ORDER.indexOf(max) + 1);
+}
+
 export function isDifficulty(value: unknown): value is Difficulty {
   return typeof value === 'string' && Object.hasOwn(DIFFICULTIES, value);
 }

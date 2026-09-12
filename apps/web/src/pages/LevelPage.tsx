@@ -2,6 +2,7 @@ import { DIFFICULTIES, DIFFICULTY_ORDER } from '@recto/shared';
 import type { CSSProperties } from 'react';
 import { Link, useParams } from 'react-router';
 import { useCategories } from '../api/useCategories';
+import { Picture } from '../components/Picture';
 import { getRecord } from '../game/records';
 import { useStartGame } from '../game/useStartGame';
 import { difficultyLabel, t } from '../i18n';
@@ -36,7 +37,7 @@ export function LevelPage() {
         ← {t('level.back')}
       </Link>
       <header className={styles.header}>
-        <img className={styles.thumb} src={category.thumbnailUrl} alt="" width={88} height={88} />
+        <Picture className={styles.thumb} sources={category.thumbnail} size={200} alt="" />
         <div>
           <h1>{category.name}</h1>
           <p>

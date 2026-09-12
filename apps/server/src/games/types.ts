@@ -7,7 +7,7 @@ export interface GameRecord {
   /** Joueur à l'origine de la partie : invité (cookie) au lot 1, compte au lot 3. */
   playerKey: string;
   userId: string | null;
-  categorySlug: string;
+  categoryId: string;
   difficulty: Difficulty;
   seed: number;
   imageIds: string[];

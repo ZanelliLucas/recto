@@ -1,4 +1,4 @@
-import { DIFFICULTIES, type CardImage, type Difficulty } from '@recto/shared';
+import { DIFFICULTIES, type Difficulty } from '@recto/shared';
 import { useCallback, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import type { EngineState } from '../game/engine';
 import { NARROW_LAYOUT, columnCount, nextFocus } from '../game/layout';
@@ -6,15 +6,21 @@ import { t } from '../i18n';
 import { Card, type CardVisual } from './Card';
 import styles from './Board.module.css';
 
+/** Face d'une carte : titre et adresse de l'image dans le format et la résolution retenus. */
+export interface CardFace {
+  title: string;
+  url: string;
+}
+
 interface BoardProps {
   engine: EngineState;
-  images: ReadonlyMap<string, CardImage>;
+  faces: ReadonlyMap<string, CardFace>;
   difficulty: Difficulty;
   showImages: boolean;
   onFlip: (index: number) => void;
 }
 
-export function Board({ engine, images, difficulty, showImages, onFlip }: BoardProps) {
+export function Board({ engine, faces, difficulty, showImages, onFlip }: BoardProps) {
   const [focus, setFocus] = useState(0);
   const grid = useRef<HTMLDivElement>(null);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
@@ -63,7 +69,7 @@ export function Board({ engine, images, difficulty, showImages, onFlip }: BoardP
       onKeyDown={onKeyDown}
     >
       {engine.deck.map((imageId, index) => {
-        const image = images.get(imageId);
+        const image = faces.get(imageId);
         return (
           <Card
             key={index}

@@ -15,6 +15,14 @@ export function formatDelta(ms: number): string {
   return `${sign}${(tenths / 10).toFixed(1).replace('.', ',')} s`;
 }
 
+const day = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+/** Date ISO « 2026-09-12 » → « 12 septembre 2026 ». */
+export function formatDay(isoDate: string): string {
+  const date = new Date(`${isoDate}T00:00:00Z`);
+  return Number.isNaN(date.getTime()) ? isoDate : day.format(date);
+}
+
 const percent = new Intl.NumberFormat('fr-FR', { style: 'percent', maximumFractionDigits: 0 });
 
 export function formatPercent(ratio: number): string {

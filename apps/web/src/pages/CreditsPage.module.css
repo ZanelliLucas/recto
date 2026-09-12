@@ -1,0 +1,47 @@
+.page {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+}
+
+.category {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.category h2 {
+  font-size: 1.2rem;
+}
+
+.list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.list li {
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.list a {
+  color: var(--accent-strong);
+}
+
+.date {
+  color: var(--muted);
+}

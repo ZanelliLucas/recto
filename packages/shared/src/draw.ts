@@ -1,4 +1,4 @@
-import { DIFFICULTIES, DIFFICULTY_ORDER, minImagesFor, type Difficulty } from './difficulty';
+import { DIFFICULTIES, difficultiesUpTo, minImagesFor, type Difficulty } from './difficulty';
 import { shuffle, type Rng } from './random';
 
 export interface DrawableImage {
@@ -15,16 +15,35 @@ export function distinctGroupCount(pool: readonly DrawableImage[]): number {
 }
 
 /**
- * Difficultés jouables pour un lot d'images :
+ * Difficultés jouables pour un lot d'images, jusqu'à `maxDifficulty` :
  * - EF-3.8 : au moins le double d'images par rapport au nombre de paires ;
  * - EF-1.8 et EF-3.9 : strictement plus de groupes visuels que de paires, faute de
  *   quoi deux tirages consécutifs seraient forcément identiques.
  */
-export function playableDifficulties(pool: readonly DrawableImage[]): Difficulty[] {
+export function playableDifficulties(
+  pool: readonly DrawableImage[],
+  maxDifficulty: Difficulty = 'difficile',
+): Difficulty[] {
   const groups = distinctGroupCount(pool);
-  return DIFFICULTY_ORDER.filter(
+  return difficultiesUpTo(maxDifficulty).filter(
     (difficulty) => pool.length >= minImagesFor(difficulty) && groups > DIFFICULTIES[difficulty].pairs,
   );
+}
+
+export type PublicationIssue =
+  | { code: 'images_insuffisantes'; required: number; actual: number }
+  | { code: 'groupes_insuffisants'; required: number; actual: number };
+
+/** EF-7.4 — ce qui empêche de publier une catégorie proposant jusqu'à `maxDifficulty`. */
+export function publicationIssues(pool: readonly DrawableImage[], maxDifficulty: Difficulty): PublicationIssue[] {
+  const { pairs } = DIFFICULTIES[maxDifficulty];
+  const issues: PublicationIssue[] = [];
+  if (pool.length < minImagesFor(maxDifficulty)) {
+    issues.push({ code: 'images_insuffisantes', required: minImagesFor(maxDifficulty), actual: pool.length });
+  }
+  const groups = distinctGroupCount(pool);
+  if (groups <= pairs) issues.push({ code: 'groupes_insuffisants', required: pairs + 1, actual: groups });
+  return issues;
 }
 
 /** Empreinte d'un tirage, indépendante de l'ordre des images. */

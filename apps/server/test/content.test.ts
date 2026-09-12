@@ -1,23 +1,25 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { playableDifficulties } from '@recto/shared';
 import { describe, expect, it } from 'vitest';
-import { FileCategoryRepository } from '../src/content/fileCategoryRepository';
 import { contentDir } from './helpers';
 
-describe('catégorie Drapeaux', async () => {
-  const repository = await FileCategoryRepository.load(contentDir);
-  const drapeaux = await repository.findPublished('drapeaux');
+interface Manifest {
+  images: { id: string; file: string; author: string; licence: string; sourceUrl: string; visualGroup: string | null }[];
+}
 
-  it('est publiée avec au moins 60 images et les trois difficultés (EF-3.8, CA-02)', () => {
-    expect(drapeaux).toBeDefined();
-    expect(drapeaux!.images.length).toBeGreaterThanOrEqual(60);
-    expect(playableDifficulties(drapeaux!.images)).toEqual(['facile', 'normal', 'difficile']);
+describe('source de la catégorie Drapeaux', () => {
+  const directory = path.join(contentDir, 'drapeaux');
+  const manifest = JSON.parse(readFileSync(path.join(directory, 'manifest.json'), 'utf8')) as Manifest;
+
+  it('compte au moins 60 images et permet les trois difficultés (EF-3.8, CA-02)', () => {
+    expect(manifest.images.length).toBeGreaterThanOrEqual(60);
+    expect(playableDifficulties(manifest.images)).toEqual(['facile', 'normal', 'difficile']);
   });
 
-  it('référence des fichiers existants, sources et licences renseignées (ENF-8, CA-12)', () => {
-    for (const image of drapeaux!.images) {
-      expect(existsSync(path.join(contentDir, 'drapeaux', image.file)), image.file).toBe(true);
+  it('référence des fichiers existants, sources et licences renseignées (ENF-8)', () => {
+    for (const image of manifest.images) {
+      expect(existsSync(path.join(directory, image.file)), image.file).toBe(true);
       expect(image.author).not.toBe('');
       expect(image.licence).not.toBe('');
       expect(image.sourceUrl).toMatch(/^https:\/\//);
