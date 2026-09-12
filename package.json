@@ -1,0 +1,27 @@
+{
+  "name": "recto",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RECTO — Retournez. Retenez. Jeu de mémoire par catégories thématiques et niveaux de difficulté",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c cyan,magenta \"npm run dev -w @recto/server\" \"npm run dev -w @recto/web\"",
+    "build": "npm run build -w @recto/web && npm run build -w @recto/server",
+    "start": "npm run start -w @recto/server",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "content:drapeaux": "npm run content:drapeaux -w @recto/server"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "concurrently": "^10.0.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  }
+}

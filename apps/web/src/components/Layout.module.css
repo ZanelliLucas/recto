@@ -1,0 +1,91 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem clamp(1rem, 4vw, 2rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.mark {
+  position: relative;
+  width: 28px;
+  height: 26px;
+}
+
+.mark span {
+  position: absolute;
+  top: 2px;
+  width: 15px;
+  height: 21px;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+}
+
+.mark span:first-child {
+  left: 1px;
+  background: var(--card-back);
+  transform: rotate(-10deg);
+}
+
+.mark span:last-child {
+  right: 1px;
+  background: var(--card-face);
+  transform: rotate(8deg);
+}
+
+.wordmark {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navLink {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navLink:hover,
+.navLink[aria-current='page'] {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 3vw, 2rem);
+}
+
+.main:focus {
+  outline: none;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}

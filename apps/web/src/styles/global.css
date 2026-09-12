@@ -1,0 +1,175 @@
+/* Direction artistique (§ 6.1) : thème sombre par défaut, accents lumineux froids,
+   lignes de structure discrètes. Les images sont la seule couleur saturée de l'écran. */
+:root {
+  color-scheme: dark;
+  --bg: #0b0f14;
+  --surface: #111821;
+  --surface-2: #17202b;
+  --line: #1f2b39;
+  --line-strong: #2d3e52;
+  --text: #e7edf4;
+  --muted: #95a3b5;
+  --accent: #5cc8ff;
+  --accent-strong: #93ddff;
+  --accent-ink: #04121c;
+  --focus: #b8ebff;
+  --danger: #ff9f8f;
+  --miss: #ffab8a;
+  --card-face: #eef1f5;
+  --card-back: #121b26;
+  --card-motif: rgb(92 200 255 / 0.1);
+  --card-motif-strong: rgb(92 200 255 / 0.3);
+  --radius: 14px;
+  --radius-card: 10px;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+}
+
+/* Thème clair proposé en alternative ; le réglage qui l'active arrive au lot 4 (EF-8.1). */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --surface-2: #edf1f6;
+  --line: #dbe2ea;
+  --line-strong: #c3cdd9;
+  --text: #0f1720;
+  --muted: #4d5b6c;
+  --accent: #0a7bbf;
+  --accent-strong: #06679f;
+  --accent-ink: #ffffff;
+  --focus: #06679f;
+  --danger: #b3261e;
+  --miss: #c2410c;
+  --card-face: #ffffff;
+  --card-back: #1b2836;
+  --card-motif: rgb(147 221 255 / 0.14);
+  --card-motif-strong: rgb(147 221 255 / 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(1100px 520px at 50% -180px, rgb(92 200 255 / 0.08), transparent 70%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ENF-4.1 — indicateur de focus nettement visible. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    transform 150ms;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-primary:hover:not(:disabled) {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}

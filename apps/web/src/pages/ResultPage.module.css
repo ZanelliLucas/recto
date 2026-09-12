@@ -1,0 +1,101 @@
+.result {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  max-width: 640px;
+  margin: clamp(0.5rem, 4vw, 2.5rem) auto;
+  padding: clamp(1.5rem, 5vw, 2.5rem) 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  text-align: center;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.4rem;
+}
+
+.time {
+  margin: 0;
+  color: var(--accent-strong);
+  font-family: var(--mono);
+  font-size: clamp(3rem, 12vw, 5rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badge {
+  margin: 0;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+}
+
+.delta {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.delta[data-better='true'] {
+  color: var(--accent-strong);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0.5rem 0 0;
+}
+
+.stats div {
+  padding: 0.8rem 0.5rem;
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+
+.stats dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stats dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.error {
+  margin: 0;
+  color: var(--danger);
+}
+
+.notice {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

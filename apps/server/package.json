@@ -1,0 +1,30 @@
+{
+  "name": "@recto/server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Services applicatifs RECTO : catégories, parties chronométrées côté serveur",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "content:drapeaux": "tsx scripts/drapeaux/generate.ts"
+  },
+  "dependencies": {
+    "@recto/shared": "*",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "zod": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.2.2",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.13"
+  }
+}

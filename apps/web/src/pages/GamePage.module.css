@@ -1,0 +1,169 @@
+.session {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.context {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.category {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.level {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.metrics {
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metric dd {
+  min-width: 3ch;
+  margin: 0;
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Le chronomètre demeure lisible en permanence (§ 6.1) et ne change jamais de largeur. */
+.metric dd.time {
+  min-width: 7.5ch;
+  color: var(--accent-strong);
+  font-family: var(--mono);
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .hud {
+    grid-template-columns: 1fr auto;
+  }
+
+  .metrics {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-around;
+  }
+
+  .controls :global(.btn) {
+    min-height: 40px;
+    padding-inline: 0.8rem;
+  }
+}
+
+.stage {
+  position: relative;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  min-width: min(320px, 85vw);
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.loading p {
+  margin: 0;
+}
+
+.loading progress {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+/* Masque opaque : aucune carte n'est mémorisable pendant la pause (EF-1.5). */
+.pauseMask {
+  position: absolute;
+  inset: -6px;
+  z-index: 10;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.pausePanel {
+  position: sticky;
+  top: 20vh;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.pausePanel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.pausePanel .pauseTitle {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.message {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.message p {
+  margin: 0;
+  max-width: 34rem;
+}

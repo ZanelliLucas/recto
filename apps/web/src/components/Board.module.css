@@ -1,0 +1,31 @@
+/*
+ * La taille des cartes est fixée une fois pour toutes par la fenêtre : rien dans la
+ * partie ne la fait varier (ENF-2.4). Sur écran large, la grille tient sans défilement,
+ * cartes de 120 px au plus (ENF-3.1) ; --chrome réserve la place de l'en-tête et du bandeau.
+ */
+.board {
+  --gap: 8px;
+  --cols: var(--cols-wide);
+  --rows: var(--rows-wide);
+  --chrome: 12.5rem;
+  --card: min(
+    120px,
+    calc((100vw - 3rem - (var(--cols) - 1) * var(--gap)) / var(--cols)),
+    max(48px, calc((100dvh - var(--chrome) - (var(--rows) - 1) * var(--gap)) / var(--rows)))
+  );
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--card));
+  grid-auto-rows: var(--card);
+  gap: var(--gap);
+  justify-content: center;
+}
+
+/* ENF-3.3 et arbitrage A-7 : recomposition verticale, défilement autorisé, 56 px minimum. */
+@media (max-width: 599px) and (orientation: portrait) {
+  .board {
+    --gap: 4px;
+    --cols: var(--cols-narrow);
+    --rows: var(--rows-narrow);
+    --card: max(56px, calc((100vw - 1rem - (var(--cols) - 1) * var(--gap)) / var(--cols)));
+  }
+}

@@ -1,0 +1,760 @@
+{
+  "slug": "drapeaux",
+  "name": "Drapeaux",
+  "description": "Drapeaux nationaux du monde entier : bandes, croix, astres et croissants.",
+  "order": 3,
+  "published": true,
+  "thumbnail": "fr",
+  "images": [
+    {
+      "id": "fr",
+      "title": "France",
+      "file": "fr.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_France.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "it",
+      "title": "Italie",
+      "file": "it.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Italy.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "ie",
+      "title": "Irlande",
+      "file": "ie.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ireland.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "vertical-vert-blanc-orange"
+    },
+    {
+      "id": "ci",
+      "title": "Côte d'Ivoire",
+      "file": "ci.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_C%C3%B4te_d'Ivoire.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "vertical-vert-blanc-orange"
+    },
+    {
+      "id": "be",
+      "title": "Belgique",
+      "file": "be.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Belgium.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "ro",
+      "title": "Roumanie",
+      "file": "ro.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Romania.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "vertical-bleu-jaune-rouge"
+    },
+    {
+      "id": "td",
+      "title": "Tchad",
+      "file": "td.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Chad.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "vertical-bleu-jaune-rouge"
+    },
+    {
+      "id": "ml",
+      "title": "Mali",
+      "file": "ml.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mali.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "vertical-vert-jaune-rouge"
+    },
+    {
+      "id": "cm",
+      "title": "Cameroun",
+      "file": "cm.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cameroon.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "vertical-vert-jaune-rouge"
+    },
+    {
+      "id": "ng",
+      "title": "Nigeria",
+      "file": "ng.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nigeria.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "pe",
+      "title": "Pérou",
+      "file": "pe.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Peru.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "de",
+      "title": "Allemagne",
+      "file": "de.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "nl",
+      "title": "Pays-Bas",
+      "file": "nl.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Netherlands.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-rouge-blanc-bleu"
+    },
+    {
+      "id": "lu",
+      "title": "Luxembourg",
+      "file": "lu.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Luxembourg.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-rouge-blanc-bleu"
+    },
+    {
+      "id": "ru",
+      "title": "Russie",
+      "file": "ru.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Russia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "at",
+      "title": "Autriche",
+      "file": "at.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Austria.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-rouge-blanc-rouge"
+    },
+    {
+      "id": "lv",
+      "title": "Lettonie",
+      "file": "lv.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Latvia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-rouge-blanc-rouge"
+    },
+    {
+      "id": "hu",
+      "title": "Hongrie",
+      "file": "hu.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Hungary.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-blanc-vert-rouge"
+    },
+    {
+      "id": "bg",
+      "title": "Bulgarie",
+      "file": "bg.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bulgaria.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-blanc-vert-rouge"
+    },
+    {
+      "id": "lt",
+      "title": "Lituanie",
+      "file": "lt.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Lithuania.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-jaune-vert-rouge"
+    },
+    {
+      "id": "bo",
+      "title": "Bolivie",
+      "file": "bo.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bolivia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-jaune-vert-rouge"
+    },
+    {
+      "id": "gh",
+      "title": "Ghana",
+      "file": "gh.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ghana.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-jaune-vert-rouge"
+    },
+    {
+      "id": "ee",
+      "title": "Estonie",
+      "file": "ee.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Estonia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "am",
+      "title": "Arménie",
+      "file": "am.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Armenia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "ga",
+      "title": "Gabon",
+      "file": "ga.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Gabon.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-vert-bleu"
+    },
+    {
+      "id": "sl",
+      "title": "Sierra Leone",
+      "file": "sl.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sierra_Leone.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "horizontal-vert-bleu"
+    },
+    {
+      "id": "ye",
+      "title": "Yémen",
+      "file": "ye.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Yemen.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "co",
+      "title": "Colombie",
+      "file": "co.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Colombia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "pl",
+      "title": "Pologne",
+      "file": "pl.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Poland.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "bicolore-rouge-blanc"
+    },
+    {
+      "id": "id",
+      "title": "Indonésie",
+      "file": "id.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Indonesia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "bicolore-rouge-blanc"
+    },
+    {
+      "id": "ua",
+      "title": "Ukraine",
+      "file": "ua.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ukraine.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "th",
+      "title": "Thaïlande",
+      "file": "th.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Thailand.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "mu",
+      "title": "Maurice",
+      "file": "mu.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mauritius.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "gm",
+      "title": "Gambie",
+      "file": "gm.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_The_Gambia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "bw",
+      "title": "Botswana",
+      "file": "bw.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Botswana.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "se",
+      "title": "Suède",
+      "file": "se.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sweden.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "dk",
+      "title": "Danemark",
+      "file": "dk.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Denmark.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "fi",
+      "title": "Finlande",
+      "file": "fi.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Finland.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "no",
+      "title": "Norvège",
+      "file": "no.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Norway.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "croix-nordique-bordee"
+    },
+    {
+      "id": "is",
+      "title": "Islande",
+      "file": "is.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Iceland.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "croix-nordique-bordee"
+    },
+    {
+      "id": "jp",
+      "title": "Japon",
+      "file": "jp.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Japan.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "bd",
+      "title": "Bangladesh",
+      "file": "bd.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bangladesh.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "pw",
+      "title": "Palaos",
+      "file": "pw.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Palau.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "la",
+      "title": "Laos",
+      "file": "la.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Laos.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "ch",
+      "title": "Suisse",
+      "file": "ch.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Switzerland.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "gr",
+      "title": "Grèce",
+      "file": "gr.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Greece.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "ge",
+      "title": "Géorgie",
+      "file": "ge.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Georgia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "cz",
+      "title": "Tchéquie",
+      "file": "cz.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "triangle-bleu-blanc-rouge"
+    },
+    {
+      "id": "ph",
+      "title": "Philippines",
+      "file": "ph.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Philippines.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "triangle-bleu-blanc-rouge"
+    },
+    {
+      "id": "cu",
+      "title": "Cuba",
+      "file": "cu.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cuba.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "triangle-bleu-blanc-rouge"
+    },
+    {
+      "id": "bs",
+      "title": "Bahamas",
+      "file": "bs.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Bahamas.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "kw",
+      "title": "Koweït",
+      "file": "kw.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kuwait.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "panarabe"
+    },
+    {
+      "id": "ae",
+      "title": "Émirats arabes unis",
+      "file": "ae.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Arab_Emirates.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "panarabe"
+    },
+    {
+      "id": "jo",
+      "title": "Jordanie",
+      "file": "jo.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jordan.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "panarabe"
+    },
+    {
+      "id": "bj",
+      "title": "Bénin",
+      "file": "bj.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Benin.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "bande-verticale-et-deux-bandes"
+    },
+    {
+      "id": "mg",
+      "title": "Madagascar",
+      "file": "mg.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Madagascar.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "bande-verticale-et-deux-bandes"
+    },
+    {
+      "id": "sc",
+      "title": "Seychelles",
+      "file": "sc.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Seychelles.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "vn",
+      "title": "Viêt Nam",
+      "file": "vn.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Vietnam.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "so",
+      "title": "Somalie",
+      "file": "so.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Somalia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "cn",
+      "title": "Chine",
+      "file": "cn.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_People's_Republic_of_China.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "ma",
+      "title": "Maroc",
+      "file": "ma.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Morocco.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "bf",
+      "title": "Burkina Faso",
+      "file": "bf.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Burkina_Faso.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "cl",
+      "title": "Chili",
+      "file": "cl.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Chile.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "pa",
+      "title": "Panama",
+      "file": "pa.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Panama.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "il",
+      "title": "Israël",
+      "file": "il.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Israel.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "tr",
+      "title": "Turquie",
+      "file": "tr.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Turkey.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "croissant-rouge-blanc"
+    },
+    {
+      "id": "tn",
+      "title": "Tunisie",
+      "file": "tn.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tunisia.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "croissant-rouge-blanc"
+    },
+    {
+      "id": "dz",
+      "title": "Algérie",
+      "file": "dz.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Algeria.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "croissant-vert-blanc"
+    },
+    {
+      "id": "pk",
+      "title": "Pakistan",
+      "file": "pk.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Pakistan.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "croissant-vert-blanc"
+    },
+    {
+      "id": "cg",
+      "title": "République du Congo",
+      "file": "cg.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Republic_of_the_Congo.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "tz",
+      "title": "Tanzanie",
+      "file": "tz.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tanzania.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "jm",
+      "title": "Jamaïque",
+      "file": "jm.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jamaica.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "tt",
+      "title": "Trinité-et-Tobago",
+      "file": "tt.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Trinidad_and_Tobago.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": null
+    },
+    {
+      "id": "qa",
+      "title": "Qatar",
+      "file": "qa.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Qatar.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "guindant-dentele"
+    },
+    {
+      "id": "bh",
+      "title": "Bahreïn",
+      "file": "bh.svg",
+      "author": "RECTO — tracé vectoriel d’après le dessin officiel, proportions normalisées",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bahrain.svg",
+      "licence": "Domaine public",
+      "retrievedAt": "2026-09-12",
+      "visualGroup": "guindant-dentele"
+    }
+  ]
+}

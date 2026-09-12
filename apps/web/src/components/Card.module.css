@@ -1,0 +1,162 @@
+/* ENF-2.3 et ENF-2.4 : seules transform et opacity s'animent ; la carte ne change jamais de taille. */
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-card);
+  background: none;
+  cursor: pointer;
+  perspective: 900px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card[data-state='found'] {
+  cursor: default;
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.shell,
+.inner,
+.face {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.inner {
+  transform-style: preserve-3d;
+  transition: transform 300ms cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.card[data-state='up'] .inner,
+.card[data-state='found'] .inner {
+  transform: rotateY(180deg);
+}
+
+.face {
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Dos strictement identique pour toutes les cartes : treillis sobre et losange central. */
+.back {
+  border: 1px solid var(--line-strong);
+  background-color: var(--card-back);
+  background-image:
+    repeating-linear-gradient(45deg, var(--card-motif) 0 1px, transparent 1px 11px),
+    repeating-linear-gradient(-45deg, var(--card-motif) 0 1px, transparent 1px 11px);
+}
+
+.back::after {
+  content: '';
+  position: absolute;
+  inset: 26%;
+  border: 1.5px solid var(--card-motif-strong);
+  border-radius: 4px;
+  transform: rotate(45deg);
+}
+
+.card:hover:not([data-state='found']) .back {
+  border-color: var(--accent);
+}
+
+.front {
+  display: grid;
+  place-items: center;
+  background: var(--card-face);
+  transform: rotateY(180deg);
+}
+
+.front img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Paire trouvée : liseré et coche, pour ne pas reposer sur la seule couleur (ENF-4.4). */
+.card[data-state='found'] .front {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.check {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.card[data-state='found'] .shell {
+  animation: found 420ms ease-out;
+}
+
+.card[data-missed] .front {
+  box-shadow: inset 0 0 0 2px var(--miss);
+}
+
+.card[data-missed] .shell {
+  animation: miss 360ms ease-in-out 200ms;
+}
+
+@keyframes found {
+  40% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes miss {
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+/* ENF-4.3 — préférence système de réduction des animations : fondus simples. */
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition: none;
+    transform: none !important;
+  }
+
+  .face {
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    transition: opacity 180ms linear;
+  }
+
+  .front {
+    opacity: 0;
+    transform: none;
+  }
+
+  .card[data-state='up'] .front,
+  .card[data-state='found'] .front {
+    opacity: 1;
+  }
+
+  .card .shell {
+    animation: none !important;
+  }
+}
