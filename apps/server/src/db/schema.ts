@@ -1,5 +1,5 @@
-import type { Difficulty, GameStatus } from '@recto/shared';
-import { index, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import type { Difficulty, GameStatus, UserRole } from '@recto/shared';
+import { index, integer, primaryKey, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 /**
  * Modèle de données du § 5.2. Les horodatages sont en millisecondes epoch.
@@ -70,7 +70,66 @@ export const games = sqliteTable(
     durationMs: integer('duration_ms'),
     moves: integer('moves'),
   },
-  (table) => [index('games_player_idx').on(table.playerKey), index('games_created_idx').on(table.createdAt)],
+  (table) => [
+    index('games_player_idx').on(table.playerKey),
+    index('games_user_idx').on(table.userId),
+    index('games_created_idx').on(table.createdAt),
+  ],
+);
+
+const USER_ROLE_VALUES = ['joueur', 'admin'] as const satisfies readonly UserRole[];
+
+/** EF-4 — minimisation (ENF-6.1) : adresse, empreinte du mot de passe, pseudonyme, avatar. */
+export const users = sqliteTable('users', {
+  id: text('id').primaryKey(),
+  /** Adresse normalisée en minuscules. */
+  email: text('email').notNull().unique(),
+  passwordHash: text('password_hash').notNull(),
+  pseudo: text('pseudo').notNull(),
+  /** Pseudonyme en minuscules : l'unicité ignore la casse. */
+  pseudoKey: text('pseudo_key').notNull().unique(),
+  avatar: text('avatar').notNull(),
+  role: text('role', { enum: USER_ROLE_VALUES }).notNull().default('joueur'),
+  emailVerifiedAt: integer('email_verified_at'),
+  /** Incrémentée à chaque changement de mot de passe : révoque toutes les sessions ouvertes. */
+  tokenVersion: integer('token_version').notNull().default(0),
+  createdAt: integer('created_at').notNull(),
+});
+
+/** Jetons d'usage unique envoyés par courriel (EF-4.2, EF-4.3) ; seule leur empreinte est stockée. */
+export const emailTokens = sqliteTable(
+  'email_tokens',
+  {
+    tokenHash: text('token_hash').primaryKey(),
+    userId: text('user_id')
+      .notNull()
+      .references(() => users.id, { onDelete: 'cascade' }),
+    purpose: text('purpose', { enum: ['verification', 'reinitialisation'] }).notNull(),
+    expiresAt: integer('expires_at').notNull(),
+    createdAt: integer('created_at').notNull(),
+  },
+  (table) => [index('email_tokens_user_idx').on(table.userId)],
+);
+
+/**
+ * Record par couple catégorie × difficulté (§ 5.2). Redondant avec `games`, à dessein :
+ * l'écran de résultat et le profil n'ont aucun agrégat à calculer.
+ */
+export const personalBests = sqliteTable(
+  'personal_bests',
+  {
+    userId: text('user_id').notNull(),
+    categoryId: text('category_id').notNull(),
+    difficulty: text('difficulty', { enum: DIFFICULTY_VALUES }).notNull(),
+    bestTimeMs: integer('best_time_ms').notNull(),
+    /** Coups de la partie détentrice du meilleur temps : départage (EF-1.1). */
+    recordMoves: integer('record_moves').notNull(),
+    bestMoves: integer('best_moves').notNull(),
+    bestAccuracy: real('best_accuracy').notNull(),
+    gameId: text('game_id').notNull(),
+    obtainedAt: integer('obtained_at').notNull(),
+  },
+  (table) => [primaryKey({ columns: [table.userId, table.categoryId, table.difficulty] })],
 );
 
 /** Dernier tirage par joueur et couple catégorie × difficulté (EF-1.8). */

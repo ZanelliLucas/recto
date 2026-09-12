@@ -11,7 +11,13 @@ import type {
   CreditsCategory,
   FinishGameRequest,
   FinishGameResponse,
+  GuestImportSummary,
   ImageMetadataInput,
+  LoginRequest,
+  PlayerStats,
+  ProfilePatch,
+  PublicUser,
+  RegisterRequest,
   StartGameResponse,
 } from '@recto/shared';
 import { t } from '../i18n';
@@ -69,10 +75,31 @@ export const api = {
   finishGame: (id: string, body: FinishGameRequest) => request<FinishGameResponse>(game(id, 'finish'), { body }),
 };
 
+export const authApi = {
+  me: () => request<{ user: PublicUser | null }>('/auth/me'),
+  register: (body: RegisterRequest) => request<PublicUser>('/auth/register', { body }),
+  login: (body: LoginRequest) => request<PublicUser>('/auth/login', { body }),
+  logout: () => request<void>('/auth/logout', { method: 'POST' }),
+  verifyEmail: (token: string) => request<void>('/auth/verify-email', { body: { token } }),
+  resendVerification: () => request<void>('/auth/resend-verification', { method: 'POST' }),
+  forgotPassword: (email: string) => request<void>('/auth/forgot-password', { body: { email } }),
+  resetPassword: (token: string, password: string) => request<void>('/auth/reset-password', { body: { token, password } }),
+};
+
+export const meApi = {
+  stats: () => request<PlayerStats>('/me/stats'),
+  guestImport: () => request<GuestImportSummary>('/me/import-guest'),
+  importGuest: () => request<{ imported: number }>('/me/import-guest', { method: 'POST' }),
+  updateProfile: (patch: ProfilePatch) => request<PublicUser>('/me', { method: 'PATCH', body: patch }),
+  changePassword: (currentPassword: string, newPassword: string) =>
+    request<void>('/me/password', { body: { currentPassword, newPassword } }),
+  deleteAccount: (password: string) => request<void>('/me/delete', { body: { password } }),
+  /** Téléchargement direct : le serveur répond en pièce jointe. */
+  exportUrl: '/api/me/export',
+};
+
 export const adminApi = {
-  session: () => request<{ enabled: boolean; authenticated: boolean }>('/admin/session'),
-  login: (secret: string) => request<void>('/admin/session', { body: { secret } }),
-  logout: () => request<void>('/admin/session', { method: 'DELETE' }),
+  session: () => request<{ authenticated: boolean; admin: boolean }>('/admin/session'),
   categories: () => request<AdminCategorySummary[]>('/admin/categories'),
   category: (id: string) => request<AdminCategoryDetail>(`/admin/categories/${encodeURIComponent(id)}`),
   createCategory: (input: CategoryInput) => request<AdminCategoryDetail>('/admin/categories', { body: input }),

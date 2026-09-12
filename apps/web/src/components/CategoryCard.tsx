@@ -1,6 +1,6 @@
 import { DIFFICULTIES, DIFFICULTY_ORDER, type CategorySummary, type Difficulty } from '@recto/shared';
 import { Link } from 'react-router';
-import { getRecord } from '../game/records';
+import { useBestTimes } from '../game/bestTimes';
 import { difficultyLabel, t } from '../i18n';
 import { formatDuration } from '../lib/format';
 import styles from './CategoryCard.module.css';
@@ -15,6 +15,7 @@ interface CategoryCardProps {
 
 /** Chaque niveau se lance directement depuis la carte : accueil → partie en un clic (CA-01). */
 export function CategoryCard({ category, pending, onPlay }: CategoryCardProps) {
+  const bestTime = useBestTimes();
   return (
     <article className={styles.card}>
       <Link to={`/jouer/${category.slug}`} className={styles.head}>
@@ -28,7 +29,7 @@ export function CategoryCard({ category, pending, onPlay }: CategoryCardProps) {
       <ul className={styles.levels} aria-label={t('categories.levelsLabel', { category: category.name })}>
         {DIFFICULTY_ORDER.map((difficulty) => {
           const available = category.difficulties.includes(difficulty);
-          const record = available ? getRecord(category.slug, difficulty) : undefined;
+          const best = available ? bestTime(category.slug, difficulty) : undefined;
           return (
             <li key={difficulty}>
               <button
@@ -40,8 +41,8 @@ export function CategoryCard({ category, pending, onPlay }: CategoryCardProps) {
               >
                 <span className={styles.levelName}>{difficultyLabel(difficulty)}</span>
                 <span className={styles.levelMeta}>
-                  {record
-                    ? formatDuration(record.bestMs)
+                  {best !== undefined
+                    ? formatDuration(best)
                     : t('difficulty.pairsShort', { pairs: DIFFICULTIES[difficulty].pairs })}
                 </span>
               </button>

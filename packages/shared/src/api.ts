@@ -1,7 +1,9 @@
+import type { Avatar, UserRole } from './account';
 import type { Difficulty } from './difficulty';
 import type { PublicationIssue } from './draw';
 import type { ImageSources } from './images';
 import type { Move } from './replay';
+import type { Performance } from './score';
 
 export type GameStatus = 'preparee' | 'en_cours' | 'terminee' | 'abandonnee' | 'rejetee';
 
@@ -58,6 +60,84 @@ export interface FinishGameResponse {
   moves: number;
   pairs: number;
   accuracy: number;
+  /** Joueur connecté : record antérieur et dépassement éventuel (EF-5.1). Invité : null. */
+  record: { previous: Performance | null; improved: boolean } | null;
+}
+
+// ——— Comptes et statistiques (EF-4, EF-5) ———
+
+export interface PublicUser {
+  id: string;
+  email: string;
+  pseudo: string;
+  avatar: Avatar;
+  role: UserRole;
+  emailVerified: boolean;
+  createdAt: string;
+}
+
+export interface RegisterRequest {
+  email: string;
+  password: string;
+  pseudo: string;
+  avatar: Avatar;
+  /** ENF-6.5 — quinze ans au moins, faute de consentement parental. */
+  ageConfirmed: true;
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface ProfilePatch {
+  pseudo?: string;
+  avatar?: Avatar;
+}
+
+/** Record et statistiques d'un couple catégorie × difficulté. */
+export interface RecordEntry {
+  category: string;
+  categoryName: string;
+  difficulty: Difficulty;
+  bestMs: number;
+  recordMoves: number;
+  bestMoves: number;
+  bestAccuracy: number;
+  gamesFinished: number;
+  averageMs: number;
+  obtainedAt: string;
+}
+
+export interface HistoryEntry {
+  id: string;
+  category: string;
+  categoryName: string;
+  difficulty: Difficulty;
+  status: 'terminee' | 'abandonnee';
+  durationMs: number | null;
+  moves: number | null;
+  playedAt: string;
+}
+
+export interface PlayerStats {
+  totals: {
+    /** Parties terminées ou abandonnées (EF-1.6). */
+    gamesPlayed: number;
+    gamesFinished: number;
+    totalPlayMs: number;
+    cardsFlipped: number;
+    /** Taux de complétion : couples catégorie × difficulté terminés au moins une fois. */
+    completed: number;
+    completable: number;
+  };
+  records: RecordEntry[];
+  history: HistoryEntry[];
+}
+
+/** EF-4.4 — parties jouées en invité sur ce navigateur, rattachables au compte. */
+export interface GuestImportSummary {
+  available: number;
 }
 
 /** ENF-8 — crédits iconographiques restitués automatiquement. */

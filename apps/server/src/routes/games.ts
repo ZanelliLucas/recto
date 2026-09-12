@@ -30,7 +30,7 @@ export function gamesRouter(games: GameService): Router {
 
   router.post('/', async (req, res) => {
     const { category, difficulty } = parseBody(createSchema, req.body);
-    res.status(201).json(await games.create(res.locals.playerKey as string, category, difficulty));
+    res.status(201).json(await games.create(res.locals.player!, category, difficulty));
   });
 
   router.post('/:id/start', async (req, res) => {

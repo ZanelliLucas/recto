@@ -1,5 +1,11 @@
 import type { Difficulty, GameStatus } from '@recto/shared';
 
+/** Joueur à l'origine d'une partie : clé de tirage (compte ou navigateur invité) et compte éventuel. */
+export interface Player {
+  key: string;
+  userId: string | null;
+}
+
 /** Correspond à l'entité `games` du modèle de données (§ 5.2). */
 export interface GameRecord {
   id: string;

@@ -67,6 +67,27 @@
   color: var(--text);
 }
 
+.account {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+  padding-left: 0.3rem;
+}
+
+.pseudo {
+  max-width: 14ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .pseudo {
+    display: none;
+  }
+}
+
 .main {
   flex: 1;
   width: 100%;

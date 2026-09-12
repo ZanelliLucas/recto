@@ -1,4 +1,5 @@
 import { Link, Navigate, useLocation } from 'react-router';
+import { useAuth } from '../auth/AuthContext';
 import type { ResultLocationState } from '../game/navigation';
 import { useStartGame } from '../game/useStartGame';
 import { difficultyLabel, t } from '../i18n';
@@ -8,6 +9,7 @@ import styles from './ResultPage.module.css';
 
 export function ResultPage() {
   const state = useLocation().state as ResultLocationState | null;
+  const { user } = useAuth();
   const { start, pending, error } = useStartGame();
   useDocumentTitle(t('result.title'));
 
@@ -15,7 +17,7 @@ export function ResultPage() {
 
   const { result, previous, improved, category, categoryName, difficulty } = state;
   // EF-5.1 — écart signé au record antérieur : le principal motif de relance.
-  const delta = previous ? result.durationMs - previous.bestMs : null;
+  const delta = previous ? result.durationMs - previous.durationMs : null;
 
   return (
     <section className={styles.result} aria-labelledby="result-title">
@@ -67,7 +69,16 @@ export function ResultPage() {
           {error}
         </p>
       )}
-      <p className={styles.notice}>{t('app.guestNotice')}</p>
+
+      {/* § 3.2 — le compte est proposé juste après un résultat que le joueur souhaite conserver. */}
+      {!user && (
+        <div className={styles.cta}>
+          <p>{t('result.saveCta')}</p>
+          <Link className="btn" to={`/inscription?retour=${encodeURIComponent('/profil')}`}>
+            {t('result.createAccount')}
+          </Link>
+        </div>
+      )}
     </section>
   );
 }

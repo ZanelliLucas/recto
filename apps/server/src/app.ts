@@ -3,26 +3,38 @@ import path from 'node:path';
 import cookieParser from 'cookie-parser';
 import express, { type Express } from 'express';
 import helmet from 'helmet';
-import type { AdminAuth } from './admin/adminAuth';
 import type { AdminService } from './admin/adminService';
+import type { AuthService } from './auth/authService';
+import { currentUser } from './auth/middleware';
+import type { SessionManager } from './auth/sessions';
+import type { SqlUserRepository } from './auth/userRepository';
 import type { CategoryRepository } from './content/types';
 import type { GameService } from './games/gameService';
 import { errorHandler } from './http/errorHandler';
 import { HttpError } from './http/httpError';
 import { playerIdentity } from './http/playerIdentity';
 import { rateLimit } from './http/rateLimit';
+import { sameOrigin } from './http/sameOrigin';
 import type { MediaStorage } from './media/storage';
+import type { RecordService } from './records/recordService';
 import { adminRouter } from './routes/admin';
+import { authRouter } from './routes/auth';
 import { categoriesRouter, creditsRouter } from './routes/categories';
 import { gamesRouter } from './routes/games';
+import { meRouter } from './routes/me';
 
 export interface AppDependencies {
   categories: CategoryRepository;
   games: GameService;
   admin: AdminService;
-  adminAuth: AdminAuth;
+  auth: AuthService;
+  records: RecordService;
+  users: SqlUserRepository;
+  sessions: SessionManager;
   media: MediaStorage;
   mediaDir: string;
+  /** Origine publique du site : seule origine étrangère à l'hôte admise en écriture. */
+  appUrl: string;
   webDistDir?: string;
   secureCookies?: boolean;
 }
@@ -42,8 +54,12 @@ export function createApp(deps: AppDependencies): Express {
   const api = express.Router();
   api.use(express.json({ limit: '64kb' }));
   api.use(cookieParser());
-  api.use('/admin', adminRouter(deps.admin, deps.adminAuth));
+  api.use(sameOrigin(deps.appUrl));
+  api.use(currentUser(deps.sessions, deps.users));
   api.use(playerIdentity(deps.secureCookies ?? false));
+  api.use('/auth', authRouter(deps.auth, deps.sessions));
+  api.use('/me', meRouter(deps.auth, deps.records, deps.sessions));
+  api.use('/admin', adminRouter(deps.admin));
   api.use('/categories', categoriesRouter(deps.categories, deps.media));
   api.use('/credits', creditsRouter(deps.categories));
   // ENF-1.3 — limitation du débit d'ouverture de parties.
@@ -52,7 +68,7 @@ export function createApp(deps: AppDependencies): Express {
     rateLimit({
       windowMs: 60_000,
       max: 30,
-      key: (req) => `${req.ip}:${String(req.res?.locals.playerKey)}`,
+      key: (req) => `${req.ip}:${req.res?.locals.player?.key}`,
       message: 'Trop de parties ouvertes en peu de temps. Patientez une minute.',
     }),
   );

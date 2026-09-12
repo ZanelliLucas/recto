@@ -15,6 +15,14 @@ export function formatDelta(ms: number): string {
   return `${sign}${(tenths / 10).toFixed(1).replace('.', ',')} s`;
 }
 
+/** Temps de jeu cumulé : « 45 s », « 12 min », « 3 h 05 ». */
+export function formatPlayTime(ms: number): string {
+  const minutes = Math.round(ms / 60_000);
+  if (minutes < 1) return `${Math.round(ms / 1000)} s`;
+  const hours = Math.floor(minutes / 60);
+  return hours === 0 ? `${minutes} min` : `${hours} h ${pad(minutes % 60)}`;
+}
+
 const day = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 /** Date ISO « 2026-09-12 » → « 12 septembre 2026 ». */

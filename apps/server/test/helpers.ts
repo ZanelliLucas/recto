@@ -2,20 +2,24 @@ import { mkdtempSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { Difficulty, Move } from '@recto/shared';
+import type { CreateGameResponse, Difficulty, FinishGameResponse, Move, PublicUser } from '@recto/shared';
 import request from 'supertest';
-import { AdminAuth } from '../src/admin/adminAuth';
 import { AdminService } from '../src/admin/adminService';
 import { createApp } from '../src/app';
+import { AuthService } from '../src/auth/authService';
+import { SessionManager } from '../src/auth/sessions';
+import { SqlUserRepository } from '../src/auth/userRepository';
 import { SqlContentRepository } from '../src/content/contentRepository';
 import { openDatabase } from '../src/db/client';
 import { GameService } from '../src/games/gameService';
 import { SqlGameStore } from '../src/games/gameStore';
+import { MemoryMailer } from '../src/mail/mailer';
 import { LocalMediaStorage } from '../src/media/storage';
+import { RecordService } from '../src/records/recordService';
 
 export const migrationsDir = fileURLToPath(new URL('../drizzle/', import.meta.url));
 export const contentDir = fileURLToPath(new URL('../content/', import.meta.url));
-export const ADMIN_SECRET = 'secret-de-test-assez-long';
+export const PASSWORD = 'correct-horse-battery';
 
 export interface SeedCategory {
   slug: string;
@@ -81,7 +85,7 @@ export function perfectMoves(deck: readonly string[]): Move[] {
   return [...positions.values()].map(([a, b]) => [a!, b!] as const);
 }
 
-export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }], adminSecret: string | null = ADMIN_SECRET) {
+export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }]) {
   let now = 1_700_000_000_000;
   const clock = () => now;
   const { db, dir } = await testDatabase();
@@ -95,24 +99,72 @@ export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }
   }
 
   const media = new LocalMediaStorage(path.join(dir, 'media'));
+  const users = new SqlUserRepository(db);
+  const records = new RecordService(db, content);
+  const mailer = new MemoryMailer();
   const app = createApp({
     categories: content,
-    games: new GameService(content, new SqlGameStore(db), media, { now: clock }),
+    games: new GameService(content, new SqlGameStore(db), media, records, { now: clock }),
     admin: new AdminService(content, media, clock),
-    adminAuth: new AdminAuth(adminSecret, false, clock),
+    auth: new AuthService(users, mailer, { appUrl: 'https://recto.test', now: clock }),
+    records,
+    users,
+    sessions: new SessionManager('secret-de-session-de-test-assez-long-pour-hs256', false),
     media,
     mediaDir: media.root,
+    appUrl: 'https://recto.test',
   });
 
   return {
     app,
     agent: request.agent(app),
+    newAgent: () => request.agent(app),
     content,
     media,
+    users,
+    mailer,
     categoryIds,
     imageIds,
     advance(ms: number) {
       now += ms;
     },
   };
+}
+
+export type Context = Awaited<ReturnType<typeof setup>>;
+export type Agent = Context['agent'];
+
+let counter = 0;
+
+/** Inscrit un compte sur cet agent, qui en garde la session. */
+export async function register(agent: Agent, overrides: Partial<{ email: string; pseudo: string; password: string }> = {}) {
+  counter++;
+  const body = {
+    email: `joueur${counter}@exemple.fr`,
+    pseudo: `Joueur${counter}`,
+    password: PASSWORD,
+    avatar: 'orbite',
+    ageConfirmed: true,
+    ...overrides,
+  };
+  const response = await agent.post('/api/auth/register').send(body).expect(201);
+  return { ...body, user: response.body as PublicUser };
+}
+
+/** Jeton du dernier lien envoyé par courriel. */
+export function lastToken(ctx: Context): string {
+  const text = ctx.mailer.sent.at(-1)?.text ?? '';
+  const match = /jeton=([\w-]+)/.exec(text);
+  if (!match) throw new Error('Aucun lien dans le dernier courriel');
+  return match[1]!;
+}
+
+/** Joue une partie parfaite de `elapsedMs` sur l'horloge du serveur. */
+export async function playGame(ctx: Context, agent: Agent, elapsedMs = 30_000, difficulty: Difficulty = 'facile', category = 'test') {
+  const game = (await agent.post('/api/games').send({ category, difficulty }).expect(201)).body as CreateGameResponse;
+  await agent.post(`/api/games/${game.gameId}/start`).send({ token: game.token }).expect(200);
+  ctx.advance(3_000 + elapsedMs);
+  const moves = perfectMoves(game.deck);
+  const result = await agent.post(`/api/games/${game.gameId}/finish`).send({ token: game.token, moves }).expect(200);
+  return result.body as FinishGameResponse;
 }

@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import { Link, useParams } from 'react-router';
 import { useCategories } from '../api/useCategories';
 import { Picture } from '../components/Picture';
-import { getRecord } from '../game/records';
+import { useBestTimes } from '../game/bestTimes';
 import { useStartGame } from '../game/useStartGame';
 import { difficultyLabel, t } from '../i18n';
 import { formatDuration } from '../lib/format';
@@ -15,6 +15,7 @@ export function LevelPage() {
   const { categorie } = useParams();
   const state = useCategories();
   const { start, pending, error } = useStartGame();
+  const bestTime = useBestTimes();
   const category = state.status === 'ready' ? state.categories.find((c) => c.slug === categorie) : undefined;
   useDocumentTitle(category?.name);
 
@@ -56,7 +57,7 @@ export function LevelPage() {
         {DIFFICULTY_ORDER.map((difficulty) => {
           const spec = DIFFICULTIES[difficulty];
           const available = category.difficulties.includes(difficulty);
-          const record = available ? getRecord(category.slug, difficulty) : undefined;
+          const best = available ? bestTime(category.slug, difficulty) : undefined;
           return (
             <li key={difficulty}>
               <button
@@ -73,8 +74,8 @@ export function LevelPage() {
                 <span className={styles.levelRecord}>
                   {!available
                     ? t('difficulty.unavailable')
-                    : record
-                      ? t('difficulty.record', { time: formatDuration(record.bestMs) })
+                    : best !== undefined
+                      ? t('difficulty.record', { time: formatDuration(best) })
                       : t('difficulty.noRecord')}
                 </span>
                 <span className={styles.miniGrid} style={{ '--cols': spec.cols } as CSSProperties} aria-hidden="true">

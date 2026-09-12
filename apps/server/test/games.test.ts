@@ -101,7 +101,7 @@ describe('chronométrage et clôture', () => {
       .post(`/api/games/${game.gameId}/finish`)
       .send({ token: game.token, moves: perfectMoves(game.deck) })
       .expect(200);
-    expect(response.body).toEqual({ durationMs: 20_000, moves: 8, pairs: 8, accuracy: 1 });
+    expect(response.body).toEqual({ durationMs: 20_000, moves: 8, pairs: 8, accuracy: 1, record: null });
   });
 
   it('compte les coups en rejouant la partie, pas en croyant le client', async () => {

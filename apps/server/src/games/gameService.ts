@@ -20,8 +20,9 @@ import type { CategoryRepository } from '../content/types';
 import { HttpError } from '../http/httpError';
 import { imageSources } from '../media/sources';
 import type { MediaStorage } from '../media/storage';
+import type { RecordService } from '../records/recordService';
 import type { GameStore } from './gameStore';
-import type { GameRecord } from './types';
+import type { GameRecord, Player } from './types';
 
 export interface GameServiceOptions {
   now?: () => number;
@@ -43,6 +44,7 @@ export class GameService {
     private readonly categories: CategoryRepository,
     private readonly games: GameStore,
     private readonly media: MediaStorage,
+    private readonly records: RecordService,
     options: GameServiceOptions = {},
   ) {
     this.now = options.now ?? Date.now;
@@ -50,7 +52,7 @@ export class GameService {
   }
 
   /** Tirage, mélange et enregistrement. Le chronomètre ne part qu'avec `start`, une fois les images préchargées. */
-  async create(playerKey: string, slug: string, difficulty: Difficulty): Promise<CreateGameResponse> {
+  async create(player: Player, slug: string, difficulty: Difficulty): Promise<CreateGameResponse> {
     const category = await this.categories.findPublished(slug);
     if (!category) throw new HttpError(404, 'categorie_introuvable', 'Catégorie introuvable.');
 
@@ -60,7 +62,7 @@ export class GameService {
     }
 
     const { pairs } = DIFFICULTIES[difficulty];
-    const drawKey = `${playerKey}:${category.id}:${difficulty}`;
+    const drawKey = `${player.key}:${category.id}:${difficulty}`;
     const seed = this.randomSeed();
     const rng = mulberry32(seed);
     const imageIds = drawImages(pool, pairs, rng, await this.games.lastDraw(drawKey));
@@ -69,8 +71,8 @@ export class GameService {
     const game: GameRecord = {
       id: randomUUID(),
       token: randomBytes(24).toString('base64url'),
-      playerKey,
-      userId: null,
+      playerKey: player.key,
+      userId: player.userId,
       categoryId: category.id,
       difficulty,
       seed,
@@ -157,7 +159,9 @@ export class GameService {
     game.durationMs = durationMs;
     game.moves = replay.moves;
     await this.commit(game, 'en_cours');
-    return { durationMs, moves: replay.moves, pairs, accuracy: accuracy(pairs, replay.moves) };
+    // EF-5.1 — joueur connecté : le serveur compare au record et le met à jour.
+    const record = game.userId ? await this.records.registerFinish(game) : null;
+    return { durationMs, moves: replay.moves, pairs, accuracy: accuracy(pairs, replay.moves), record };
   }
 
   /** EF-1.6 — la partie compte comme jouée mais n'entre jamais dans les records. */

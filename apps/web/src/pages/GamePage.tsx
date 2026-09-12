@@ -5,6 +5,7 @@ import { ApiError, api } from '../api/client';
 import { Board, type CardFace } from '../components/Board';
 import { Countdown } from '../components/Countdown';
 import { Stopwatch } from '../components/Stopwatch';
+import { invalidateStats } from '../game/bestTimes';
 import { engineReducer, initEngine, type FlipEvent } from '../game/engine';
 import type { GameLocationState, ResultLocationState } from '../game/navigation';
 import { preloadImages } from '../game/preload';
@@ -123,11 +124,22 @@ function GameSession({ game, categoryName }: GameLocationState) {
     finishing.current = api.finishGame(game.gameId, { token: game.token, moves: [...engine.moves] });
     Promise.all([finishing.current, delay(LAST_PAIR_PAUSE_MS)]).then(
       ([result]) => {
-        const saved = saveResult(game.category, game.difficulty, result);
+        // Joueur connecté : le serveur fait foi. Invité : record conservé par le navigateur.
+        let comparison: Pick<ResultLocationState, 'previous' | 'improved'>;
+        if (result.record) {
+          invalidateStats();
+          comparison = result.record;
+        } else {
+          const saved = saveResult(game.category, game.difficulty, result);
+          comparison = {
+            previous: saved.previous ? { durationMs: saved.previous.bestMs, moves: saved.previous.recordMoves } : null,
+            improved: saved.improved,
+          };
+        }
         dispatch({ type: 'finished' });
         const state: ResultLocationState = {
           result,
-          ...saved,
+          ...comparison,
           category: game.category,
           categoryName,
           difficulty: game.difficulty,

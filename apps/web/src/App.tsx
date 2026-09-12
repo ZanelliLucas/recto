@@ -1,6 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 import { Layout } from './components/Layout';
+import { ForgotPasswordPage } from './pages/account/ForgotPasswordPage';
+import { LoginPage } from './pages/account/LoginPage';
+import { ProfilePage } from './pages/account/ProfilePage';
+import { RegisterPage } from './pages/account/RegisterPage';
+import { ResetPasswordPage } from './pages/account/ResetPasswordPage';
+import { SettingsPage } from './pages/account/SettingsPage';
+import { VerifyEmailPage } from './pages/account/VerifyEmailPage';
 import { CategoriesPage } from './pages/CategoriesPage';
 import { CreditsPage } from './pages/CreditsPage';
 import { GamePage } from './pages/GamePage';
@@ -12,7 +19,7 @@ import { ResultPage } from './pages/ResultPage';
 /** Le back-office est chargé à la demande : il n'alourdit pas le jeu (ENF-2.1). */
 const AdminApp = lazy(() => import('./pages/admin/AdminApp'));
 
-/** Arborescence du § 3.1 ; profil, comptes et paramètres arrivent au lot 3. */
+/** Arborescence du § 3.1. */
 export function App() {
   return (
     <Routes>
@@ -22,6 +29,13 @@ export function App() {
         <Route path="jouer/:categorie" element={<LevelPage />} />
         <Route path="partie/:id" element={<GamePage />} />
         <Route path="partie/:id/resultat" element={<ResultPage />} />
+        <Route path="connexion" element={<LoginPage />} />
+        <Route path="inscription" element={<RegisterPage />} />
+        <Route path="verification" element={<VerifyEmailPage />} />
+        <Route path="mot-de-passe-oublie" element={<ForgotPasswordPage />} />
+        <Route path="reinitialisation" element={<ResetPasswordPage />} />
+        <Route path="profil" element={<ProfilePage />} />
+        <Route path="parametres" element={<SettingsPage />} />
         <Route path="credits" element={<CreditsPage />} />
         <Route
           path="admin/*"

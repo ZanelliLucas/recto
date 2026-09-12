@@ -1,5 +1,4 @@
-import type { CreateGameResponse, Difficulty, FinishGameResponse } from '@recto/shared';
-import type { LocalRecord } from './records';
+import type { CreateGameResponse, Difficulty, FinishGameResponse, Performance } from '@recto/shared';
 
 /** État transmis à /partie/:id ; conservé par l'historique du navigateur. */
 export interface GameLocationState {
@@ -10,7 +9,8 @@ export interface GameLocationState {
 /** État transmis à /partie/:id/resultat. */
 export interface ResultLocationState {
   result: FinishGameResponse;
-  previous: LocalRecord | undefined;
+  /** Record détenu avant la partie : celui du compte, ou du navigateur pour un invité (EF-5.1). */
+  previous: Performance | null;
   improved: boolean;
   category: string;
   categoryName: string;

@@ -16,7 +16,8 @@
     "content:drapeaux": "npm run content:drapeaux -w @recto/server",
     "content:commons:resolve": "npm run content:commons:resolve -w @recto/server --",
     "content:commons:import": "npm run content:commons:import -w @recto/server --",
-    "db:seed": "npm run db:seed -w @recto/server"
+    "db:seed": "npm run db:seed -w @recto/server",
+    "user:role": "npm run user:role -w @recto/server --"
   },
   "engines": {
     "node": ">=20"

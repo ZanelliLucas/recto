@@ -2,10 +2,9 @@ import { DIFFICULTY_ORDER } from '@recto/shared';
 import { Router } from 'express';
 import multer from 'multer';
 import { z } from 'zod';
-import { ADMIN_COOKIE, type AdminAuth } from '../admin/adminAuth';
 import type { AdminService } from '../admin/adminService';
+import { requireAdmin } from '../auth/middleware';
 import { HttpError } from '../http/httpError';
-import { rateLimit } from '../http/rateLimit';
 import { parseBody } from '../http/validate';
 
 const ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -65,35 +64,16 @@ function id(raw: unknown, what: 'categorie' | 'image'): string {
   return raw;
 }
 
-export function adminRouter(admin: AdminService, auth: AdminAuth): Router {
+export function adminRouter(admin: AdminService): Router {
   const router = Router();
 
-  router.get('/session', (req, res) => {
-    res.json({ enabled: auth.enabled, authenticated: auth.verify(req.cookies?.[ADMIN_COOKIE]) });
+  router.get('/session', (_req, res) => {
+    const { user } = res.locals;
+    res.json({ authenticated: Boolean(user), admin: user?.role === 'admin' });
   });
 
-  // Cinq tentatives par minute et par adresse (ENF-5.3).
-  const loginLimit = rateLimit({
-    windowMs: 60_000,
-    max: 5,
-    key: (req) => req.ip ?? 'inconnue',
-    message: 'Trop de tentatives. Réessayez dans une minute.',
-  });
-
-  router.post('/session', loginLimit, (req, res) => {
-    if (!auth.enabled) throw new HttpError(503, 'admin_desactive', 'Back-office désactivé : ADMIN_SECRET n’est pas défini.');
-    const { secret } = parseBody(z.object({ secret: z.string().min(1).max(256) }), req.body);
-    if (!auth.checkSecret(secret)) throw new HttpError(401, 'secret_invalide', 'Secret d’administration incorrect.');
-    res.cookie(ADMIN_COOKIE, auth.issue(), auth.cookieOptions);
-    res.status(204).end();
-  });
-
-  router.delete('/session', (_req, res) => {
-    res.clearCookie(ADMIN_COOKIE, { path: '/api/admin' });
-    res.status(204).end();
-  });
-
-  router.use(auth.require);
+  // EF-7.5 — tout le reste est réservé au rôle administrateur.
+  router.use(requireAdmin);
 
   router.get('/categories', async (_req, res) => {
     res.json(await admin.listCategories());

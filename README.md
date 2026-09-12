@@ -7,11 +7,20 @@ Le cahier des charges de référence est [docs/RECTO_Cahier-des-charges_v1.1.pdf
 
 ```bash
 npm install
-cp apps/server/.env.example apps/server/.env   # puis renseigner ADMIN_SECRET (16 caractères minimum)
+cp apps/server/.env.example apps/server/.env   # puis renseigner AUTH_SECRET (32 caractères minimum)
 npm run db:seed                                # catégorie Drapeaux
 npm run content:commons:import                 # Monuments, Histoire, Faune (téléchargement depuis Commons)
 npm run dev
 ```
+
+Pour accéder au back-office, créez un compte sur le site puis donnez-lui le rôle administrateur :
+
+```bash
+npm run user:role -- votre@adresse.fr admin
+```
+
+Sans `SMTP_URL`, les courriels (vérification d'adresse, réinitialisation) ne partent pas : ils sont écrits dans
+`apps/server/storage/mail/` et signalés dans la console du serveur.
 
 - Interface : http://localhost:5173 — back-office : http://localhost:5173/admin
 - API : http://localhost:4747 (variable `API_PORT` ; en production, `PORT`)
@@ -29,6 +38,7 @@ non versionnées : les commandes ci-dessus les reconstruisent à partir des sour
 | `npm run content:drapeaux` | Régénère les SVG et le manifeste des drapeaux |
 | `npm run content:commons:resolve` | Relève fichiers, auteurs et licences Commons, sans téléchargement d'image |
 | `npm run content:commons:import` | Télécharge et traite les images des listes verrouillées |
+| `npm run user:role -- <adresse> <admin\|joueur>` | Attribue un rôle à un compte existant |
 
 ## Organisation
 
@@ -46,7 +56,10 @@ apps/web                   React + Vite : jeu, crédits, back-office (chargé à
 - **A-2 / H-1** : Facile 8 paires (16 cartes), Normal 15 paires (30), Difficile 30 paires (60).
 - **A-7** : sur mobile en portrait, grille recomposée verticalement avec défilement (5 colonnes en Difficile).
 - **A-8** : plateforme durable ; stockages derrière des interfaces remplaçables.
-- **Back-office** : protégé par un secret d'administration (`ADMIN_SECRET`) jusqu'au rôle administrateur du lot 3.
+- **Back-office** : réservé au rôle administrateur (EF-7.5), attribué par `npm run user:role`.
+- **Reprise du mode invité (EF-4.4)** : seules les parties jouées sur le navigateur et validées par le serveur
+  rejoignent le compte ; les records locaux, modifiables à volonté, ne font jamais foi (§ 5.4).
+- **Authentification déléguée (A-6)** : non retenue en V1.
 - **Contenu** : images principales Wikidata (P18) hébergées sur Wikimedia Commons ; seules les licences
   domaine public, CC0, CC BY et CC BY-SA sont admises, auteur obligatoire hors domaine public.
 
@@ -64,6 +77,18 @@ apps/web                   React + Vite : jeu, crédits, back-office (chargé à
 - Page de crédits générée à partir du contenu publié (ENF-8).
 - Quatre catégories de lancement : Drapeaux (75), Monuments (70), Histoire (70), Faune (64).
 - Limitation du débit : ouverture de parties (ENF-1.3), connexion au back-office (ENF-5.3).
+
+**Lot 3 — comptes et records** :
+
+- Inscription (adresse, pseudonyme public unique, mot de passe de 12 caractères, avatar, âge minimal de 15 ans),
+  vérification de l'adresse et réinitialisation du mot de passe par liens à usage unique et durée limitée.
+- Mots de passe hachés en Argon2id ; session JWT en cookie httpOnly SameSite=Lax, révocable par compte ;
+  requêtes d'écriture d'une autre origine refusées ; cinq tentatives de connexion par minute et par adresse.
+- Records par couple catégorie × difficulté mis à jour par le serveur à la clôture ; écran de résultat comparé au
+  record du compte (EF-5.1) ; parties abandonnées comptées comme jouées, jamais dans les records (EF-1.6).
+- Profil : statistiques, records, historique, reprise des parties invité ; paramètres : pseudonyme, avatar,
+  mot de passe, export JSON et suppression définitive du compte (ENF-6.2, ENF-6.3).
+- Proposition de compte juste après un résultat obtenu en invité (§ 3.2).
 
 Écart assumé par rapport au § 5.2 : les colonnes `url_200`, `url_400`, `url_800` sont remplacées par un préfixe de
 stockage et une nature (vectorielle ou matricielle), dont l'API dérive les six adresses.
