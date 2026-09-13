@@ -7,6 +7,10 @@ coverage/
 !.env.example
 *.tsbuildinfo
 
+# Résultats des tests de bout en bout (Playwright)
+test-results/
+playwright-report/
+
 # Données locales : base SQLite et images traitées, reconstruites par db:seed et content:commons:import
 apps/server/data/
 apps/server/storage/

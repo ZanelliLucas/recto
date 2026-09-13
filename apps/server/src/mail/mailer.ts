@@ -5,7 +5,9 @@ import nodemailer, { type Transporter } from 'nodemailer';
 export interface MailMessage {
   to: string;
   subject: string;
+  /** Version texte, toujours présente : lue par les clients qui refusent le HTML. */
   text: string;
+  html?: string;
 }
 
 export interface Mailer {
@@ -34,9 +36,11 @@ export class FileMailer implements Mailer {
 
   async send(message: MailMessage): Promise<void> {
     await mkdir(this.directory, { recursive: true });
-    const file = path.join(this.directory, `${Date.now()}.txt`);
-    await writeFile(file, `À : ${message.to}\nObjet : ${message.subject}\n\n${message.text}\n`);
-    console.log(`Courriel écrit dans ${file}`);
+    const base = path.join(this.directory, String(Date.now()));
+    await writeFile(`${base}.txt`, `À : ${message.to}\nObjet : ${message.subject}\n\n${message.text}\n`);
+    // Version HTML à ouvrir dans un navigateur pour en vérifier la mise en forme.
+    if (message.html) await writeFile(`${base}.html`, message.html);
+    console.log(`Courriel écrit dans ${base}.txt`);
   }
 }
 

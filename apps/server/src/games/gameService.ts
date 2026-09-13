@@ -101,7 +101,14 @@ export class GameService {
       deck,
       images: imageIds.map((id) => {
         const image = imagesById.get(id)!;
-        return { id, title: image.title, sources: imageSources(this.media, image.kind, image.storageKey) };
+        return {
+          id,
+          title: image.title,
+          sources: imageSources(this.media, image.kind, image.storageKey),
+          caption: image.caption,
+          date: image.date,
+          place: image.place,
+        };
       }),
     };
   }

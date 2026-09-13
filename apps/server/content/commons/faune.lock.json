@@ -3,7 +3,7 @@
   "name": "Faune",
   "description": "Animaux des cinq continents et des océans.",
   "sortOrder": 4,
-  "resolvedAt": "2026-09-12",
+  "resolvedAt": "2026-09-13",
   "items": [
     {
       "article": "Lion",
@@ -19,7 +19,9 @@
       "height": 3264,
       "author": "GinaFranchi",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce du genre Grands félins proprement dits (Panthera)"
+      "caption": "espèce du genre Grands félins proprement dits (Panthera)",
+      "date": null,
+      "place": null
     },
     {
       "article": "Tigre",
@@ -35,7 +37,9 @@
       "height": 3456,
       "author": "Seemaleena",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Léopard",
@@ -51,7 +55,9 @@
       "height": 2626,
       "author": "Sumeet Moghe",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères carnassiers"
+      "caption": "espèce de mammifères carnassiers",
+      "date": null,
+      "place": null
     },
     {
       "article": "Jaguar",
@@ -67,7 +73,9 @@
       "height": 3329,
       "author": "Thiagomarcelcampi",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "mammifère carnivore de la famille des félidés"
+      "caption": "mammifère carnivore de la famille des félidés",
+      "date": null,
+      "place": null
     },
     {
       "article": "Guépard",
@@ -83,7 +91,9 @@
       "height": 1280,
       "author": "James Temple",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Éléphant de savane d'Afrique",
@@ -99,7 +109,9 @@
       "height": 5475,
       "author": "Giles Laurent",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Girafe",
@@ -137,7 +149,9 @@
       "height": 3260,
       "author": "Payamfarahani",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Hippopotame amphibie",
@@ -153,7 +167,9 @@
       "height": 2745,
       "author": "Muhammad Mahdi Karim",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Gorille",
@@ -169,7 +185,9 @@
       "height": 1827,
       "author": "Rennett Stowe from USA",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "espèce de mammifères (Hominidés)"
+      "caption": "espèce de mammifères (Hominidés)",
+      "date": null,
+      "place": null
     },
     {
       "article": "Chimpanzé commun",
@@ -185,7 +203,9 @@
       "height": 5760,
       "author": "Giles Laurent",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères du genre Pan"
+      "caption": "espèce de mammifères du genre Pan",
+      "date": null,
+      "place": null
     },
     {
       "article": "Orang-outan",
@@ -201,7 +221,9 @@
       "height": 541,
       "author": "Eric Kilby Aiwok Tim Laman",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "genre de mammifères"
+      "caption": "genre de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Kangourou roux",
@@ -228,7 +250,9 @@
       "height": 1113,
       "author": "Diliff",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "marsupial arboricole herbivore endémique d'Australie"
+      "caption": "marsupial arboricole herbivore endémique d'Australie",
+      "date": null,
+      "place": null
     },
     {
       "article": "Panda géant",
@@ -244,7 +268,9 @@
       "height": 1394,
       "author": "Jeff Kubina",
       "licenceUrl": null,
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Petit panda",
@@ -260,7 +286,9 @@
       "height": 2823,
       "author": "Gzzz",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "genre de mammifères"
+      "caption": "genre de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Flamant rose",
@@ -276,7 +304,9 @@
       "height": 1876,
       "author": "El Golli Mohamed",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseaux du genre Phoenicopterus"
+      "caption": "espèce d'oiseaux du genre Phoenicopterus",
+      "date": null,
+      "place": null
     },
     {
       "article": "Paon bleu",
@@ -292,7 +322,9 @@
       "height": 2424,
       "author": "Praveenp",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseaux galliformes de la famille des phasianidae originaire de l'Inde"
+      "caption": "espèce d'oiseaux galliformes de la famille des phasianidae originaire de l'Inde",
+      "date": null,
+      "place": null
     },
     {
       "article": "Pygargue à tête blanche",
@@ -308,7 +340,9 @@
       "height": 2465,
       "author": "Andy Morffew from Itchen Abbas, Hampshire, UK",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Harfang des neiges",
@@ -324,7 +358,9 @@
       "height": 768,
       "author": "Bill Bouton from San Luis Obispo, CA, USA",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Toucan toco",
@@ -340,7 +376,9 @@
       "height": 4609,
       "author": "Giles Laurent",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseau"
+      "caption": "espèce d'oiseau",
+      "date": null,
+      "place": null
     },
     {
       "article": "Ara macao",
@@ -356,7 +394,9 @@
       "height": 3623,
       "author": "Charles J. Sharp",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Colibri à gorge rubis",
@@ -372,7 +412,9 @@
       "height": 2136,
       "author": "Pslawinski",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Macareux moine",
@@ -388,7 +430,9 @@
       "height": 3317,
       "author": "Charles J. Sharp",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseaux marins qui vit en haute mer, sauf lors de sa reproduction"
+      "caption": "espèce d'oiseaux marins qui vit en haute mer, sauf lors de sa reproduction",
+      "date": null,
+      "place": null
     },
     {
       "article": "Autruche d'Afrique",
@@ -404,7 +448,9 @@
       "height": 640,
       "author": "Lip Kee from Singapore, Republic of Singapore",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Manchot empereur",
@@ -420,7 +466,9 @@
       "height": 1400,
       "author": "Ian Duffy from UK",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Grand dauphin",
@@ -436,7 +484,9 @@
       "height": 1025,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Orque",
@@ -452,7 +502,9 @@
       "height": 1453,
       "author": "Robert Pittman",
       "licenceUrl": null,
-      "caption": "espèce de mammifères marins"
+      "caption": "espèce de mammifères marins",
+      "date": null,
+      "place": null
     },
     {
       "article": "Baleine à bosse",
@@ -468,7 +520,9 @@
       "height": 1172,
       "author": "Dr. Louis M. Herman.",
       "licenceUrl": null,
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Grand requin blanc",
@@ -484,7 +538,9 @@
       "height": 2448,
       "author": "Sharkdiver.com",
       "licenceUrl": null,
-      "caption": "espèce de grands requins"
+      "caption": "espèce de grands requins",
+      "date": null,
+      "place": null
     },
     {
       "article": "Tortue verte",
@@ -500,7 +556,9 @@
       "height": 4448,
       "author": "Charles J. Sharp",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de tortues de mer du genre Chelonia"
+      "caption": "espèce de tortues de mer du genre Chelonia",
+      "date": null,
+      "place": null
     },
     {
       "article": "Poulpe commun",
@@ -508,15 +566,18 @@
       "visualGroup": null,
       "status": "ok",
       "wikidata": "Q651361",
-      "file": "Octopus vulgaris Merculiano.jpg",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Octopus_vulgaris_Merculiano.jpg",
-      "licence": "Public domain",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Octopus_vulgaris_Merculiano.jpg/1280px-Octopus_vulgaris_Merculiano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "width": 1800,
-      "height": 2000,
-      "author": "Comingio Merculiano (1845-1915) in Jatta Giuseppe (1860-1903)",
-      "licenceUrl": null,
-      "caption": "espèce de mollusques"
+      "file": "Pulpo (Octopus vulgaris), isla de Mouro, Santander, España, 2019-08-14, DD 30.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulpo_(Octopus_vulgaris),_isla_de_Mouro,_Santander,_Espa%C3%B1a,_2019-08-14,_DD_30.jpg",
+      "licence": "CC BY-SA 4.0",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Pulpo_%28Octopus_vulgaris%29%2C_isla_de_Mouro%2C_Santander%2C_Espa%C3%B1a%2C_2019-08-14%2C_DD_30.jpg/1280px-Pulpo_%28Octopus_vulgaris%29%2C_isla_de_Mouro%2C_Santander%2C_Espa%C3%B1a%2C_2019-08-14%2C_DD_30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 5388,
+      "height": 3592,
+      "author": "Diego Delso",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "caption": "espèce de mollusques",
+      "replaces": "https://commons.wikimedia.org/wiki/File:Octopus_vulgaris_Merculiano.jpg",
+      "date": null,
+      "place": null
     },
     {
       "article": "Amphiprion ocellaris",
@@ -532,7 +593,9 @@
       "height": 734,
       "author": "Raimond Spekking",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de poissons"
+      "caption": "espèce de poissons",
+      "date": null,
+      "place": null
     },
     {
       "article": "Hippocampe (poisson)",
@@ -548,7 +611,9 @@
       "height": 3378,
       "author": "Hans Hillewaert",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "genre de poissons de la famille des Syngnathidae"
+      "caption": "genre de poissons de la famille des Syngnathidae",
+      "date": null,
+      "place": null
     },
     {
       "article": "Caméléon panthère",
@@ -564,7 +629,9 @@
       "height": 2903,
       "author": "Charles J. Sharp",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de reptiles (Caméléons)"
+      "caption": "espèce de reptiles (Caméléons)",
+      "date": null,
+      "place": null
     },
     {
       "article": "Crocodile du Nil",
@@ -580,7 +647,9 @@
       "height": 768,
       "author": "Tim Muttoo",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "caption": "espèce de crocodiliens"
+      "caption": "espèce de crocodiliens",
+      "date": null,
+      "place": null
     },
     {
       "article": "Dragon de Komodo",
@@ -596,7 +665,9 @@
       "height": 2136,
       "author": "Midori",
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "caption": "espèce de reptile de la famille des Varanidae"
+      "caption": "espèce de reptile de la famille des Varanidae",
+      "date": null,
+      "place": null
     },
     {
       "article": "Rainette aux yeux rouges",
@@ -612,7 +683,9 @@
       "height": 1720,
       "author": "Careyjamesbalboa (Carey James Balboa)",
       "licenceUrl": null,
-      "caption": "espèce d'amphibiens"
+      "caption": "espèce d'amphibiens",
+      "date": null,
+      "place": null
     },
     {
       "article": "Cobra royal",
@@ -620,15 +693,18 @@
       "visualGroup": null,
       "status": "ok",
       "wikidata": "Q48186",
-      "file": "Ophiophagus hannah 381373252.jpg",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ophiophagus_hannah_381373252.jpg",
-      "licence": "CC0",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Ophiophagus_hannah_381373252.jpg/1280px-Ophiophagus_hannah_381373252.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "width": 2048,
-      "height": 1536,
-      "author": "Max Tibby",
-      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "espèce de serpents de la famille des Elapidae"
+      "file": "Ophiophagus hannah head.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ophiophagus_hannah_head.jpg",
+      "licence": "Domaine public",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Ophiophagus_hannah_head.jpg/1280px-Ophiophagus_hannah_head.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 3092,
+      "height": 2040,
+      "author": "TimVickers",
+      "licenceUrl": null,
+      "caption": "espèce de serpents de la famille des Elapidae",
+      "replaces": "https://commons.wikimedia.org/wiki/File:Ophiophagus_hannah_381373252.jpg",
+      "date": null,
+      "place": null
     },
     {
       "article": "Tortue géante des Galápagos",
@@ -644,7 +720,9 @@
       "height": 683,
       "author": "The original uploader was Pandanus at German Wikipedia .",
       "licenceUrl": null,
-      "caption": "un des animaux les plus emblématiques de la faune des îles Galápagos"
+      "caption": "un des animaux les plus emblématiques de la faune des îles Galápagos",
+      "date": null,
+      "place": null
     },
     {
       "article": "Dromadaire",
@@ -660,7 +738,9 @@
       "height": 1200,
       "author": "Garrondo",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "un grand chameau du genre Camelus, doté d'une seule bosse sur le dos"
+      "caption": "un grand chameau du genre Camelus, doté d'une seule bosse sur le dos",
+      "date": null,
+      "place": null
     },
     {
       "article": "Lama (animal)",
@@ -687,7 +767,9 @@
       "height": 1761,
       "author": "Jack Dykinga",
       "licenceUrl": null,
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Élan",
@@ -703,7 +785,9 @@
       "height": 1814,
       "author": "USDA Forest Service",
       "licenceUrl": null,
-      "caption": "genre de mammifères ruminants de la famille des cervidés"
+      "caption": "genre de mammifères ruminants de la famille des cervidés",
+      "date": null,
+      "place": null
     },
     {
       "article": "Renne",
@@ -719,7 +803,9 @@
       "height": 1638,
       "author": "Dean Biggins (U.S. Fish and Wildlife Service)",
       "licenceUrl": null,
-      "caption": "espèce de mammifères communément appelée renne ou caribou"
+      "caption": "espèce de mammifères communément appelée renne ou caribou",
+      "date": null,
+      "place": null
     },
     {
       "article": "Loup gris",
@@ -735,7 +821,9 @@
       "height": 2664,
       "author": "User:Mas3cf",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de canidé"
+      "caption": "espèce de canidé",
+      "date": null,
+      "place": null
     },
     {
       "article": "Renard roux",
@@ -751,7 +839,9 @@
       "height": 2292,
       "author": "ClaudiaTen",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifère"
+      "caption": "espèce de mammifère",
+      "date": null,
+      "place": null
     },
     {
       "article": "Renard polaire",
@@ -767,7 +857,9 @@
       "height": 2893,
       "author": "Hobboto4ek (Ольга Яковлевна Куликова / Olga Y. Kulikova)",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Raton laveur",
@@ -783,7 +875,9 @@
       "height": 3019,
       "author": "Rhododendrites",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifère"
+      "caption": "espèce de mammifère",
+      "date": null,
+      "place": null
     },
     {
       "article": "Hérisson d'Europe",
@@ -799,7 +893,9 @@
       "height": 1559,
       "author": "Michael Gäbler",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "espèce de petits mammifères omnivores de la famille des Erinaceidae (hérissons)"
+      "caption": "espèce de petits mammifères omnivores de la famille des Erinaceidae (hérissons)",
+      "date": null,
+      "place": null
     },
     {
       "article": "Écureuil roux",
@@ -815,7 +911,9 @@
       "height": 1426,
       "author": "Peter Trimming",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "espèce de mammifères de la famille des Sciuridae"
+      "caption": "espèce de mammifères de la famille des Sciuridae",
+      "date": null,
+      "place": null
     },
     {
       "article": "Castor d'Europe",
@@ -831,7 +929,9 @@
       "height": 554,
       "author": "Per Harald Olsen",
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "caption": "Castor originaire d'Europe"
+      "caption": "Castor originaire d'Europe",
+      "date": null,
+      "place": null
     },
     {
       "article": "Bradypus variegatus",
@@ -847,7 +947,9 @@
       "height": 2048,
       "author": "Stefan Laube ( Tauchgurke )",
       "licenceUrl": null,
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Tatou à neuf bandes",
@@ -863,7 +965,9 @@
       "height": 2046,
       "author": "http://www.birdphotos.com",
       "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Ornithorynque",
@@ -879,7 +983,9 @@
       "height": 3348,
       "author": "Charles J. Sharp",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "mammifère ovipare semi-aquatique endémique à l'Australie"
+      "caption": "mammifère ovipare semi-aquatique endémique à l'Australie",
+      "date": null,
+      "place": null
     },
     {
       "article": "Suricate",
@@ -895,7 +1001,9 @@
       "height": 1833,
       "author": "Hans Hillewaert",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Maki catta",
@@ -911,7 +1019,9 @@
       "height": 1728,
       "author": "Alex Dunkel ( Maky )",
       "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Monarque (papillon)",
@@ -927,7 +1037,9 @@
       "height": 8598,
       "author": "Didier Descouens",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "espèce de lépidoptères de la famille des Nymphalidae"
+      "caption": "espèce de lépidoptères de la famille des Nymphalidae",
+      "date": null,
+      "place": null
     },
     {
       "article": "Abeille européenne",
@@ -943,7 +1055,9 @@
       "height": 4786,
       "author": "Didier Descouens",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "Apidae du genre Apis"
+      "caption": "Apidae du genre Apis",
+      "date": null,
+      "place": null
     },
     {
       "article": "Coccinelle à sept points",
@@ -970,7 +1084,9 @@
       "height": 2592,
       "author": "Robert F. Tobler",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Ours blanc",
@@ -986,7 +1102,9 @@
       "height": 565,
       "author": "Alan Wilson",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Morse (animal)",
@@ -1002,7 +1120,9 @@
       "height": 3648,
       "author": "Nixette",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Loutre de mer",
@@ -1036,7 +1156,9 @@
       "height": 2622,
       "author": "Mattia Nocciola",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce de salamandre de l'ordre des urodèles"
+      "caption": "espèce de salamandre de l'ordre des urodèles",
+      "date": null,
+      "place": null
     },
     {
       "article": "Paresseux à deux doigts",
@@ -1052,7 +1174,9 @@
       "height": 1912,
       "author": "Dave Pape",
       "licenceUrl": null,
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     },
     {
       "article": "Chouette effraie",
@@ -1068,7 +1192,9 @@
       "height": 1500,
       "author": "User:Alun Williams333",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Pélican brun",
@@ -1084,7 +1210,9 @@
       "height": 1634,
       "author": "Terry Foote",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "espèce d'oiseaux"
+      "caption": "espèce d'oiseaux",
+      "date": null,
+      "place": null
     },
     {
       "article": "Mouffette rayée",
@@ -1100,7 +1228,9 @@
       "height": 2848,
       "author": "Dan & Lin Dzurisin",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "espèce de mammifères"
+      "caption": "espèce de mammifères",
+      "date": null,
+      "place": null
     }
   ]
 }

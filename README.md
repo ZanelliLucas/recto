@@ -9,7 +9,7 @@ Le cahier des charges de référence est [docs/RECTO_Cahier-des-charges_v1.1.pdf
 npm install
 cp apps/server/.env.example apps/server/.env   # puis renseigner AUTH_SECRET (32 caractères minimum)
 npm run db:seed                                # catégorie Drapeaux
-npm run content:commons:import                 # Monuments, Histoire, Faune (téléchargement depuis Commons)
+npm run content:commons:import                 # Monuments, Histoire, Faune, Espace (téléchargement depuis Commons)
 npm run dev
 ```
 
@@ -32,13 +32,15 @@ non versionnées : les commandes ci-dessus les reconstruisent à partir des sour
 | --- | --- |
 | `npm run dev` | Serveur et interface en rechargement à chaud |
 | `npm test` | Tests de tous les packages |
+| `npm run test:e2e` | Tests de bout en bout (Playwright) sur le build de production ; `RECTO_E2E_BROWSER` = chemin d'un Chromium installé, Edge par défaut |
 | `npm run typecheck` | Vérification des types de tous les packages |
 | `npm run build` puis `npm start` | Build de production, servi par un seul processus |
 | `npm run db:seed` | Charge et publie la catégorie Drapeaux |
 | `npm run db:backup` | Sauvegarde immédiate de la base (le serveur en fait une par jour en production) |
 | `npm run content:drapeaux` | Régénère les SVG et le manifeste des drapeaux |
-| `npm run content:commons:resolve` | Relève fichiers, auteurs et licences Commons, sans téléchargement d'image |
+| `npm run content:commons:resolve` | Relève fichiers, auteurs et licences Commons, sans téléchargement d'image ; `"--only=Article"` ne relève que les sujets cités |
 | `npm run content:commons:import` | Télécharge et traite les images des listes verrouillées |
+| `npm run content:commons:enrich` | Complète dates et lieux depuis Wikidata (métadonnées seules), sans écraser une saisie du back-office |
 | `npm run user:role -- <adresse> <admin\|joueur>` | Attribue un rôle à un compte existant |
 | `npm run check:launch [-- --env]` | Contrôle préalable à la mise en ligne : pages légales, puis variables d'environnement |
 
@@ -161,6 +163,20 @@ deploy                     Composition Docker et Caddy pour un serveur unique
 - Sécurité (ENF-5.1) : redirection HTTPS derrière mandataire, HSTS, politique de sécurité de contenu sans script en ligne.
 - Exploitation (§ 7.5) : sonde `/api/health`, journaux JSON, erreurs des navigateurs remontées au serveur,
   sauvegarde quotidienne, purges aux durées annoncées, arrêt propre, image Docker et composition Caddy.
+
+**Après le lot 4** :
+
+- Écran de résultat : revue des cartes de la partie, avec légende, date et lieu (métadonnées complétées depuis
+  Wikidata par `content:commons:enrich`).
+- Cinquième catégorie, Espace (74 images de la NASA, de l'ESA et de Commons) ; images du cobra royal et de la pieuvre
+  remplacées, Cité de Carcassonne ajoutée. Un sujet peut désormais imposer son fichier Commons (`file` dans
+  `scripts/commons/subjects.ts`) ; l'import retire l'ancienne image une fois la nouvelle en place.
+- Interface disponible en anglais depuis les paramètres (pages légales, back-office et contenu des cartes restent en
+  français).
+- Application installable (manifeste, icônes, service worker) avec page hors ligne ; courriels de service en HTML et en
+  texte.
+- Clôture de partie rejouable sur réseau instable ; pause automatique quand l'onglet est quitté.
+- Tests de bout en bout Playwright (`npm run test:e2e`).
 
 Restent à décider avant l'ouverture publique : hébergeur, prestataire SMTP, nom de domaine et identité de l'éditeur
 (voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-13 sur l'environnement de recette

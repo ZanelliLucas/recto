@@ -162,6 +162,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
           category: game.category,
           categoryName,
           difficulty: game.difficulty,
+          cards: game.images,
         };
         navigate(`/partie/${game.gameId}/resultat`, { replace: true, state });
       },

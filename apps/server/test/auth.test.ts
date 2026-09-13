@@ -14,6 +14,10 @@ describe('inscription (EF-4.1, EF-4.2)', () => {
 
     expect(ctx.mailer.sent).toHaveLength(1);
     expect(ctx.mailer.sent[0]!.text).toContain('https://recto.test/verification?jeton=');
+    // Version HTML de même contenu : bouton et adresse de secours portent le même lien.
+    const html = ctx.mailer.sent[0]!.html ?? '';
+    expect(html).toContain('Bonjour Alice,');
+    expect(html.match(/href="https:\/\/recto\.test\/verification\?jeton=[\w-]+"/g)).toHaveLength(2);
     const token = lastToken(ctx);
     await ctx.agent.post('/api/auth/verify-email').send({ token }).expect(204);
     expect((await ctx.agent.get('/api/auth/me').expect(200)).body.user.emailVerified).toBe(true);

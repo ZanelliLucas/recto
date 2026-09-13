@@ -19,7 +19,9 @@
       "height": 11348,
       "author": "Leonardo da Vinci",
       "licenceUrl": null,
-      "caption": "peinture à l'huile, sur panneau de bois, de Léonard de Vinci, musée du Louvre"
+      "caption": "peinture à l'huile, sur panneau de bois, de Léonard de Vinci, musée du Louvre",
+      "date": "années 1500",
+      "place": "département des peintures du musée du Louvre"
     },
     {
       "article": "Vénus de Milo",
@@ -35,7 +37,9 @@
       "height": 10349,
       "author": "Shonagon",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "sculpture grecque de la fin de l'époque hellénistique"
+      "caption": "sculpture grecque de la fin de l'époque hellénistique",
+      "date": "IIe siècle av. J.-C.",
+      "place": "département des antiquités grecques, étrusques et romaines du musée du Louvre"
     },
     {
       "article": "Victoire de Samothrace",
@@ -51,7 +55,9 @@
       "height": 4800,
       "author": "Shonagon",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "sculpture grecque de l'époque hellénistique conservée au Louvre, Paris, France"
+      "caption": "sculpture grecque de l'époque hellénistique conservée au Louvre, Paris, France",
+      "date": "IIe siècle av. J.-C.",
+      "place": "département des antiquités grecques, étrusques et romaines du musée du Louvre"
     },
     {
       "article": "Pierre de Rosette",
@@ -67,7 +73,9 @@
       "height": 4288,
       "author": "Awikimate",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "stèle gravée de l'Égypte antique portant trois versions d'un même texte"
+      "caption": "stèle gravée de l'Égypte antique portant trois versions d'un même texte",
+      "date": "196 av. J.-C.",
+      "place": "British Museum"
     },
     {
       "article": "Masque funéraire de Toutânkhamon",
@@ -83,7 +91,9 @@
       "height": 2113,
       "author": "Wael Mostafa",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "masque funéraire du pharaon Toutânkhamon"
+      "caption": "masque funéraire du pharaon Toutânkhamon",
+      "date": "1323 av. J.-C.",
+      "place": "musée égyptien du Caire"
     },
     {
       "article": "Buste de Néfertiti",
@@ -99,7 +109,9 @@
       "height": 1877,
       "author": "Philip Pikart",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "Buste de la reine Néfertiti de l'époque d'Amarna au Neues Museum, Berlin"
+      "caption": "Buste de la reine Néfertiti de l'époque d'Amarna au Neues Museum, Berlin",
+      "date": "1350 av. J.-C.",
+      "place": "musée égyptien de Berlin"
     },
     {
       "article": "Tapisserie de Bayeux",
@@ -115,7 +127,9 @@
       "height": 2274,
       "author": "Myrabella",
       "licenceUrl": null,
-      "caption": "tapisserie décrivant la conquête normande de l'Angleterre et la bataille d’Hastings"
+      "caption": "tapisserie décrivant la conquête normande de l'Angleterre et la bataille d’Hastings",
+      "date": "années 1070",
+      "place": "musée de la Tapisserie de Bayeux"
     },
     {
       "article": "Armée de terre cuite",
@@ -131,7 +145,9 @@
       "height": 1987,
       "author": "xiquinhosilva",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "collection de statues funéraires de soldats et chevaux représentant les troupes de Qin Shi Huang, 1er empereur de Chine"
+      "caption": "collection de statues funéraires de soldats et chevaux représentant les troupes de Qin Shi Huang, 1er empereur de Chine",
+      "date": "248 av. J.-C.",
+      "place": "république populaire de Chine"
     },
     {
       "article": "Code de Hammurabi",
@@ -147,7 +163,9 @@
       "height": 2500,
       "author": "Mbzt",
       "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
-      "caption": "texte de loi babylonien"
+      "caption": "texte de loi babylonien",
+      "date": null,
+      "place": "Babylonie"
     },
     {
       "article": "Grotte de Lascaux",
@@ -163,7 +181,9 @@
       "height": 472,
       "author": "EU",
       "licenceUrl": null,
-      "caption": "grotte ornée en Dordogne, France"
+      "caption": "grotte ornée en Dordogne, France",
+      "date": null,
+      "place": "Montignac-Lascaux, France"
     },
     {
       "article": "Vénus de Willendorf",
@@ -179,7 +199,9 @@
       "height": 2684,
       "author": "User:MatthiasKabel",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
-      "caption": "statuette préhistorique découverte en Autriche"
+      "caption": "statuette préhistorique découverte en Autriche",
+      "date": null,
+      "place": "muséum d'histoire naturelle de Vienne"
     },
     {
       "article": "Discobole",
@@ -195,7 +217,9 @@
       "height": 5409,
       "author": "Livioandronico2013",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "sculpture de Myron"
+      "caption": "sculpture de Myron",
+      "date": "vers 450 av. J.-C.",
+      "place": null
     },
     {
       "article": "Groupe du Laocoon",
@@ -211,7 +235,9 @@
       "height": 9502,
       "author": "Wilfredor",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "groupe sculpté conservé au Vatican"
+      "caption": "groupe sculpté conservé au Vatican",
+      "date": "Ie siècle av. J.-C.",
+      "place": "musée Pio-Clementino"
     },
     {
       "article": "David (Michel-Ange)",
@@ -227,7 +253,9 @@
       "height": 9099,
       "author": "Commonists",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "statue de Michel-Ange"
+      "caption": "statue de Michel-Ange",
+      "date": "années 1500",
+      "place": "Galleria dell'Accademia de Florence"
     },
     {
       "article": "Casque de Sutton Hoo",
@@ -243,7 +271,9 @@
       "height": 2791,
       "author": "user:Geni",
       "licenceUrl": null,
-      "caption": "casque anglo-saxon du VIe tardif au début du VIIe siècle"
+      "caption": "casque anglo-saxon du VIe tardif au début du VIIe siècle",
+      "date": null,
+      "place": "British Museum"
     },
     {
       "article": "Figurines de Lewis",
@@ -259,7 +289,9 @@
       "height": 2000,
       "author": "National Museums Scotland",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": null
+      "caption": null,
+      "date": "XIIe siècle",
+      "place": "musée national d'Écosse"
     },
     {
       "article": "La Liberté guidant le peuple",
@@ -275,7 +307,9 @@
       "height": 8103,
       "author": "Eugène Delacroix",
       "licenceUrl": null,
-      "caption": "tableau d'Eugène Delacroix, Louvre"
+      "caption": "tableau d'Eugène Delacroix, Louvre",
+      "date": "1830",
+      "place": "département des peintures du musée du Louvre"
     },
     {
       "article": "Le Radeau de La Méduse",
@@ -291,7 +325,9 @@
       "height": 4008,
       "author": "Théodore Géricault",
       "licenceUrl": null,
-      "caption": "tableau de Théodore Géricault, peint en 1818-1819"
+      "caption": "tableau de Théodore Géricault, peint en 1818-1819",
+      "date": "1819",
+      "place": "département des peintures du musée du Louvre"
     },
     {
       "article": "Bonaparte franchissant le Grand-Saint-Bernard",
@@ -307,7 +343,9 @@
       "height": 4134,
       "author": "Jacques-Louis David",
       "licenceUrl": null,
-      "caption": "série de peintures de Jacques-Louis David ayant 5 versions distinctes"
+      "caption": "série de peintures de Jacques-Louis David ayant 5 versions distinctes",
+      "date": "1801",
+      "place": "château de Malmaison"
     },
     {
       "article": "Le Sacre de Napoléon",
@@ -323,7 +361,9 @@
       "height": 6874,
       "author": "Jacques-Louis David",
       "licenceUrl": null,
-      "caption": "peinture de Jacques-Louis David"
+      "caption": "peinture de Jacques-Louis David",
+      "date": "1807",
+      "place": "département des peintures du musée du Louvre"
     },
     {
       "article": "Napoléon dans son cabinet de travail",
@@ -339,7 +379,9 @@
       "height": 26731,
       "author": "Jacques-Louis David",
       "licenceUrl": null,
-      "caption": "tableau de Jacques-Louis David"
+      "caption": "tableau de Jacques-Louis David",
+      "date": "1812",
+      "place": "National Gallery of Art"
     },
     {
       "article": "La Cène (Léonard de Vinci)",
@@ -355,7 +397,9 @@
       "height": 2645,
       "author": "Leonardo da Vinci",
       "licenceUrl": null,
-      "caption": "fresque de Léonard de Vinci"
+      "caption": "fresque de Léonard de Vinci",
+      "date": "années 1490",
+      "place": "église Santa Maria delle Grazie de Milan"
     },
     {
       "article": "La Création d'Adam",
@@ -371,7 +415,9 @@
       "height": 1663,
       "author": "Michelangelo",
       "licenceUrl": null,
-      "caption": "fresque de Michel-Ange"
+      "caption": "fresque de Michel-Ange",
+      "date": "1511",
+      "place": "musées du Vatican"
     },
     {
       "article": "La Jeune Fille à la perle",
@@ -387,7 +433,9 @@
       "height": 14550,
       "author": "Johannes Vermeer",
       "licenceUrl": null,
-      "caption": "tableau de Johannes Vermeer"
+      "caption": "tableau de Johannes Vermeer",
+      "date": "1665",
+      "place": "Mauritshuis"
     },
     {
       "article": "La Ronde de nuit",
@@ -403,7 +451,9 @@
       "height": 11528,
       "author": "Rembrandt",
       "licenceUrl": null,
-      "caption": "tableau de Rembrandt peint, Rijksmuseum"
+      "caption": "tableau de Rembrandt peint, Rijksmuseum",
+      "date": "1642",
+      "place": "Rijksmuseum"
     },
     {
       "article": "La Nuit étoilée (1889)",
@@ -419,7 +469,9 @@
       "height": 35291,
       "author": "Vincent van Gogh",
       "licenceUrl": null,
-      "caption": "tableau de Vincent van Gogh"
+      "caption": "tableau de Vincent van Gogh",
+      "date": "1889",
+      "place": "Museum of Modern Art"
     },
     {
       "article": "La Naissance de Vénus (Botticelli)",
@@ -435,7 +487,9 @@
       "height": 18840,
       "author": "Sandro Botticelli",
       "licenceUrl": null,
-      "caption": "tableau de Sandro Botticelli, Uffizi"
+      "caption": "tableau de Sandro Botticelli, Uffizi",
+      "date": "1485",
+      "place": "galerie des Offices"
     },
     {
       "article": "L'École d'Athènes",
@@ -451,7 +505,9 @@
       "height": 2964,
       "author": "Raphael",
       "licenceUrl": null,
-      "caption": "fresque de Raphaël peinte vers 1508-1512"
+      "caption": "fresque de Raphaël peinte vers 1508-1512",
+      "date": "1512",
+      "place": "musées du Vatican"
     },
     {
       "article": "Les Ménines",
@@ -467,7 +523,9 @@
       "height": 30000,
       "author": "Diego Velázquez",
       "licenceUrl": null,
-      "caption": "peinture de Diego Velázquez"
+      "caption": "peinture de Diego Velázquez",
+      "date": "1656",
+      "place": "musée du Prado"
     },
     {
       "article": "Tres de mayo",
@@ -483,7 +541,9 @@
       "height": 2328,
       "author": "Francisco Goya",
       "licenceUrl": null,
-      "caption": "tableau de Francisco de Goya"
+      "caption": "tableau de Francisco de Goya",
+      "date": "1814",
+      "place": "musée du Prado"
     },
     {
       "article": "La Grande Vague de Kanagawa",
@@ -499,7 +559,9 @@
       "height": 6037,
       "author": "Katsushika, Hokusai, 1760-1849, artist",
       "licenceUrl": null,
-      "caption": "estampe de Hokusai, 1830"
+      "caption": "estampe de Hokusai, 1830",
+      "date": "années 1830",
+      "place": "musée national de Tokyo"
     },
     {
       "article": "Le Cri",
@@ -515,7 +577,9 @@
       "height": 4000,
       "author": "Edvard Munch",
       "licenceUrl": null,
-      "caption": "composition peinte d'Edvard Munch, dont plusieurs versions existent"
+      "caption": "composition peinte d'Edvard Munch, dont plusieurs versions existent",
+      "date": "1893",
+      "place": "Musée national de Norvège"
     },
     {
       "article": "Magna Carta",
@@ -531,7 +595,9 @@
       "height": 4800,
       "author": "Original authors were the barons and King John of England . Uploaded by Earthsound .",
       "licenceUrl": null,
-      "caption": "document historique anglais"
+      "caption": "document historique anglais",
+      "date": "1215",
+      "place": "royaume d'Angleterre"
     },
     {
       "article": "Bible de Gutenberg",
@@ -547,7 +613,9 @@
       "height": 1200,
       "author": "NYC Wanderer (Kevin Eng)",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "caption": "premier livre imprimé à l'aide de caractères mobiles"
+      "caption": "premier livre imprimé à l'aide de caractères mobiles",
+      "date": null,
+      "place": "bibliothèque universitaire Johann-Christian-Senckenberg"
     },
     {
       "article": "Livre de Kells",
@@ -563,7 +631,9 @@
       "height": 1012,
       "author": "Unknown author Unknown author",
       "licenceUrl": null,
-      "caption": "manuscrit des Évangiles insulaire enluminé"
+      "caption": "manuscrit des Évangiles insulaire enluminé",
+      "date": "années 800",
+      "place": "bibliothèque du Trinity College"
     },
     {
       "article": "Machine d'Anticythère",
@@ -579,7 +649,9 @@
       "height": 924,
       "author": "No machine-readable author provided. Marsyas assumed (based on copyright claims).",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
-      "caption": "calculateur astronomique antique"
+      "caption": "calculateur astronomique antique",
+      "date": "Ie siècle av. J.-C.",
+      "place": "musée national archéologique d'Athènes"
     },
     {
       "article": "Disque céleste de Nebra",
@@ -595,7 +667,9 @@
       "height": 8941,
       "author": "Shonagon",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "disque de bronze"
+      "caption": "disque de bronze",
+      "date": "XVIe siècle av. J.-C.",
+      "place": "Musée régional de préhistoire de Halle"
     },
     {
       "article": "Porte d'Ishtar",
@@ -611,7 +685,9 @@
       "height": 768,
       "author": "Rictor Norton",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "une des portes de la cité de Babylone"
+      "caption": "une des portes de la cité de Babylone",
+      "date": "575 av. J.-C.",
+      "place": "Vorderasiatisches Museum Berlin"
     },
     {
       "article": "Étendard d'Ur",
@@ -627,7 +703,9 @@
       "height": 3216,
       "author": "Denis Bourez from France",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "artéfact archéologique sumérien"
+      "caption": "artéfact archéologique sumérien",
+      "date": "2501 av. J.-C.",
+      "place": "British Museum"
     },
     {
       "article": "Têtes colossales olmèques",
@@ -643,7 +721,9 @@
       "height": 1237,
       "author": "Glysiak",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "sculpture monolithique représentant une tête humaine en ronde-bosse de grande taille, datant de la période olmèque au Mexique"
+      "caption": "sculpture monolithique représentant une tête humaine en ronde-bosse de grande taille, datant de la période olmèque au Mexique",
+      "date": null,
+      "place": null
     },
     {
       "article": "Pierre du Soleil",
@@ -659,7 +739,9 @@
       "height": 7424,
       "author": "Anonymous Mexica artist",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "monolithe aztèque"
+      "caption": "monolithe aztèque",
+      "date": "XVIe siècle",
+      "place": "Musée national d'anthropologie de Mexico"
     },
     {
       "article": "Masque d'Agamemnon",
@@ -675,7 +757,9 @@
       "height": 3268,
       "author": "Gleb Simonov",
       "licenceUrl": null,
-      "caption": "masque funéraire en or découvert sur le site antique grec de Mycènes"
+      "caption": "masque funéraire en or découvert sur le site antique grec de Mycènes",
+      "date": "XVIe siècle av. J.-C.",
+      "place": "musée national archéologique d'Athènes"
     },
     {
       "article": "Aurige de Delphes",
@@ -691,7 +775,9 @@
       "height": 3888,
       "author": "Vicenç Valcárcel Pérez",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "sculpture antique"
+      "caption": "sculpture antique",
+      "date": "478 av. J.-C.",
+      "place": "musée archéologique de Delphes"
     },
     {
       "article": "Louve du Capitole",
@@ -707,7 +793,9 @@
       "height": 4876,
       "author": "Auteur inconnu",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "louve allaitant Romulus et Rémus"
+      "caption": "louve allaitant Romulus et Rémus",
+      "date": "Ve siècle av. J.-C.",
+      "place": "musées du Capitole"
     },
     {
       "article": "Auguste de Prima Porta",
@@ -723,7 +811,9 @@
       "height": 4500,
       "author": "Joel Bellviure",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "Statue en marbre blanc de l'empereur Auguste"
+      "caption": "Statue en marbre blanc de l'empereur Auguste",
+      "date": "20 av. J.-C.",
+      "place": "musées du Vatican"
     },
     {
       "article": "Portrait de Louis XIV en costume de sacre",
@@ -739,7 +829,9 @@
       "height": 4018,
       "author": "Hyacinthe Rigaud",
       "licenceUrl": null,
-      "caption": "tableau de Hyacinthe Rigaud"
+      "caption": "tableau de Hyacinthe Rigaud",
+      "date": "1701",
+      "place": "département des peintures du musée du Louvre"
     },
     {
       "article": "Le Portrait de l'Armada",
@@ -755,7 +847,9 @@
       "height": 1000,
       "author": "Formerly attributed to George Gower",
       "licenceUrl": null,
-      "caption": "groupe de peintures attribués au peintre George Gower"
+      "caption": "groupe de peintures attribués au peintre George Gower",
+      "date": "1588",
+      "place": null
     },
     {
       "article": "Jeanne d'Arc au sacre du roi Charles VII",
@@ -771,7 +865,9 @@
       "height": 5176,
       "author": "Jean-Auguste-Dominique Ingres",
       "licenceUrl": null,
-      "caption": "peinture de Jean Auguste Dominique Ingres"
+      "caption": "peinture de Jean Auguste Dominique Ingres",
+      "date": "1854",
+      "place": "département des peintures du musée du Louvre"
     },
     {
       "article": "Portrait de Marie-Antoinette à la rose",
@@ -787,7 +883,9 @@
       "height": 4728,
       "author": "Élisabeth Louise Vigée Le Brun",
       "licenceUrl": null,
-      "caption": "peinture par Élisabeth Vigée Le Brun de 1783"
+      "caption": "peinture par Élisabeth Vigée Le Brun de 1783",
+      "date": "1783",
+      "place": "musée de l’Histoire de France"
     },
     {
       "article": "George Washington (Lansdowne Portrait)",
@@ -803,7 +901,9 @@
       "height": 10582,
       "author": "Gilbert Stuart",
       "licenceUrl": null,
-      "caption": "tableau de Gilbert Stuart"
+      "caption": "tableau de Gilbert Stuart",
+      "date": "1796",
+      "place": "National Portrait Gallery"
     },
     {
       "article": "Abraham Lincoln",
@@ -819,7 +919,9 @@
       "height": 2835,
       "author": "Alexander Gardner",
       "licenceUrl": null,
-      "caption": "homme d'État américain"
+      "caption": "homme d'État américain",
+      "date": "1809–1865",
+      "place": null
     },
     {
       "article": "Victoria (reine du Royaume-Uni)",
@@ -835,7 +937,9 @@
       "height": 3851,
       "author": "Alexander Bassano",
       "licenceUrl": null,
-      "caption": "reine du Royaume-Uni de 1837 à 1901 et impératrice des Indes de 1876 à 1901"
+      "caption": "reine du Royaume-Uni de 1837 à 1901 et impératrice des Indes de 1876 à 1901",
+      "date": "1819–1901",
+      "place": null
     },
     {
       "article": "Albert Einstein",
@@ -851,7 +955,9 @@
       "height": 5607,
       "author": "Oren Jack Turner",
       "licenceUrl": null,
-      "caption": "physicien helvético-américain d'origine allemande, auteur des théories de la relativité restreinte et de la relativité générale"
+      "caption": "physicien helvético-américain d'origine allemande, auteur des théories de la relativité restreinte et de la relativité générale",
+      "date": "1879–1955",
+      "place": null
     },
     {
       "article": "Marie Curie",
@@ -878,7 +984,9 @@
       "height": 3270,
       "author": "Elliott & Fry",
       "licenceUrl": null,
-      "caption": "leader politique et religieux indien"
+      "caption": "leader politique et religieux indien",
+      "date": "1869–1948",
+      "place": null
     },
     {
       "article": "Léonard de Vinci",
@@ -894,7 +1002,9 @@
       "height": 1842,
       "author": "Attributed to Francesco Melzi",
       "licenceUrl": null,
-      "caption": "peintre, sculpteur, architecte et ingénieur, théoricien de l'art et chercheur scientifique toscan"
+      "caption": "peintre, sculpteur, architecte et ingénieur, théoricien de l'art et chercheur scientifique toscan",
+      "date": "1452–1519",
+      "place": null
     },
     {
       "article": "Galilée (savant)",
@@ -910,7 +1020,9 @@
       "height": 1448,
       "author": "Justus Sustermans",
       "licenceUrl": null,
-      "caption": "physicien, philosophe et astronome italien"
+      "caption": "physicien, philosophe et astronome italien",
+      "date": "1564–1642",
+      "place": null
     },
     {
       "article": "Isaac Newton",
@@ -926,7 +1038,9 @@
       "height": 1916,
       "author": "James Thronill after Sir Godfrey Kneller",
       "licenceUrl": null,
-      "caption": "philosophe, mathématicien, physicien, alchimiste, astronome et théologien anglais"
+      "caption": "philosophe, mathématicien, physicien, alchimiste, astronome et théologien anglais",
+      "date": "1642–1727",
+      "place": null
     },
     {
       "article": "William Shakespeare",
@@ -942,7 +1056,9 @@
       "height": 3059,
       "author": "Attributed to John Taylor",
       "licenceUrl": null,
-      "caption": "dramaturge, poète et acteur anglais (1564-1616)"
+      "caption": "dramaturge, poète et acteur anglais (1564-1616)",
+      "date": "1564–1616",
+      "place": null
     },
     {
       "article": "Molière",
@@ -958,7 +1074,9 @@
       "height": 4214,
       "author": "Pierre Mignard I",
       "licenceUrl": null,
-      "caption": "dramaturge et acteur français (1622–1673)"
+      "caption": "dramaturge et acteur français (1622–1673)",
+      "date": "1622–1673",
+      "place": null
     },
     {
       "article": "Victor Hugo",
@@ -974,7 +1092,9 @@
       "height": 2632,
       "author": "Étienne Carjat",
       "licenceUrl": null,
-      "caption": "romancier, poète, dramaturge, dessinateur et politicien français (1802–1885)"
+      "caption": "romancier, poète, dramaturge, dessinateur et politicien français (1802–1885)",
+      "date": "1802–1885",
+      "place": null
     },
     {
       "article": "Wolfgang Amadeus Mozart",
@@ -990,7 +1110,9 @@
       "height": 3840,
       "author": "Barbara Krafft",
       "licenceUrl": null,
-      "caption": "compositeur, pianiste, violoniste, organiste et chef d'orchestre autrichien"
+      "caption": "compositeur, pianiste, violoniste, organiste et chef d'orchestre autrichien",
+      "date": "1756–1791",
+      "place": null
     },
     {
       "article": "Ludwig van Beethoven",
@@ -1006,7 +1128,9 @@
       "height": 1443,
       "author": "Joseph Karl Stieler",
       "licenceUrl": null,
-      "caption": "compositeur classique et romantique allemand"
+      "caption": "compositeur classique et romantique allemand",
+      "date": "1770–1827",
+      "place": null
     },
     {
       "article": "Mosaïque d'Alexandre",
@@ -1022,7 +1146,9 @@
       "height": 2236,
       "author": "Magrippa at English Wikipedia",
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "caption": "mosaïque de Pompéi"
+      "caption": "mosaïque de Pompéi",
+      "date": "IIe siècle av. J.-C.",
+      "place": "musée archéologique national de Naples"
     },
     {
       "article": "Bateau d'Oseberg",
@@ -1038,7 +1164,9 @@
       "height": 3264,
       "author": "Petter Ulleland",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "bateau viking découvert dans un monticule funéraire près de la ferme Oseberg, Østlandet"
+      "caption": "bateau viking découvert dans un monticule funéraire près de la ferme Oseberg, Østlandet",
+      "date": null,
+      "place": "musée des navires vikings d'Oslo"
     },
     {
       "article": "Liberty Bell",
@@ -1054,7 +1182,9 @@
       "height": 1562,
       "author": "Tony the Misfit on Flickr",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": null
+      "caption": null,
+      "date": "1753",
+      "place": "Philadelphie, États-Unis"
     },
     {
       "article": "Couronne de saint Édouard",
@@ -1070,7 +1200,9 @@
       "height": 1080,
       "author": "Firebrace",
       "licenceUrl": null,
-      "caption": "joyaux de la Couronne britannique"
+      "caption": "joyaux de la Couronne britannique",
+      "date": "1602",
+      "place": "Royal Collection"
     },
     {
       "article": "Enigma (machine)",
@@ -1086,7 +1218,9 @@
       "height": 1133,
       "author": "Alessandro Nassiri",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "machine électromécanique portative servant au chiffrement et au déchiffrement de l'information"
+      "caption": "machine électromécanique portative servant au chiffrement et au déchiffrement de l'information",
+      "date": null,
+      "place": "Allemagne"
     },
     {
       "article": "Wright Flyer",
@@ -1102,7 +1236,9 @@
       "height": 4280,
       "author": "John T. Daniels",
       "licenceUrl": null,
-      "caption": "avion avec lequel les frères Wright effectuèrent leurs premiers vols motorisés"
+      "caption": "avion avec lequel les frères Wright effectuèrent leurs premiers vols motorisés",
+      "date": null,
+      "place": "National Air and Space Museum"
     },
     {
       "article": "Titanic (paquebot)",
@@ -1118,7 +1254,9 @@
       "height": 3677,
       "author": "Francis Godolphin Osbourne Stuart",
       "licenceUrl": null,
-      "caption": "paquebot transatlantique britannique, lancé et ayant sombré en 1912"
+      "caption": "paquebot transatlantique britannique, lancé et ayant sombré en 1912",
+      "date": "1909",
+      "place": "océan Atlantique"
     },
     {
       "article": "La Déclaration d'indépendance (Trumbull)",
@@ -1134,7 +1272,9 @@
       "height": 1970,
       "author": "John Trumbull",
       "licenceUrl": null,
-      "caption": "tableau de John Trumbull"
+      "caption": "tableau de John Trumbull",
+      "date": "1810",
+      "place": "Capitole des États-Unis"
     }
   ]
 }

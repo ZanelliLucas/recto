@@ -12,6 +12,14 @@ import './styles/global.css';
 installErrorReporting();
 setLocale(loadPreferences().locale);
 
+// Application installable (écran d'accueil du téléphone) et page hors ligne ; jamais en
+// développement, où le cache masquerait les modifications.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => undefined);
+  });
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>

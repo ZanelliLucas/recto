@@ -6,7 +6,7 @@ import { readJson, writeJson } from '../lib/storage';
  */
 export type ThemePreference = 'sombre' | 'clair' | 'systeme';
 export type MotionPreference = 'systeme' | 'reduites';
-export type Locale = 'fr';
+export type Locale = 'fr' | 'en';
 
 export interface Preferences {
   sound: boolean;
@@ -23,6 +23,7 @@ export const DEFAULT_PREFERENCES: Preferences = { sound: false, motion: 'systeme
 
 const THEMES: readonly ThemePreference[] = ['sombre', 'clair', 'systeme'];
 const MOTIONS: readonly MotionPreference[] = ['systeme', 'reduites'];
+const LOCALE_CODES: readonly Locale[] = ['fr', 'en'];
 
 /** Valeurs relues sans confiance : un stockage altéré retombe sur les valeurs par défaut. */
 export function sanitizePreferences(raw: unknown): Preferences {
@@ -31,7 +32,7 @@ export function sanitizePreferences(raw: unknown): Preferences {
     sound: typeof value.sound === 'boolean' ? value.sound : DEFAULT_PREFERENCES.sound,
     motion: MOTIONS.includes(value.motion as MotionPreference) ? (value.motion as MotionPreference) : DEFAULT_PREFERENCES.motion,
     theme: THEMES.includes(value.theme as ThemePreference) ? (value.theme as ThemePreference) : DEFAULT_PREFERENCES.theme,
-    locale: 'fr',
+    locale: LOCALE_CODES.includes(value.locale as Locale) ? (value.locale as Locale) : DEFAULT_PREFERENCES.locale,
   };
 }
 

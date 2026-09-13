@@ -115,13 +115,21 @@ function PreferencesForm() {
 
       <label className={styles.field}>
         <span>{t('settings.language')}</span>
-        <select className={styles.input} value={preferences.locale} onChange={() => undefined}>
+        <select
+          className={styles.input}
+          value={preferences.locale}
+          onChange={(event) => {
+            const locale = LOCALES.find((candidate) => candidate.code === event.target.value);
+            if (locale) update({ locale: locale.code });
+          }}
+        >
           {LOCALES.map((locale) => (
-            <option key={locale.code} value={locale.code} disabled={!locale.available}>
-              {locale.available ? locale.label : t('settings.languageSoon', { label: locale.label })}
+            <option key={locale.code} value={locale.code} lang={locale.code}>
+              {locale.label}
             </option>
           ))}
         </select>
+        {preferences.locale !== 'fr' && <span className={styles.hint}>{t('settings.languageNote')}</span>}
       </label>
     </section>
   );

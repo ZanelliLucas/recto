@@ -1,4 +1,4 @@
-import type { CreateGameResponse, Difficulty, FinishGameResponse, Performance } from '@recto/shared';
+import type { CardImage, CreateGameResponse, Difficulty, FinishGameResponse, Performance } from '@recto/shared';
 
 /** État transmis à /partie/:id ; conservé par l'historique du navigateur. */
 export interface GameLocationState {
@@ -15,4 +15,6 @@ export interface ResultLocationState {
   category: string;
   categoryName: string;
   difficulty: Difficulty;
+  /** Images de la partie, revues après coup ; absentes d'un historique antérieur à leur ajout. */
+  cards?: CardImage[];
 }

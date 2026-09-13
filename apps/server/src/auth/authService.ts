@@ -2,6 +2,7 @@ import { createHash, randomBytes, randomUUID } from 'node:crypto';
 import type { Avatar, ProfilePatch, PublicUser } from '@recto/shared';
 import { HttpError } from '../http/httpError';
 import type { Mailer } from '../mail/mailer';
+import { actionEmail } from '../mail/templates';
 import { hashPassword, verifyPassword } from './passwords';
 import type { SqlUserRepository, TokenPurpose, UserRecord } from './userRepository';
 
@@ -84,15 +85,13 @@ export class AuthService {
     await this.mailer.send({
       to: user.email,
       subject: 'RECTO — confirmez votre adresse',
-      text: [
-        `Bonjour ${user.pseudo},`,
-        '',
-        'Pour confirmer votre adresse et finaliser votre compte RECTO, ouvrez ce lien :',
-        `${this.options.appUrl}/verification?jeton=${token}`,
-        '',
-        'Ce lien est valable 48 heures et ne sert qu’une fois.',
-        'Si vous n’avez pas créé de compte, ignorez ce message.',
-      ].join('\n'),
+      ...actionEmail({
+        greeting: `Bonjour ${user.pseudo},`,
+        intro: 'Pour confirmer votre adresse et finaliser votre compte RECTO, ouvrez ce lien :',
+        actionLabel: 'Confirmer mon adresse',
+        url: `${this.options.appUrl}/verification?jeton=${token}`,
+        notes: ['Ce lien est valable 48 heures et ne sert qu’une fois.', 'Si vous n’avez pas créé de compte, ignorez ce message.'],
+      }),
     });
   }
 
@@ -110,15 +109,16 @@ export class AuthService {
     await this.mailer.send({
       to: user.email,
       subject: 'RECTO — réinitialisation du mot de passe',
-      text: [
-        `Bonjour ${user.pseudo},`,
-        '',
-        'Pour choisir un nouveau mot de passe, ouvrez ce lien :',
-        `${this.options.appUrl}/reinitialisation?jeton=${token}`,
-        '',
-        'Ce lien est valable une heure et ne sert qu’une fois.',
-        'Si vous n’êtes pas à l’origine de cette demande, ignorez ce message : votre mot de passe reste inchangé.',
-      ].join('\n'),
+      ...actionEmail({
+        greeting: `Bonjour ${user.pseudo},`,
+        intro: 'Pour choisir un nouveau mot de passe, ouvrez ce lien :',
+        actionLabel: 'Choisir un nouveau mot de passe',
+        url: `${this.options.appUrl}/reinitialisation?jeton=${token}`,
+        notes: [
+          'Ce lien est valable une heure et ne sert qu’une fois.',
+          'Si vous n’êtes pas à l’origine de cette demande, ignorez ce message : votre mot de passe reste inchangé.',
+        ],
+      }),
     });
   }
 

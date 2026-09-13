@@ -16,15 +16,18 @@
     "content:drapeaux": "npm run content:drapeaux -w @recto/server",
     "content:commons:resolve": "npm run content:commons:resolve -w @recto/server --",
     "content:commons:import": "npm run content:commons:import -w @recto/server --",
+    "content:commons:enrich": "npm run content:commons:enrich -w @recto/server --",
     "db:seed": "npm run db:seed -w @recto/server",
     "db:backup": "npm run db:backup -w @recto/server",
     "check:launch": "node scripts/check-launch.mjs",
+    "test:e2e": "playwright test",
     "user:role": "npm run user:role -w @recto/server --"
   },
   "engines": {
     "node": ">=20"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^22.20.2",
     "concurrently": "^10.0.5",
     "typescript": "^7.0.2",

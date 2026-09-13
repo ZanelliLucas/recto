@@ -13,6 +13,7 @@
     "content:drapeaux": "tsx scripts/drapeaux/generate.ts",
     "content:commons:resolve": "tsx scripts/commons/resolve.ts",
     "content:commons:import": "tsx scripts/commons/import.ts",
+    "content:commons:enrich": "tsx scripts/commons/enrich.ts",
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx scripts/seed-drapeaux.ts",
     "db:backup": "tsx scripts/backup.ts",

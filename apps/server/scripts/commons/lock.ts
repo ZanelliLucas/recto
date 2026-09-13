@@ -24,6 +24,11 @@ export interface LockItem {
   licenceUrl?: string | null;
   /** Description Wikidata, reprise comme légende pédagogique (EF-7.3). */
   caption?: string | null;
+  /** Source de l'image que celle-ci remplace : supprimée par l'import une fois la nouvelle en place. */
+  replaces?: string;
+  /** Date (création, ou naissance et mort) et lieu relevés dans Wikidata par `enrich`. */
+  date?: string | null;
+  place?: string | null;
 }
 
 export interface LockFile {

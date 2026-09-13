@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { setLocale } from '../i18n';
 import {
   loadPreferences,
   resolveReducedMotion,
@@ -56,6 +57,8 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
   }, [theme, reducedMotion]);
 
   const update = useCallback((patch: Partial<Preferences>) => {
+    // La langue change avant le rendu suivant : tous les textes le prennent en compte.
+    if (patch.locale) setLocale(patch.locale);
     setPreferences((current) => {
       const next = { ...current, ...patch };
       savePreferences(next);
@@ -64,7 +67,12 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(() => ({ preferences, update, reducedMotion }), [preferences, update, reducedMotion]);
-  return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>;
+  // Changement de langue : l'arbre est reconstruit, composants mémoïsés compris.
+  return (
+    <PreferencesContext.Provider value={value}>
+      <Fragment key={preferences.locale}>{children}</Fragment>
+    </PreferencesContext.Provider>
+  );
 }
 
 export function usePreferences(): PreferencesValue {

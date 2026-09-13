@@ -42,6 +42,7 @@ for (const file of lockFiles) {
   const known = new Set((existing?.images ?? []).map((image) => image.sourceUrl));
 
   let added = 0;
+  let replacedCount = 0;
   const failures: string[] = [];
   for (const item of lock.items) {
     if (item.status !== 'ok' || !item.downloadUrl || !item.sourceUrl || known.has(item.sourceUrl)) continue;
@@ -55,10 +56,19 @@ for (const file of lockFiles) {
         licence: licenceLabel(item.licence!),
         licenceUrl: item.licenceUrl ?? null,
         caption: item.caption ?? null,
+        date: item.date ?? null,
+        place: item.place ?? null,
         visualGroup: item.visualGroup,
       });
       added++;
       process.stdout.write('.');
+      // Remplacement : l'ancienne image n'est retirée qu'une fois la nouvelle en place, pour ne
+      // jamais faire passer une catégorie publiée sous son minimum.
+      const replaced = item.replaces ? existing?.images.find((image) => image.sourceUrl === item.replaces) : undefined;
+      if (replaced) {
+        await admin.deleteImage(replaced.id);
+        replacedCount++;
+      }
     } catch (error) {
       failures.push(`${item.title} — ${error instanceof Error ? error.message : String(error)}`);
     }
@@ -74,6 +84,8 @@ for (const file of lockFiles) {
     });
     status = 'publiée';
   }
-  console.log(`\n${lock.name} : ${added} image(s) importée(s), ${detail.imageCount} au total, ${detail.groupCount} groupes — ${status}.`);
+  console.log(
+    `\n${lock.name} : ${added} image(s) importée(s) dont ${replacedCount} en remplacement, ${detail.imageCount} au total, ${detail.groupCount} groupes — ${status}.`,
+  );
   for (const failure of failures) console.log(`  ✗ ${failure}`);
 }

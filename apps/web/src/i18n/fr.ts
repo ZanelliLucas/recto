@@ -127,6 +127,7 @@ export const fr = {
   'settings.motionSystem': 'Votre système demande déjà de réduire les animations : la réduction s’applique dans tous les cas.',
   'settings.language': 'Langue',
   'settings.languageSoon': '{label} (bientôt)',
+  'settings.languageNote': 'Les pages légales et le contenu des cartes restent en français.',
   'settings.account': 'Compte',
   'settings.guest': 'Connectez-vous pour modifier votre profil ou votre mot de passe, exporter ou supprimer vos données.',
   'settings.profile': 'Profil public',
@@ -220,6 +221,8 @@ export const fr = {
   'result.changeLevel': 'Changer de niveau',
   'result.saveCta': 'Créez un compte pour conserver ce résultat et retrouver vos records sur tous vos appareils.',
   'result.createAccount': 'Créer un compte',
+  'result.cards': 'Les cartes de la partie',
+  'result.cardsCredits': 'Auteurs et licences des images',
 
   'error.network': 'Le serveur est injoignable. Réessayez dans un instant.',
   'error.generic': 'Une erreur est survenue. Réessayez dans un instant.',

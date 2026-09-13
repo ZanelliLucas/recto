@@ -22,6 +22,10 @@ export interface CardImage {
   /** Titre de l'image, qui alimente aussi son texte de remplacement (ENF-4.5). */
   title: string;
   sources: ImageSources;
+  /** EF-7.3 — métadonnées pédagogiques, restituées après la partie (« Revoir les cartes »). */
+  caption: string | null;
+  date: string | null;
+  place: string | null;
 }
 
 export interface CreateGameRequest {
