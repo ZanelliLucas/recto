@@ -1,0 +1,118 @@
+.page {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.step {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  min-height: 20rem;
+  padding: 1.5rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.illustration {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 44px);
+  gap: 8px;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 420px) {
+  .illustration {
+    grid-template-columns: repeat(3, 44px);
+  }
+}
+
+.card {
+  aspect-ratio: 1;
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  background-color: var(--card-back);
+  background-image:
+    repeating-linear-gradient(45deg, var(--card-motif) 0 1px, transparent 1px 8px),
+    repeating-linear-gradient(-45deg, var(--card-motif) 0 1px, transparent 1px 8px);
+}
+
+.card[data-card='found'],
+.card[data-card='miss'] {
+  border: 0;
+  background: var(--card-face);
+}
+
+/* Paire trouvée : liseré ; erreur : liseré d'une autre teinte et en pointillé, pas seulement une couleur. */
+.card[data-card='found'] {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.card[data-card='miss'] {
+  outline: 2px dashed var(--miss);
+  outline-offset: -2px;
+}
+
+.count {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-shadow: 0 0 24px rgb(92 200 255 / 0.6);
+}
+
+.counter {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stepTitle {
+  font-size: 1.35rem;
+}
+
+.stepTitle:focus {
+  outline: none;
+}
+
+.text {
+  max-width: 44ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.dots span[data-active='true'] {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}

@@ -15,12 +15,14 @@
     "content:commons:import": "tsx scripts/commons/import.ts",
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx scripts/seed-drapeaux.ts",
+    "db:backup": "tsx scripts/backup.ts",
     "user:role": "tsx scripts/user-role.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
     "@node-rs/argon2": "^2.2.1",
     "@recto/shared": "*",
+    "compression": "^1.8.2",
     "cookie-parser": "^1.4.7",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",
@@ -32,6 +34,7 @@
     "zod": "^4.6.2"
   },
   "devDependencies": {
+    "@types/compression": "^1.8.1",
     "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",
     "@types/multer": "^2.2.0",

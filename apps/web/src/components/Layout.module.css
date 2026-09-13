@@ -111,6 +111,24 @@
   font-size: 0.85rem;
 }
 
+.footerIntro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cible tactile d'au moins 24 px (WCAG 2.5.8). */
 .footerLink {
+  display: inline-block;
+  padding-block: 0.2rem;
   color: var(--text);
 }

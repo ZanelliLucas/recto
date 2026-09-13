@@ -3,6 +3,7 @@ import { Link, Route, Routes } from 'react-router';
 import { adminApi } from '../../api/client';
 import { useAuth } from '../../auth/AuthContext';
 import { useDocumentTitle } from '../../lib/useDocumentTitle';
+import { AdminAudiencePage } from './AdminAudiencePage';
 import { AdminCategoriesPage } from './AdminCategoriesPage';
 import { AdminCategoryPage } from './AdminCategoryPage';
 import styles from './admin.module.css';
@@ -55,6 +56,9 @@ export default function AdminApp() {
         <Link to="/admin" className={styles.barTitle}>
           Back-office
         </Link>
+        <Link to="/admin/audience" className="btn btn-ghost">
+          Audience
+        </Link>
         <Link to="/" className="btn btn-ghost">
           Retour au jeu
         </Link>
@@ -62,6 +66,7 @@ export default function AdminApp() {
       <Routes>
         <Route index element={<AdminCategoriesPage />} />
         <Route path="categories/:id" element={<AdminCategoryPage />} />
+        <Route path="audience" element={<AdminAudiencePage />} />
       </Routes>
     </div>
   );

@@ -12,6 +12,16 @@ if (existsSync(envFile)) process.loadEnvFile(envFile);
 
 const isProduction = process.env.NODE_ENV === 'production';
 const toFileUrl = (file: string) => `file:${file.replaceAll('\\', '/')}`;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/** § 7.5 — environnements distincts : la recette tourne en mode production mais n'est jamais indexée. */
+export type AppEnv = 'developpement' | 'recette' | 'production';
+
+function appEnv(): AppEnv {
+  const value = process.env.APP_ENV;
+  if (value === 'developpement' || value === 'recette' || value === 'production') return value;
+  return isProduction ? 'production' : 'developpement';
+}
 
 function authSecret(): string {
   const secret = process.env.AUTH_SECRET;
@@ -21,6 +31,16 @@ function authSecret(): string {
   return randomBytes(48).toString('base64url');
 }
 
+/** Nombre de mandataires inverses de confiance devant le serveur (adresse du client, protocole). */
+function trustProxy(): number | false {
+  const raw = process.env.TRUST_PROXY;
+  if (raw === undefined) return isProduction ? 1 : false;
+  const hops = Number(raw);
+  return Number.isInteger(hops) && hops > 0 ? hops : false;
+}
+
+const dataDir = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : fromRoot('data');
+
 export const config = {
   /**
    * En production, un seul processus sert l'interface et l'API sur PORT. En
@@ -28,21 +48,38 @@ export const config = {
    */
   port: Number(process.env.API_PORT ?? (isProduction ? process.env.PORT : undefined) ?? 4747),
   isProduction,
-  databaseUrl: process.env.DATABASE_URL ?? toFileUrl(path.join(fromRoot('data'), 'recto.db')),
+  appEnv: appEnv(),
+  /** Version déployée, reprise par /api/health. */
+  version: process.env.RECTO_VERSION ?? 'dev',
+  trustProxy: trustProxy(),
+  databaseUrl: process.env.DATABASE_URL ?? toFileUrl(path.join(dataDir, 'recto.db')),
+  /** Jeton d'une base libSQL distante ; inutile pour un fichier local. */
+  databaseAuthToken: process.env.DATABASE_AUTH_TOKEN,
   migrationsDir: fromRoot('drizzle'),
-  /** Stockage local des images ; remplacé par un stockage objet et un CDN à la mise en ligne. */
-  mediaDir: process.env.MEDIA_DIR ?? fromRoot('storage/media'),
+  /** Stockage local des images, sur le même volume persistant que la base en production. */
+  mediaDir: process.env.MEDIA_DIR ? path.resolve(process.env.MEDIA_DIR) : fromRoot('storage/media'),
   /** Sources du contenu versionnées (drapeaux générés, listes Commons verrouillées). */
   contentDir: fromRoot('content'),
   webDistDir: fileURLToPath(new URL('../../web/dist/', import.meta.url)),
   /** Signature des jetons de session. */
   authSecret: authSecret(),
-  /** Adresse publique de l'interface, pour les liens envoyés par courriel. */
+  /** Adresse publique de l'interface : liens des courriels, adresses canoniques, plan du site. */
   appUrl: (process.env.APP_URL ?? 'http://localhost:5173').replace(/\/$/, ''),
   smtpUrl: process.env.SMTP_URL ?? null,
   mailFrom: process.env.MAIL_FROM ?? 'RECTO <ne-pas-repondre@recto.local>',
   /** Sans SMTP, les courriels sont écrits ici (développement). */
-  mailDir: fromRoot('storage/mail'),
+  mailDir: process.env.MAIL_DIR ? path.resolve(process.env.MAIL_DIR) : fromRoot('storage/mail'),
+  /** § 7.5 — sauvegarde quotidienne de la base, conservée trente jours ; active par défaut en production. */
+  backup: {
+    enabled: (process.env.BACKUPS ?? (isProduction ? 'on' : 'off')) === 'on',
+    dir: process.env.BACKUP_DIR ? path.resolve(process.env.BACKUP_DIR) : path.join(dataDir, 'backups'),
+    retentionDays: 30,
+  },
   /** Les parties laissées inachevées au-delà de ce délai sont classées abandonnées. */
   gameRetentionMs: 6 * 60 * 60 * 1000,
+  /** Durées annoncées par la politique de confidentialité : à modifier de concert. */
+  retention: {
+    guestGamesMs: 365 * DAY_MS,
+    audienceMs: 760 * DAY_MS,
+  },
 };

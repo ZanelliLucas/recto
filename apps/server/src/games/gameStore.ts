@@ -1,5 +1,5 @@
 import type { GameStatus } from '@recto/shared';
-import { and, eq, inArray, lt } from 'drizzle-orm';
+import { and, eq, inArray, isNull, lt } from 'drizzle-orm';
 import type { Database } from '../db/client';
 import { games, lastDraws } from '../db/schema';
 import type { GameRecord } from './types';
@@ -56,6 +56,12 @@ export class SqlGameStore implements GameStore {
       .update(games)
       .set({ status: 'abandonnee', finishedAt: Date.now() })
       .where(and(inArray(games.status, ['preparee', 'en_cours']), lt(games.createdAt, createdBefore)));
+    return result.rowsAffected;
+  }
+
+  /** Parties jouées sans compte, au-delà de la durée annoncée par la politique de confidentialité. */
+  async purgeGuestGames(createdBefore: number): Promise<number> {
+    const result = await this.db.delete(games).where(and(isNull(games.userId), lt(games.createdAt, createdBefore)));
     return result.rowsAffected;
   }
 }

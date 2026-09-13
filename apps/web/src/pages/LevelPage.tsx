@@ -17,7 +17,7 @@ export function LevelPage() {
   const { start, pending, error } = useStartGame();
   const bestTime = useBestTimes();
   const category = state.status === 'ready' ? state.categories.find((c) => c.slug === categorie) : undefined;
-  useDocumentTitle(category?.name);
+  useDocumentTitle(category ? `Memory ${category.name} : jeu de mémoire en ligne` : undefined);
 
   if (state.status === 'loading') return <p role="status">{t('categories.loading')}</p>;
   if (state.status === 'error') return <p role="alert">{t('categories.error')}</p>;

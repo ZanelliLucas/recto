@@ -4,6 +4,13 @@ import type { CategoryRepository, ContentCategory } from '../content/types';
 import { imageSources } from '../media/sources';
 import type { MediaStorage } from '../media/storage';
 
+/** Catégories publiées et jouables à au moins une difficulté (EF-3.8), telles que l'accueil les présente. */
+export async function publishedSummaries(categories: CategoryRepository, media: MediaStorage): Promise<CategorySummary[]> {
+  return (await categories.listPublished())
+    .map((category) => toSummary(category, media))
+    .filter((category) => category.difficulties.length > 0);
+}
+
 function toSummary(category: ContentCategory, media: MediaStorage): CategorySummary {
   const thumbnail = category.images.find((image) => image.id === category.thumbnailImageId) ?? category.images[0];
   return {
@@ -21,10 +28,7 @@ export function categoriesRouter(categories: CategoryRepository, media: MediaSto
 
   // Une catégorie trop pauvre pour la moindre difficulté n'est pas proposée (EF-3.8).
   router.get('/', async (_req, res) => {
-    const summaries = (await categories.listPublished())
-      .map((category) => toSummary(category, media))
-      .filter((category) => category.difficulties.length > 0);
-    res.json(summaries);
+    res.json(await publishedSummaries(categories, media));
   });
 
   return router;

@@ -1,9 +1,19 @@
 import { useEffect } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthContext';
-import { t } from '../i18n';
+import { t, type MessageKey } from '../i18n';
+import { trackPageView } from '../lib/audience';
 import { AvatarIcon } from './AvatarIcon';
 import styles from './Layout.module.css';
+
+const FOOTER_LINKS: readonly (readonly [string, MessageKey])[] = [
+  ['/comment-jouer', 'nav.help'],
+  ['/parametres', 'nav.settings'],
+  ['/credits', 'nav.credits'],
+  ['/mentions-legales', 'nav.legal'],
+  ['/confidentialite', 'nav.privacy'],
+  ['/contact', 'nav.contact'],
+];
 
 export function Layout() {
   const { pathname } = useLocation();
@@ -11,6 +21,7 @@ export function Layout() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (!pathname.startsWith('/admin')) trackPageView(pathname);
   }, [pathname]);
 
   return (
@@ -45,14 +56,25 @@ export function Layout() {
       <main id="contenu" className={styles.main} tabIndex={-1}>
         <Outlet />
       </main>
+      {/* CA-14 — mentions légales et confidentialité accessibles depuis toutes les pages. */}
       <footer className={styles.footer}>
-        <span>
-          {t('app.name')} · {t('app.tagline')}
-        </span>
-        {!user && <span>{t('app.guestNotice')}</span>}
-        <Link to="/credits" className={styles.footerLink}>
-          {t('nav.credits')}
-        </Link>
+        <div className={styles.footerIntro}>
+          <span>
+            {t('app.name')} · {t('app.tagline')}
+          </span>
+          {!user && <span>{t('app.guestNotice')}</span>}
+        </div>
+        <nav aria-label={t('nav.footer')}>
+          <ul className={styles.footerLinks}>
+            {FOOTER_LINKS.map(([to, label]) => (
+              <li key={to}>
+                <Link to={to} className={styles.footerLink}>
+                  {t(label)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </footer>
     </>
   );

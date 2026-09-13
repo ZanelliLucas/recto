@@ -133,30 +133,29 @@
   }
 }
 
-/* ENF-4.3 — préférence système de réduction des animations : fondus simples. */
-@media (prefers-reduced-motion: reduce) {
-  .inner {
-    transition: none;
-    transform: none !important;
-  }
+/* ENF-4.3 — réduction des animations (préférence système ou réglage du site, cf. PreferencesContext) :
+   les retournements deviennent de simples fondus. */
+:global(html[data-motion='reduced']) .inner {
+  transition: none;
+  transform: none !important;
+}
 
-  .face {
-    backface-visibility: visible;
-    -webkit-backface-visibility: visible;
-    transition: opacity 180ms linear;
-  }
+:global(html[data-motion='reduced']) .face {
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  transition: opacity 180ms linear;
+}
 
-  .front {
-    opacity: 0;
-    transform: none;
-  }
+:global(html[data-motion='reduced']) .front {
+  opacity: 0;
+  transform: none;
+}
 
-  .card[data-state='up'] .front,
-  .card[data-state='found'] .front {
-    opacity: 1;
-  }
+:global(html[data-motion='reduced']) .card[data-state='up'] .front,
+:global(html[data-motion='reduced']) .card[data-state='found'] .front {
+  opacity: 1;
+}
 
-  .card .shell {
-    animation: none !important;
-  }
+:global(html[data-motion='reduced']) .card .shell {
+  animation: none !important;
 }

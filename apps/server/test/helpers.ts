@@ -1,4 +1,4 @@
-import { mkdtempSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -6,6 +6,7 @@ import type { CreateGameResponse, Difficulty, FinishGameResponse, Move, PublicUs
 import request from 'supertest';
 import { AdminService } from '../src/admin/adminService';
 import { createApp } from '../src/app';
+import { AudienceService } from '../src/audience/audienceService';
 import { AuthService } from '../src/auth/authService';
 import { SessionManager } from '../src/auth/sessions';
 import { SqlUserRepository } from '../src/auth/userRepository';
@@ -20,6 +21,11 @@ import { RecordService } from '../src/records/recordService';
 export const migrationsDir = fileURLToPath(new URL('../drizzle/', import.meta.url));
 export const contentDir = fileURLToPath(new URL('../content/', import.meta.url));
 export const PASSWORD = 'correct-horse-battery';
+
+/** Gabarit réduit de la page produite par Vite, avec les mêmes marqueurs. */
+export const PAGE_TEMPLATE =
+  '<!doctype html><html lang="fr"><head><!--recto:head--><title>RECTO</title><!--/recto:head--></head>' +
+  '<body><div id="root"><!--recto:body--></div></body></html>';
 
 export interface SeedCategory {
   slug: string;
@@ -101,7 +107,11 @@ export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }
   const media = new LocalMediaStorage(path.join(dir, 'media'));
   const users = new SqlUserRepository(db);
   const records = new RecordService(db, content);
+  const audience = new AudienceService(db, content, clock);
   const mailer = new MemoryMailer();
+  const webDistDir = path.join(dir, 'web');
+  mkdirSync(webDistDir);
+  writeFileSync(path.join(webDistDir, 'index.html'), PAGE_TEMPLATE);
   const app = createApp({
     categories: content,
     games: new GameService(content, new SqlGameStore(db), media, records, { now: clock }),
@@ -111,12 +121,18 @@ export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }
     users,
     sessions: new SessionManager('secret-de-session-de-test-assez-long-pour-hs256', false),
     media,
+    audience,
     mediaDir: media.root,
     appUrl: 'https://recto.test',
+    webDistDir,
+    indexable: true,
   });
 
   return {
     app,
+    db,
+    audience,
+    now: clock,
     agent: request.agent(app),
     newAgent: () => request.agent(app),
     content,

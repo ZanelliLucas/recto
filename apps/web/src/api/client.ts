@@ -3,6 +3,7 @@ import type {
   AdminCategorySummary,
   AdminImage,
   ApiErrorBody,
+  AudienceSummary,
   CategoryInput,
   CategoryPatch,
   CategorySummary,
@@ -100,6 +101,7 @@ export const meApi = {
 
 export const adminApi = {
   session: () => request<{ authenticated: boolean; admin: boolean }>('/admin/session'),
+  audience: () => request<AudienceSummary>('/admin/audience'),
   categories: () => request<AdminCategorySummary[]>('/admin/categories'),
   category: (id: string) => request<AdminCategoryDetail>(`/admin/categories/${encodeURIComponent(id)}`),
   createCategory: (input: CategoryInput) => request<AdminCategoryDetail>('/admin/categories', { body: input }),

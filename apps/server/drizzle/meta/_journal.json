@@ -15,6 +15,13 @@
       "when": 1789206230119,
       "tag": "0001_comptes",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789259118194,
+      "tag": "0002_audience",
+      "breakpoints": true
     }
   ]
 }

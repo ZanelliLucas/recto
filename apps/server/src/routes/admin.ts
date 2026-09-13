@@ -3,6 +3,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import { z } from 'zod';
 import type { AdminService } from '../admin/adminService';
+import type { AudienceService } from '../audience/audienceService';
 import { requireAdmin } from '../auth/middleware';
 import { HttpError } from '../http/httpError';
 import { parseBody } from '../http/validate';
@@ -64,7 +65,7 @@ function id(raw: unknown, what: 'categorie' | 'image'): string {
   return raw;
 }
 
-export function adminRouter(admin: AdminService): Router {
+export function adminRouter(admin: AdminService, audience: AudienceService): Router {
   const router = Router();
 
   router.get('/session', (_req, res) => {
@@ -77,6 +78,11 @@ export function adminRouter(admin: AdminService): Router {
 
   router.get('/categories', async (_req, res) => {
     res.json(await admin.listCategories());
+  });
+
+  // ENF-6.4 — fréquentation des trente derniers jours, en compteurs agrégés.
+  router.get('/audience', async (_req, res) => {
+    res.json(await audience.summary(30));
   });
 
   router.post('/categories', async (req, res) => {

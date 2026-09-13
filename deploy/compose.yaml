@@ -1,0 +1,36 @@
+# Déploiement sur un serveur unique (VPS) : RECTO derrière Caddy, qui obtient et renouvelle
+# automatiquement le certificat HTTPS (ENF-5.1).
+#   cp deploy/.env.example deploy/.env    # puis renseigner les valeurs
+#   docker compose -f deploy/compose.yaml up -d --build
+services:
+  app:
+    build: ..
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Caddy est l'unique mandataire devant le serveur.
+      TRUST_PROXY: '1'
+    volumes:
+      - recto-data:/data
+    expose:
+      - '8080'
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  recto-data:
+  caddy-data:
+  caddy-config:

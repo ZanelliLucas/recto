@@ -1,9 +1,10 @@
-import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 /** Stockage des fichiers d'images. L'implémentation locale cédera la place à un stockage objet (§ 5.1). */
 export interface MediaStorage {
   put(key: string, data: Buffer): Promise<void>;
+  read(key: string): Promise<Buffer>;
   remove(keys: readonly string[]): Promise<void>;
   url(key: string): string;
 }
@@ -20,6 +21,10 @@ export class LocalMediaStorage implements MediaStorage {
     const file = this.resolve(key);
     await mkdir(path.dirname(file), { recursive: true });
     await writeFile(file, data);
+  }
+
+  read(key: string): Promise<Buffer> {
+    return readFile(this.resolve(key));
   }
 
   async remove(keys: readonly string[]): Promise<void> {

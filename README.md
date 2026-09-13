@@ -35,20 +35,74 @@ non versionnées : les commandes ci-dessus les reconstruisent à partir des sour
 | `npm run typecheck` | Vérification des types de tous les packages |
 | `npm run build` puis `npm start` | Build de production, servi par un seul processus |
 | `npm run db:seed` | Charge et publie la catégorie Drapeaux |
+| `npm run db:backup` | Sauvegarde immédiate de la base (le serveur en fait une par jour en production) |
 | `npm run content:drapeaux` | Régénère les SVG et le manifeste des drapeaux |
 | `npm run content:commons:resolve` | Relève fichiers, auteurs et licences Commons, sans téléchargement d'image |
 | `npm run content:commons:import` | Télécharge et traite les images des listes verrouillées |
 | `npm run user:role -- <adresse> <admin\|joueur>` | Attribue un rôle à un compte existant |
+| `npm run check:launch [-- --env]` | Contrôle préalable à la mise en ligne : pages légales, puis variables d'environnement |
+
+## Mise en ligne
+
+L'application tient dans un seul processus Node, qui sert l'interface, l'API et les images. Base SQLite, images
+traitées et sauvegardes vivent sur un même volume persistant (`/data` dans l'image). Ce choix tient dans une offre
+de premier palier (§ 8.1) ; `DATABASE_URL=libsql://…` bascule vers une base libSQL distante sans changer le code.
+
+### Avant la première mise en ligne
+
+1. Renseigner l'identité de l'éditeur, le contact, l'hébergeur et le prestataire de courriel dans
+   [apps/web/src/legal/site.ts](apps/web/src/legal/site.ts) : mentions légales, confidentialité et contact en dépendent.
+2. Choisir un prestataire SMTP et réserver le nom de domaine.
+3. `npm run check:launch` doit répondre « aucun point bloquant » ; sur le serveur, `npm run check:launch -- --env`.
+
+### Serveur unique avec Docker et Caddy
+
+[deploy/compose.yaml](deploy/compose.yaml) construit l'image ([Dockerfile](Dockerfile)) et place devant elle Caddy,
+qui obtient et renouvelle le certificat HTTPS.
+
+```bash
+cp deploy/.env.example deploy/.env       # DOMAIN, APP_URL, AUTH_SECRET, SMTP_URL, MAIL_FROM
+docker compose -f deploy/compose.yaml up -d --build
+docker compose -f deploy/compose.yaml exec app node apps/server/dist/seed-drapeaux.js
+docker compose -f deploy/compose.yaml exec app node apps/server/dist/commons-import.js
+docker compose -f deploy/compose.yaml exec app node apps/server/dist/user-role.js votre@adresse.fr admin
+```
+
+Sur une plateforme d'hébergement de conteneurs, la même image suffit : monter un volume persistant sur `/data`,
+définir les variables de [deploy/.env.example](deploy/.env.example), exposer le port 8080 et, si la plateforme
+ajoute plusieurs mandataires, ajuster `TRUST_PROXY`.
+
+### Environnements (§ 7.5)
+
+- **Développement** : `npm run dev`, courriels écrits sur disque, aucune indexation.
+- **Recette** : même image que la production avec `APP_ENV=recette` — le site se comporte comme en production mais
+  `robots.txt` interdit tout et chaque réponse porte `X-Robots-Tag: noindex`.
+- **Production** : `APP_ENV=production` (valeur par défaut quand `NODE_ENV=production`).
+
+### Exploitation
+
+- **Disponibilité** : `GET /api/health` répond `200 {"status":"ok"}` et vérifie la base ; à brancher sur une sonde
+  externe (objectif de 99 % mensuel). L'image Docker l'utilise aussi comme `HEALTHCHECK`.
+- **Journaux** : une ligne JSON par événement sur la sortie standard (erreurs serveur, erreurs remontées par les
+  navigateurs, sauvegardes, purges). Ni adresse IP, ni cookie, ni paramètre d'adresse n'y figurent. Conserver
+  trente jours au plus, comme l'annonce la politique de confidentialité.
+- **Sauvegardes** : une copie cohérente de la base par jour dans `/data/backups`, trente jours de rétention. Elles
+  partagent le volume de la base : copier régulièrement ce dossier ailleurs (instantané du volume, stockage objet).
+  Restauration : arrêter le serveur, remplacer `recto.db` par la copie choisie, supprimer `recto.db-wal` et
+  `recto.db-shm`, redémarrer. Les images téléversées depuis le back-office (`/data/media`) sont à sauvegarder avec
+  le volume ; celles des catégories de lancement se reconstruisent à partir des sources versionnées.
+- **Purges automatiques** : parties jouées sans compte après 12 mois, compteurs d'audience après 25 mois.
 
 ## Organisation
 
 ```
 packages/shared            Règles du jeu et contrats d'API (tirage, rejeu des coups, publication, formats d'image)
-apps/server/src            Express : catégories, parties, back-office, crédits
+apps/server/src            Express : catégories, parties, comptes, back-office, référencement, audience, maintenance
 apps/server/drizzle        Migrations versionnées (Drizzle, SQLite)
 apps/server/content        Sources du contenu : drapeaux générés, listes Commons verrouillées (*.lock.json)
-apps/server/scripts        Génération des drapeaux, amorçage, import Commons
-apps/web                   React + Vite : jeu, crédits, back-office (chargé à la demande)
+apps/server/scripts        Génération des drapeaux, amorçage, import Commons, rôles, sauvegarde
+apps/web                   React + Vite : jeu, comptes, pages légales, back-office (chargé à la demande)
+deploy                     Composition Docker et Caddy pour un serveur unique
 ```
 
 ## Arbitrages retenus (§ 12)
@@ -62,6 +116,8 @@ apps/web                   React + Vite : jeu, crédits, back-office (chargé à
 - **Authentification déléguée (A-6)** : non retenue en V1.
 - **Contenu** : images principales Wikidata (P18) hébergées sur Wikimedia Commons ; seules les licences
   domaine public, CC0, CC BY et CC BY-SA sont admises, auteur obligatoire hors domaine public.
+- **Mesure d'audience (ENF-6.4)** : compteurs de pages vues par jour, tenus par le serveur lui-même, sans cookie ni
+  identifiant ni service tiers ; consultables dans le back-office (`/admin/audience`).
 
 ## État d'avancement
 
@@ -89,6 +145,26 @@ apps/web                   React + Vite : jeu, crédits, back-office (chargé à
 - Profil : statistiques, records, historique, reprise des parties invité ; paramètres : pseudonyme, avatar,
   mot de passe, export JSON et suppression définitive du compte (ENF-6.2, ENF-6.3).
 - Proposition de compte juste après un résultat obtenu en invité (§ 3.2).
+
+**Lot 4 — finitions et mise en ligne** :
+
+- Réglages persistants, ouverts aux invités (EF-8.1) : sons de partie synthétisés (désactivés par défaut), thème
+  sombre, clair ou selon le système (appliqué avant le premier affichage), réduction des animations — la préférence
+  du système prévaut toujours —, langue (français ; dictionnaires typés prêts pour l'anglais, EF-8.4).
+- Page « Comment jouer » en quatre écrans (EF-8.2) ; mentions légales, politique de confidentialité et contact
+  accessibles depuis toutes les pages (EF-8.3, CA-14).
+- Référencement (ENF-7) : titre, description, adresse canonique, Open Graph et données structurées servis avec chaque
+  page ; contenu indexable et catégories jointes à l'accueil et aux pages de catégorie ; `robots.txt`, `sitemap.xml` ;
+  image de partage 1200 × 630 composée pour chaque catégorie ; pages de compte et de partie non indexées.
+- Performance (ENF-2.1) : compression, fichiers hachés mis en cache un an, catégories jointes à la page (aucun
+  aller-retour avant le premier affichage), contenu lisible avant le chargement du script.
+- Sécurité (ENF-5.1) : redirection HTTPS derrière mandataire, HSTS, politique de sécurité de contenu sans script en ligne.
+- Exploitation (§ 7.5) : sonde `/api/health`, journaux JSON, erreurs des navigateurs remontées au serveur,
+  sauvegarde quotidienne, purges aux durées annoncées, arrêt propre, image Docker et composition Caddy.
+
+Restent à décider avant l'ouverture publique : hébergeur, prestataire SMTP, nom de domaine et identité de l'éditeur
+(voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-14 sur l'environnement de recette
+et sur des terminaux réels.
 
 Écart assumé par rapport au § 5.2 : les colonnes `url_200`, `url_400`, `url_800` sont remplacées par un préfixe de
 stockage et une nature (vectorielle ou matricielle), dont l'API dérive les six adresses.

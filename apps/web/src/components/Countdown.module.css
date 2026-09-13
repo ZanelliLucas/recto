@@ -34,8 +34,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .number {
-    animation: none;
-  }
+:global(html[data-motion='reduced']) .number {
+  animation: none;
 }

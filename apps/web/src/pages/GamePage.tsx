@@ -12,7 +12,9 @@ import { preloadImages } from '../game/preload';
 import { saveResult } from '../game/records';
 import { difficultyLabel, t } from '../i18n';
 import { sizeForDifficulty, supportsAvif } from '../lib/images';
+import { playSound } from '../lib/sound';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
+import { usePreferences } from '../settings/PreferencesContext';
 import styles from './GamePage.module.css';
 
 /** Laisse voir la dernière paire avant l'écran de résultat. */
@@ -109,6 +111,17 @@ function GameSession({ game, categoryName }: GameLocationState) {
       setError(caught instanceof ApiError && caught.status === 409 ? t('game.interrupted') : t('game.loadError'));
     });
   }, [game]);
+
+  // EF-8.1 — sons de partie, si le joueur les a activés. La dernière paire sonne la fin.
+  const { preferences } = usePreferences();
+  const soundedSeq = useRef(0);
+  useEffect(() => {
+    const event = engine.lastEvent;
+    // Un son par événement, identifié par son numéro d'ordre.
+    if (!event || event.seq === soundedSeq.current) return;
+    soundedSeq.current = event.seq;
+    if (preferences.sound) playSound(event.kind === 'match' && engine.phase === 'finishing' ? 'finish' : event.kind);
+  }, [engine.lastEvent, engine.phase, preferences.sound]);
 
   // Appariement incorrect : les deux cartes se retournent après 900 ms.
   useEffect(() => {

@@ -82,6 +82,65 @@
   accent-color: var(--accent);
 }
 
+.fieldset {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fieldset legend {
+  margin-bottom: 0.4rem;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.segment {
+  position: relative;
+}
+
+.segment input {
+  position: absolute;
+  opacity: 0;
+}
+
+.segment span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* État choisi : fond et coche, pas seulement une couleur (ENF-4.4). */
+.segment input:checked + span {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  font-weight: 700;
+}
+
+.segment input:checked + span::before {
+  content: '✓';
+  margin-right: 0.45rem;
+  color: var(--accent);
+}
+
+.segment input:focus-visible + span {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;

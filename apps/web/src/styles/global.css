@@ -25,7 +25,7 @@
   --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
 }
 
-/* Thème clair proposé en alternative ; le réglage qui l'active arrive au lot 4 (EF-8.1). */
+/* Thème clair proposé en alternative, activé depuis les paramètres (EF-8.1). */
 :root[data-theme='light'] {
   color-scheme: light;
   --bg: #f3f5f8;
@@ -172,4 +172,101 @@ img {
 
 .skip-link:focus {
   transform: none;
+}
+
+/* Réduction des animations : aucune transition décorative ne subsiste. */
+html[data-motion='reduced'] .btn {
+  transition: none;
+}
+
+/* ENF-7.1 et ENF-2.1 — contenu servi avec la page, lisible avant le chargement de l'application. */
+.seo-fallback {
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.seo-fallback h1 {
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+}
+
+.seo-fallback p,
+.seo-fallback ul {
+  margin: 0;
+}
+
+.seo-fallback ul {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.seo-fallback a {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+/* Pages de texte : aide, mentions légales, confidentialité. */
+.prose {
+  display: grid;
+  gap: 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prose h1 {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.prose h2 {
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.prose p,
+.prose ul,
+.prose dl {
+  margin: 0;
+}
+
+.prose ul {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1.2rem;
+}
+
+.prose a {
+  color: var(--accent-strong);
+}
+
+.prose .lead {
+  color: var(--muted);
+}
+
+.prose .table-wrap {
+  overflow-x: auto;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.55rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  color: var(--muted);
+  font-weight: 600;
 }

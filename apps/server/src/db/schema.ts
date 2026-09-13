@@ -132,6 +132,22 @@ export const personalBests = sqliteTable(
   (table) => [primaryKey({ columns: [table.userId, table.categoryId, table.difficulty] })],
 );
 
+/**
+ * ENF-6.4 — mesure d'audience sans cookie : un compteur par jour et par page, sans identifiant
+ * ni adresse IP. Rien ne permet de relier deux vues entre elles.
+ */
+export const pageViews = sqliteTable(
+  'page_views',
+  {
+    /** Jour UTC, au format AAAA-MM-JJ. */
+    day: text('day').notNull(),
+    /** Gabarit de la page (`/jouer/monuments`, `/partie`…), jamais une adresse complète. */
+    path: text('path').notNull(),
+    views: integer('views').notNull().default(0),
+  },
+  (table) => [primaryKey({ columns: [table.day, table.path] })],
+);
+
 /** Dernier tirage par joueur et couple catégorie × difficulté (EF-1.8). */
 export const lastDraws = sqliteTable('last_draws', {
   drawKey: text('draw_key').primaryKey(),
