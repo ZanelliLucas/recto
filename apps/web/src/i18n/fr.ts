@@ -205,6 +205,8 @@ export const fr = {
   'game.interrupted': 'Cette partie a été interrompue : elle ne peut pas reprendre après un rechargement de la page.',
   'game.loadError': 'Le chargement de la partie a échoué. Vérifiez votre connexion puis relancez une partie.',
   'game.finishError': 'Le résultat n’a pas pu être validé par le serveur.',
+  'game.finishRetry': 'Réessayer la validation',
+  'game.finishRetryHint': 'Votre partie est conservée : vérifiez votre connexion, puis réessayez.',
   'game.newGame': 'Nouvelle partie',
 
   'result.title': 'Partie terminée',

@@ -1,6 +1,6 @@
-import { COUNTDOWN_MS, drawSignature, type CreateGameResponse, type Difficulty } from '@recto/shared';
+import { COUNTDOWN_MS, drawSignature, type CreateGameResponse, type Difficulty, type PlayerStats } from '@recto/shared';
 import { describe, expect, it } from 'vitest';
-import { imageIndex, perfectMoves, setup } from './helpers';
+import { imageIndex, perfectMoves, register, setup } from './helpers';
 
 type Agent = Awaited<ReturnType<typeof setup>>['agent'];
 
@@ -171,13 +171,36 @@ describe('chronométrage et clôture', () => {
     expect(response.body.error.code).toBe('coups_invalides');
   });
 
-  it('ne clôt une partie qu’une seule fois', async () => {
+  it('ne clôt une partie qu’une seule fois : une clôture répétée rend le même résultat', async () => {
     const { agent, advance } = await setup();
     const game = await openAndStart(agent);
     advance(COUNTDOWN_MS + 30_000);
     const body = { token: game.token, moves: perfectMoves(game.deck) };
-    await agent.post(`/api/games/${game.gameId}/finish`).send(body).expect(200);
-    await agent.post(`/api/games/${game.gameId}/finish`).send(body).expect(409);
+    const first = await agent.post(`/api/games/${game.gameId}/finish`).send(body).expect(200);
+    // Réponse perdue puis nouvelle tentative, plus tard : même durée, rien n'est recompté.
+    advance(20_000);
+    const again = await agent.post(`/api/games/${game.gameId}/finish`).send(body).expect(200);
+    expect(again.body).toEqual(first.body);
+    // Une autre liste de coups ne peut pas remplacer la première.
+    const other = game.deck.findIndex((id) => id !== game.deck[0]);
+    await agent
+      .post(`/api/games/${game.gameId}/finish`)
+      .send({ token: game.token, moves: [[0, other], ...perfectMoves(game.deck)] })
+      .expect(409);
+  });
+
+  it('rend au compte la même comparaison au record, sans la recompter', async () => {
+    const ctx = await setup();
+    await register(ctx.agent);
+    const game = await openAndStart(ctx.agent);
+    ctx.advance(COUNTDOWN_MS + 30_000);
+    const body = { token: game.token, moves: perfectMoves(game.deck) };
+    const first = await ctx.agent.post(`/api/games/${game.gameId}/finish`).send(body).expect(200);
+    expect(first.body.record).toEqual({ previous: null, improved: true });
+    const again = await ctx.agent.post(`/api/games/${game.gameId}/finish`).send(body).expect(200);
+    expect(again.body).toEqual(first.body);
+    const stats = (await ctx.agent.get('/api/me/stats').expect(200)).body as PlayerStats;
+    expect(stats.totals).toMatchObject({ gamesPlayed: 1, gamesFinished: 1 });
   });
 
   it('exige le secret de la partie', async () => {

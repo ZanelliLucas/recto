@@ -65,6 +65,25 @@ async function request<T>(path: string, { method, body }: RequestOptions = {}): 
 
 const game = (id: string, action: string) => `/games/${encodeURIComponent(id)}/${action}`;
 
+/**
+ * Nouvelles tentatives sur coupure réseau ou panne passagère du serveur, jamais sur un refus.
+ * Réservé aux appels que le serveur sait rejouer sans effet de bord (clôture de partie).
+ */
+async function withRetry<T>(call: () => Promise<T>, delaysMs: readonly number[] = [1_000, 3_000]): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await call();
+    } catch (error) {
+      const transient = error instanceof ApiError && (error.status === 0 || error.status >= 500);
+      if (!transient || attempt >= delaysMs.length) throw error;
+      await new Promise((resolve) => setTimeout(resolve, delaysMs[attempt]));
+    }
+  }
+}
+
+/** Erreur passagère : réseau injoignable ou panne du serveur. Une nouvelle tentative a un sens. */
+export const isTransient = (error: unknown) => error instanceof ApiError && (error.status === 0 || error.status >= 500);
+
 export const api = {
   categories: () => request<CategorySummary[]>('/categories'),
   credits: () => request<CreditsCategory[]>('/credits'),
@@ -73,7 +92,8 @@ export const api = {
   pauseGame: (id: string, token: string) => request<void>(game(id, 'pause'), { body: { token } }),
   resumeGame: (id: string, token: string) => request<void>(game(id, 'resume'), { body: { token } }),
   abandonGame: (id: string, token: string) => request<void>(game(id, 'abandon'), { body: { token } }),
-  finishGame: (id: string, body: FinishGameRequest) => request<FinishGameResponse>(game(id, 'finish'), { body }),
+  finishGame: (id: string, body: FinishGameRequest) =>
+    withRetry(() => request<FinishGameResponse>(game(id, 'finish'), { body })),
 };
 
 export const authApi = {

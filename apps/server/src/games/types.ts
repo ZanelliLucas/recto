@@ -1,4 +1,4 @@
-import type { Difficulty, GameStatus } from '@recto/shared';
+import type { Difficulty, FinishGameResponse, GameStatus } from '@recto/shared';
 
 /** Joueur à l'origine d'une partie : clé de tirage (compte ou navigateur invité) et compte éventuel. */
 export interface Player {
@@ -27,4 +27,6 @@ export interface GameRecord {
   finishedAt: number | null;
   durationMs: number | null;
   moves: number | null;
+  /** Joueur connecté : comparaison au record établie à la clôture. */
+  recordOutcome: NonNullable<FinishGameResponse['record']> | null;
 }

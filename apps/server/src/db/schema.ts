@@ -1,4 +1,4 @@
-import type { Difficulty, GameStatus, UserRole } from '@recto/shared';
+import type { Difficulty, FinishGameResponse, GameStatus, UserRole } from '@recto/shared';
 import { index, integer, primaryKey, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 /**
@@ -69,6 +69,8 @@ export const games = sqliteTable(
     finishedAt: integer('finished_at'),
     durationMs: integer('duration_ms'),
     moves: integer('moves'),
+    /** Comparaison au record établie à la clôture : rendue telle quelle si la clôture est répétée. */
+    recordOutcome: text('record_outcome', { mode: 'json' }).$type<NonNullable<FinishGameResponse['record']>>(),
   },
   (table) => [
     index('games_player_idx').on(table.playerKey),

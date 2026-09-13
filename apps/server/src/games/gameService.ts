@@ -86,6 +86,7 @@ export class GameService {
       finishedAt: null,
       durationMs: null,
       moves: null,
+      recordOutcome: null,
     };
     await this.games.insert(game);
     await this.games.setLastDraw(drawKey, imageIds);
@@ -133,9 +134,15 @@ export class GameService {
     await this.commit(game, 'en_cours');
   }
 
-  /** Clôture : rejoue les coups, applique les contrôles de vraisemblance (ENF-1.2) et fige la durée. */
+  /**
+   * Clôture : rejoue les coups, applique les contrôles de vraisemblance (ENF-1.2) et fige la durée.
+   * Répétée avec les mêmes coups (réponse perdue sur un réseau mobile), elle rend le même résultat
+   * sans rien recompter ; toute autre liste de coups est refusée, la partie restant close.
+   */
   async finish(id: string, token: string, moves: readonly Move[]): Promise<FinishGameResponse> {
-    const game = await this.running(id, token);
+    const game = await this.owned(id, token);
+    if (game.status === 'terminee') return this.finishedResult(game, moves);
+    if (game.status !== 'en_cours') throw conflict('La partie n’est pas en cours.');
     const now = this.now();
     const pausedMs = game.pausedMs + (game.pausedAt === null ? 0 : now - game.pausedAt);
     const durationMs = now - game.startedAt! - pausedMs;
@@ -161,7 +168,24 @@ export class GameService {
     await this.commit(game, 'en_cours');
     // EF-5.1 — joueur connecté : le serveur compare au record et le met à jour.
     const record = game.userId ? await this.records.registerFinish(game) : null;
+    if (record) {
+      game.recordOutcome = record;
+      await this.commit(game, 'terminee');
+    }
     return { durationMs, moves: replay.moves, pairs, accuracy: accuracy(pairs, replay.moves), record };
+  }
+
+  private finishedResult(game: GameRecord, moves: readonly Move[]): FinishGameResponse {
+    const replay = replayMoves(game.deck, moves);
+    if (!replay.ok || replay.moves !== game.moves) throw conflict('La partie est déjà close.');
+    const pairs = game.deck.length / 2;
+    return {
+      durationMs: game.durationMs!,
+      moves: game.moves,
+      pairs,
+      accuracy: accuracy(pairs, game.moves),
+      record: game.userId ? game.recordOutcome : null,
+    };
   }
 
   /** EF-1.6 — la partie compte comme jouée mais n'entre jamais dans les records. */

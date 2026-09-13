@@ -1,7 +1,7 @@
 import { MISMATCH_DELAY_MS, pickImageUrl, type FinishGameResponse } from '@recto/shared';
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router';
-import { ApiError, api } from '../api/client';
+import { ApiError, api, isTransient } from '../api/client';
 import { Board, type CardFace } from '../components/Board';
 import { Countdown } from '../components/Countdown';
 import { Stopwatch } from '../components/Stopwatch';
@@ -74,6 +74,8 @@ function GameSession({ game, categoryName }: GameLocationState) {
   const [countdownEnd, setCountdownEnd] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [confirmingAbandon, setConfirmingAbandon] = useState(false);
+  const [finishFailed, setFinishFailed] = useState(false);
+  const [finishAttempt, setFinishAttempt] = useState(0);
   /** Vrai si la demande d'abandon a elle-même suspendu la partie : l'annulation la reprend. */
   const resumeAfterCancel = useRef(false);
   const [faces, setFaces] = useState<ReadonlyMap<string, CardFace>>(
@@ -137,7 +139,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
   // Dernière paire trouvée : le serveur rejoue les coups, valide et mesure la partie.
   useEffect(() => {
     if (engine.phase !== 'finishing' || finishing.current) return;
-    clock.current.stoppedAt = performance.now();
+    clock.current.stoppedAt ??= performance.now();
     finishing.current = api.finishGame(game.gameId, { token: game.token, moves: [...engine.moves] });
     Promise.all([finishing.current, delay(LAST_PAIR_PAUSE_MS)]).then(
       ([result]) => {
@@ -163,9 +165,19 @@ function GameSession({ game, categoryName }: GameLocationState) {
         };
         navigate(`/partie/${game.gameId}/resultat`, { replace: true, state });
       },
-      () => setError(t('game.finishError')),
+      (caught: unknown) => {
+        // Réseau ou serveur indisponible : la clôture est rejouable, la partie n'est pas perdue.
+        if (isTransient(caught)) setFinishFailed(true);
+        else setError(t('game.finishError'));
+      },
     );
-  }, [engine.phase, engine.moves, game, categoryName, navigate]);
+  }, [engine.phase, engine.moves, game, categoryName, navigate, finishAttempt]);
+
+  const retryFinish = useCallback(() => {
+    finishing.current = null;
+    setFinishFailed(false);
+    setFinishAttempt((attempt) => attempt + 1);
+  }, []);
 
   const paused = engine.phase === 'paused';
   const canPause = engine.phase === 'playing' || paused;
@@ -331,6 +343,22 @@ function GameSession({ game, categoryName }: GameLocationState) {
               <button type="button" className="btn btn-primary" onClick={togglePause} autoFocus>
                 {t('game.resume')}
               </button>
+            </div>
+          </div>
+        )}
+        {finishFailed && (
+          <div className={styles.pauseMask}>
+            <div className={styles.pausePanel} role="alert">
+              <p className={styles.pauseTitle}>{t('game.finishError')}</p>
+              <p>{t('game.finishRetryHint')}</p>
+              <div className={styles.dialogActions}>
+                <button type="button" className="btn btn-primary" onClick={retryFinish} autoFocus>
+                  {t('game.finishRetry')}
+                </button>
+                <Link className="btn" to={`/jouer/${game.category}`}>
+                  {t('game.newGame')}
+                </Link>
+              </div>
             </div>
           </div>
         )}

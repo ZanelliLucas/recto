@@ -53,6 +53,8 @@ chronomètre pendant l'hésitation du joueur.
 - **Performance** : environ 100 Ko de script compressé au premier affichage (script principal, dictionnaire, client
   d'API), feuille de style de 5 Ko ; les écrans hors parcours de jeu (comptes, aide, crédits, pages légales,
   back-office) sont chargés à la demande. Catégories jointes à la page et contenu lisible avant le chargement du script.
+- **Réseau instable** : la clôture d'une partie est rejouable côté serveur (même réponse, rien n'est recompté) ; le
+  client la retente sur coupure ou panne passagère, puis propose « Réessayer la validation » sans perdre la partie.
 - **Équité du chronomètre** : la partie ne démarre côté serveur qu'une fois l'onglet visible, et se met en pause
   d'elle-même si le joueur quitte l'onglet en cours de partie.
 - **Audience** : vues comptées par gabarit de page, sans cookie ; aucune n'est comptée pour le back-office ni les robots.
