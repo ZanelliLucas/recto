@@ -152,7 +152,7 @@ deploy                     Composition Docker et Caddy pour un serveur unique
   sombre, clair ou selon le système (appliqué avant le premier affichage), réduction des animations — la préférence
   du système prévaut toujours —, langue (français ; dictionnaires typés prêts pour l'anglais, EF-8.4).
 - Page « Comment jouer » en quatre écrans (EF-8.2) ; mentions légales, politique de confidentialité et contact
-  accessibles depuis toutes les pages (EF-8.3, CA-14).
+  accessibles depuis toutes les pages (EF-8.3, CA-13).
 - Référencement (ENF-7) : titre, description, adresse canonique, Open Graph et données structurées servis avec chaque
   page ; contenu indexable et catégories jointes à l'accueil et aux pages de catégorie ; `robots.txt`, `sitemap.xml` ;
   image de partage 1200 × 630 composée pour chaque catégorie ; pages de compte et de partie non indexées.
@@ -163,8 +163,9 @@ deploy                     Composition Docker et Caddy pour un serveur unique
   sauvegarde quotidienne, purges aux durées annoncées, arrêt propre, image Docker et composition Caddy.
 
 Restent à décider avant l'ouverture publique : hébergeur, prestataire SMTP, nom de domaine et identité de l'éditeur
-(voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-14 sur l'environnement de recette
-et sur des terminaux réels.
+(voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-13 sur l'environnement de recette
+et sur des terminaux réels. Le procès-verbal de la recette locale et la liste des vérifications restantes figurent dans
+[docs/recette.md](docs/recette.md).
 
 Écart assumé par rapport au § 5.2 : les colonnes `url_200`, `url_400`, `url_800` sont remplacées par un préfixe de
 stockage et une nature (vectorielle ou matricielle), dont l'API dérive les six adresses.

@@ -15,11 +15,11 @@ import { SqlContentRepository } from '../../src/content/contentRepository';
 import { openDatabase } from '../../src/db/client';
 import { LocalMediaStorage } from '../../src/media/storage';
 import { lockDir, type LockFile } from './lock';
-import { fetchWithRetry } from './wikimedia';
+import { fetchWithRetry, licenceLabel } from './wikimedia';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir));
+const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
 const admin = new AdminService(content, new LocalMediaStorage(config.mediaDir));
 
 const wanted = process.argv.slice(2);
@@ -52,7 +52,7 @@ for (const file of lockFiles) {
         title: item.title,
         author: item.author!,
         sourceUrl: item.sourceUrl,
-        licence: item.licence!,
+        licence: licenceLabel(item.licence!),
         licenceUrl: item.licenceUrl ?? null,
         caption: item.caption ?? null,
         visualGroup: item.visualGroup,

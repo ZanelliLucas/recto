@@ -22,6 +22,21 @@ describe('records et statistiques (EF-5)', () => {
     expect(stats.history).toHaveLength(3);
   });
 
+  it('retrouve le record après reconnexion depuis un autre terminal (CA-04)', async () => {
+    const ctx = await setup();
+    const account = await register(ctx.agent);
+    await playGame(ctx, ctx.agent, 35_000);
+    await ctx.agent.post('/api/auth/logout').expect(204);
+
+    const otherDevice = ctx.newAgent();
+    await otherDevice.post('/api/auth/login').send({ email: account.email, password: PASSWORD }).expect(200);
+    const stats = (await otherDevice.get('/api/me/stats').expect(200)).body as PlayerStats;
+    expect(stats.records).toEqual([expect.objectContaining({ category: 'test', difficulty: 'facile', bestMs: 35_000 })]);
+    // La partie suivante, jouée sur ce terminal, se compare au record établi sur l'autre.
+    const next = await playGame(ctx, otherDevice, 45_000);
+    expect(next.record).toEqual({ previous: { durationMs: 35_000, moves: 8 }, improved: false });
+  });
+
   it('ne donne aucun record à un invité', async () => {
     const ctx = await setup();
     expect((await playGame(ctx, ctx.agent)).record).toBeNull();

@@ -34,7 +34,7 @@ interface FlagManifest {
 const directory = path.join(config.contentDir, 'drapeaux');
 const manifest = JSON.parse(await readFile(path.join(directory, 'manifest.json'), 'utf8')) as FlagManifest;
 
-const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir));
+const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
 const admin = new AdminService(content, new LocalMediaStorage(config.mediaDir));
 
 const existing = await content.findBySlug(manifest.slug);

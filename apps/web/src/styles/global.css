@@ -7,6 +7,9 @@
   --surface-2: #17202b;
   --line: #1f2b39;
   --line-strong: #2d3e52;
+  /* WCAG 1.4.11 — contours qui identifient un composant : 3:1 au moins sur les fonds. */
+  --control-border: #66778b;
+  --card-edge: #4f7394;
   --text: #e7edf4;
   --muted: #95a3b5;
   --accent: #5cc8ff;
@@ -19,6 +22,9 @@
   --card-back: #121b26;
   --card-motif: rgb(92 200 255 / 0.1);
   --card-motif-strong: rgb(92 200 255 / 0.3);
+  /* États posés sur la face claire des cartes, quel que soit le thème : 3:1 au moins. */
+  --card-found: #0a7bbf;
+  --card-miss: #c2410c;
   --radius: 14px;
   --radius-card: 10px;
   --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -33,6 +39,8 @@
   --surface-2: #edf1f6;
   --line: #dbe2ea;
   --line-strong: #c3cdd9;
+  --control-border: #7b8898;
+  --card-edge: #2d3e52;
   --text: #0f1720;
   --muted: #4d5b6c;
   --accent: #0a7bbf;

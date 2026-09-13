@@ -56,7 +56,7 @@ export function Layout() {
       <main id="contenu" className={styles.main} tabIndex={-1}>
         <Outlet />
       </main>
-      {/* CA-14 — mentions légales et confidentialité accessibles depuis toutes les pages. */}
+      {/* CA-13 — mentions légales et confidentialité accessibles depuis toutes les pages. */}
       <footer className={styles.footer}>
         <div className={styles.footerIntro}>
           <span>

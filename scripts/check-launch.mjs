@@ -1,4 +1,4 @@
-// Contrôle préalable à la mise en ligne (§ 7.3, CA-14) : identité de l'éditeur renseignée dans les
+// Contrôle préalable à la mise en ligne (§ 7.3, CA-13) : identité de l'éditeur renseignée dans les
 // pages légales et, avec --env, variables d'environnement de production cohérentes.
 //   npm run check:launch               pages légales seulement
 //   npm run check:launch -- --env      ajoute les variables de l'environnement courant

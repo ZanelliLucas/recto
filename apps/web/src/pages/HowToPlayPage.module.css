@@ -37,7 +37,7 @@
 
 .card {
   aspect-ratio: 1;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--card-edge);
   border-radius: 7px;
   background-color: var(--card-back);
   background-image:
@@ -53,11 +53,11 @@
 
 /* Paire trouvée : liseré ; erreur : liseré d'une autre teinte et en pointillé, pas seulement une couleur. */
 .card[data-card='found'] {
-  box-shadow: inset 0 0 0 2px var(--accent);
+  box-shadow: inset 0 0 0 3px var(--card-found);
 }
 
 .card[data-card='miss'] {
-  outline: 2px dashed var(--miss);
+  outline: 2px dashed var(--card-miss);
   outline-offset: -2px;
 }
 

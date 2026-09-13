@@ -14,7 +14,7 @@ if (!email || (role !== 'admin' && role !== 'joueur')) {
   process.exit(1);
 }
 
-const users = new SqlUserRepository(await openDatabase(config.databaseUrl, config.migrationsDir));
+const users = new SqlUserRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
 const user = await users.findByEmail(normalizeEmail(email));
 if (!user) {
   console.error(`Aucun compte pour ${email}. Inscrivez-vous d’abord sur le site.`);

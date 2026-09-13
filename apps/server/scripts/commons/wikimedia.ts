@@ -151,7 +151,7 @@ export async function commonsFiles(files: readonly string[]): Promise<Map<string
         height: info.height,
         mime: info.mime,
         artist: stripHtml(meta.Artist?.value ?? ''),
-        licence: stripHtml(meta.LicenseShortName?.value ?? ''),
+        licence: licenceLabel(stripHtml(meta.LicenseShortName?.value ?? '')),
         licenceUrl: meta.LicenseUrl?.value || null,
       });
     });
@@ -171,6 +171,11 @@ export function stripHtml(html: string): string {
     })
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/** Libellé affiché sur la page de crédits : Commons renvoie « Public domain » en anglais. */
+export function licenceLabel(licence: string): string {
+  return /^public domain$/i.test(licence.trim()) ? 'Domaine public' : licence;
 }
 
 /** Licences admises (§ 4.1) : domaine public, CC0, CC BY, CC BY-SA. */
