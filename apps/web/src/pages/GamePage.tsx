@@ -73,6 +73,9 @@ function GameSession({ game, categoryName }: GameLocationState) {
   const [loaded, setLoaded] = useState(0);
   const [countdownEnd, setCountdownEnd] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [confirmingAbandon, setConfirmingAbandon] = useState(false);
+  /** Vrai si la demande d'abandon a elle-même suspendu la partie : l'annulation la reprend. */
+  const resumeAfterCancel = useRef(false);
   const [faces, setFaces] = useState<ReadonlyMap<string, CardFace>>(
     () => new Map(game.images.map((image) => [image.id, { title: image.title, url: '' }])),
   );
@@ -193,7 +196,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
   }, [engine.phase, game]);
 
   useEffect(() => {
-    if (!canPause) return;
+    if (!canPause || confirmingAbandon) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key.toLowerCase() !== 'p' || event.ctrlKey || event.metaKey || event.altKey) return;
       event.preventDefault();
@@ -201,10 +204,23 @@ function GameSession({ game, categoryName }: GameLocationState) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [canPause, togglePause]);
+  }, [canPause, confirmingAbandon, togglePause]);
 
-  const abandon = useCallback(async () => {
-    if (!window.confirm(t('game.abandonConfirm'))) return;
+  // EF-1.6 — abandon confirmé dans la page. La partie est suspendue le temps de la décision :
+  // l'hésitation ne coûte pas de temps, et la grille reste masquée.
+  const askAbandon = useCallback(async () => {
+    resumeAfterCancel.current = engine.phase === 'playing';
+    setConfirmingAbandon(true);
+    if (resumeAfterCancel.current) await togglePause();
+  }, [engine.phase, togglePause]);
+
+  const cancelAbandon = useCallback(async () => {
+    setConfirmingAbandon(false);
+    if (resumeAfterCancel.current && engine.phase === 'paused') await togglePause();
+    resumeAfterCancel.current = false;
+  }, [engine.phase, togglePause]);
+
+  const confirmAbandon = useCallback(async () => {
     await api.abandonGame(game.gameId, game.token).catch(() => undefined);
     navigate(`/jouer/${game.category}`, { replace: true });
   }, [game, navigate]);
@@ -244,7 +260,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
           <button type="button" className="btn btn-ghost" onClick={togglePause} disabled={!canPause} aria-keyshortcuts="P">
             {paused ? t('game.resume') : t('game.pause')}
           </button>
-          <button type="button" className="btn btn-ghost" onClick={abandon} disabled={!inProgress}>
+          <button type="button" className="btn btn-ghost" onClick={askAbandon} disabled={!inProgress || confirmingAbandon}>
             {t('game.abandon')}
           </button>
         </div>
@@ -267,7 +283,33 @@ function GameSession({ game, categoryName }: GameLocationState) {
         {engine.phase === 'countdown' && countdownEnd !== null && (
           <Countdown endsAt={countdownEnd} onDone={() => dispatch({ type: 'go' })} />
         )}
-        {paused && (
+        {confirmingAbandon && (
+          <div className={styles.pauseMask}>
+            <div
+              className={styles.pausePanel}
+              role="alertdialog"
+              aria-modal="true"
+              aria-labelledby="abandon-title"
+              onKeyDown={(event) => {
+                if (event.key === 'Escape') void cancelAbandon();
+              }}
+            >
+              <p id="abandon-title" className={styles.pauseTitle}>
+                {t('game.abandonTitle')}
+              </p>
+              <p>{t('game.abandonConfirm')}</p>
+              <div className={styles.dialogActions}>
+                <button type="button" className="btn btn-primary" onClick={cancelAbandon} autoFocus>
+                  {t('game.abandonCancel')}
+                </button>
+                <button type="button" className="btn" onClick={confirmAbandon}>
+                  {t('game.abandon')}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        {paused && !confirmingAbandon && (
           <div className={styles.pauseMask}>
             <div className={styles.pausePanel}>
               <p className={styles.pauseTitle}>{t('game.paused')}</p>

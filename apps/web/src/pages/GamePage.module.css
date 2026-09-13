@@ -149,6 +149,14 @@
   color: var(--muted);
 }
 
+.dialogActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
 .pausePanel .pauseTitle {
   color: var(--text);
   font-size: 1.5rem;

@@ -19,6 +19,25 @@ de développement (quatre catégories publiées), et par la suite de tests autom
 | CA-12 — crédits : auteur, source et licence de chaque image publiée | Conforme | Base et test `games.test.ts`. Libellés de licence harmonisés en français (migration `0003_licences`). |
 | CA-13 — mentions légales et confidentialité accessibles depuis toutes les pages | Conforme sur la forme | Pied de page commun à toutes les routes, y compris la page 404 et la partie. **Reste : identité de l'éditeur, contact, hébergeur et prestataire de courriel** à renseigner dans `apps/web/src/legal/site.ts` (`npm run check:launch` bloque d'ici là). |
 
+## Essais de jeu
+
+Parties jouées au pointeur dans le navigateur, sur le build de production.
+
+| Essai | Constat |
+| --- | --- |
+| Drapeaux, Normal (15 paires), écran large | Terminée en 16 coups, précision 94 % (15/16), temps serveur 1:33, pause de 0,5 s déduite. |
+| Appariement incorrect | Coup compté, cartes marquées et annoncées (« Pas de paire : Seychelles et Pologne »), refermées après 900 ms ; un clic sur une troisième carte pendant ce délai est ignoré. |
+| Même carte cliquée deux fois | Aucun coup compté (EF-1.4). |
+| Pause et reprise | La pause masque la grille et donne le focus à « Reprendre » ; la touche P reprend la partie. |
+| Rejouer | Nouvelle partie immédiate ; 3 images en commun seulement avec le tirage précédent (CA-05). |
+| Rechargement en cours de partie | Message « Cette partie a été interrompue… » : la partie ne reprend pas. |
+| Accueil après une partie | Raccourci « Rejouer · Drapeaux · Normal » avec le record de l'invité (§ 3.3). |
+| Histoire, Facile, mobile 375 px | Cartes de 87 px, aucun défilement horizontal ; terminée en 8 coups, 100 %. |
+| Abandon | Panneau de confirmation dans la page : partie suspendue, focus sur « Continuer la partie », Échap annule et reprend ; la confirmation ramène au choix du niveau, partie enregistrée « abandonnée ». |
+
+Défaut corrigé à cette occasion : l'abandon passait par la boîte de dialogue native du navigateur, qui laissait courir le
+chronomètre pendant l'hésitation du joueur.
+
 ## Vérifications complémentaires
 
 - **Contrastes (WCAG 2.1 AA)** : texte courant ≥ 4,5:1 et contours de composants ≥ 3:1 dans les deux thèmes, après
