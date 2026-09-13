@@ -1,4 +1,5 @@
 import type { CardImage } from '@recto/shared';
+import { useState } from 'react';
 import { Link, Navigate, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthContext';
 import { Picture } from '../components/Picture';
@@ -13,6 +14,7 @@ export function ResultPage() {
   const state = useLocation().state as ResultLocationState | null;
   const { user } = useAuth();
   const { start, pending, error } = useStartGame();
+  const [shareStatus, setShareStatus] = useState<string | null>(null);
   useDocumentTitle(t('result.title'));
 
   if (!state) return <Navigate to="/categories" replace />;
@@ -20,6 +22,29 @@ export function ResultPage() {
   const { result, previous, improved, category, categoryName, difficulty } = state;
   // EF-5.1 — écart signé au record antérieur : le principal motif de relance.
   const delta = previous ? result.durationMs - previous.durationMs : null;
+
+  // Partage : feuille native du téléphone si elle existe, sinon texte et lien copiés. Le lien mène
+  // à la catégorie, dont l'aperçu porte son image de partage (ENF-7.2).
+  const share = async () => {
+    const url = `${location.origin}/jouer/${category}`;
+    const text = t('result.shareText', {
+      pairs: result.pairs,
+      category: categoryName,
+      level: difficultyLabel(difficulty),
+      time: formatDuration(result.durationMs),
+    });
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: 'RECTO', text, url });
+        return;
+      }
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      setShareStatus(t('result.shareCopied'));
+    } catch (caught) {
+      // Feuille de partage fermée par le joueur : rien à signaler.
+      if (!(caught instanceof DOMException && caught.name === 'AbortError')) setShareStatus(t('result.shareFailed'));
+    }
+  };
 
   return (
     <section className={styles.result} aria-labelledby="result-title">
@@ -65,7 +90,13 @@ export function ResultPage() {
         <Link className="btn" to={`/jouer/${category}`}>
           {t('result.changeLevel')}
         </Link>
+        <button type="button" className="btn btn-ghost" onClick={share}>
+          {t('result.share')}
+        </button>
       </div>
+      <p className={styles.shareStatus} role="status">
+        {shareStatus}
+      </p>
       {error && (
         <p className={styles.error} role="alert">
           {error}

@@ -14,7 +14,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_France.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Paris",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "it",
@@ -24,7 +27,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Italy.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Rome",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "ie",
@@ -34,7 +40,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ireland.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "vertical-vert-blanc-orange"
+      "visualGroup": "vertical-vert-blanc-orange",
+      "caption": "Capitale : Dublin",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "ci",
@@ -44,7 +53,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_C%C3%B4te_d'Ivoire.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "vertical-vert-blanc-orange"
+      "visualGroup": "vertical-vert-blanc-orange",
+      "caption": "Capitale : Yamoussoukro",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "be",
@@ -54,7 +66,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Belgium.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Bruxelles",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "ro",
@@ -64,7 +79,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Romania.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "vertical-bleu-jaune-rouge"
+      "visualGroup": "vertical-bleu-jaune-rouge",
+      "caption": "Capitale : Bucarest",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "td",
@@ -74,7 +92,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Chad.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "vertical-bleu-jaune-rouge"
+      "visualGroup": "vertical-bleu-jaune-rouge",
+      "caption": "Capitale : N'Djaména",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "ml",
@@ -84,7 +105,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mali.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "vertical-vert-jaune-rouge"
+      "visualGroup": "vertical-vert-jaune-rouge",
+      "caption": "Capitale : Bamako",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "cm",
@@ -94,7 +118,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cameroon.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "vertical-vert-jaune-rouge"
+      "visualGroup": "vertical-vert-jaune-rouge",
+      "caption": "Capitale : Yaoundé",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "ng",
@@ -104,7 +131,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nigeria.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Abuja",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "pe",
@@ -114,7 +144,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Peru.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Lima",
+      "date": null,
+      "place": "Amérique du Sud"
     },
     {
       "id": "de",
@@ -124,7 +157,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Germany.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Berlin",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "nl",
@@ -134,7 +170,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Netherlands.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-rouge-blanc-bleu"
+      "visualGroup": "horizontal-rouge-blanc-bleu",
+      "caption": "Capitale : Amsterdam",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "lu",
@@ -144,7 +183,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Luxembourg.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-rouge-blanc-bleu"
+      "visualGroup": "horizontal-rouge-blanc-bleu",
+      "caption": "Capitale : Luxembourg",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "ru",
@@ -154,7 +196,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Russia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Moscou",
+      "date": null,
+      "place": "Asie / Europe"
     },
     {
       "id": "at",
@@ -164,7 +209,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Austria.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-rouge-blanc-rouge"
+      "visualGroup": "horizontal-rouge-blanc-rouge",
+      "caption": "Capitale : Vienne",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "lv",
@@ -174,7 +222,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Latvia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-rouge-blanc-rouge"
+      "visualGroup": "horizontal-rouge-blanc-rouge",
+      "caption": "Capitale : Riga",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "hu",
@@ -184,7 +235,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Hungary.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-blanc-vert-rouge"
+      "visualGroup": "horizontal-blanc-vert-rouge",
+      "caption": "Capitale : Budapest",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "bg",
@@ -194,7 +248,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bulgaria.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-blanc-vert-rouge"
+      "visualGroup": "horizontal-blanc-vert-rouge",
+      "caption": "Capitale : Sofia",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "lt",
@@ -204,7 +261,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Lithuania.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-jaune-vert-rouge"
+      "visualGroup": "horizontal-jaune-vert-rouge",
+      "caption": "Capitale : Vilnius",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "bo",
@@ -214,7 +274,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bolivia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-jaune-vert-rouge"
+      "visualGroup": "horizontal-jaune-vert-rouge",
+      "caption": "Capitales : La Paz, Sucre",
+      "date": null,
+      "place": "Amérique du Sud"
     },
     {
       "id": "gh",
@@ -224,7 +287,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ghana.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-jaune-vert-rouge"
+      "visualGroup": "horizontal-jaune-vert-rouge",
+      "caption": "Capitale : Accra",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "ee",
@@ -234,7 +300,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Estonia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Tallinn",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "am",
@@ -244,7 +313,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Armenia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Erevan",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "ga",
@@ -254,7 +326,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Gabon.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-vert-bleu"
+      "visualGroup": "horizontal-vert-bleu",
+      "caption": "Capitale : Libreville",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "sl",
@@ -264,7 +339,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sierra_Leone.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "horizontal-vert-bleu"
+      "visualGroup": "horizontal-vert-bleu",
+      "caption": "Capitale : Freetown",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "ye",
@@ -274,7 +352,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Yemen.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitales : Aden, Sanaa",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "co",
@@ -284,7 +365,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Colombia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Bogota",
+      "date": null,
+      "place": "Amérique du Sud"
     },
     {
       "id": "pl",
@@ -294,7 +378,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Poland.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "bicolore-rouge-blanc"
+      "visualGroup": "bicolore-rouge-blanc",
+      "caption": "Capitale : Varsovie",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "id",
@@ -304,7 +391,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Indonesia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "bicolore-rouge-blanc"
+      "visualGroup": "bicolore-rouge-blanc",
+      "caption": "Capitale : Jakarta",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "ua",
@@ -314,7 +404,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Ukraine.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Kiev",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "th",
@@ -324,7 +417,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Thailand.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Bangkok",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "mu",
@@ -334,7 +430,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Mauritius.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Port-Louis",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "gm",
@@ -344,7 +443,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_The_Gambia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Banjul",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "bw",
@@ -354,7 +456,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Botswana.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Gaborone",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "se",
@@ -364,7 +469,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Sweden.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Stockholm",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "dk",
@@ -374,7 +482,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Denmark.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Copenhague",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "fi",
@@ -384,7 +495,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Finland.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Helsinki",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "no",
@@ -394,7 +508,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Norway.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "croix-nordique-bordee"
+      "visualGroup": "croix-nordique-bordee",
+      "caption": "Capitale : Oslo",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "is",
@@ -404,7 +521,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Iceland.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "croix-nordique-bordee"
+      "visualGroup": "croix-nordique-bordee",
+      "caption": "Capitale : Reykjavik",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "jp",
@@ -414,7 +534,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Japan.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Tokyo",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "bd",
@@ -424,7 +547,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bangladesh.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Dacca",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "pw",
@@ -434,7 +560,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Palau.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Ngerulmud",
+      "date": null,
+      "place": "Océanie"
     },
     {
       "id": "la",
@@ -444,7 +573,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Laos.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Vientiane",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "ch",
@@ -454,7 +586,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Switzerland.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Berne",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "gr",
@@ -464,7 +599,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Greece.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Athènes",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "ge",
@@ -474,7 +612,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Georgia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Tbilissi",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "cz",
@@ -484,7 +625,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Czech_Republic.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "triangle-bleu-blanc-rouge"
+      "visualGroup": "triangle-bleu-blanc-rouge",
+      "caption": "Capitale : Prague",
+      "date": null,
+      "place": "Europe"
     },
     {
       "id": "ph",
@@ -494,7 +638,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Philippines.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "triangle-bleu-blanc-rouge"
+      "visualGroup": "triangle-bleu-blanc-rouge",
+      "caption": "Capitale : Manille",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "cu",
@@ -504,7 +651,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Cuba.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "triangle-bleu-blanc-rouge"
+      "visualGroup": "triangle-bleu-blanc-rouge",
+      "caption": "Capitale : La Havane",
+      "date": null,
+      "place": "Amérique du Nord"
     },
     {
       "id": "bs",
@@ -514,7 +664,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Bahamas.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Nassau",
+      "date": null,
+      "place": "Amérique du Nord"
     },
     {
       "id": "kw",
@@ -524,7 +677,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Kuwait.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "panarabe"
+      "visualGroup": "panarabe",
+      "caption": "Capitale : Koweït",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "ae",
@@ -534,7 +690,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Arab_Emirates.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "panarabe"
+      "visualGroup": "panarabe",
+      "caption": "Capitale : Abou Dabi",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "jo",
@@ -544,7 +703,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jordan.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "panarabe"
+      "visualGroup": "panarabe",
+      "caption": "Capitale : Amman",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "bj",
@@ -554,7 +716,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Benin.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "bande-verticale-et-deux-bandes"
+      "visualGroup": "bande-verticale-et-deux-bandes",
+      "caption": "Capitale : Porto-Novo",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "mg",
@@ -564,7 +729,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Madagascar.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "bande-verticale-et-deux-bandes"
+      "visualGroup": "bande-verticale-et-deux-bandes",
+      "caption": "Capitale : Antananarivo",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "sc",
@@ -574,7 +742,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Seychelles.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Victoria",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "vn",
@@ -584,7 +755,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Vietnam.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Hanoï",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "so",
@@ -594,7 +768,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Somalia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Mogadiscio",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "cn",
@@ -604,7 +781,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_People's_Republic_of_China.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Pékin",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "ma",
@@ -614,7 +794,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Morocco.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Rabat",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "bf",
@@ -624,7 +807,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Burkina_Faso.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Ouagadougou",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "cl",
@@ -634,7 +820,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Chile.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Santiago",
+      "date": null,
+      "place": "Amérique du Sud"
     },
     {
       "id": "pa",
@@ -644,7 +833,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Panama.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Panama",
+      "date": null,
+      "place": "Amérique du Nord"
     },
     {
       "id": "il",
@@ -654,7 +846,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Israel.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Jérusalem",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "tr",
@@ -664,7 +859,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Turkey.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "croissant-rouge-blanc"
+      "visualGroup": "croissant-rouge-blanc",
+      "caption": "Capitale : Ankara",
+      "date": null,
+      "place": "Asie / Europe"
     },
     {
       "id": "tn",
@@ -674,7 +872,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tunisia.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "croissant-rouge-blanc"
+      "visualGroup": "croissant-rouge-blanc",
+      "caption": "Capitale : Tunis",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "dz",
@@ -684,7 +885,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Algeria.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "croissant-vert-blanc"
+      "visualGroup": "croissant-vert-blanc",
+      "caption": "Capitale : Alger",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "pk",
@@ -694,7 +898,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Pakistan.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "croissant-vert-blanc"
+      "visualGroup": "croissant-vert-blanc",
+      "caption": "Capitales : Islamabad, Rawalpindi",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "cg",
@@ -704,7 +911,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Republic_of_the_Congo.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Brazzaville",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "tz",
@@ -714,7 +924,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Tanzania.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Dodoma",
+      "date": null,
+      "place": "Afrique"
     },
     {
       "id": "jm",
@@ -724,7 +937,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Jamaica.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Kingston",
+      "date": null,
+      "place": "Amérique du Nord"
     },
     {
       "id": "tt",
@@ -734,7 +950,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Trinidad_and_Tobago.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": null
+      "visualGroup": null,
+      "caption": "Capitale : Port-d'Espagne",
+      "date": null,
+      "place": "Amérique du Nord"
     },
     {
       "id": "qa",
@@ -744,7 +963,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Qatar.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "guindant-dentele"
+      "visualGroup": "guindant-dentele",
+      "caption": "Capitale : Doha",
+      "date": null,
+      "place": "Asie"
     },
     {
       "id": "bh",
@@ -754,7 +976,10 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Bahrain.svg",
       "licence": "Domaine public",
       "retrievedAt": "2026-09-12",
-      "visualGroup": "guindant-dentele"
+      "visualGroup": "guindant-dentele",
+      "caption": "Capitale : Manama",
+      "date": null,
+      "place": "Asie"
     }
   ]
 }

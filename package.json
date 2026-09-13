@@ -14,6 +14,7 @@
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "content:drapeaux": "npm run content:drapeaux -w @recto/server",
+    "content:drapeaux:enrich": "npm run content:drapeaux:enrich -w @recto/server",
     "content:commons:resolve": "npm run content:commons:resolve -w @recto/server --",
     "content:commons:import": "npm run content:commons:import -w @recto/server --",
     "content:commons:enrich": "npm run content:commons:enrich -w @recto/server --",

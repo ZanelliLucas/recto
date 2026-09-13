@@ -1,0 +1,24 @@
+# Vérifications à chaque envoi : types, tests unitaires et build de production.
+# Les tests de bout en bout (npm run test:e2e) exigent le contenu importé depuis Commons et ne
+# tournent donc qu'en local ou sur l'environnement de recette.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

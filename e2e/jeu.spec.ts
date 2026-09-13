@@ -33,6 +33,15 @@ test.describe('bureau', () => {
   test.skip(({ isMobile }) => isMobile, 'parcours au clavier');
 
   test('une partie complète se joue au clavier seul, puis on revoit les cartes (CA-07, CA-01)', async ({ page }) => {
+    // Feuille de partage simulée : le texte partagé est relevé au lieu d'ouvrir celle du système.
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'share', {
+        configurable: true,
+        value: async (data: ShareData) => {
+          (window as unknown as { __shared: ShareData }).__shared = data;
+        },
+      });
+    });
     const game = await startFromHome(page, 'Monuments', 'Facile');
 
     // Tabulation jusqu'à la grille : une seule carte y est atteignable (tabulation itinérante).
@@ -59,6 +68,11 @@ test.describe('bureau', () => {
     const review = page.getByRole('region', { name: 'Les cartes de la partie' });
     await expect(review.getByRole('listitem')).toHaveCount(game.images.length);
     await expect(review.getByText(game.images[0]!.title, { exact: true })).toBeVisible();
+
+    await page.getByRole('button', { name: 'Partager' }).click();
+    const shared = await page.evaluate(() => (window as unknown as { __shared?: ShareData }).__shared);
+    expect(shared?.text).toContain('les 8 paires de « Monuments » (niveau Facile)');
+    expect(shared?.url).toMatch(/\/jouer\/monuments$/);
   });
 
   test('l’abandon se confirme dans la page et suspend la partie', async ({ page }) => {

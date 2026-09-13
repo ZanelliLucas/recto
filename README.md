@@ -37,7 +37,8 @@ non versionnées : les commandes ci-dessus les reconstruisent à partir des sour
 | `npm run build` puis `npm start` | Build de production, servi par un seul processus |
 | `npm run db:seed` | Charge et publie la catégorie Drapeaux |
 | `npm run db:backup` | Sauvegarde immédiate de la base (le serveur en fait une par jour en production) |
-| `npm run content:drapeaux` | Régénère les SVG et le manifeste des drapeaux |
+| `npm run content:drapeaux` | Régénère les SVG et le manifeste des drapeaux (relancer ensuite `content:drapeaux:enrich`) |
+| `npm run content:drapeaux:enrich` | Capitale et continent de chaque pays, depuis Wikidata |
 | `npm run content:commons:resolve` | Relève fichiers, auteurs et licences Commons, sans téléchargement d'image ; `"--only=Article"` ne relève que les sujets cités |
 | `npm run content:commons:import` | Télécharge et traite les images des listes verrouillées |
 | `npm run content:commons:enrich` | Complète dates et lieux depuis Wikidata (métadonnées seules), sans écraser une saisie du back-office |
@@ -177,6 +178,10 @@ deploy                     Composition Docker et Caddy pour un serveur unique
   texte.
 - Clôture de partie rejouable sur réseau instable ; pause automatique quand l'onglet est quitté.
 - Tests de bout en bout Playwright (`npm run test:e2e`).
+- Partage du résultat (feuille native du téléphone, sinon texte et lien copiés) ; drapeaux complétés de leur
+  capitale et de leur continent (les dates d'adoption de Wikidata, trop hétérogènes, sont écartées).
+- Intégration continue prête (`.github/workflows/ci.yml` : types, tests, build), active dès que le dépôt est publié
+  sur GitHub.
 
 Restent à décider avant l'ouverture publique : hébergeur, prestataire SMTP, nom de domaine et identité de l'éditeur
 (voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-13 sur l'environnement de recette

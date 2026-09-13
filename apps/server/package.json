@@ -11,6 +11,7 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "content:drapeaux": "tsx scripts/drapeaux/generate.ts",
+    "content:drapeaux:enrich": "tsx scripts/drapeaux/enrich.ts",
     "content:commons:resolve": "tsx scripts/commons/resolve.ts",
     "content:commons:import": "tsx scripts/commons/import.ts",
     "content:commons:enrich": "tsx scripts/commons/enrich.ts",

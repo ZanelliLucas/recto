@@ -221,6 +221,10 @@ export const fr = {
   'result.changeLevel': 'Changer de niveau',
   'result.saveCta': 'Créez un compte pour conserver ce résultat et retrouver vos records sur tous vos appareils.',
   'result.createAccount': 'Créer un compte',
+  'result.share': 'Partager',
+  'result.shareText': 'J’ai retrouvé les {pairs} paires de « {category} » (niveau {level}) en {time} sur RECTO. À vous de jouer !',
+  'result.shareCopied': 'Texte et lien copiés : collez-les où vous voulez.',
+  'result.shareFailed': 'Le partage n’a pas abouti.',
   'result.cards': 'Les cartes de la partie',
   'result.cardsCredits': 'Auteurs et licences des images',
 

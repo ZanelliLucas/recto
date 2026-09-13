@@ -226,6 +226,10 @@ export const en: Messages = {
   'result.changeLevel': 'Change level',
   'result.saveCta': 'Create an account to keep this result and find your records on all your devices.',
   'result.createAccount': 'Create an account',
+  'result.share': 'Share',
+  'result.shareText': 'I found all {pairs} pairs of “{category}” ({level} level) in {time} on RECTO. Your turn!',
+  'result.shareCopied': 'Text and link copied: paste them anywhere.',
+  'result.shareFailed': 'Sharing did not work.',
   'result.cards': 'The cards of this game',
   'result.cardsCredits': 'Picture authors and licences',
 
