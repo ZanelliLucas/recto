@@ -26,6 +26,8 @@ export interface CardImage {
   caption: string | null;
   date: string | null;
   place: string | null;
+  /** Article de référence, ouvert depuis la revue des cartes : « En savoir plus ». */
+  infoUrl: string | null;
 }
 
 export interface CreateGameRequest {
@@ -175,6 +177,7 @@ export interface AdminImage {
   licenceUrl: string | null;
   retrievedAt: string;
   visualGroup: string | null;
+  infoUrl: string | null;
   sources: ImageSources;
 }
 
@@ -223,6 +226,7 @@ export interface ImageMetadataInput {
   date?: string | null;
   place?: string | null;
   visualGroup?: string | null;
+  infoUrl?: string | null;
 }
 
 export interface ApiErrorBody {

@@ -168,7 +168,8 @@ deploy                     Composition Docker et Caddy pour un serveur unique
 **Après le lot 4** :
 
 - Écran de résultat : revue des cartes de la partie, avec légende, date et lieu (métadonnées complétées depuis
-  Wikidata par `content:commons:enrich`).
+  Wikidata par `content:commons:enrich`) ; chaque titre mène à l'article de Wikipédia correspondant (« En savoir
+  plus », champ modifiable au back-office).
 - Cinquième catégorie, Espace (74 images de la NASA, de l'ESA et de Commons) ; images du cobra royal et de la pieuvre
   remplacées, Cité de Carcassonne ajoutée. Un sujet peut désormais imposer son fichier Commons (`file` dans
   `scripts/commons/subjects.ts`) ; l'import retire l'ancienne image une fois la nouvelle en place.

@@ -177,6 +177,13 @@
   overflow-wrap: anywhere;
 }
 
+/* Titre souligné : le lien « En savoir plus » ne repose pas sur la seule couleur. */
+.cardTitle a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .cardMeta,
 .cardCaption {
   color: var(--muted);

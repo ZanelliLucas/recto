@@ -108,6 +108,7 @@ export class GameService {
           caption: image.caption,
           date: image.date,
           place: image.place,
+          infoUrl: image.infoUrl,
         };
       }),
     };

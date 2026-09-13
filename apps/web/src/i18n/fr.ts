@@ -227,6 +227,7 @@ export const fr = {
   'result.shareFailed': 'Le partage n’a pas abouti.',
   'result.cards': 'Les cartes de la partie',
   'result.cardsCredits': 'Auteurs et licences des images',
+  'result.cardsMore': 'en savoir plus sur Wikipédia (nouvel onglet)',
 
   'error.network': 'Le serveur est injoignable. Réessayez dans un instant.',
   'error.generic': 'Une erreur est survenue. Réessayez dans un instant.',

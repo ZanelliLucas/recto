@@ -44,6 +44,8 @@ export const images = sqliteTable(
     licenceUrl: text('licence_url'),
     retrievedAt: text('retrieved_at').notNull(),
     visualGroup: text('visual_group'),
+    /** Article de référence (Wikipédia) proposé après la partie : « En savoir plus ». */
+    infoUrl: text('info_url'),
     createdAt: integer('created_at').notNull(),
   },
   (table) => [index('images_category_idx').on(table.categoryId)],

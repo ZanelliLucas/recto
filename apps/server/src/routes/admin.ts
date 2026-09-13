@@ -56,6 +56,8 @@ const imageMetadataSchema = z.object({
   date: optionalText(80),
   place: optionalText(120),
   visualGroup: optionalText(60),
+  // Lien ouvert par les joueurs : http(s) seulement, comme la source.
+  infoUrl: httpUrl.nullish().or(z.literal('').transform(() => null)),
 });
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024, files: 1 } });

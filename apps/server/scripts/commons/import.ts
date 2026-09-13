@@ -58,6 +58,7 @@ for (const file of lockFiles) {
         caption: item.caption ?? null,
         date: item.date ?? null,
         place: item.place ?? null,
+        infoUrl: item.infoUrl ?? null,
         visualGroup: item.visualGroup,
       });
       added++;

@@ -75,6 +75,7 @@ export async function seedCategory(content: SqlContentRepository, seed: SeedCate
       licenceUrl: null,
       retrievedAt: '2026-09-12',
       visualGroup: seed.visualGroup?.(i) ?? null,
+      infoUrl: i === 0 ? `https://fr.wikipedia.org/wiki/${seed.slug}` : null,
       createdAt: i,
     });
   }

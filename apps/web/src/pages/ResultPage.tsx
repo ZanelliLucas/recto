@@ -136,7 +136,16 @@ function CardsReview({ cards }: { cards: CardImage[] }) {
             <li key={card.id} className={styles.cardItem}>
               <Picture className={styles.cardImage} sources={card.sources} size={200} alt="" />
               <div className={styles.cardText}>
-                <p className={styles.cardTitle}>{card.title}</p>
+                <p className={styles.cardTitle}>
+                  {card.infoUrl ? (
+                    <a href={card.infoUrl} target="_blank" rel="noopener noreferrer">
+                      {card.title}
+                      <span className="visually-hidden"> — {t('result.cardsMore')}</span>
+                    </a>
+                  ) : (
+                    card.title
+                  )}
+                </p>
                 {meta && <p className={styles.cardMeta}>{meta}</p>}
                 {card.caption && <p className={styles.cardCaption}>{card.caption}</p>}
               </div>

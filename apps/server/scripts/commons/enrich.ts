@@ -27,12 +27,15 @@ for (const file of lockFiles) {
 
   // Valeurs de l'enrichissement précédent : en base, elles peuvent être remplacées ; toute autre
   // valeur a été saisie au back-office et prévaut.
-  const previous = new Map(lock.items.map((item) => [item.sourceUrl, { date: item.date ?? null, place: item.place ?? null }]));
+  const previous = new Map(
+    lock.items.map((item) => [item.sourceUrl, { date: item.date ?? null, place: item.place ?? null, infoUrl: item.infoUrl ?? null }]),
+  );
   for (const item of lock.items) {
     const found = item.wikidata ? facts.get(item.wikidata) : undefined;
     if (!found) continue;
     item.date = found.date;
     item.place = found.place;
+    item.infoUrl = found.infoUrl;
   }
   await writeFile(lockFile, `${JSON.stringify(lock, null, 2)}\n`);
 
@@ -47,13 +50,17 @@ for (const file of lockFiles) {
     const update = {
       date: replaceable(image.date, before?.date) ? (item.date ?? null) : image.date,
       place: replaceable(image.place, before?.place) ? (item.place ?? null) : image.place,
+      infoUrl: replaceable(image.infoUrl, before?.infoUrl) ? (item.infoUrl ?? null) : image.infoUrl,
     };
-    if (update.date === image.date && update.place === image.place) continue;
+    if (update.date === image.date && update.place === image.place && update.infoUrl === image.infoUrl) continue;
     await content.updateImage(image.id, update);
     updated++;
   }
 
   const withDate = lock.items.filter((item) => item.date).length;
   const withPlace = lock.items.filter((item) => item.place).length;
-  console.log(`${lock.name} : ${withDate} date(s), ${withPlace} lieu(x) relevés ; ${updated} image(s) mise(s) à jour en base.`);
+  const withArticle = lock.items.filter((item) => item.infoUrl).length;
+  console.log(
+    `${lock.name} : ${withDate} date(s), ${withPlace} lieu(x), ${withArticle} article(s) relevés ; ${updated} image(s) mise(s) à jour en base.`,
+  );
 }

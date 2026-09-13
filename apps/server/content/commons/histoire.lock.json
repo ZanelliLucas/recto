@@ -21,7 +21,8 @@
       "licenceUrl": null,
       "caption": "peinture à l'huile, sur panneau de bois, de Léonard de Vinci, musée du Louvre",
       "date": "années 1500",
-      "place": "département des peintures du musée du Louvre"
+      "place": "département des peintures du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Joconde"
     },
     {
       "article": "Vénus de Milo",
@@ -39,7 +40,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "sculpture grecque de la fin de l'époque hellénistique",
       "date": "IIe siècle av. J.-C.",
-      "place": "département des antiquités grecques, étrusques et romaines du musée du Louvre"
+      "place": "département des antiquités grecques, étrusques et romaines du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/V%C3%A9nus_de_Milo"
     },
     {
       "article": "Victoire de Samothrace",
@@ -57,7 +59,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "sculpture grecque de l'époque hellénistique conservée au Louvre, Paris, France",
       "date": "IIe siècle av. J.-C.",
-      "place": "département des antiquités grecques, étrusques et romaines du musée du Louvre"
+      "place": "département des antiquités grecques, étrusques et romaines du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Victoire_de_Samothrace"
     },
     {
       "article": "Pierre de Rosette",
@@ -75,7 +78,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "stèle gravée de l'Égypte antique portant trois versions d'un même texte",
       "date": "196 av. J.-C.",
-      "place": "British Museum"
+      "place": "British Museum",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pierre_de_Rosette"
     },
     {
       "article": "Masque funéraire de Toutânkhamon",
@@ -93,7 +97,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "masque funéraire du pharaon Toutânkhamon",
       "date": "1323 av. J.-C.",
-      "place": "musée égyptien du Caire"
+      "place": "musée égyptien du Caire",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Masque_fun%C3%A9raire_de_Tout%C3%A2nkhamon"
     },
     {
       "article": "Buste de Néfertiti",
@@ -111,7 +116,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "Buste de la reine Néfertiti de l'époque d'Amarna au Neues Museum, Berlin",
       "date": "1350 av. J.-C.",
-      "place": "musée égyptien de Berlin"
+      "place": "musée égyptien de Berlin",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Buste_de_N%C3%A9fertiti"
     },
     {
       "article": "Tapisserie de Bayeux",
@@ -129,7 +135,8 @@
       "licenceUrl": null,
       "caption": "tapisserie décrivant la conquête normande de l'Angleterre et la bataille d’Hastings",
       "date": "années 1070",
-      "place": "musée de la Tapisserie de Bayeux"
+      "place": "musée de la Tapisserie de Bayeux",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tapisserie_de_Bayeux"
     },
     {
       "article": "Armée de terre cuite",
@@ -147,7 +154,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "collection de statues funéraires de soldats et chevaux représentant les troupes de Qin Shi Huang, 1er empereur de Chine",
       "date": "248 av. J.-C.",
-      "place": "république populaire de Chine"
+      "place": "république populaire de Chine",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Arm%C3%A9e_de_terre_cuite"
     },
     {
       "article": "Code de Hammurabi",
@@ -165,7 +173,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
       "caption": "texte de loi babylonien",
       "date": null,
-      "place": "Babylonie"
+      "place": "Babylonie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Code_de_Hammurabi"
     },
     {
       "article": "Grotte de Lascaux",
@@ -183,7 +192,8 @@
       "licenceUrl": null,
       "caption": "grotte ornée en Dordogne, France",
       "date": null,
-      "place": "Montignac-Lascaux, France"
+      "place": "Montignac-Lascaux, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Grotte_de_Lascaux"
     },
     {
       "article": "Vénus de Willendorf",
@@ -201,7 +211,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
       "caption": "statuette préhistorique découverte en Autriche",
       "date": null,
-      "place": "muséum d'histoire naturelle de Vienne"
+      "place": "muséum d'histoire naturelle de Vienne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/V%C3%A9nus_de_Willendorf"
     },
     {
       "article": "Discobole",
@@ -219,7 +230,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "sculpture de Myron",
       "date": "vers 450 av. J.-C.",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Discobole"
     },
     {
       "article": "Groupe du Laocoon",
@@ -237,7 +249,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "groupe sculpté conservé au Vatican",
       "date": "Ie siècle av. J.-C.",
-      "place": "musée Pio-Clementino"
+      "place": "musée Pio-Clementino",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Groupe_du_Laocoon"
     },
     {
       "article": "David (Michel-Ange)",
@@ -255,7 +268,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "statue de Michel-Ange",
       "date": "années 1500",
-      "place": "Galleria dell'Accademia de Florence"
+      "place": "Galleria dell'Accademia de Florence",
+      "infoUrl": "https://fr.wikipedia.org/wiki/David_(Michel-Ange)"
     },
     {
       "article": "Casque de Sutton Hoo",
@@ -273,7 +287,8 @@
       "licenceUrl": null,
       "caption": "casque anglo-saxon du VIe tardif au début du VIIe siècle",
       "date": null,
-      "place": "British Museum"
+      "place": "British Museum",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Casque_de_Sutton_Hoo"
     },
     {
       "article": "Figurines de Lewis",
@@ -291,7 +306,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": null,
       "date": "XIIe siècle",
-      "place": "musée national d'Écosse"
+      "place": "musée national d'Écosse",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Figurines_de_Lewis"
     },
     {
       "article": "La Liberté guidant le peuple",
@@ -309,7 +325,8 @@
       "licenceUrl": null,
       "caption": "tableau d'Eugène Delacroix, Louvre",
       "date": "1830",
-      "place": "département des peintures du musée du Louvre"
+      "place": "département des peintures du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Libert%C3%A9_guidant_le_peuple"
     },
     {
       "article": "Le Radeau de La Méduse",
@@ -327,7 +344,8 @@
       "licenceUrl": null,
       "caption": "tableau de Théodore Géricault, peint en 1818-1819",
       "date": "1819",
-      "place": "département des peintures du musée du Louvre"
+      "place": "département des peintures du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Le_Radeau_de_la_M%C3%A9duse"
     },
     {
       "article": "Bonaparte franchissant le Grand-Saint-Bernard",
@@ -345,7 +363,8 @@
       "licenceUrl": null,
       "caption": "série de peintures de Jacques-Louis David ayant 5 versions distinctes",
       "date": "1801",
-      "place": "château de Malmaison"
+      "place": "château de Malmaison",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bonaparte_franchissant_le_Grand-Saint-Bernard"
     },
     {
       "article": "Le Sacre de Napoléon",
@@ -363,7 +382,8 @@
       "licenceUrl": null,
       "caption": "peinture de Jacques-Louis David",
       "date": "1807",
-      "place": "département des peintures du musée du Louvre"
+      "place": "département des peintures du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Le_Sacre_de_Napol%C3%A9on"
     },
     {
       "article": "Napoléon dans son cabinet de travail",
@@ -381,7 +401,8 @@
       "licenceUrl": null,
       "caption": "tableau de Jacques-Louis David",
       "date": "1812",
-      "place": "National Gallery of Art"
+      "place": "National Gallery of Art",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Napol%C3%A9on_dans_son_cabinet_de_travail"
     },
     {
       "article": "La Cène (Léonard de Vinci)",
@@ -399,7 +420,8 @@
       "licenceUrl": null,
       "caption": "fresque de Léonard de Vinci",
       "date": "années 1490",
-      "place": "église Santa Maria delle Grazie de Milan"
+      "place": "église Santa Maria delle Grazie de Milan",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_C%C3%A8ne_(L%C3%A9onard_de_Vinci)"
     },
     {
       "article": "La Création d'Adam",
@@ -417,7 +439,8 @@
       "licenceUrl": null,
       "caption": "fresque de Michel-Ange",
       "date": "1511",
-      "place": "musées du Vatican"
+      "place": "musées du Vatican",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Cr%C3%A9ation_d'Adam_(Michel-Ange)"
     },
     {
       "article": "La Jeune Fille à la perle",
@@ -435,7 +458,8 @@
       "licenceUrl": null,
       "caption": "tableau de Johannes Vermeer",
       "date": "1665",
-      "place": "Mauritshuis"
+      "place": "Mauritshuis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Jeune_Fille_%C3%A0_la_perle"
     },
     {
       "article": "La Ronde de nuit",
@@ -453,7 +477,8 @@
       "licenceUrl": null,
       "caption": "tableau de Rembrandt peint, Rijksmuseum",
       "date": "1642",
-      "place": "Rijksmuseum"
+      "place": "Rijksmuseum",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Ronde_de_nuit"
     },
     {
       "article": "La Nuit étoilée (1889)",
@@ -471,7 +496,8 @@
       "licenceUrl": null,
       "caption": "tableau de Vincent van Gogh",
       "date": "1889",
-      "place": "Museum of Modern Art"
+      "place": "Museum of Modern Art",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Nuit_%C3%A9toil%C3%A9e_(1889)"
     },
     {
       "article": "La Naissance de Vénus (Botticelli)",
@@ -489,7 +515,8 @@
       "licenceUrl": null,
       "caption": "tableau de Sandro Botticelli, Uffizi",
       "date": "1485",
-      "place": "galerie des Offices"
+      "place": "galerie des Offices",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Naissance_de_V%C3%A9nus_(Botticelli)"
     },
     {
       "article": "L'École d'Athènes",
@@ -507,7 +534,8 @@
       "licenceUrl": null,
       "caption": "fresque de Raphaël peinte vers 1508-1512",
       "date": "1512",
-      "place": "musées du Vatican"
+      "place": "musées du Vatican",
+      "infoUrl": "https://fr.wikipedia.org/wiki/L'%C3%89cole_d'Ath%C3%A8nes"
     },
     {
       "article": "Les Ménines",
@@ -525,7 +553,8 @@
       "licenceUrl": null,
       "caption": "peinture de Diego Velázquez",
       "date": "1656",
-      "place": "musée du Prado"
+      "place": "musée du Prado",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Les_M%C3%A9nines"
     },
     {
       "article": "Tres de mayo",
@@ -543,7 +572,8 @@
       "licenceUrl": null,
       "caption": "tableau de Francisco de Goya",
       "date": "1814",
-      "place": "musée du Prado"
+      "place": "musée du Prado",
+      "infoUrl": "https://fr.wikipedia.org/wiki/El_tres_de_mayo_de_1808_en_Madrid"
     },
     {
       "article": "La Grande Vague de Kanagawa",
@@ -561,7 +591,8 @@
       "licenceUrl": null,
       "caption": "estampe de Hokusai, 1830",
       "date": "années 1830",
-      "place": "musée national de Tokyo"
+      "place": "musée national de Tokyo",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Grande_Vague_de_Kanagawa"
     },
     {
       "article": "Le Cri",
@@ -579,7 +610,8 @@
       "licenceUrl": null,
       "caption": "composition peinte d'Edvard Munch, dont plusieurs versions existent",
       "date": "1893",
-      "place": "Musée national de Norvège"
+      "place": "Musée national de Norvège",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Le_Cri"
     },
     {
       "article": "Magna Carta",
@@ -597,7 +629,8 @@
       "licenceUrl": null,
       "caption": "document historique anglais",
       "date": "1215",
-      "place": "royaume d'Angleterre"
+      "place": "royaume d'Angleterre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Magna_Carta"
     },
     {
       "article": "Bible de Gutenberg",
@@ -615,7 +648,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "caption": "premier livre imprimé à l'aide de caractères mobiles",
       "date": null,
-      "place": "bibliothèque universitaire Johann-Christian-Senckenberg"
+      "place": "bibliothèque universitaire Johann-Christian-Senckenberg",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bible_de_Gutenberg"
     },
     {
       "article": "Livre de Kells",
@@ -633,7 +667,8 @@
       "licenceUrl": null,
       "caption": "manuscrit des Évangiles insulaire enluminé",
       "date": "années 800",
-      "place": "bibliothèque du Trinity College"
+      "place": "bibliothèque du Trinity College",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Livre_de_Kells"
     },
     {
       "article": "Machine d'Anticythère",
@@ -651,7 +686,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
       "caption": "calculateur astronomique antique",
       "date": "Ie siècle av. J.-C.",
-      "place": "musée national archéologique d'Athènes"
+      "place": "musée national archéologique d'Athènes",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Machine_d'Anticyth%C3%A8re"
     },
     {
       "article": "Disque céleste de Nebra",
@@ -669,7 +705,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "disque de bronze",
       "date": "XVIe siècle av. J.-C.",
-      "place": "Musée régional de préhistoire de Halle"
+      "place": "Musée régional de préhistoire de Halle",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Disque_c%C3%A9leste_de_Nebra"
     },
     {
       "article": "Porte d'Ishtar",
@@ -687,7 +724,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "une des portes de la cité de Babylone",
       "date": "575 av. J.-C.",
-      "place": "Vorderasiatisches Museum Berlin"
+      "place": "Vorderasiatisches Museum Berlin",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Porte_d'Ishtar"
     },
     {
       "article": "Étendard d'Ur",
@@ -705,7 +743,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "artéfact archéologique sumérien",
       "date": "2501 av. J.-C.",
-      "place": "British Museum"
+      "place": "British Museum",
+      "infoUrl": "https://fr.wikipedia.org/wiki/%C3%89tendard_d'Ur"
     },
     {
       "article": "Têtes colossales olmèques",
@@ -723,7 +762,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "sculpture monolithique représentant une tête humaine en ronde-bosse de grande taille, datant de la période olmèque au Mexique",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/T%C3%AAte_colossale_olm%C3%A8que"
     },
     {
       "article": "Pierre du Soleil",
@@ -741,7 +781,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "monolithe aztèque",
       "date": "XVIe siècle",
-      "place": "Musée national d'anthropologie de Mexico"
+      "place": "Musée national d'anthropologie de Mexico",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pierre_du_Soleil"
     },
     {
       "article": "Masque d'Agamemnon",
@@ -759,7 +800,8 @@
       "licenceUrl": null,
       "caption": "masque funéraire en or découvert sur le site antique grec de Mycènes",
       "date": "XVIe siècle av. J.-C.",
-      "place": "musée national archéologique d'Athènes"
+      "place": "musée national archéologique d'Athènes",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Masque_d'Agamemnon"
     },
     {
       "article": "Aurige de Delphes",
@@ -777,7 +819,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "sculpture antique",
       "date": "478 av. J.-C.",
-      "place": "musée archéologique de Delphes"
+      "place": "musée archéologique de Delphes",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Aurige_de_Delphes"
     },
     {
       "article": "Louve du Capitole",
@@ -795,7 +838,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "louve allaitant Romulus et Rémus",
       "date": "Ve siècle av. J.-C.",
-      "place": "musées du Capitole"
+      "place": "musées du Capitole",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Louve_capitoline"
     },
     {
       "article": "Auguste de Prima Porta",
@@ -813,7 +857,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "Statue en marbre blanc de l'empereur Auguste",
       "date": "20 av. J.-C.",
-      "place": "musées du Vatican"
+      "place": "musées du Vatican",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Auguste_de_Prima_Porta"
     },
     {
       "article": "Portrait de Louis XIV en costume de sacre",
@@ -831,7 +876,8 @@
       "licenceUrl": null,
       "caption": "tableau de Hyacinthe Rigaud",
       "date": "1701",
-      "place": "département des peintures du musée du Louvre"
+      "place": "département des peintures du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Portrait_de_Louis_XIV_en_costume_de_sacre"
     },
     {
       "article": "Le Portrait de l'Armada",
@@ -849,7 +895,8 @@
       "licenceUrl": null,
       "caption": "groupe de peintures attribués au peintre George Gower",
       "date": "1588",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Le_Portrait_de_l'Armada"
     },
     {
       "article": "Jeanne d'Arc au sacre du roi Charles VII",
@@ -867,7 +914,8 @@
       "licenceUrl": null,
       "caption": "peinture de Jean Auguste Dominique Ingres",
       "date": "1854",
-      "place": "département des peintures du musée du Louvre"
+      "place": "département des peintures du musée du Louvre",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Jeanne_d'Arc_au_sacre_du_roi_Charles_VII"
     },
     {
       "article": "Portrait de Marie-Antoinette à la rose",
@@ -885,7 +933,8 @@
       "licenceUrl": null,
       "caption": "peinture par Élisabeth Vigée Le Brun de 1783",
       "date": "1783",
-      "place": "musée de l’Histoire de France"
+      "place": "musée de l’Histoire de France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Portrait_de_Marie-Antoinette_%C3%A0_la_rose"
     },
     {
       "article": "George Washington (Lansdowne Portrait)",
@@ -903,7 +952,8 @@
       "licenceUrl": null,
       "caption": "tableau de Gilbert Stuart",
       "date": "1796",
-      "place": "National Portrait Gallery"
+      "place": "National Portrait Gallery",
+      "infoUrl": "https://fr.wikipedia.org/wiki/George_Washington_(Lansdowne_Portrait)"
     },
     {
       "article": "Abraham Lincoln",
@@ -921,7 +971,8 @@
       "licenceUrl": null,
       "caption": "homme d'État américain",
       "date": "1809–1865",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Abraham_Lincoln"
     },
     {
       "article": "Victoria (reine du Royaume-Uni)",
@@ -939,7 +990,8 @@
       "licenceUrl": null,
       "caption": "reine du Royaume-Uni de 1837 à 1901 et impératrice des Indes de 1876 à 1901",
       "date": "1819–1901",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Victoria_(reine)"
     },
     {
       "article": "Albert Einstein",
@@ -957,7 +1009,8 @@
       "licenceUrl": null,
       "caption": "physicien helvético-américain d'origine allemande, auteur des théories de la relativité restreinte et de la relativité générale",
       "date": "1879–1955",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Albert_Einstein"
     },
     {
       "article": "Marie Curie",
@@ -986,7 +1039,8 @@
       "licenceUrl": null,
       "caption": "leader politique et religieux indien",
       "date": "1869–1948",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mohandas_Karamchand_Gandhi"
     },
     {
       "article": "Léonard de Vinci",
@@ -1004,7 +1058,8 @@
       "licenceUrl": null,
       "caption": "peintre, sculpteur, architecte et ingénieur, théoricien de l'art et chercheur scientifique toscan",
       "date": "1452–1519",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/L%C3%A9onard_de_Vinci"
     },
     {
       "article": "Galilée (savant)",
@@ -1022,7 +1077,8 @@
       "licenceUrl": null,
       "caption": "physicien, philosophe et astronome italien",
       "date": "1564–1642",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Galil%C3%A9e_(savant)"
     },
     {
       "article": "Isaac Newton",
@@ -1040,7 +1096,8 @@
       "licenceUrl": null,
       "caption": "philosophe, mathématicien, physicien, alchimiste, astronome et théologien anglais",
       "date": "1642–1727",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Isaac_Newton"
     },
     {
       "article": "William Shakespeare",
@@ -1058,7 +1115,8 @@
       "licenceUrl": null,
       "caption": "dramaturge, poète et acteur anglais (1564-1616)",
       "date": "1564–1616",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/William_Shakespeare"
     },
     {
       "article": "Molière",
@@ -1076,7 +1134,8 @@
       "licenceUrl": null,
       "caption": "dramaturge et acteur français (1622–1673)",
       "date": "1622–1673",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Moli%C3%A8re"
     },
     {
       "article": "Victor Hugo",
@@ -1094,7 +1153,8 @@
       "licenceUrl": null,
       "caption": "romancier, poète, dramaturge, dessinateur et politicien français (1802–1885)",
       "date": "1802–1885",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Victor_Hugo"
     },
     {
       "article": "Wolfgang Amadeus Mozart",
@@ -1112,7 +1172,8 @@
       "licenceUrl": null,
       "caption": "compositeur, pianiste, violoniste, organiste et chef d'orchestre autrichien",
       "date": "1756–1791",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
     },
     {
       "article": "Ludwig van Beethoven",
@@ -1130,7 +1191,8 @@
       "licenceUrl": null,
       "caption": "compositeur classique et romantique allemand",
       "date": "1770–1827",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ludwig_van_Beethoven"
     },
     {
       "article": "Mosaïque d'Alexandre",
@@ -1148,7 +1210,8 @@
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "caption": "mosaïque de Pompéi",
       "date": "IIe siècle av. J.-C.",
-      "place": "musée archéologique national de Naples"
+      "place": "musée archéologique national de Naples",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mosa%C3%AFque_d'Alexandre"
     },
     {
       "article": "Bateau d'Oseberg",
@@ -1166,7 +1229,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "bateau viking découvert dans un monticule funéraire près de la ferme Oseberg, Østlandet",
       "date": null,
-      "place": "musée des navires vikings d'Oslo"
+      "place": "musée des navires vikings d'Oslo",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bateau_d'Oseberg"
     },
     {
       "article": "Liberty Bell",
@@ -1184,7 +1248,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": null,
       "date": "1753",
-      "place": "Philadelphie, États-Unis"
+      "place": "Philadelphie, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Liberty_Bell"
     },
     {
       "article": "Couronne de saint Édouard",
@@ -1202,7 +1267,8 @@
       "licenceUrl": null,
       "caption": "joyaux de la Couronne britannique",
       "date": "1602",
-      "place": "Royal Collection"
+      "place": "Royal Collection",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Couronne_de_saint_%C3%89douard"
     },
     {
       "article": "Enigma (machine)",
@@ -1220,7 +1286,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "machine électromécanique portative servant au chiffrement et au déchiffrement de l'information",
       "date": null,
-      "place": "Allemagne"
+      "place": "Allemagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Enigma_(machine)"
     },
     {
       "article": "Wright Flyer",
@@ -1238,7 +1305,8 @@
       "licenceUrl": null,
       "caption": "avion avec lequel les frères Wright effectuèrent leurs premiers vols motorisés",
       "date": null,
-      "place": "National Air and Space Museum"
+      "place": "National Air and Space Museum",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Wright_Flyer"
     },
     {
       "article": "Titanic (paquebot)",
@@ -1256,7 +1324,8 @@
       "licenceUrl": null,
       "caption": "paquebot transatlantique britannique, lancé et ayant sombré en 1912",
       "date": "1909",
-      "place": "océan Atlantique"
+      "place": "océan Atlantique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Titanic"
     },
     {
       "article": "La Déclaration d'indépendance (Trumbull)",
@@ -1274,7 +1343,8 @@
       "licenceUrl": null,
       "caption": "tableau de John Trumbull",
       "date": "1810",
-      "place": "Capitole des États-Unis"
+      "place": "Capitole des États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_D%C3%A9claration_d'ind%C3%A9pendance_(Trumbull)"
     }
   ]
 }

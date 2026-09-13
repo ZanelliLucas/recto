@@ -17,6 +17,8 @@ export interface ContentImage {
   licenceUrl: string | null;
   retrievedAt: string;
   visualGroup: string | null;
+  /** Article de référence proposé après la partie (« En savoir plus »). */
+  infoUrl: string | null;
   createdAt: number;
 }
 

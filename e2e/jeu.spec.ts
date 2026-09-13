@@ -67,7 +67,13 @@ test.describe('bureau', () => {
     await expect(page.getByText('100 %')).toBeVisible();
     const review = page.getByRole('region', { name: 'Les cartes de la partie' });
     await expect(review.getByRole('listitem')).toHaveCount(game.images.length);
-    await expect(review.getByText(game.images[0]!.title, { exact: true })).toBeVisible();
+    // Le titre est un lien dont le nom accessible précise « en savoir plus » : on cherche la carte qui le contient.
+    await expect(review.getByRole('listitem').filter({ hasText: game.images[0]!.title })).toHaveCount(1);
+    // « En savoir plus » : les titres mènent à l'article de Wikipédia, dans un nouvel onglet.
+    const more = review.getByRole('link', { name: /en savoir plus sur Wikipédia/ });
+    expect(await more.count()).toBeGreaterThan(0);
+    await expect(more.first()).toHaveAttribute('href', /^https:\/\/fr\.wikipedia\.org\/wiki\//);
+    await expect(more.first()).toHaveAttribute('target', '_blank');
 
     await page.getByRole('button', { name: 'Partager' }).click();
     const shared = await page.evaluate(() => (window as unknown as { __shared?: ShareData }).__shared);

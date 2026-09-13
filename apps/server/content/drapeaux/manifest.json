@@ -17,7 +17,8 @@
       "visualGroup": null,
       "caption": "Capitale : Paris",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/France"
     },
     {
       "id": "it",
@@ -30,7 +31,8 @@
       "visualGroup": null,
       "caption": "Capitale : Rome",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Italie"
     },
     {
       "id": "ie",
@@ -43,7 +45,8 @@
       "visualGroup": "vertical-vert-blanc-orange",
       "caption": "Capitale : Dublin",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Irlande_(pays)"
     },
     {
       "id": "ci",
@@ -56,7 +59,8 @@
       "visualGroup": "vertical-vert-blanc-orange",
       "caption": "Capitale : Yamoussoukro",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/C%C3%B4te_d%27Ivoire"
     },
     {
       "id": "be",
@@ -69,7 +73,8 @@
       "visualGroup": null,
       "caption": "Capitale : Bruxelles",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Belgique"
     },
     {
       "id": "ro",
@@ -82,7 +87,8 @@
       "visualGroup": "vertical-bleu-jaune-rouge",
       "caption": "Capitale : Bucarest",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Roumanie"
     },
     {
       "id": "td",
@@ -95,7 +101,8 @@
       "visualGroup": "vertical-bleu-jaune-rouge",
       "caption": "Capitale : N'Djaména",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tchad"
     },
     {
       "id": "ml",
@@ -108,7 +115,8 @@
       "visualGroup": "vertical-vert-jaune-rouge",
       "caption": "Capitale : Bamako",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mali"
     },
     {
       "id": "cm",
@@ -121,7 +129,8 @@
       "visualGroup": "vertical-vert-jaune-rouge",
       "caption": "Capitale : Yaoundé",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cameroun"
     },
     {
       "id": "ng",
@@ -134,7 +143,8 @@
       "visualGroup": null,
       "caption": "Capitale : Abuja",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Nigeria"
     },
     {
       "id": "pe",
@@ -147,7 +157,8 @@
       "visualGroup": null,
       "caption": "Capitale : Lima",
       "date": null,
-      "place": "Amérique du Sud"
+      "place": "Amérique du Sud",
+      "infoUrl": "https://fr.wikipedia.org/wiki/P%C3%A9rou"
     },
     {
       "id": "de",
@@ -160,7 +171,8 @@
       "visualGroup": null,
       "caption": "Capitale : Berlin",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Allemagne"
     },
     {
       "id": "nl",
@@ -173,7 +185,8 @@
       "visualGroup": "horizontal-rouge-blanc-bleu",
       "caption": "Capitale : Amsterdam",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pays-Bas"
     },
     {
       "id": "lu",
@@ -186,7 +199,8 @@
       "visualGroup": "horizontal-rouge-blanc-bleu",
       "caption": "Capitale : Luxembourg",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Luxembourg"
     },
     {
       "id": "ru",
@@ -199,7 +213,8 @@
       "visualGroup": null,
       "caption": "Capitale : Moscou",
       "date": null,
-      "place": "Asie / Europe"
+      "place": "Asie / Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Russie"
     },
     {
       "id": "at",
@@ -212,7 +227,8 @@
       "visualGroup": "horizontal-rouge-blanc-rouge",
       "caption": "Capitale : Vienne",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Autriche"
     },
     {
       "id": "lv",
@@ -225,7 +241,8 @@
       "visualGroup": "horizontal-rouge-blanc-rouge",
       "caption": "Capitale : Riga",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Lettonie"
     },
     {
       "id": "hu",
@@ -238,7 +255,8 @@
       "visualGroup": "horizontal-blanc-vert-rouge",
       "caption": "Capitale : Budapest",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Hongrie"
     },
     {
       "id": "bg",
@@ -251,7 +269,8 @@
       "visualGroup": "horizontal-blanc-vert-rouge",
       "caption": "Capitale : Sofia",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bulgarie"
     },
     {
       "id": "lt",
@@ -264,7 +283,8 @@
       "visualGroup": "horizontal-jaune-vert-rouge",
       "caption": "Capitale : Vilnius",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Lituanie"
     },
     {
       "id": "bo",
@@ -277,7 +297,8 @@
       "visualGroup": "horizontal-jaune-vert-rouge",
       "caption": "Capitales : La Paz, Sucre",
       "date": null,
-      "place": "Amérique du Sud"
+      "place": "Amérique du Sud",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bolivie"
     },
     {
       "id": "gh",
@@ -290,7 +311,8 @@
       "visualGroup": "horizontal-jaune-vert-rouge",
       "caption": "Capitale : Accra",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ghana"
     },
     {
       "id": "ee",
@@ -303,7 +325,8 @@
       "visualGroup": null,
       "caption": "Capitale : Tallinn",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Estonie"
     },
     {
       "id": "am",
@@ -316,7 +339,8 @@
       "visualGroup": null,
       "caption": "Capitale : Erevan",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Arm%C3%A9nie"
     },
     {
       "id": "ga",
@@ -329,7 +353,8 @@
       "visualGroup": "horizontal-vert-bleu",
       "caption": "Capitale : Libreville",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Gabon"
     },
     {
       "id": "sl",
@@ -342,7 +367,8 @@
       "visualGroup": "horizontal-vert-bleu",
       "caption": "Capitale : Freetown",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Sierra_Leone"
     },
     {
       "id": "ye",
@@ -355,7 +381,8 @@
       "visualGroup": null,
       "caption": "Capitales : Aden, Sanaa",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Y%C3%A9men"
     },
     {
       "id": "co",
@@ -368,7 +395,8 @@
       "visualGroup": null,
       "caption": "Capitale : Bogota",
       "date": null,
-      "place": "Amérique du Sud"
+      "place": "Amérique du Sud",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Colombie"
     },
     {
       "id": "pl",
@@ -381,7 +409,8 @@
       "visualGroup": "bicolore-rouge-blanc",
       "caption": "Capitale : Varsovie",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pologne"
     },
     {
       "id": "id",
@@ -394,7 +423,8 @@
       "visualGroup": "bicolore-rouge-blanc",
       "caption": "Capitale : Jakarta",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Indon%C3%A9sie"
     },
     {
       "id": "ua",
@@ -407,7 +437,8 @@
       "visualGroup": null,
       "caption": "Capitale : Kiev",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ukraine"
     },
     {
       "id": "th",
@@ -420,7 +451,8 @@
       "visualGroup": null,
       "caption": "Capitale : Bangkok",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tha%C3%AFlande"
     },
     {
       "id": "mu",
@@ -433,7 +465,8 @@
       "visualGroup": null,
       "caption": "Capitale : Port-Louis",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Maurice_(pays)"
     },
     {
       "id": "gm",
@@ -446,7 +479,8 @@
       "visualGroup": null,
       "caption": "Capitale : Banjul",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Gambie"
     },
     {
       "id": "bw",
@@ -459,7 +493,8 @@
       "visualGroup": null,
       "caption": "Capitale : Gaborone",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Botswana"
     },
     {
       "id": "se",
@@ -472,7 +507,8 @@
       "visualGroup": null,
       "caption": "Capitale : Stockholm",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Su%C3%A8de"
     },
     {
       "id": "dk",
@@ -485,7 +521,8 @@
       "visualGroup": null,
       "caption": "Capitale : Copenhague",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Danemark_(pays_constitutif)"
     },
     {
       "id": "fi",
@@ -498,7 +535,8 @@
       "visualGroup": null,
       "caption": "Capitale : Helsinki",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Finlande"
     },
     {
       "id": "no",
@@ -511,7 +549,8 @@
       "visualGroup": "croix-nordique-bordee",
       "caption": "Capitale : Oslo",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Norv%C3%A8ge"
     },
     {
       "id": "is",
@@ -524,7 +563,8 @@
       "visualGroup": "croix-nordique-bordee",
       "caption": "Capitale : Reykjavik",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Islande"
     },
     {
       "id": "jp",
@@ -537,7 +577,8 @@
       "visualGroup": null,
       "caption": "Capitale : Tokyo",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Japon"
     },
     {
       "id": "bd",
@@ -550,7 +591,8 @@
       "visualGroup": null,
       "caption": "Capitale : Dacca",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bangladesh"
     },
     {
       "id": "pw",
@@ -563,7 +605,8 @@
       "visualGroup": null,
       "caption": "Capitale : Ngerulmud",
       "date": null,
-      "place": "Océanie"
+      "place": "Océanie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Palaos"
     },
     {
       "id": "la",
@@ -576,7 +619,8 @@
       "visualGroup": null,
       "caption": "Capitale : Vientiane",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Laos"
     },
     {
       "id": "ch",
@@ -589,7 +633,8 @@
       "visualGroup": null,
       "caption": "Capitale : Berne",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Suisse"
     },
     {
       "id": "gr",
@@ -602,7 +647,8 @@
       "visualGroup": null,
       "caption": "Capitale : Athènes",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Gr%C3%A8ce"
     },
     {
       "id": "ge",
@@ -615,7 +661,8 @@
       "visualGroup": null,
       "caption": "Capitale : Tbilissi",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/G%C3%A9orgie_(pays)"
     },
     {
       "id": "cz",
@@ -628,7 +675,8 @@
       "visualGroup": "triangle-bleu-blanc-rouge",
       "caption": "Capitale : Prague",
       "date": null,
-      "place": "Europe"
+      "place": "Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tch%C3%A9quie"
     },
     {
       "id": "ph",
@@ -641,7 +689,8 @@
       "visualGroup": "triangle-bleu-blanc-rouge",
       "caption": "Capitale : Manille",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Philippines"
     },
     {
       "id": "cu",
@@ -654,7 +703,8 @@
       "visualGroup": "triangle-bleu-blanc-rouge",
       "caption": "Capitale : La Havane",
       "date": null,
-      "place": "Amérique du Nord"
+      "place": "Amérique du Nord",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cuba"
     },
     {
       "id": "bs",
@@ -667,7 +717,8 @@
       "visualGroup": null,
       "caption": "Capitale : Nassau",
       "date": null,
-      "place": "Amérique du Nord"
+      "place": "Amérique du Nord",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bahamas"
     },
     {
       "id": "kw",
@@ -680,7 +731,8 @@
       "visualGroup": "panarabe",
       "caption": "Capitale : Koweït",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Kowe%C3%AFt"
     },
     {
       "id": "ae",
@@ -693,7 +745,8 @@
       "visualGroup": "panarabe",
       "caption": "Capitale : Abou Dabi",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/%C3%89mirats_arabes_unis"
     },
     {
       "id": "jo",
@@ -706,7 +759,8 @@
       "visualGroup": "panarabe",
       "caption": "Capitale : Amman",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Jordanie"
     },
     {
       "id": "bj",
@@ -719,7 +773,8 @@
       "visualGroup": "bande-verticale-et-deux-bandes",
       "caption": "Capitale : Porto-Novo",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/B%C3%A9nin"
     },
     {
       "id": "mg",
@@ -732,7 +787,8 @@
       "visualGroup": "bande-verticale-et-deux-bandes",
       "caption": "Capitale : Antananarivo",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Madagascar"
     },
     {
       "id": "sc",
@@ -745,7 +801,8 @@
       "visualGroup": null,
       "caption": "Capitale : Victoria",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Seychelles"
     },
     {
       "id": "vn",
@@ -758,7 +815,8 @@
       "visualGroup": null,
       "caption": "Capitale : Hanoï",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Vietnam"
     },
     {
       "id": "so",
@@ -771,7 +829,8 @@
       "visualGroup": null,
       "caption": "Capitale : Mogadiscio",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Somalie"
     },
     {
       "id": "cn",
@@ -784,7 +843,8 @@
       "visualGroup": null,
       "caption": "Capitale : Pékin",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Chine"
     },
     {
       "id": "ma",
@@ -797,7 +857,8 @@
       "visualGroup": null,
       "caption": "Capitale : Rabat",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Maroc"
     },
     {
       "id": "bf",
@@ -810,7 +871,8 @@
       "visualGroup": null,
       "caption": "Capitale : Ouagadougou",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Burkina_Faso"
     },
     {
       "id": "cl",
@@ -823,7 +885,8 @@
       "visualGroup": null,
       "caption": "Capitale : Santiago",
       "date": null,
-      "place": "Amérique du Sud"
+      "place": "Amérique du Sud",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Chili"
     },
     {
       "id": "pa",
@@ -836,7 +899,8 @@
       "visualGroup": null,
       "caption": "Capitale : Panama",
       "date": null,
-      "place": "Amérique du Nord"
+      "place": "Amérique du Nord",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Panama"
     },
     {
       "id": "il",
@@ -849,7 +913,8 @@
       "visualGroup": null,
       "caption": "Capitale : Jérusalem",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Isra%C3%ABl"
     },
     {
       "id": "tr",
@@ -862,7 +927,8 @@
       "visualGroup": "croissant-rouge-blanc",
       "caption": "Capitale : Ankara",
       "date": null,
-      "place": "Asie / Europe"
+      "place": "Asie / Europe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Turquie"
     },
     {
       "id": "tn",
@@ -875,7 +941,8 @@
       "visualGroup": "croissant-rouge-blanc",
       "caption": "Capitale : Tunis",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tunisie"
     },
     {
       "id": "dz",
@@ -888,7 +955,8 @@
       "visualGroup": "croissant-vert-blanc",
       "caption": "Capitale : Alger",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Alg%C3%A9rie"
     },
     {
       "id": "pk",
@@ -901,7 +969,8 @@
       "visualGroup": "croissant-vert-blanc",
       "caption": "Capitales : Islamabad, Rawalpindi",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pakistan"
     },
     {
       "id": "cg",
@@ -914,7 +983,8 @@
       "visualGroup": null,
       "caption": "Capitale : Brazzaville",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Congo"
     },
     {
       "id": "tz",
@@ -927,7 +997,8 @@
       "visualGroup": null,
       "caption": "Capitale : Dodoma",
       "date": null,
-      "place": "Afrique"
+      "place": "Afrique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tanzanie"
     },
     {
       "id": "jm",
@@ -940,7 +1011,8 @@
       "visualGroup": null,
       "caption": "Capitale : Kingston",
       "date": null,
-      "place": "Amérique du Nord"
+      "place": "Amérique du Nord",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Jama%C3%AFque"
     },
     {
       "id": "tt",
@@ -953,7 +1025,8 @@
       "visualGroup": null,
       "caption": "Capitale : Port-d'Espagne",
       "date": null,
-      "place": "Amérique du Nord"
+      "place": "Amérique du Nord",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Trinit%C3%A9-et-Tobago"
     },
     {
       "id": "qa",
@@ -966,7 +1039,8 @@
       "visualGroup": "guindant-dentele",
       "caption": "Capitale : Doha",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Qatar"
     },
     {
       "id": "bh",
@@ -979,7 +1053,8 @@
       "visualGroup": "guindant-dentele",
       "caption": "Capitale : Manama",
       "date": null,
-      "place": "Asie"
+      "place": "Asie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bahre%C3%AFn"
     }
   ]
 }

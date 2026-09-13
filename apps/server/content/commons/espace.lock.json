@@ -21,7 +21,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "étoile au centre du Système solaire",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Soleil"
     },
     {
       "article": "Mercure (planète)",
@@ -39,7 +40,8 @@
       "licenceUrl": null,
       "caption": "première planète du système solaire",
       "date": null,
-      "place": "système solaire interne"
+      "place": "système solaire interne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mercure_(plan%C3%A8te)"
     },
     {
       "article": "Vénus (planète)",
@@ -57,7 +59,8 @@
       "licenceUrl": null,
       "caption": "deuxième planète du Système solaire",
       "date": null,
-      "place": "système solaire interne"
+      "place": "système solaire interne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/V%C3%A9nus_(plan%C3%A8te)"
     },
     {
       "article": "Terre",
@@ -86,7 +89,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "quatrième planète du Système solaire",
       "date": null,
-      "place": "système solaire interne"
+      "place": "système solaire interne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)"
     },
     {
       "article": "Jupiter (planète)",
@@ -104,7 +108,8 @@
       "licenceUrl": null,
       "caption": "cinquième planète du Système solaire",
       "date": null,
-      "place": "système solaire externe"
+      "place": "système solaire externe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Jupiter_(plan%C3%A8te)"
     },
     {
       "article": "Saturne (planète)",
@@ -122,7 +127,8 @@
       "licenceUrl": null,
       "caption": "sixième planète du Système solaire",
       "date": null,
-      "place": "système solaire externe"
+      "place": "système solaire externe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Saturne_(plan%C3%A8te)"
     },
     {
       "article": "Uranus (planète)",
@@ -140,7 +146,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "septième planète du Système solaire par ordre d'éloignement du Soleil",
       "date": null,
-      "place": "système solaire externe"
+      "place": "système solaire externe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te)"
     },
     {
       "article": "Neptune (planète)",
@@ -158,7 +165,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "huitième et dernière planète du système solaire",
       "date": null,
-      "place": "système solaire externe"
+      "place": "système solaire externe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Neptune_(plan%C3%A8te)"
     },
     {
       "article": "Pluton (planète naine)",
@@ -176,7 +184,8 @@
       "licenceUrl": null,
       "caption": "planète naine du Système solaire",
       "date": null,
-      "place": "système solaire externe"
+      "place": "système solaire externe",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pluton_(plan%C3%A8te_naine)"
     },
     {
       "article": "Cérès (planète naine)",
@@ -194,7 +203,8 @@
       "licenceUrl": null,
       "caption": "planète naine du système solaire, située dans la ceinture d'astéroïdes",
       "date": null,
-      "place": "ceinture d'astéroïdes"
+      "place": "ceinture d'astéroïdes",
+      "infoUrl": "https://fr.wikipedia.org/wiki/(1)_C%C3%A9r%C3%A8s"
     },
     {
       "article": "Lune",
@@ -212,7 +222,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "satellite naturel de la Terre",
       "date": null,
-      "place": "système solaire interne"
+      "place": "système solaire interne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Lune"
     },
     {
       "article": "Io (lune)",
@@ -230,7 +241,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "satellite de Jupiter",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Io_(lune)"
     },
     {
       "article": "Europe (lune)",
@@ -248,7 +260,8 @@
       "licenceUrl": null,
       "caption": "satellite de Jupiter",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Europe_(lune)"
     },
     {
       "article": "Ganymède (lune)",
@@ -266,7 +279,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "satellite de Jupiter",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ganym%C3%A8de_(lune)"
     },
     {
       "article": "Callisto (lune)",
@@ -284,7 +298,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "satellite de Jupiter",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Callisto_(lune)"
     },
     {
       "article": "Titan (lune)",
@@ -302,7 +317,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "satellite de Saturne",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Titan_(lune)"
     },
     {
       "article": "Encelade (lune)",
@@ -320,7 +336,8 @@
       "licenceUrl": null,
       "caption": "satellite de Saturne",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Encelade_(lune)"
     },
     {
       "article": "Phobos (lune)",
@@ -338,7 +355,8 @@
       "licenceUrl": null,
       "caption": "satellite de Mars",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Phobos_(lune)"
     },
     {
       "article": "Grande Tache rouge",
@@ -356,7 +374,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "anticyclone de l'atmosphère de Jupiter",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Grande_Tache_rouge"
     },
     {
       "article": "Olympus Mons",
@@ -374,7 +393,8 @@
       "licenceUrl": null,
       "caption": "volcan de la planète Mars",
       "date": null,
-      "place": "quadrangle d'Amazonis"
+      "place": "quadrangle d'Amazonis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Olympus_Mons"
     },
     {
       "article": "Valles Marineris",
@@ -392,7 +412,8 @@
       "licenceUrl": null,
       "caption": "vallis sur Mars",
       "date": null,
-      "place": "Quadrangle de Coprates"
+      "place": "Quadrangle de Coprates",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Valles_Marineris"
     },
     {
       "article": "Comète de Halley",
@@ -410,7 +431,8 @@
       "licenceUrl": null,
       "caption": "comète du système solaire",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Com%C3%A8te_de_Halley"
     },
     {
       "article": "C/1995 O1 (Hale-Bopp)",
@@ -428,7 +450,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "comète du système solaire",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/C%2F1995_O1_(Hale-Bopp)"
     },
     {
       "article": "Aurore polaire",
@@ -446,7 +469,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "caption": "phénomène lumineux caractérisé par des voiles extrêmement colorés dans le ciel nocturne",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Aurore_polaire"
     },
     {
       "article": "Éclipse solaire",
@@ -464,7 +488,8 @@
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "caption": "phénomène qui se produit lorsque la Lune se place devant le Soleil",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/%C3%89clipse_solaire"
     },
     {
       "article": "Meteor Crater",
@@ -482,7 +507,8 @@
       "licenceUrl": null,
       "caption": "cratère d'impact en Arizona",
       "date": null,
-      "place": "comté de Coconino, États-Unis"
+      "place": "comté de Coconino, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Meteor_Crater"
     },
     {
       "article": "Voie lactée",
@@ -500,7 +526,8 @@
       "licenceUrl": null,
       "caption": "galaxie spirale qui comprend de 200 à 400 milliards d'étoiles dont le Soleil",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Voie_lact%C3%A9e"
     },
     {
       "article": "Galaxie d’Andromède",
@@ -518,7 +545,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
       "caption": "galaxie spirale de la constellation d'Andromède, membre du Groupe local",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Galaxie_d'Androm%C3%A8de"
     },
     {
       "article": "Galaxie du Tourbillon",
@@ -536,7 +564,8 @@
       "licenceUrl": null,
       "caption": "galaxie spirale de la constellation des Chiens de Chasse",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/M51_(galaxie)"
     },
     {
       "article": "Galaxie du Triangle",
@@ -554,7 +583,8 @@
       "licenceUrl": null,
       "caption": "galaxie spirale de la constellation du Triangle et membre du Groupe local",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Galaxie_du_Triangle"
     },
     {
       "article": "Galaxie du Sombrero",
@@ -572,7 +602,8 @@
       "licenceUrl": null,
       "caption": "galaxie de la constellation de la Vierge",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/M104_(galaxie)"
     },
     {
       "article": "Grand Nuage de Magellan",
@@ -590,7 +621,8 @@
       "licenceUrl": null,
       "caption": "galaxie",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Grand_Nuage_de_Magellan"
     },
     {
       "article": "Quintette de Stephan",
@@ -608,7 +640,8 @@
       "licenceUrl": null,
       "caption": "groupement visuel de galaxies",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Quintette_de_Stephan"
     },
     {
       "article": "Pléiades (astronomie)",
@@ -626,7 +659,8 @@
       "licenceUrl": null,
       "caption": "amas ouvert de la constellation du Taureau",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pl%C3%A9iades_(astronomie)"
     },
     {
       "article": "Omega Centauri",
@@ -644,7 +678,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
       "caption": "amas globulaire de la constellation du Centaure",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Omega_Centauri"
     },
     {
       "article": "Nébuleuse du Crabe",
@@ -662,7 +697,8 @@
       "licenceUrl": null,
       "caption": "rémanent de supernova situé dans la constellation du Taureau",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_du_Crabe"
     },
     {
       "article": "Nébuleuse d’Orion",
@@ -680,7 +716,8 @@
       "licenceUrl": null,
       "caption": "nébuleuse diffuse et en réflexion de la constellation d'Orion",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_d'Orion"
     },
     {
       "article": "Piliers de la création",
@@ -706,7 +743,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "grande nébuleuse faisant partie de la constellation de la Carène",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_Car%C3%A8ne"
     },
     {
       "article": "Nébuleuse de la Tête de Cheval",
@@ -724,7 +762,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "nébuleuse obscure dans la constellation d'Orion",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_T%C3%AAte_de_Cheval"
     },
     {
       "article": "Nébuleuse de la Rosette",
@@ -742,7 +781,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "vaste région HII",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_Rosette"
     },
     {
       "article": "Nébuleuse de l'Hélice",
@@ -760,7 +800,8 @@
       "licenceUrl": null,
       "caption": "nébuleuse planétaire située dans la constellation du Verseau, à proximité du Poisson austral",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/NGC_7293"
     },
     {
       "article": "Nébuleuse de l'Œil de chat",
@@ -778,7 +819,8 @@
       "licenceUrl": null,
       "caption": "nébuleuse planétaire",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_l'%C5%92il_de_Chat"
     },
     {
       "article": "Nébuleuse de la Lyre",
@@ -796,7 +838,8 @@
       "licenceUrl": null,
       "caption": "nébuleuse planétaire de la constellation de la Lyre",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_Lyre"
     },
     {
       "article": "Cassiopeia A",
@@ -814,7 +857,8 @@
       "licenceUrl": null,
       "caption": "rémanent d'une supernova dans la constellation de Cassiopée",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cassiop%C3%A9e_A"
     },
     {
       "article": "Sagittarius A*",
@@ -832,7 +876,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "trou noir supermassif au centre de la Voie Lactée",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Sagittarius_A*"
     },
     {
       "article": "La Bille bleue",
@@ -850,7 +895,8 @@
       "licenceUrl": null,
       "caption": "photographie de la Terre prise par l'équipage d'Apollo 17",
       "date": "1972",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/La_Bille_bleue"
     },
     {
       "article": "Lever de Terre",
@@ -868,7 +914,8 @@
       "licenceUrl": null,
       "caption": "photographie de William Anders",
       "date": "1968",
-      "place": "National Aeronautics and Space Administration"
+      "place": "National Aeronautics and Space Administration",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Lever_de_Terre"
     },
     {
       "article": "Spoutnik 1",
@@ -897,7 +944,8 @@
       "licenceUrl": null,
       "caption": "mission spatiale soviétique de 1961",
       "date": null,
-      "place": "Union soviétique"
+      "place": "Union soviétique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Vostok_1"
     },
     {
       "article": "Apollo 11",
@@ -915,7 +963,8 @@
       "licenceUrl": null,
       "caption": "11e mission du programme spatial américain Apollo (premiers pas de l'homme sur la Lune)",
       "date": null,
-      "place": "États-Unis"
+      "place": "États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Apollo_11"
     },
     {
       "article": "Module lunaire Apollo",
@@ -933,7 +982,8 @@
       "licenceUrl": null,
       "caption": "véhicule spatial",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Module_lunaire_Apollo"
     },
     {
       "article": "Lunar Roving Vehicle",
@@ -951,7 +1001,8 @@
       "licenceUrl": null,
       "caption": "Astromobile d'exploration lunaire à pilotage humain utilisé à partir de 1971",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Rover_lunaire_Apollo"
     },
     {
       "article": "Saturn V",
@@ -970,7 +1021,8 @@
       "caption": "lanceur spatial américain",
       "replaces": "https://commons.wikimedia.org/wiki/File:Saturn_V_launches.jpg",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Saturn_V"
     },
     {
       "article": "Ariane 5",
@@ -988,7 +1040,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "lanceur spatial européen",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ariane_5"
     },
     {
       "article": "Falcon 9",
@@ -1006,7 +1059,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "lanceur moyen à lourd partiellement réutilisable développé par SpaceX",
       "date": null,
-      "place": "États-Unis"
+      "place": "États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Falcon_9"
     },
     {
       "article": "Navette spatiale américaine",
@@ -1024,7 +1078,8 @@
       "licenceUrl": null,
       "caption": "vaisseau spatial réutilisable",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Navette_spatiale_am%C3%A9ricaine"
     },
     {
       "article": "Station spatiale internationale",
@@ -1042,7 +1097,8 @@
       "licenceUrl": null,
       "caption": "Station spatiale en orbite terrestre basse assemblée à partir de 1998 développée par les Etats-Unis, la Russie, l'Europe et le Japon",
       "date": "1998",
-      "place": "orbite terrestre basse"
+      "place": "orbite terrestre basse",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Station_spatiale_internationale"
     },
     {
       "article": "Mir (station spatiale)",
@@ -1060,7 +1116,8 @@
       "licenceUrl": null,
       "caption": "station spatiale soviétique puis russe ayant orbité autour de la Terre de 1986 à 2001",
       "date": "1986",
-      "place": "Union soviétique"
+      "place": "Union soviétique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mir_(station_spatiale)"
     },
     {
       "article": "Skylab",
@@ -1078,7 +1135,8 @@
       "licenceUrl": null,
       "caption": "Station spatiale orbitale américaine, 1973-1974",
       "date": null,
-      "place": "États-Unis"
+      "place": "États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Skylab"
     },
     {
       "article": "Télescope spatial Hubble",
@@ -1096,7 +1154,8 @@
       "licenceUrl": null,
       "caption": "télescope spatial américain de la NASA",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Hubble_(t%C3%A9lescope_spatial)"
     },
     {
       "article": "Télescope spatial James-Webb",
@@ -1114,7 +1173,8 @@
       "licenceUrl": null,
       "caption": "télescope spatial de la NASA, l'ESA et l'ASC",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/James_Webb_(t%C3%A9lescope_spatial)"
     },
     {
       "article": "Voyager 1",
@@ -1132,7 +1192,8 @@
       "licenceUrl": null,
       "caption": "sonde spatiale",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Voyager_1"
     },
     {
       "article": "Cassini-Huygens",
@@ -1150,7 +1211,8 @@
       "licenceUrl": null,
       "caption": "mission d'exploration spatiale",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cassini-Huygens"
     },
     {
       "article": "New Horizons",
@@ -1168,7 +1230,8 @@
       "licenceUrl": null,
       "caption": "sonde spatiale américaine",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/New_Horizons"
     },
     {
       "article": "Rosetta (sonde spatiale)",
@@ -1186,7 +1249,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "caption": "sonde spatiale de l'ESA",
       "date": null,
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Rosetta_(sonde_spatiale)"
     },
     {
       "article": "Curiosity (rover)",
@@ -1204,7 +1268,8 @@
       "licenceUrl": null,
       "caption": "rover d'exploration robotique de la mission Mars Science Laboratory",
       "date": null,
-      "place": "Gale"
+      "place": "Gale",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Curiosity_(astromobile)"
     },
     {
       "article": "Perseverance (rover)",
@@ -1233,7 +1298,8 @@
       "licenceUrl": null,
       "caption": "ancien rover de la NASA",
       "date": null,
-      "place": "Quadrangle de Margaritifer Sinus"
+      "place": "Quadrangle de Margaritifer Sinus",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Opportunity"
     },
     {
       "article": "Iouri Gagarine",
@@ -1251,7 +1317,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
       "caption": "pilote et astronaute soviétique, premier humain dans l'espace (1934–1968)",
       "date": "1934–1968",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Youri_Gagarine"
     },
     {
       "article": "Valentina Terechkova",
@@ -1269,7 +1336,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
       "caption": "cosmonaute et femme politique russe, première femme dans l'espace",
       "date": "née en 1937",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Valentina_Terechkova"
     },
     {
       "article": "Neil Armstrong",
@@ -1287,7 +1355,8 @@
       "licenceUrl": null,
       "caption": "astronaute américain, premier homme ayant marché sur la Lune",
       "date": "1930–2012",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Neil_Armstrong"
     },
     {
       "article": "Buzz Aldrin",
@@ -1305,7 +1374,8 @@
       "licenceUrl": null,
       "caption": "astronaute américain",
       "date": "né en 1930",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Buzz_Aldrin"
     },
     {
       "article": "Sally Ride",
@@ -1323,7 +1393,8 @@
       "licenceUrl": null,
       "caption": "astronaute américaine et physicienne (1951–2012)",
       "date": "1951–2012",
-      "place": null
+      "place": null,
+      "infoUrl": "https://fr.wikipedia.org/wiki/Sally_Ride"
     },
     {
       "article": "Radiotélescope d'Arecibo",
@@ -1341,7 +1412,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "ancien radiotélescope à Porto Rico",
       "date": null,
-      "place": "Arecibo, Porto Rico"
+      "place": "Arecibo, Porto Rico",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Radiot%C3%A9lescope_d'Arecibo"
     },
     {
       "article": "Very Large Telescope",
@@ -1359,7 +1431,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
       "caption": "ensemble de plusieurs télescopes situé dans le désert d'Atacama au Chili",
       "date": "1998",
-      "place": "Région d'Antofagasta, Chili"
+      "place": "Région d'Antofagasta, Chili",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tr%C3%A8s_Grand_T%C3%A9lescope"
     },
     {
       "article": "Centre spatial guyanais",
@@ -1377,7 +1450,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "base de lancement française et européenne, située près de Kourou en Guyane française",
       "date": "1964",
-      "place": "Kourou, France"
+      "place": "Kourou, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Centre_spatial_guyanais"
     }
   ]
 }

@@ -36,6 +36,13 @@
       "when": 1789321640524,
       "tag": "0004_resultat_rejouable",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1789325033890,
+      "tag": "0005_article_de_reference",
+      "breakpoints": true
     }
   ]
 }

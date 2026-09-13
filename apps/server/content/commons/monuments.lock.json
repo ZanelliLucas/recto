@@ -21,7 +21,8 @@
       "licenceUrl": null,
       "caption": "tour de fer puddlé de 330 mètres à Paris, France",
       "date": "1887",
-      "place": "Paris, France"
+      "place": "Paris, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tour_Eiffel"
     },
     {
       "article": "Colisée",
@@ -39,7 +40,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "monument de la ville de Rome",
       "date": "82",
-      "place": "Rome Capitale, Italie"
+      "place": "Rome Capitale, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Colis%C3%A9e"
     },
     {
       "article": "Taj Mahal",
@@ -57,7 +59,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "mausolée de marbre à Agra, État de l'Uttar Pradesh, Inde",
       "date": "1631",
-      "place": "Agra, Inde"
+      "place": "Agra, Inde",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Taj_Mahal"
     },
     {
       "article": "Grande Muraille",
@@ -75,7 +78,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "Ensemble de fortifications militaires construites pour marquer et défendre la frontière nord de la Chine",
       "date": "vers 700 av. J.-C.",
-      "place": "Hebei, république populaire de Chine"
+      "place": "Hebei, république populaire de Chine",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Grande_Muraille"
     },
     {
       "article": "Pyramide de Khéops",
@@ -93,7 +97,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
       "caption": "plus ancienne et plus grande des trois pyramides de la nécropole de Gizeh",
       "date": "2560 av. J.-C.",
-      "place": "Gizeh, Égypte"
+      "place": "Gizeh, Égypte",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pyramide_de_Kh%C3%A9ops"
     },
     {
       "article": "Grand Sphinx de Gizeh",
@@ -111,7 +116,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "sculpture monumentale de l'Égypte antique dressée devant les grandes pyramides du plateau de Gizeh en Basse-Égypte",
       "date": "XXVIe siècle av. J.-C.",
-      "place": "Gizeh, Égypte"
+      "place": "Gizeh, Égypte",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Sphinx_de_Gizeh"
     },
     {
       "article": "Machu Picchu",
@@ -129,7 +135,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "ancienne cité inca du XVe siècle au Pérou",
       "date": "1450",
-      "place": "Urubamba, Pérou"
+      "place": "Urubamba, Pérou",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Machu_Picchu"
     },
     {
       "article": "Chichén Itzá",
@@ -147,7 +154,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "ruines mayas de la péninsule du Yucatan",
       "date": "455",
-      "place": "Yucatán, Mexique"
+      "place": "Yucatán, Mexique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Chich%C3%A9n_Itz%C3%A1"
     },
     {
       "article": "Pyramide du Soleil",
@@ -165,7 +173,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": null,
       "date": null,
-      "place": "État de Mexico, Mexique"
+      "place": "État de Mexico, Mexique",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pyramide_du_Soleil"
     },
     {
       "article": "Angkor Vat",
@@ -194,7 +203,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
       "caption": "ancien temple de l'Acropole d'Athènes, Grèce",
       "date": "Ve siècle av. J.-C.",
-      "place": "dème des Athéniens, Grèce"
+      "place": "dème des Athéniens, Grèce",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Parth%C3%A9non"
     },
     {
       "article": "Statue de la Liberté",
@@ -212,7 +222,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "monument de la ville de New York",
       "date": "1886",
-      "place": "New York, États-Unis"
+      "place": "New York, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Statue_de_la_Libert%C3%A9"
     },
     {
       "article": "Big Ben",
@@ -230,7 +241,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "tour horloge du Palais de Westminster à Londres",
       "date": "1843",
-      "place": "cité de Westminster, Royaume-Uni"
+      "place": "cité de Westminster, Royaume-Uni",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Big_Ben"
     },
     {
       "article": "Tower Bridge",
@@ -248,7 +260,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "pont londonien",
       "date": "1886",
-      "place": "borough londonien de Tower Hamlets, Royaume-Uni"
+      "place": "borough londonien de Tower Hamlets, Royaume-Uni",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tower_Bridge"
     },
     {
       "article": "Porte de Brandebourg",
@@ -266,7 +279,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "monument allemand situé à Berlin",
       "date": "1791",
-      "place": "Berlin, Allemagne"
+      "place": "Berlin, Allemagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Porte_de_Brandebourg"
     },
     {
       "article": "Cathédrale Saint-Basile-le-Bienheureux",
@@ -284,7 +298,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "cathédrale située à Moscou",
       "date": "1555",
-      "place": "Moscou, Russie"
+      "place": "Moscou, Russie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Saint-Basile-le-Bienheureux_de_Moscou"
     },
     {
       "article": "Sainte-Sophie (Constantinople)",
@@ -302,7 +317,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "monument byzantin à Istanbul, Turquie",
       "date": "532",
-      "place": "Fatih, Turquie"
+      "place": "Fatih, Turquie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Sainte-Sophie_(Constantinople)"
     },
     {
       "article": "Tour de Pise",
@@ -320,7 +336,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "campanile de la cathédrale de Pise, en Italie",
       "date": "1173",
-      "place": "Pise, Italie"
+      "place": "Pise, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tour_de_Pise"
     },
     {
       "article": "Basilique Saint-Pierre",
@@ -338,7 +355,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "basilique catholique de la Cité du Vatican",
       "date": "1506",
-      "place": "Vatican"
+      "place": "Vatican",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Basilique_Saint-Pierre"
     },
     {
       "article": "Fontaine de Trevi",
@@ -356,7 +374,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "Fontaina Roma, Italia",
       "date": "1732",
-      "place": "Rome, Italie"
+      "place": "Rome, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Fontaine_de_Trevi"
     },
     {
       "article": "Cathédrale Notre-Dame de Paris",
@@ -374,7 +393,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "cathédrale située à Paris, en France",
       "date": "1163",
-      "place": "Notre-Dame, France"
+      "place": "Notre-Dame, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Notre-Dame_de_Paris"
     },
     {
       "article": "Cathédrale de Cologne",
@@ -392,7 +412,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
       "caption": "édifice religieux allemand",
       "date": "1248",
-      "place": "Cologne, Allemagne"
+      "place": "Cologne, Allemagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_de_Cologne"
     },
     {
       "article": "Cathédrale de Milan",
@@ -410,7 +431,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "cathédrale de Milan, \"Duomo\", Italie",
       "date": "1386",
-      "place": "Milan, Italie"
+      "place": "Milan, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/D%C3%B4me_de_Milan"
     },
     {
       "article": "Arc de triomphe de l'Étoile",
@@ -428,7 +450,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "arc de triomphe à la jonction des 8e, 16e et 17e arrondissements de Paris",
       "date": "1836",
-      "place": "Paris, France"
+      "place": "Paris, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Arc_de_triomphe_de_l'%C3%89toile"
     },
     {
       "article": "Mont-Saint-Michel",
@@ -446,7 +469,8 @@
       "licenceUrl": null,
       "caption": "commune française du département de la Manche",
       "date": null,
-      "place": "France"
+      "place": "France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Le_Mont-Saint-Michel"
     },
     {
       "article": "Château de Versailles",
@@ -464,7 +488,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "château à Versailles, en France",
       "date": "1661",
-      "place": "Versailles, France"
+      "place": "Versailles, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Versailles"
     },
     {
       "article": "Château de Schönbrunn",
@@ -482,7 +507,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
       "caption": "château à Vienne, Autriche",
       "date": "1638",
-      "place": "Vienne, Autriche"
+      "place": "Vienne, Autriche",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Sch%C3%B6nbrunn"
     },
     {
       "article": "Château de Chambord",
@@ -500,7 +526,8 @@
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "caption": "château français situé à Chambord (Loir-et-Cher)",
       "date": "1519",
-      "place": "Chambord, France"
+      "place": "Chambord, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Chambord"
     },
     {
       "article": "Château de Chenonceau",
@@ -529,7 +556,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "pont-aqueduc romain à trois niveaux d'étages situé sur la commune de Vers-Pont-du-Gard",
       "date": "Ie siècle",
-      "place": "Vers-Pont-du-Gard, France"
+      "place": "Vers-Pont-du-Gard, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pont_du_Gard"
     },
     {
       "article": "Basilique du Sacré-Cœur de Montmartre",
@@ -547,7 +575,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "basilique située à Paris, France",
       "date": "1875",
-      "place": "Paris, France"
+      "place": "Paris, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre"
     },
     {
       "article": "Château de Neuschwanstein",
@@ -565,7 +594,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
       "caption": "château allemand",
       "date": "1869",
-      "place": "Schwangau, Allemagne"
+      "place": "Schwangau, Allemagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Neuschwanstein"
     },
     {
       "article": "Alhambra (Grenade)",
@@ -583,7 +613,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "château fort espagnol situé dans Grenade",
       "date": "1239",
-      "place": "Grenade, Espagne"
+      "place": "Grenade, Espagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Alhambra_(Grenade)"
     },
     {
       "article": "Stonehenge",
@@ -601,7 +632,8 @@
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "caption": "monument préhistorique dans le Wiltshire, Angleterre",
       "date": "XXXe siècle av. J.-C.",
-      "place": "Amesbury, Royaume-Uni"
+      "place": "Amesbury, Royaume-Uni",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Stonehenge"
     },
     {
       "article": "Al-Khazneh",
@@ -619,7 +651,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "caption": "tombeau nabatéen de la cité antique de Pétra en Jordanie",
       "date": "Ie siècle",
-      "place": "Jordanie"
+      "place": "Jordanie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Khazneh"
     },
     {
       "article": "Temples d'Abou Simbel",
@@ -637,7 +670,8 @@
       "licenceUrl": null,
       "caption": "temples d'Égypte antique",
       "date": "1274 av. J.-C.",
-      "place": "Assouan, Égypte"
+      "place": "Assouan, Égypte",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Temples_d'Abou_Simbel"
     },
     {
       "article": "Temple de Karnak",
@@ -655,7 +689,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
       "caption": "Complexe religieux",
       "date": "1900 av. J.-C.",
-      "place": "Louxor, Égypte"
+      "place": "Louxor, Égypte",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Karnak"
     },
     {
       "article": "Cité interdite",
@@ -673,7 +708,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "palais impérial au sein de la Cité impériale de Pékin",
       "date": "1420",
-      "place": "Pékin, république populaire de Chine"
+      "place": "Pékin, république populaire de Chine",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cit%C3%A9_interdite"
     },
     {
       "article": "Temple du Ciel",
@@ -691,7 +727,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "complexe religieux de Pékin",
       "date": null,
-      "place": "Pékin, république populaire de Chine"
+      "place": "Pékin, république populaire de Chine",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Temple_du_Ciel"
     },
     {
       "article": "Borobudur",
@@ -709,7 +746,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "site bouddhique sur l'île de Java, actif entre 800 et 1100",
       "date": "VIIIe siècle",
-      "place": "kabupaten de Magelang, Indonésie"
+      "place": "kabupaten de Magelang, Indonésie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Temple_de_Borobudur"
     },
     {
       "article": "Moaï",
@@ -727,7 +765,8 @@
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "caption": "statues de l'île de Pâques, Chili",
       "date": null,
-      "place": "Chili"
+      "place": "Chili",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Moa%C3%AF"
     },
     {
       "article": "Kinkaku-ji",
@@ -745,7 +784,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "temple bouddhiste à Kyoto, au Japon",
       "date": "1397",
-      "place": "Kyoto, Japon"
+      "place": "Kyoto, Japon",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Kinkaku-ji"
     },
     {
       "article": "Château de Himeji",
@@ -763,7 +803,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "château dans la préfecture de Hyogo, au Japon",
       "date": "1346",
-      "place": "Himeji, Japon"
+      "place": "Himeji, Japon",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Himeji"
     },
     {
       "article": "Itsukushima-jinja",
@@ -781,7 +822,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "sanctuaire shinto dans la préfecture de Hiroshima, au Japon",
       "date": "593",
-      "place": "Hatsukaichi, Japon"
+      "place": "Hatsukaichi, Japon",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Itsukushima-jinja"
     },
     {
       "article": "Palais du Potala",
@@ -799,7 +841,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
       "caption": "forteresse située à Lhassa (Tibet), résidence du dalaï-lama jusqu'en 1959",
       "date": "637",
-      "place": "Lhassa, Tibet"
+      "place": "Lhassa, Tibet",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Palais_du_Potala"
     },
     {
       "article": "Pagode Shwedagon",
@@ -817,7 +860,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "lieu saint bouddhiste et premier centre religieux à Rangoon, Birmanie",
       "date": null,
-      "place": "Rangoun, Birmanie"
+      "place": "Rangoun, Birmanie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pagode_Shwedagon"
     },
     {
       "article": "Harmandir Sahib",
@@ -835,7 +879,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "édifice religieux sikh à Amritsar, Pendjab, Inde",
       "date": "1589",
-      "place": "Amritsar, Inde"
+      "place": "Amritsar, Inde",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Harmandir_Sahib"
     },
     {
       "article": "Qutb Minar",
@@ -853,7 +898,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "minaret en Inde",
       "date": null,
-      "place": "Delhi, Inde"
+      "place": "Delhi, Inde",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Q%C3%BBtb_Min%C3%A2r"
     },
     {
       "article": "Hawa Mahal",
@@ -871,7 +917,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "bâtiment en Inde",
       "date": "1799",
-      "place": "Inde"
+      "place": "Inde",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Palais_des_vents"
     },
     {
       "article": "Wat Arun",
@@ -889,7 +936,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
       "caption": "temple (wat) bouddhiste de Bangkok",
       "date": "1656",
-      "place": "Thaïlande"
+      "place": "Thaïlande",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Wat_Arun"
     },
     {
       "article": "Tikal",
@@ -907,7 +955,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "site archéologique maya du Guatemala",
       "date": null,
-      "place": "Petén, Guatemala"
+      "place": "Petén, Guatemala",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tikal"
     },
     {
       "article": "Grande mosquée de Djenné",
@@ -925,7 +974,8 @@
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
       "caption": "mosquée au Mali",
       "date": "1906",
-      "place": "Djenné, Mali"
+      "place": "Djenné, Mali",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Grande_mosqu%C3%A9e_de_Djenn%C3%A9"
     },
     {
       "article": "Bete Giyorgis",
@@ -943,7 +993,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
       "caption": "bâtiment en Afrique",
       "date": "XIIe siècle",
-      "place": "Lalibela, Éthiopie"
+      "place": "Lalibela, Éthiopie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Bete_Giyorgis"
     },
     {
       "article": "Cité de Carcassonne",
@@ -962,7 +1013,8 @@
       "caption": "ensemble architectural médiéval dans le département de l'Aude, en France",
       "replaces": "https://commons.wikimedia.org/wiki/File:Cit%C3%A9_de_Carcassonne.jpg",
       "date": null,
-      "place": "Carcassonne, France"
+      "place": "Carcassonne, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cit%C3%A9_de_Carcassonne"
     },
     {
       "article": "Palais des papes d'Avignon",
@@ -980,7 +1032,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "palais et musée d'Avignon, France",
       "date": null,
-      "place": "Avignon, France"
+      "place": "Avignon, France",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Palais_des_papes_d'Avignon"
     },
     {
       "article": "Abbaye de Westminster",
@@ -998,7 +1051,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "abbaye à Londres",
       "date": "Xe siècle",
-      "place": "cité de Westminster, Royaume-Uni"
+      "place": "cité de Westminster, Royaume-Uni",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Abbaye_de_Westminster"
     },
     {
       "article": "Château d'Édimbourg",
@@ -1016,7 +1070,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "château en Écosse",
       "date": "XIIe siècle",
-      "place": "Ville d'Édimbourg, Royaume-Uni"
+      "place": "Ville d'Édimbourg, Royaume-Uni",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_d'%C3%89dimbourg"
     },
     {
       "article": "Pont Charles",
@@ -1045,7 +1100,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "édifice législatif situé à Budapest en Hongrie",
       "date": "IIe millénaire",
-      "place": "5e arrondissement de Budapest, Hongrie"
+      "place": "5e arrondissement de Budapest, Hongrie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Parlement_hongrois"
     },
     {
       "article": "Tour de Belém",
@@ -1063,7 +1119,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "bâtiment de Santa Maria de Belém, Lisbonne, au Portugal",
       "date": "1515",
-      "place": "Belém, Portugal"
+      "place": "Belém, Portugal",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tour_de_Bel%C3%A9m"
     },
     {
       "article": "Aqueduc de Ségovie",
@@ -1081,7 +1138,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "aqueduc romain",
       "date": "IIe siècle",
-      "place": "Ségovie, Espagne"
+      "place": "Ségovie, Espagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Aqueduc_de_S%C3%A9govie"
     },
     {
       "article": "Mosquée-cathédrale de Cordoue",
@@ -1099,7 +1157,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
       "caption": "édifice religieux espagnol",
       "date": "786",
-      "place": "Cordoue, Espagne"
+      "place": "Cordoue, Espagne",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Mosqu%C3%A9e-cath%C3%A9drale_de_Cordoue"
     },
     {
       "article": "Palais des Doges",
@@ -1117,7 +1176,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "palais à Vénise",
       "date": "1340",
-      "place": "Venise, Italie"
+      "place": "Venise, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Palais_des_Doges"
     },
     {
       "article": "Pont du Rialto",
@@ -1135,7 +1195,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "pont italien",
       "date": "1588",
-      "place": "Venise, Italie"
+      "place": "Venise, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pont_du_Rialto"
     },
     {
       "article": "Cathédrale Santa Maria del Fiore",
@@ -1153,7 +1214,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "basilique à Florence, Italie",
       "date": "1296",
-      "place": "Florence, Italie"
+      "place": "Florence, Italie",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Santa_Maria_del_Fiore"
     },
     {
       "article": "Capitole des États-Unis",
@@ -1171,7 +1233,8 @@
       "licenceUrl": null,
       "caption": "édifice législatif situé à Washington D.C. aux États-Unis",
       "date": "1793",
-      "place": "Washington, États-Unis"
+      "place": "Washington, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Capitole_des_%C3%89tats-Unis"
     },
     {
       "article": "Maison-Blanche",
@@ -1189,7 +1252,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "résidence officielle du président des États-Unis",
       "date": "XVIIIe siècle",
-      "place": "Washington, États-Unis"
+      "place": "Washington, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Maison-Blanche"
     },
     {
       "article": "Golden Gate Bridge",
@@ -1207,7 +1271,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by/2.5",
       "caption": "pont suspendu au-dessus de la baie de San Francisco",
       "date": "1937",
-      "place": "comté de Marin, États-Unis"
+      "place": "comté de Marin, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pont_du_Golden_Gate"
     },
     {
       "article": "Château Frontenac",
@@ -1225,7 +1290,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "grand hôtel de Québec",
       "date": "1893",
-      "place": "Québec, Canada"
+      "place": "Québec, Canada",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_Frontenac"
     },
     {
       "article": "Persépolis",
@@ -1243,7 +1309,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "monument historique, palais achéménide, patrimoine national de l'Iran, site du patrimoine mondial de l'UNESCO.",
       "date": "vers 510 av. J.-C.",
-      "place": "Iran"
+      "place": "Iran",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Pers%C3%A9polis"
     },
     {
       "article": "Régistan (Samarcande)",
@@ -1261,7 +1328,8 @@
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
       "caption": "centre historique de Samarcande",
       "date": "1417",
-      "place": "Samarcande, Ouzbékistan"
+      "place": "Samarcande, Ouzbékistan",
+      "infoUrl": "https://fr.wikipedia.org/wiki/R%C3%A9gistan_(Samarcande)"
     },
     {
       "article": "Dôme du Rocher",
@@ -1290,7 +1358,8 @@
       "licenceUrl": null,
       "caption": "gratte-ciel à New York",
       "date": "1930",
-      "place": "New York, États-Unis"
+      "place": "New York, États-Unis",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Chrysler_Building"
     },
     {
       "article": "Tour de Londres",
@@ -1308,7 +1377,8 @@
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
       "caption": "château britannique",
       "date": "1066",
-      "place": "borough londonien de Tower Hamlets, Royaume-Uni"
+      "place": "borough londonien de Tower Hamlets, Royaume-Uni",
+      "infoUrl": "https://fr.wikipedia.org/wiki/Tour_de_Londres"
     }
   ]
 }

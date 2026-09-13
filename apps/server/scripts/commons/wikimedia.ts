@@ -149,9 +149,18 @@ export function lifeDates(born: string, died: string | null, sex: string | null)
 export interface EntityFacts {
   date: string | null;
   place: string | null;
+  /** Article de Wikipédia en français consacré au sujet. */
+  infoUrl: string | null;
 }
 
-type WikidataEntity = { claims?: Record<string, Claim[]>; labels?: Record<string, { value: string }> };
+type WikidataEntity = {
+  claims?: Record<string, Claim[]>;
+  labels?: Record<string, { value: string }>;
+  sitelinks?: Record<string, { title: string } | undefined>;
+};
+
+/** Adresse de l'article de Wikipédia en français. */
+export const frWikipediaUrl = (title: string) => `https://fr.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}`;
 
 const bestValue = (entity: WikidataEntity, property: string): unknown => {
   const claims = (entity.claims?.[property] ?? []).filter((claim) => claim.rank !== 'deprecated');
@@ -173,6 +182,7 @@ async function fetchEntities(ids: readonly string[], props: string): Promise<Map
       ids: batch.join('|'),
       props,
       languages: 'fr',
+      sitefilter: 'frwiki',
     });
     for (const [id, entity] of Object.entries(data.entities)) result.set(id, entity);
   }
@@ -214,7 +224,7 @@ export async function wikidataFacts(ids: readonly string[]): Promise<Map<string,
     const value = bestValue(entity, property) as TimeValue | undefined;
     return value?.time ? formatWikidataTime(value) : null;
   };
-  const entities = await fetchEntities(ids, 'claims');
+  const entities = await fetchEntities(ids, 'claims|sitelinks');
 
   // Premier niveau de références : collections, emplacements, territoires et pays.
   const firstRefs = [...entities.values()].flatMap((entity) =>
@@ -264,7 +274,8 @@ export async function wikidataFacts(ids: readonly string[]): Promise<Map<string,
       const location = label(refValue(entity, 'P276'));
       place = location && !ROOM.test(location) ? location : null;
     }
-    result.set(id, { date, place });
+    const article = entity.sitelinks?.frwiki?.title;
+    result.set(id, { date, place, infoUrl: article ? frWikipediaUrl(article) : null });
   }
   return result;
 }

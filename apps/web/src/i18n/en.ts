@@ -232,6 +232,7 @@ export const en: Messages = {
   'result.shareFailed': 'Sharing did not work.',
   'result.cards': 'The cards of this game',
   'result.cardsCredits': 'Picture authors and licences',
+  'result.cardsMore': 'learn more on Wikipedia, in French (new tab)',
 
   'error.network': 'The server cannot be reached. Please try again in a moment.',
   'error.generic': 'Something went wrong. Please try again in a moment.',

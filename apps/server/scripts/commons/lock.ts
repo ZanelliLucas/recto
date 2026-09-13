@@ -29,6 +29,8 @@ export interface LockItem {
   /** Date (création, ou naissance et mort) et lieu relevés dans Wikidata par `enrich`. */
   date?: string | null;
   place?: string | null;
+  /** Article de Wikipédia en français, relevé par `enrich` : « En savoir plus ». */
+  infoUrl?: string | null;
 }
 
 export interface LockFile {

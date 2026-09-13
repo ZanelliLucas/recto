@@ -28,10 +28,11 @@ interface FlagManifest {
     licence: string;
     retrievedAt: string;
     visualGroup: string | null;
-    /** Capitale et continent, relevés par content:drapeaux:enrich. */
+    /** Capitale, continent et article du pays, relevés par content:drapeaux:enrich. */
     caption?: string | null;
     date?: string | null;
     place?: string | null;
+    infoUrl?: string | null;
   }[];
 }
 
@@ -68,6 +69,7 @@ for (const entry of manifest.images) {
     caption: entry.caption ?? null,
     date: entry.date ?? null,
     place: entry.place ?? null,
+    infoUrl: entry.infoUrl ?? null,
   });
   if (entry.id === manifest.thumbnail) thumbnailImageId = image.id;
   added++;

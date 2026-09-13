@@ -23,6 +23,7 @@ interface ManifestImage {
   caption?: string | null;
   date?: string | null;
   place?: string | null;
+  infoUrl?: string | null;
 }
 
 const manifestFile = path.join(config.contentDir, 'drapeaux', 'manifest.json');
@@ -33,9 +34,11 @@ const sparql = `
 SELECT ?code
   (GROUP_CONCAT(DISTINCT ?capitalLabel; separator="|") AS ?capitals)
   (GROUP_CONCAT(DISTINCT ?continentLabel; separator="|") AS ?continents)
+  (SAMPLE(?article) AS ?articleUrl)
 WHERE {
   VALUES ?code { ${codes} }
   ?country wdt:P297 ?code .
+  OPTIONAL { ?article schema:about ?country ; schema:isPartOf <https://fr.wikipedia.org/> . }
   OPTIONAL { ?country wdt:P36 ?capital . ?capital rdfs:label ?capitalLabel . FILTER(LANG(?capitalLabel) = "fr") }
   OPTIONAL { ?country wdt:P30 ?continent . ?continent rdfs:label ?continentLabel . FILTER(LANG(?continentLabel) = "fr") }
 }
@@ -62,7 +65,7 @@ const data = (await response.json()) as {
   results: { bindings: Record<string, { value: string } | undefined>[] };
 };
 
-const facts = new Map<string, { caption: string | null; date: string | null; place: string | null }>();
+const facts = new Map<string, { caption: string | null; date: string | null; place: string | null; infoUrl: string | null }>();
 for (const row of data.results.bindings) {
   const code = row.code?.value.toLowerCase();
   if (!code) continue;
@@ -70,6 +73,8 @@ for (const row of data.results.bindings) {
     caption: capitalsCaption(row.capitals?.value),
     date: null,
     place: continents(row.continents?.value),
+    // Adresse renvoyée par Wikidata, déjà encodée : l'article du pays sur Wikipédia en français.
+    infoUrl: row.articleUrl?.value ?? null,
   });
 }
 
@@ -81,6 +86,7 @@ for (const image of manifest.images) {
   image.caption = found.caption;
   image.date = found.date;
   image.place = found.place;
+  image.infoUrl = found.infoUrl;
 }
 // Même mise en forme que content:drapeaux, qui régénère ce fichier (et efface donc ces relevés).
 await writeFile(manifestFile, `${JSON.stringify(manifest, null, 2)}\n`);
@@ -98,13 +104,15 @@ for (const image of category?.images ?? []) {
     caption: replaceable(image.caption, before?.caption) ? (entry.caption ?? null) : image.caption,
     date: replaceable(image.date, before?.date) ? (entry.date ?? null) : image.date,
     place: replaceable(image.place, before?.place) ? (entry.place ?? null) : image.place,
+    infoUrl: replaceable(image.infoUrl, before?.infoUrl) ? (entry.infoUrl ?? null) : image.infoUrl,
   };
-  if (update.caption === image.caption && update.date === image.date && update.place === image.place) continue;
+  const unchanged = (['caption', 'date', 'place', 'infoUrl'] as const).every((key) => update[key] === image[key]);
+  if (unchanged) continue;
   await content.updateImage(image.id, update);
   updated++;
 }
 
-const count = (key: 'caption' | 'date' | 'place') => manifest.images.filter((image) => image[key]).length;
+const count = (key: 'caption' | 'place' | 'infoUrl') => manifest.images.filter((image) => image[key]).length;
 console.log(
-  `Drapeaux : ${count('caption')} capitale(s), ${count('place')} continent(s) ; ${updated} image(s) mise(s) à jour en base.`,
+  `Drapeaux : ${count('caption')} capitale(s), ${count('place')} continent(s), ${count('infoUrl')} article(s) ; ${updated} image(s) mise(s) à jour en base.`,
 );

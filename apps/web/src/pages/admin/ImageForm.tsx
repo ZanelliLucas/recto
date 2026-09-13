@@ -13,6 +13,7 @@ export interface ImageFormValues {
   date: string;
   place: string;
   visualGroup: string;
+  infoUrl: string;
 }
 
 const EMPTY: ImageFormValues = {
@@ -26,6 +27,7 @@ const EMPTY: ImageFormValues = {
   date: '',
   place: '',
   visualGroup: '',
+  infoUrl: '',
 };
 
 const fromImage = (image: AdminImage): ImageFormValues => ({
@@ -39,6 +41,7 @@ const fromImage = (image: AdminImage): ImageFormValues => ({
   date: image.date ?? '',
   place: image.place ?? '',
   visualGroup: image.visualGroup ?? '',
+  infoUrl: image.infoUrl ?? '',
 });
 
 interface ImageFormProps {
@@ -100,6 +103,7 @@ export function ImageForm({ image, submitLabel, onSubmit, onCancel }: ImageFormP
         {field('visualGroup', 'Groupe visuel', { maxLength: 60, placeholder: 'ex. cathedrale-gothique' })}
         {field('date', 'Date (fiche d’information)', { maxLength: 80 })}
         {field('place', 'Lieu (fiche d’information)', { maxLength: 120 })}
+        {field('infoUrl', 'Article « En savoir plus » (Wikipédia…)', { type: 'url', maxLength: 500 })}
       </div>
       <label className={styles.field}>
         <span>Légende (fiche d’information)</span>
