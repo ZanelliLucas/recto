@@ -8,7 +8,7 @@ import { Stopwatch } from '../components/Stopwatch';
 import { invalidateStats } from '../game/bestTimes';
 import { engineReducer, initEngine, type FlipEvent } from '../game/engine';
 import type { GameLocationState, ResultLocationState } from '../game/navigation';
-import { preloadImages } from '../game/preload';
+import { preloadImages, whenVisible } from '../game/preload';
 import { saveResult } from '../game/records';
 import { difficultyLabel, t } from '../i18n';
 import { sizeForDifficulty, supportsAvif } from '../lib/images';
@@ -105,6 +105,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
         setLoaded,
       );
       setFaces(resolved);
+      await whenVisible();
       const { countdownMs } = await api.startGame(game.gameId, game.token);
       const end = performance.now() + countdownMs;
       clock.current.origin = end;
@@ -195,6 +196,16 @@ function GameSession({ game, categoryName }: GameLocationState) {
     }
   }, [engine.phase, game]);
 
+  // Onglet quitté en cours de partie : pause automatique, le temps d'absence n'est pas compté.
+  useEffect(() => {
+    if (engine.phase !== 'playing') return;
+    const onVisibility = () => {
+      if (document.hidden) void togglePause();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, [engine.phase, togglePause]);
+
   useEffect(() => {
     if (!canPause || confirmingAbandon) return;
     const onKey = (event: KeyboardEvent) => {
@@ -233,6 +244,9 @@ function GameSession({ game, categoryName }: GameLocationState) {
 
   return (
     <div className={styles.session}>
+      <h1 className="visually-hidden">
+        {t('game.heading', { category: categoryName, level: difficultyLabel(game.difficulty) })}
+      </h1>
       <div className={styles.hud}>
         <div className={styles.context}>
           <span className={styles.category}>{categoryName}</span>

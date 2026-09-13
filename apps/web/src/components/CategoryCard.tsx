@@ -11,17 +11,20 @@ interface CategoryCardProps {
   /** Partie en cours d'ouverture (`catégorie:difficulté`), qui neutralise les autres boutons. */
   pending: string | null;
   onPlay: (difficulty: Difficulty) => void;
+  /** Niveau du titre, selon la page : les titres ne sautent jamais de niveau (WCAG 1.3.1). */
+  headingLevel?: 2 | 3;
 }
 
 /** Chaque niveau se lance directement depuis la carte : accueil → partie en un clic (CA-01). */
-export function CategoryCard({ category, pending, onPlay }: CategoryCardProps) {
+export function CategoryCard({ category, pending, onPlay, headingLevel = 3 }: CategoryCardProps) {
   const bestTime = useBestTimes();
+  const Heading = headingLevel === 2 ? 'h2' : 'h3';
   return (
     <article className={styles.card}>
       <Link to={`/jouer/${category.slug}`} className={styles.head}>
         <Picture className={styles.thumb} sources={category.thumbnail} size={200} alt="" />
         <span className={styles.heading}>
-          <h3 className={styles.name}>{category.name}</h3>
+          <Heading className={styles.name}>{category.name}</Heading>
           <span className={styles.count}>{t('categories.images', { count: category.imageCount })}</span>
         </span>
       </Link>

@@ -27,7 +27,8 @@ export function PrivacyPage() {
       </p>
 
       <h2>Données traitées</h2>
-      <div className="table-wrap">
+      {/* Zone défilante sur petit écran : atteignable au clavier pour être parcourue (WCAG 2.1.1). */}
+      <div className="table-wrap" tabIndex={0} role="region" aria-label="Données traitées">
         <table>
           <thead>
             <tr>

@@ -1,26 +1,32 @@
-import { lazy, Suspense } from 'react';
+import { lazy, type ComponentType } from 'react';
 import { Route, Routes } from 'react-router';
 import { Layout } from './components/Layout';
-import { ForgotPasswordPage } from './pages/account/ForgotPasswordPage';
-import { LoginPage } from './pages/account/LoginPage';
-import { ProfilePage } from './pages/account/ProfilePage';
-import { RegisterPage } from './pages/account/RegisterPage';
-import { ResetPasswordPage } from './pages/account/ResetPasswordPage';
-import { SettingsPage } from './pages/account/SettingsPage';
-import { VerifyEmailPage } from './pages/account/VerifyEmailPage';
 import { CategoriesPage } from './pages/CategoriesPage';
-import { CreditsPage } from './pages/CreditsPage';
 import { GamePage } from './pages/GamePage';
 import { HomePage } from './pages/HomePage';
-import { HowToPlayPage } from './pages/HowToPlayPage';
-import { ContactPage } from './pages/legal/ContactPage';
-import { LegalNoticePage } from './pages/legal/LegalNoticePage';
-import { PrivacyPage } from './pages/legal/PrivacyPage';
 import { LevelPage } from './pages/LevelPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ResultPage } from './pages/ResultPage';
 
-/** Le back-office est chargé à la demande : il n'alourdit pas le jeu (ENF-2.1). */
+/**
+ * ENF-2.1 — le parcours de jeu (accueil, catégories, niveau, partie, résultat) est dans le script
+ * initial ; les autres écrans sont chargés à la demande. Layout les attend sous un seul Suspense.
+ */
+const page = <K extends string>(load: () => Promise<Record<K, ComponentType>>, name: K) =>
+  lazy(() => load().then((module) => ({ default: module[name] })));
+
+const LoginPage = page(() => import('./pages/account/LoginPage'), 'LoginPage');
+const RegisterPage = page(() => import('./pages/account/RegisterPage'), 'RegisterPage');
+const VerifyEmailPage = page(() => import('./pages/account/VerifyEmailPage'), 'VerifyEmailPage');
+const ForgotPasswordPage = page(() => import('./pages/account/ForgotPasswordPage'), 'ForgotPasswordPage');
+const ResetPasswordPage = page(() => import('./pages/account/ResetPasswordPage'), 'ResetPasswordPage');
+const ProfilePage = page(() => import('./pages/account/ProfilePage'), 'ProfilePage');
+const SettingsPage = page(() => import('./pages/account/SettingsPage'), 'SettingsPage');
+const HowToPlayPage = page(() => import('./pages/HowToPlayPage'), 'HowToPlayPage');
+const CreditsPage = page(() => import('./pages/CreditsPage'), 'CreditsPage');
+const LegalNoticePage = page(() => import('./pages/legal/LegalNoticePage'), 'LegalNoticePage');
+const PrivacyPage = page(() => import('./pages/legal/PrivacyPage'), 'PrivacyPage');
+const ContactPage = page(() => import('./pages/legal/ContactPage'), 'ContactPage');
 const AdminApp = lazy(() => import('./pages/admin/AdminApp'));
 
 /** Arborescence du § 3.1, complétée des pages transverses (EF-8.2, EF-8.3). */
@@ -45,14 +51,7 @@ export function App() {
         <Route path="mentions-legales" element={<LegalNoticePage />} />
         <Route path="confidentialite" element={<PrivacyPage />} />
         <Route path="contact" element={<ContactPage />} />
-        <Route
-          path="admin/*"
-          element={
-            <Suspense fallback={<p role="status">Chargement…</p>}>
-              <AdminApp />
-            </Suspense>
-          }
-        />
+        <Route path="admin/*" element={<AdminApp />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

@@ -3,6 +3,7 @@ export const fr = {
   'app.name': 'RECTO',
   'app.tagline': 'Retournez. Retenez.',
   'app.promise': 'Le jeu de mémoire où chaque carte vous apprend quelque chose. Retrouvez les paires, battez votre record.',
+  'app.loading': 'Chargement…',
   'app.guestNotice': 'Mode invité : vos records sont conservés dans ce navigateur uniquement.',
 
   'nav.main': 'Navigation principale',
@@ -179,6 +180,7 @@ export const fr = {
   'level.unknown': 'Cette catégorie n’existe pas ou n’est plus publiée.',
 
   'game.title': 'Partie en cours',
+  'game.heading': 'Partie en cours : {category}, niveau {level}',
   'game.loading': 'Préchargement des images… {loaded} / {total}',
   'game.time': 'Temps',
   'game.moves': 'Coups',

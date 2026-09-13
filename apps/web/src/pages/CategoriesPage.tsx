@@ -9,7 +9,7 @@ export function CategoriesPage() {
   return (
     <section className={styles.page}>
       <h1 className={styles.title}>{t('categories.title')}</h1>
-      <CategoryList />
+      <CategoryList headingLevel={2} />
     </section>
   );
 }

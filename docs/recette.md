@@ -45,8 +45,16 @@ chronomètre pendant l'hésitation du joueur.
 - **Réduction des animations** : préférence système détectée et appliquée ; réglage du site disponible.
 - **Référencement** : titres, descriptions, adresses canoniques, Open Graph, `robots.txt`, `sitemap.xml` (11 adresses),
   images de partage 1200 × 630 contrôlées visuellement ; 404 réelles pour les adresses inconnues.
-- **Performance** : script principal de 106 Ko compressé, feuille de style de 6 Ko ; catégories jointes à la page et
-  contenu lisible avant le chargement du script.
+- **Accessibilité automatisée (axe-core, WCAG 2.1 A/AA et bonnes pratiques)** : aucune violation sur l'accueil, les
+  catégories, le choix du niveau, la partie (en cours, en pause, panneau d'abandon), l'aide, les paramètres, la connexion,
+  l'inscription, les crédits, les pages légales, le contact et la page 404, après correction de trois défauts : ordre des
+  titres de la page Catégories, tableau défilant de la politique de confidentialité inatteignable au clavier, titre de
+  niveau 1 absent de la partie.
+- **Performance** : environ 100 Ko de script compressé au premier affichage (script principal, dictionnaire, client
+  d'API), feuille de style de 5 Ko ; les écrans hors parcours de jeu (comptes, aide, crédits, pages légales,
+  back-office) sont chargés à la demande. Catégories jointes à la page et contenu lisible avant le chargement du script.
+- **Équité du chronomètre** : la partie ne démarre côté serveur qu'une fois l'onglet visible, et se met en pause
+  d'elle-même si le joueur quitte l'onglet en cours de partie.
 - **Audience** : vues comptées par gabarit de page, sans cookie ; aucune n'est comptée pour le back-office ni les robots.
 
 ## Reste à faire avant l'ouverture publique

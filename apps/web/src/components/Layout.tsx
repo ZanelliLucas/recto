@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthContext';
 import { t, type MessageKey } from '../i18n';
@@ -54,7 +54,10 @@ export function Layout() {
         </nav>
       </header>
       <main id="contenu" className={styles.main} tabIndex={-1}>
-        <Outlet />
+        {/* Écrans chargés à la demande (App.tsx) : un seul état d'attente pour tous. */}
+        <Suspense fallback={<p role="status">{t('app.loading')}</p>}>
+          <Outlet />
+        </Suspense>
       </main>
       {/* CA-13 — mentions légales et confidentialité accessibles depuis toutes les pages. */}
       <footer className={styles.footer}>

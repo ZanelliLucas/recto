@@ -4,7 +4,7 @@ import { t } from '../i18n';
 import { CategoryCard } from './CategoryCard';
 import styles from './CategoryList.module.css';
 
-export function CategoryList() {
+export function CategoryList({ headingLevel = 3 }: { headingLevel?: 2 | 3 }) {
   const state = useCategories();
   const { start, pending, error } = useStartGame();
 
@@ -37,6 +37,7 @@ export function CategoryList() {
             key={category.slug}
             category={category}
             pending={pending}
+            headingLevel={headingLevel}
             onPlay={(difficulty) => start(category.slug, category.name, difficulty)}
           />
         ))}
