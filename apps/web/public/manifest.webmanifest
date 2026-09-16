@@ -1,7 +1,7 @@
 {
   "name": "RECTO — Jeu de mémoire",
   "short_name": "RECTO",
-  "description": "Le jeu de mémoire en ligne par catégories : monuments, drapeaux, faune, histoire.",
+  "description": "Le jeu de mémoire en ligne par catégories : monuments, drapeaux, faune, peinture, cuisine, sports…",
   "lang": "fr",
   "dir": "ltr",
   "start_url": "/",

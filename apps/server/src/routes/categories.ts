@@ -1,6 +1,7 @@
-import { playableDifficulties, type CategorySummary, type CreditsCategory } from '@recto/shared';
+import { playableDifficulties, type CardImage, type CategorySummary, type CreditsCategory } from '@recto/shared';
 import { Router } from 'express';
 import type { CategoryRepository, ContentCategory } from '../content/types';
+import { HttpError } from '../http/httpError';
 import { imageSources } from '../media/sources';
 import type { MediaStorage } from '../media/storage';
 
@@ -29,6 +30,24 @@ export function categoriesRouter(categories: CategoryRepository, media: MediaSto
   // Une catégorie trop pauvre pour la moindre difficulté n'est pas proposée (EF-3.8).
   router.get('/', async (_req, res) => {
     res.json(await publishedSummaries(categories, media));
+  });
+
+  // EF-7.3 — galerie d'une catégorie publiée : chaque carte et sa fiche, triées par titre.
+  router.get('/:slug/cards', async (req, res) => {
+    const category = await categories.findPublished(String(req.params.slug));
+    if (!category) throw new HttpError(404, 'categorie_introuvable', 'Catégorie introuvable.');
+    const cards: CardImage[] = [...category.images]
+      .sort((a, b) => a.title.localeCompare(b.title, 'fr'))
+      .map((image) => ({
+        id: image.id,
+        title: image.title,
+        sources: imageSources(media, image.kind, image.storageKey),
+        caption: image.caption,
+        date: image.date,
+        place: image.place,
+        infoUrl: image.infoUrl,
+      }));
+    res.set('Cache-Control', 'public, max-age=300').json(cards);
   });
 
   return router;

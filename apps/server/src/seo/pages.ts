@@ -26,7 +26,7 @@ export interface PageDescription {
 const SITE = 'RECTO';
 const HOME_TITLE = 'RECTO — Jeu de mémoire en ligne par catégories';
 const DEFAULT_DESCRIPTION =
-  'RECTO, le jeu de mémoire en ligne par catégories thématiques : monuments, drapeaux, faune, histoire. Retrouvez les paires, battez votre record.';
+  'RECTO, le jeu de mémoire en ligne par catégories thématiques : monuments, drapeaux, faune, peinture, espace, cuisine du monde, sports… Retrouvez les paires, battez votre record.';
 const SITE_IMAGE = { path: '/og/recto.jpg', alt: 'RECTO, jeu de mémoire en ligne' };
 
 const TEXT_PAGES: Record<string, { title: string; description: string }> = {
@@ -132,6 +132,13 @@ export class SeoService {
       const levels = category.difficulties
         .map((difficulty) => `<li>${DIFFICULTIES[difficulty].pairs} paires</li>`)
         .join('');
+      // Titres des cartes : contenu indexable propre à la catégorie (ENF-7.3).
+      const titles = ((await this.categories.findPublished(category.slug))?.images ?? [])
+        .map((image) => image.title)
+        .sort((a, b) => a.localeCompare(b, 'fr'));
+      const cardList = titles.length
+        ? `<h2>Les ${titles.length} cartes</h2><ul>${titles.map((title) => `<li>${escapeHtml(title)}</li>`).join('')}</ul>`
+        : '';
       return {
         status: 200,
         title: `${title} — ${SITE}`,
@@ -140,7 +147,7 @@ export class SeoService {
         indexable: true,
         image: { path: `/og/categorie/${category.slug}.jpg`, alt: `Memory ${category.name} sur RECTO` },
         body: fallback(
-          `<h1>Memory ${escapeHtml(category.name)}</h1><p>${escapeHtml(category.description)}</p><p>${category.imageCount} images. Niveaux :</p><ul>${levels}</ul><p><a href="/categories">Toutes les catégories</a></p>`,
+          `<h1>Memory ${escapeHtml(category.name)}</h1><p>${escapeHtml(category.description)}</p><p>${category.imageCount} images. Niveaux :</p><ul>${levels}</ul>${cardList}<p><a href="/categories">Toutes les catégories</a></p>`,
         ),
         jsonLd: {
           '@context': 'https://schema.org',

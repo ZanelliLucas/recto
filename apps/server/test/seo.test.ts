@@ -28,6 +28,8 @@ describe('pages servies avec leurs métadonnées (ENF-7.1)', () => {
     expect(text).toContain('60 images, 8, 15 ou 30 paires à retrouver');
     expect(text).toContain('content="https://recto.test/og/categorie/monuments.jpg"');
     expect(text).toContain('<link rel="canonical" href="https://recto.test/jouer/monuments" />');
+    expect(text).toContain('<h2>Les 60 cartes</h2>');
+    expect(text).toContain('<li>Image 0</li>');
   });
 
   it('répond 404, sans indexation, pour une catégorie inconnue ou non publiée et une adresse inconnue', async () => {

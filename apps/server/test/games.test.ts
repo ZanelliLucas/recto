@@ -34,6 +34,22 @@ describe('GET /api/categories', () => {
   });
 });
 
+describe('GET /api/categories/:slug/cards', () => {
+  it('présente les cartes d’une catégorie publiée, triées, avec leurs fiches (EF-7.3)', async () => {
+    const ctx = await setup([
+      { slug: 'test', count: 60 },
+      { slug: 'brouillon', count: 60, published: false },
+    ]);
+    const { body } = await ctx.agent.get('/api/categories/test/cards').expect(200);
+    const titles = (body as { title: string }[]).map((card) => card.title);
+    expect(titles).toHaveLength(60);
+    expect(titles).toEqual([...titles].sort((a, b) => a.localeCompare(b, 'fr')));
+    expect(body[0]).toMatchObject({ title: 'Image 0', infoUrl: 'https://fr.wikipedia.org/wiki/test', caption: null });
+    await ctx.agent.get('/api/categories/brouillon/cards').expect(404);
+    await ctx.agent.get('/api/categories/inconnue/cards').expect(404);
+  });
+});
+
 describe('GET /api/credits', () => {
   it('restitue auteur, source et licence des images publiées (ENF-8)', async () => {
     const { agent } = await setup([

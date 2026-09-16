@@ -64,7 +64,7 @@ export const config = {
   /** Signature des jetons de session. */
   authSecret: authSecret(),
   /** Adresse publique de l'interface : liens des courriels, adresses canoniques, plan du site. */
-  appUrl: (process.env.APP_URL ?? 'http://localhost:5173').replace(/\/$/, ''),
+  appUrl: (process.env.APP_URL ?? `http://localhost:${process.env.PORT ?? 5173}`).replace(/\/$/, ''),
   smtpUrl: process.env.SMTP_URL ?? null,
   mailFrom: process.env.MAIL_FROM ?? 'RECTO <ne-pas-repondre@recto.local>',
   /** Sans SMTP, les courriels sont écrits ici (développement). */
