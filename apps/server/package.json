@@ -16,6 +16,7 @@
     "content:commons:import": "tsx scripts/commons/import.ts",
     "content:commons:enrich": "tsx scripts/commons/enrich.ts",
     "content:commons:reframe": "tsx scripts/commons/reframe.ts",
+    "content:commons:dedupe": "tsx scripts/commons/dedupe.ts",
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx scripts/seed-drapeaux.ts",
     "db:backup": "tsx scripts/backup.ts",

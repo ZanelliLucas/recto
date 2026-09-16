@@ -1789,25 +1789,6 @@
       "status": "rejete",
       "reason": "aucune image principale (P18) sur Wikidata",
       "wikidata": "Q2733886"
-    },
-    {
-      "article": "Ouchanka",
-      "title": "Ouchanka",
-      "visualGroup": "couvre-chef",
-      "status": "ok",
-      "wikidata": "Q488509",
-      "file": "Ushanka of Soldier of Soviet Army-6.jpg",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ushanka_of_Soldier_of_Soviet_Army-6.jpg",
-      "licence": "CC BY-SA 4.0",
-      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Ushanka_of_Soldier_of_Soviet_Army-6.jpg/1280px-Ushanka_of_Soldier_of_Soviet_Army-6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "width": 1704,
-      "height": 2272,
-      "author": "Eugene Zelenko",
-      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "chapeau traditionnel russe ou scandinave, en fourrure, muni de parties rabattables",
-      "date": null,
-      "place": null,
-      "infoUrl": "https://fr.wikipedia.org/wiki/Ouchanka"
     }
   ]
 }
