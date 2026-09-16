@@ -202,8 +202,9 @@ deploy                     Composition Docker et Caddy pour un serveur unique
 ## Mise en ligne sur Vercel
 
 L'application garde son serveur Express : `api/index.ts` le sert comme fonction, `vercel.json` y
-redirige tout ce qui n'est pas un fichier statique, et la tâche planifiée appelle `/api/entretien`
-toutes les heures. Deux dépendances doivent sortir du disque, que l'hébergement ne conserve pas.
+redirige tout ce qui n'est pas un fichier statique, et la tâche planifiée appelle `/api/entretien`.
+Le palier gratuit de Vercel n'autorise qu'un passage par jour : les purges gardent leur effet, mais
+une partie laissée en plan peut rester ouverte jusqu'au lendemain au lieu de six heures. Deux dépendances doivent sortir du disque, que l'hébergement ne conserve pas.
 
 | Variable | Rôle |
 | --- | --- |

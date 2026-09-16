@@ -10,5 +10,5 @@
     }
   },
   "rewrites": [{ "source": "/((?!assets/|icons/|og/).*)", "destination": "/api" }],
-  "crons": [{ "path": "/api/entretien", "schedule": "17 * * * *" }]
+  "crons": [{ "path": "/api/entretien", "schedule": "17 3 * * *" }]
 }
