@@ -24,6 +24,9 @@ const LETTERBOX_RATIO = 1.8;
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/** Même cadence que l'import : upload.wikimedia.org bride un client anonyme plus tôt que cela. */
+const RATE_LIMIT_MS = 3000;
+
 const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
 const media = new LocalMediaStorage(config.mediaDir);
 
@@ -58,7 +61,7 @@ for (const file of lockFiles) {
     } catch (error) {
       failures.push(`${item.title} — ${error instanceof Error ? error.message : String(error)}`);
     }
-    await sleep(250);
+    await sleep(RATE_LIMIT_MS);
   }
 
   console.log(`\n${lock.name} : ${done} image(s) recadrée(s) sur ${elongated.length} allongée(s).`);
