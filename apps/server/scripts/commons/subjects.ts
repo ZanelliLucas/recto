@@ -595,7 +595,8 @@ export const SUBJECT_LISTS: SubjectList[] = [
       { article: 'Flûte de Pan' },
       { article: 'Ocarina' },
       { article: 'Cor des Alpes' },
-      { article: 'Shakuhachi' },
+      // L'image de Wikidata est un gros plan de l'embouchure : l'instrument entier se reconnaît.
+      { article: 'Shakuhachi', file: 'Flet Shakuhachi.jpg' },
       { article: 'Batterie (musique)', title: 'Batterie' },
       { article: 'Timbales (musique classique)', title: 'Timbales' },
       { article: 'Caisse claire' },
@@ -683,7 +684,8 @@ export const SUBJECT_LISTS: SubjectList[] = [
       { article: 'Rhubarbe' },
       { article: 'Tomate' },
       { article: 'Carotte' },
-      { article: 'Pomme de terre' },
+      // Même raison : la planche de Vilmorin cède la place à un étal de marché.
+      { article: 'Pomme de terre', file: 'Au marché - pommes de terre.JPG' },
       { article: 'Patate douce' },
       { article: 'Aubergine' },
       { article: 'Courgette', group: 'courge-longue' },
@@ -702,7 +704,8 @@ export const SUBJECT_LISTS: SubjectList[] = [
       { article: 'Radis' },
       { article: 'Betterave' },
       { article: 'Maïs' },
-      { article: 'Petit pois' },
+      // Planche botanique au milieu de photographies : remplacée par une cosse ouverte.
+      { article: 'Petit pois', file: 'Peas.jpg' },
       { article: 'Haricot vert' },
       { article: 'Champignon de Paris' },
       { article: 'Potiron' },

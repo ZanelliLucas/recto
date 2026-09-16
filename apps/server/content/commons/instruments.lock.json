@@ -3,7 +3,7 @@
   "name": "Instruments de musique",
   "description": "Cordes, vents, percussions et claviers des cinq continents.",
   "sortOrder": 8,
-  "resolvedAt": "2026-09-13",
+  "resolvedAt": "2026-09-16",
   "items": [
     {
       "article": "Violon",
@@ -815,18 +815,16 @@
       "visualGroup": null,
       "status": "ok",
       "wikidata": "Q524526",
-      "file": "JapaneseShakuhachiSection.jpg",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:JapaneseShakuhachiSection.jpg",
-      "licence": "Domaine public",
-      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/JapaneseShakuhachiSection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "width": 404,
-      "height": 632,
-      "author": "Auteur inconnu",
-      "licenceUrl": null,
+      "file": "Flet Shakuhachi.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flet_Shakuhachi.jpg",
+      "licence": "CC BY-SA 4.0",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Flet_Shakuhachi.jpg/1280px-Flet_Shakuhachi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 2000,
+      "height": 1335,
+      "author": "Yuzu696",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
       "caption": "flûte japonaise",
-      "date": null,
-      "place": null,
-      "infoUrl": "https://fr.wikipedia.org/wiki/Shakuhachi"
+      "replaces": "https://commons.wikimedia.org/wiki/File:JapaneseShakuhachiSection.jpg"
     },
     {
       "article": "Batterie (musique)",
