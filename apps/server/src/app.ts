@@ -23,6 +23,7 @@ import type { RecordService } from './records/recordService';
 import { adminRouter } from './routes/admin';
 import { authRouter } from './routes/auth';
 import { categoriesRouter, creditsRouter } from './routes/categories';
+import type { DailyService } from './games/dailyService';
 import { gamesRouter } from './routes/games';
 import { meRouter } from './routes/me';
 import { telemetryRouter } from './routes/telemetry';
@@ -51,6 +52,8 @@ export interface AppDependencies {
   /** Faux en développement et en recette : aucune page n'est indexée (§ 7.5). */
   indexable?: boolean;
   version?: string;
+  /** Défi du jour : tirage commun et classement des comptes (§ 3.3). */
+  daily?: DailyService;
   /** Sonde de disponibilité : lève une erreur si une dépendance (la base) est hors service. */
   checkHealth?: () => Promise<void>;
   /**
@@ -142,7 +145,14 @@ export function createApp(deps: AppDependencies): Express {
       message: 'Trop de parties ouvertes en peu de temps. Patientez une minute.',
     }),
   );
-  api.use('/games', gamesRouter(deps.games));
+  api.use('/games', gamesRouter(deps.games, deps.daily));
+  if (deps.daily) {
+    const daily = deps.daily;
+    // Le classement change à chaque clôture : une minute de cache suffit à absorber les rafales.
+    api.get('/defi', async (_req, res) => {
+      res.set('Cache-Control', 'private, max-age=60').json(await daily.challenge(res.locals.user?.id ?? null));
+    });
+  }
   api.use(() => {
     throw new HttpError(404, 'route_introuvable', 'Point d’entrée inconnu.');
   });

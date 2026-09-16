@@ -13,6 +13,7 @@ import { SessionManager } from '../apps/server/src/auth/sessions';
 import { config } from '../apps/server/src/config';
 import { SqlContentRepository } from '../apps/server/src/content/contentRepository';
 import { openDatabase } from '../apps/server/src/db/client';
+import { DailyService } from '../apps/server/src/games/dailyService';
 import { GameService } from '../apps/server/src/games/gameService';
 import { SqlGameStore } from '../apps/server/src/games/gameStore';
 import { FileMailer, SmtpMailer } from '../apps/server/src/mail/mailer';
@@ -36,6 +37,8 @@ async function build(): Promise<Handler> {
   const jobs = maintenanceJobs({ db, games, audience, config });
   const secret = process.env.CRON_SECRET;
 
+  const daily = new DailyService(content, media, games, users);
+
   return createApp({
     categories: content,
     games: new GameService(content, games, media, records),
@@ -46,6 +49,7 @@ async function build(): Promise<Handler> {
     sessions: new SessionManager(config.authSecret, config.isProduction),
     media,
     audience,
+  daily,
     mediaDir: config.mediaDir,
     appUrl: config.appUrl,
     webDistDir: config.webDistDir,

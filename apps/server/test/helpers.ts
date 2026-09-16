@@ -12,6 +12,7 @@ import { SessionManager } from '../src/auth/sessions';
 import { SqlUserRepository } from '../src/auth/userRepository';
 import { SqlContentRepository } from '../src/content/contentRepository';
 import { openDatabase } from '../src/db/client';
+import { DailyService } from '../src/games/dailyService';
 import { GameService } from '../src/games/gameService';
 import { SqlGameStore } from '../src/games/gameStore';
 import { MemoryMailer } from '../src/mail/mailer';
@@ -113,9 +114,11 @@ export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }
   const webDistDir = path.join(dir, 'web');
   mkdirSync(webDistDir);
   writeFileSync(path.join(webDistDir, 'index.html'), PAGE_TEMPLATE);
+  const store = new SqlGameStore(db);
   const app = createApp({
     categories: content,
-    games: new GameService(content, new SqlGameStore(db), media, records, { now: clock }),
+    games: new GameService(content, store, media, records, { now: clock }),
+    daily: new DailyService(content, media, store, users, clock),
     admin: new AdminService(content, media, clock),
     auth: new AuthService(users, mailer, { appUrl: 'https://recto.test', now: clock }),
     records,

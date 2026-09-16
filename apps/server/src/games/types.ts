@@ -19,6 +19,8 @@ export interface GameRecord {
   imageIds: string[];
   deck: string[];
   status: GameStatus;
+  /** Jour du défi quand la partie en relève : le tirage est alors le même pour tous. */
+  dailyDay: string | null;
   createdAt: number;
   /** Instant serveur où le chronomètre démarre, soit la fin du décompte. */
   startedAt: number | null;

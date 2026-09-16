@@ -8,6 +8,7 @@ import { SqlUserRepository } from './auth/userRepository';
 import { config } from './config';
 import { SqlContentRepository } from './content/contentRepository';
 import { openDatabase } from './db/client';
+import { DailyService } from './games/dailyService';
 import { GameService } from './games/gameService';
 import { SqlGameStore } from './games/gameStore';
 import { logger } from './logger';
@@ -31,6 +32,8 @@ const records = new RecordService(db, content);
 const audience = new AudienceService(db, content);
 const mailer = config.smtpUrl ? new SmtpMailer(config.smtpUrl, config.mailFrom) : new FileMailer(config.mailDir);
 
+const daily = new DailyService(content, media, games, users);
+
 const app = createApp({
   categories: content,
   games: new GameService(content, games, media, records),
@@ -41,6 +44,7 @@ const app = createApp({
   sessions: new SessionManager(config.authSecret, config.isProduction),
   media,
   audience,
+  daily,
   mediaDir: config.mediaDir,
   appUrl: config.appUrl,
   webDistDir: config.webDistDir,

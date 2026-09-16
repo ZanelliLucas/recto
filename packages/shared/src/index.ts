@@ -1,5 +1,6 @@
 export * from './account';
 export * from './api';
+export * from './daily';
 export * from './audience';
 export * from './difficulty';
 export * from './draw';

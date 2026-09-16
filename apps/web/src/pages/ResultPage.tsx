@@ -1,8 +1,10 @@
-import type { CardImage } from '@recto/shared';
-import { useState } from 'react';
+import type { CardImage, DailyChallenge } from '@recto/shared';
+import { useEffect, useState } from 'react';
 import { Link, Navigate, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthContext';
+import { api } from '../api/client';
 import { CardGallery } from '../components/CardGallery';
+import { DailyBoard } from '../components/DailyBoard';
 import type { ResultLocationState } from '../game/navigation';
 import { useStartGame } from '../game/useStartGame';
 import { difficultyLabel, t } from '../i18n';
@@ -113,7 +115,35 @@ export function ResultPage() {
         </div>
       )}
 
+      {state.daily && <DailyResult />}
       {state.cards && state.cards.length > 0 && <CardsReview cards={state.cards} missed={state.missed} />}
+    </section>
+  );
+}
+
+/** Classement du défi, relu après la partie : le résultat du joueur vient d'y entrer. */
+function DailyResult() {
+  const [challenge, setChallenge] = useState<DailyChallenge | null>(null);
+  const { user } = useAuth();
+
+  useEffect(() => {
+    let alive = true;
+    api
+      .daily()
+      .then((found) => alive && setChallenge(found))
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  if (!challenge) return null;
+  return (
+    <section className={styles.review} aria-labelledby="result-daily">
+      <h2 id="result-daily" className={styles.reviewTitle}>
+        {t('daily.board')}
+      </h2>
+      <DailyBoard challenge={challenge} signedIn={user !== null} />
     </section>
   );
 }

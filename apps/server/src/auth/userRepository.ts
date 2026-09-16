@@ -1,4 +1,5 @@
-import { and, eq } from 'drizzle-orm';
+import type { Avatar } from '@recto/shared';
+import { and, eq, inArray } from 'drizzle-orm';
 import type { Database } from '../db/client';
 import { emailTokens, games, personalBests, users } from '../db/schema';
 
@@ -18,6 +19,16 @@ export class SqlUserRepository {
 
   findByPseudoKey(pseudoKey: string): Promise<UserRecord | undefined> {
     return this.db.select().from(users).where(eq(users.pseudoKey, pseudoKey)).get();
+  }
+
+  /** Pseudo et avatar de plusieurs comptes : ce qu'un classement peut montrer, et rien de plus. */
+  async publicProfiles(ids: readonly string[]): Promise<Map<string, { pseudo: string; avatar: Avatar }>> {
+    if (ids.length === 0) return new Map();
+    const rows = await this.db
+      .select({ id: users.id, pseudo: users.pseudo, avatar: users.avatar })
+      .from(users)
+      .where(inArray(users.id, [...ids]));
+    return new Map(rows.map((row) => [row.id, { pseudo: row.pseudo, avatar: row.avatar as Avatar }]));
   }
 
   async insert(user: UserRecord): Promise<void> {

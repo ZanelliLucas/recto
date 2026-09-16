@@ -4,6 +4,8 @@ import type { CardImage, CreateGameResponse, Difficulty, FinishGameResponse, Per
 export interface GameLocationState {
   game: CreateGameResponse;
   categoryName: string;
+  /** Partie du défi du jour : le classement suit le résultat. */
+  daily?: boolean;
 }
 
 /** État transmis à /partie/:id/resultat. */
@@ -19,4 +21,6 @@ export interface ResultLocationState {
   cards?: CardImage[];
   /** Images d'au moins une paire manquée : celles que la mémoire a laissé filer (EF-7.3). */
   missed?: string[];
+  /** Partie du défi du jour : le classement est proposé à la suite du résultat. */
+  daily?: boolean;
 }

@@ -1,0 +1,60 @@
+.board {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.board caption {
+  text-align: left;
+}
+
+.board th,
+.board td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.board thead th {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rank,
+.time,
+.moves {
+  font-variant-numeric: tabular-nums;
+}
+
+.rank {
+  width: 3ch;
+  color: var(--muted);
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+/* La ligne du joueur se repère sans dépendre de la seule couleur (WCAG 1.4.1). */
+.mine td,
+.mine th {
+  background: var(--surface-2);
+}
+
+.mine .rank::after {
+  content: ' ←';
+  color: var(--accent);
+}
+
+.empty,
+.note {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

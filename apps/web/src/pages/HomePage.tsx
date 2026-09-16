@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { CategoryList } from '../components/CategoryList';
+import { DailyPanel } from '../components/DailyPanel';
 import { useBestTimes } from '../game/bestTimes';
 import { getLastPlayed } from '../game/records';
 import { useStartGame } from '../game/useStartGame';
@@ -49,6 +50,8 @@ export function HomePage() {
           </p>
         )}
       </section>
+
+      <DailyPanel />
 
       <section aria-labelledby="home-categories">
         <h2 id="home-categories" className={styles.sectionTitle}>

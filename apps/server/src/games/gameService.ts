@@ -4,6 +4,7 @@ import {
   DIFFICULTIES,
   accuracy,
   buildDeck,
+  dailySeed,
   drawImages,
   minDurationMs,
   mulberry32,
@@ -52,7 +53,7 @@ export class GameService {
   }
 
   /** Tirage, mélange et enregistrement. Le chronomètre ne part qu'avec `start`, une fois les images préchargées. */
-  async create(player: Player, slug: string, difficulty: Difficulty): Promise<CreateGameResponse> {
+  async create(player: Player, slug: string, difficulty: Difficulty, dailyDay: string | null = null): Promise<CreateGameResponse> {
     const category = await this.categories.findPublished(slug);
     if (!category) throw new HttpError(404, 'categorie_introuvable', 'Catégorie introuvable.');
 
@@ -63,9 +64,11 @@ export class GameService {
 
     const { pairs } = DIFFICULTIES[difficulty];
     const drawKey = `${player.key}:${category.id}:${difficulty}`;
-    const seed = this.randomSeed();
+    // Défi du jour : la graine vient de la date, et le tirage précédent du joueur ne l'écarte de
+    // rien — sans quoi deux joueurs n'auraient pas la même grille.
+    const seed = dailyDay === null ? this.randomSeed() : dailySeed(dailyDay);
     const rng = mulberry32(seed);
-    const imageIds = drawImages(pool, pairs, rng, await this.games.lastDraw(drawKey));
+    const imageIds = drawImages(pool, pairs, rng, dailyDay === null ? await this.games.lastDraw(drawKey) : undefined);
     const deck = buildDeck(imageIds, rng);
 
     const game: GameRecord = {
@@ -79,6 +82,7 @@ export class GameService {
       imageIds,
       deck,
       status: 'preparee',
+      dailyDay,
       createdAt: this.now(),
       startedAt: null,
       pausedAt: null,
@@ -89,7 +93,7 @@ export class GameService {
       recordOutcome: null,
     };
     await this.games.insert(game);
-    await this.games.setLastDraw(drawKey, imageIds);
+    if (dailyDay === null) await this.games.setLastDraw(drawKey, imageIds);
 
     const imagesById = new Map(category.images.map((image) => [image.id, image]));
     return {
@@ -180,6 +184,8 @@ export class GameService {
       game.recordOutcome = record;
       await this.commit(game, 'terminee');
     }
+    // Le défi ne retient que la première partie terminée du jour : on ne rejoue pas son classement.
+    if (game.dailyDay && game.userId) await this.games.recordDailyScore(game);
     return { durationMs, moves: replay.moves, pairs, accuracy: accuracy(pairs, replay.moves), record };
   }
 

@@ -84,7 +84,7 @@ export function missedImages(moves: readonly Move[], deck: readonly string[]): s
   return [...missed];
 }
 
-function GameSession({ game, categoryName }: GameLocationState) {
+function GameSession({ game, categoryName, daily }: GameLocationState) {
   const navigate = useNavigate();
   const [engine, dispatch] = useReducer(engineReducer, game.deck, initEngine);
   const [loaded, setLoaded] = useState(0);
@@ -181,6 +181,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
           difficulty: game.difficulty,
           cards: game.images,
           missed: missedImages(engine.moves, game.deck),
+          daily,
         };
         navigate(`/partie/${game.gameId}/resultat`, { replace: true, state });
       },

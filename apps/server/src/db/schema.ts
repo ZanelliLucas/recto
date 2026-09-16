@@ -72,6 +72,8 @@ export const games = sqliteTable(
     durationMs: integer('duration_ms'),
     moves: integer('moves'),
     /** Comparaison au record établie à la clôture : rendue telle quelle si la clôture est répétée. */
+    /** Jour du défi quand la partie en relève : le tirage est alors le même pour tous. */
+    dailyDay: text('daily_day'),
     recordOutcome: text('record_outcome', { mode: 'json' }).$type<NonNullable<FinishGameResponse['record']>>(),
   },
   (table) => [
@@ -134,6 +136,25 @@ export const personalBests = sqliteTable(
     obtainedAt: integer('obtained_at').notNull(),
   },
   (table) => [primaryKey({ columns: [table.userId, table.categoryId, table.difficulty] })],
+);
+
+/**
+ * Défi du jour : une seule entrée par compte et par jour, celle de la première partie terminée.
+ * Réservé aux comptes — un invité joue le défi mais n'est pas classé, pour qu'aucune donnée
+ * nominative ne naisse d'une visite anonyme. Purgé avec les autres données à durée annoncée.
+ */
+export const dailyScores = sqliteTable(
+  'daily_scores',
+  {
+    day: text('day').notNull(),
+    userId: text('user_id').notNull(),
+    categoryId: text('category_id').notNull(),
+    durationMs: integer('duration_ms').notNull(),
+    moves: integer('moves').notNull(),
+    gameId: text('game_id').notNull(),
+    finishedAt: integer('finished_at').notNull(),
+  },
+  (table) => [primaryKey({ columns: [table.day, table.userId] }), index('daily_scores_day_idx').on(table.day, table.durationMs)],
 );
 
 /**

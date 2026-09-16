@@ -13,13 +13,14 @@ export function useStartGame() {
   const [error, setError] = useState<string | null>(null);
 
   const start = useCallback(
-    async (category: string, categoryName: string, difficulty: Difficulty) => {
+    async (category: string, categoryName: string, difficulty: Difficulty, daily = false) => {
       setPending(`${category}:${difficulty}`);
       setError(null);
       try {
-        const game = await api.createGame({ category, difficulty });
-        setLastPlayed({ category, categoryName, difficulty });
-        navigate(`/partie/${game.gameId}`, { state: { game, categoryName } satisfies GameLocationState });
+        const game = await api.createGame({ category, difficulty, ...(daily ? { daily } : {}) });
+        // Le défi ne remplace pas la dernière partie jouée : la reprise reste celle du joueur.
+        if (!daily) setLastPlayed({ category, categoryName, difficulty });
+        navigate(`/partie/${game.gameId}`, { state: { game, categoryName, daily } satisfies GameLocationState });
       } catch (caught) {
         setError(caught instanceof ApiError ? caught.message : t('error.network'));
         setPending(null);

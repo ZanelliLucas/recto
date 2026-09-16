@@ -33,6 +33,8 @@ export interface CardImage {
 export interface CreateGameRequest {
   category: string;
   difficulty: Difficulty;
+  /** Partie du défi du jour : le serveur impose alors le tirage et classe le résultat. */
+  daily?: boolean;
 }
 
 export interface CreateGameResponse {
@@ -68,6 +70,33 @@ export interface FinishGameResponse {
   accuracy: number;
   /** Joueur connecté : record antérieur et dépassement éventuel (EF-5.1). Invité : null. */
   record: { previous: Performance | null; improved: boolean } | null;
+}
+
+// ——— Défi du jour ———
+
+export interface DailyEntry {
+  rank: number;
+  pseudo: string;
+  avatar: Avatar;
+  durationMs: number;
+  moves: number;
+  /** Vrai pour la ligne du joueur connecté. */
+  mine: boolean;
+}
+
+export interface DailyChallenge {
+  /** Jour du défi, AAAA-MM-JJ en heure française. */
+  day: string;
+  difficulty: Difficulty;
+  /** Catégorie tirée pour la journée ; null si aucune catégorie n'est jouable. */
+  category: string | null;
+  categoryName: string | null;
+  /** Meilleurs temps du jour. Seuls les comptes sont classés. */
+  leaderboard: DailyEntry[];
+  /** Entrée du joueur connecté, même hors des premiers ; null s'il n'a pas encore joué. */
+  mine: DailyEntry | null;
+  /** Nombre de comptes classés aujourd'hui. */
+  players: number;
 }
 
 // ——— Comptes et statistiques (EF-4, EF-5) ———
