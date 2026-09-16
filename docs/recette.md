@@ -78,3 +78,12 @@ Chromium installé, Microsoft Edge à défaut.
 4. Remplacer depuis le back-office les deux images jugées faibles lors de l'import : Cobra royal (serpent trop petit dans
    le cadre) et Pieuvre (gravure parmi des photographies).
 5. Brancher une sonde de disponibilité externe sur `/api/health` et vérifier la première sauvegarde quotidienne.
+
+## Défi du jour
+
+- Ouvrir l'accueil : le panneau annonce une catégorie et propose quinze paires.
+- Ouvrir la même page dans une seconde fenêtre privée : la catégorie annoncée doit être la même.
+- Lancer le défi depuis les deux fenêtres : les deux grilles portent les mêmes images aux mêmes places.
+- Terminer une partie avec un compte : le pseudonyme apparaît au classement, temps et coups à l'appui.
+- Rejouer le défi avec ce compte : le classement ne bouge pas, seule la première partie du jour compte.
+- Terminer le défi sans compte : la partie se joue, mais aucune ligne n'apparaît au classement.

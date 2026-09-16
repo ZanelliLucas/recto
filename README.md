@@ -46,6 +46,7 @@ non versionnées : les commandes ci-dessus les reconstruisent à partir des sour
 | `npm run content:commons:import` | Télécharge et traite les images des listes verrouillées |
 | `npm run content:commons:enrich` | Complète dates et lieux depuis Wikidata (métadonnées seules), sans écraser une saisie du back-office |
 | `npm run content:commons:reframe` | Reprend le cadrage des images déjà importées dont la source est très allongée |
+| `npm run content:commons:dedupe` | Énumère, et avec `--appliquer` retire, les images en double d'une catégorie |
 | `npm run user:role -- <adresse> <admin\|joueur>` | Attribue un rôle à un compte existant |
 | `npm run check:launch [-- --env]` | Contrôle préalable à la mise en ligne : pages légales, puis variables d'environnement |
 
@@ -198,6 +199,13 @@ deploy                     Composition Docker et Caddy pour un serveur unique
   l'article de Wikipédia, ce qui a récupéré une centaine de sujets.
 - Traitement des images : une source très allongée (au-delà de 1,8:1) est désormais intégrée en entier dans la carte
   carrée, sur un fond repris de l'image, au lieu d'être recadrée sur une bande.
+- Défi du jour : une grille commune à tous jusqu'à minuit (heure française), tirée d'une empreinte de la date, et son
+  classement. Seuls les comptes y figurent, et seule la première partie terminée du jour compte ; un invité joue le
+  défi sans être classé.
+- Écran de résultat : les paires cherchées plus d'une fois sont présentées avant la revue complète des cartes.
+- Légendes des cartes : la première phrase de l'article de Wikipédia remplace la description Wikidata, qui ne servait
+  qu'à distinguer deux éléments (« espèce de champignons » sur soixante et une cartes).
+- `content:commons:dedupe` retire les images faisant double emploi ou disparues d'une liste verrouillée.
 
 ## Mise en ligne sur Vercel
 
