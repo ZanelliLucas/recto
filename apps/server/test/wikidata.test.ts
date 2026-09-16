@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatWikidataTime, lifeDates } from '../scripts/commons/wikimedia';
+import { announcesAmbiguity, formatWikidataTime, lifeDates } from '../scripts/commons/wikimedia';
 
 describe('dates d’une vie', () => {
   it('donne les deux bornes, ou l’année de naissance accordée pour une personne vivante', () => {
@@ -22,5 +22,19 @@ describe('dates Wikidata en français (EF-7.3)', () => {
     expect(formatWikidataTime({ time: '-2560-00-00T00:00:00Z', precision: 9 })).toBe('2560 av. J.-C.');
     expect(formatWikidataTime({ time: '-0450-00-00T00:00:00Z', precision: 7 })).toBe('Ve siècle av. J.-C.');
     expect(formatWikidataTime({ time: '+2000-00-00T00:00:00Z', precision: 3 })).toBeNull();
+  });
+});
+
+describe('announcesAmbiguity', () => {
+  it('écarte une phrase qui annonce une ambiguïté plutôt que de définir', () => {
+    expect(announcesAmbiguity('Acacia peut désigner :')).toBe(true);
+    expect(announcesAmbiguity('Le terme Bolet orangé est un nom vernaculaire ambigu, pouvant désigner…')).toBe(true);
+    expect(announcesAmbiguity('Pamplemousse et pomélo sont des noms vernaculaires ambigus.')).toBe(true);
+    expect(announcesAmbiguity('Cette page d’homonymie liste les articles.')).toBe(true);
+  });
+
+  it('garde une définition ordinaire', () => {
+    expect(announcesAmbiguity('Le rubis est la variété rouge de la famille minérale du corindon.')).toBe(false);
+    expect(announcesAmbiguity('Le violon est un instrument à cordes frottées.')).toBe(false);
   });
 });

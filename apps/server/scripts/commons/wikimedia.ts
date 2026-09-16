@@ -116,6 +116,13 @@ function shorten(text: string, max = 200): string {
 }
 
 /**
+ * Vrai si la phrase relevée annonce une ambiguïté au lieu de définir le sujet : « Acacia peut
+ * désigner : », « nom vernaculaire ambigu ». Elle n'apprendrait rien au joueur.
+ */
+export const announcesAmbiguity = (sentence: string): boolean =>
+  /homonymie|ambigu|peut désigner|peut faire référence|peuvent désigner/i.test(sentence);
+
+/**
  * Première phrase de l'article de fr.wikipedia : une définition écrite pour un lecteur, là où la
  * description Wikidata ne sert qu'à distinguer deux éléments (« espèce de champignons »).
  */
@@ -123,10 +130,13 @@ export async function wikipediaLeadSentences(titles: readonly string[]): Promise
   const result = new Map<string, string>();
   for (const batch of chunks(titles, 20)) {
     const data = await query<{
-      query?: TitleMappings & { pages: { title: string; extract?: string }[] };
+      query?: TitleMappings & {
+        pages: { title: string; extract?: string; pageprops?: { disambiguation?: string } }[];
+      };
     }>('fr.wikipedia.org', {
       action: 'query',
-      prop: 'extracts',
+      prop: 'extracts|pageprops',
+      ppprop: 'disambiguation',
       exintro: '1',
       explaintext: '1',
       exsentences: '1',
@@ -136,11 +146,14 @@ export async function wikipediaLeadSentences(titles: readonly string[]): Promise
     });
     const q = data.query;
     if (!q) continue;
-    const byTitle = new Map(q.pages.map((page) => [page.title, page.extract]));
+    const byTitle = new Map(q.pages.map((page) => [page.title, page]));
     for (const title of batch) {
-      const extract = byTitle.get(follow(title, q))?.trim();
-      // Une page d'homonymie décrit la page, pas le sujet : sa phrase n'apprendrait rien.
-      if (extract && extract.length > 15 && !/homonymie/i.test(extract)) result.set(title, shorten(extract));
+      const page = byTitle.get(follow(title, q));
+      // Une page d'homonymie décrit la page, pas le sujet. Wikipédia les marque, mais certains
+      // articles ordinaires ouvrent aussi sur une ambiguïté : les deux sont écartés.
+      if (!page || page.pageprops?.disambiguation !== undefined) continue;
+      const extract = page.extract?.trim();
+      if (extract && extract.length > 15 && !announcesAmbiguity(extract)) result.set(title, shorten(extract));
     }
   }
   return result;
@@ -444,6 +457,13 @@ export function stripHtml(html: string): string {
     .replace(/\s+/g, ' ')
     .trim();
 }
+
+/**
+ * Une légende qui décrit la page de Wikimédia plutôt que le sujet (« page d'homonymie de
+ * Wikimédia ») n'est jamais une saisie de l'éditeur : elle peut toujours être remplacée.
+ */
+export const describesThePage = (caption: string | null | undefined): boolean =>
+  caption !== null && caption !== undefined && /homonymie|wikimedia|wikimédia|page de liste/i.test(caption);
 
 /** Libellé affiché sur la page de crédits : Commons renvoie « Public domain » en anglais. */
 export function licenceLabel(licence: string): string {

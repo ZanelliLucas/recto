@@ -12,7 +12,7 @@ import { config } from '../../src/config';
 import { SqlContentRepository } from '../../src/content/contentRepository';
 import { openDatabase } from '../../src/db/client';
 import { lockDir, type LockFile } from './lock';
-import { wikidataFacts, wikipediaLeadSentences } from './wikimedia';
+import { announcesAmbiguity, describesThePage, wikidataFacts, wikipediaLeadSentences } from './wikimedia';
 
 const wanted = process.argv.slice(2);
 const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
@@ -46,7 +46,10 @@ for (const file of lockFiles) {
   }
   for (const item of lock.items) {
     const sentence = sentences.get(item.article);
+    // Faute de définition, on garde la description Wikidata — sauf si elle parle de la page ou
+    // annonce une ambiguïté, auquel cas mieux vaut aucune légende qu'une légende inutile.
     if (sentence) item.caption = sentence;
+    else if (describesThePage(item.caption) || (item.caption && announcesAmbiguity(item.caption))) item.caption = null;
   }
   await writeFile(lockFile, `${JSON.stringify(lock, null, 2)}\n`);
 
@@ -60,7 +63,12 @@ for (const file of lockFiles) {
     const before = previous.get(image.sourceUrl);
     const update = {
       // La légende vient du relevé : une description Wikidata écartée depuis doit disparaître.
-      caption: replaceable(image.caption, before?.caption) ? (item.caption ?? null) : image.caption,
+      caption:
+        replaceable(image.caption, before?.caption) ||
+        describesThePage(image.caption) ||
+        (image.caption !== null && announcesAmbiguity(image.caption))
+          ? (item.caption ?? null)
+          : image.caption,
       date: replaceable(image.date, before?.date) ? (item.date ?? null) : image.date,
       place: replaceable(image.place, before?.place) ? (item.place ?? null) : image.place,
       infoUrl: replaceable(image.infoUrl, before?.infoUrl) ? (item.infoUrl ?? null) : image.infoUrl,

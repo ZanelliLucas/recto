@@ -19,7 +19,7 @@
       "height": 3648,
       "author": "Matúš Motlo",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "étoile au centre du Système solaire",
+      "caption": "Le Soleil est l’étoile de type naine jaune du Système solaire, qui se situe dans le bras d'Orion, à environ 8 kpc (∼26 100 al) du centre galactique de la Voie lactée.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Soleil"
@@ -38,7 +38,7 @@
       "height": 1974,
       "author": "NASA / Johns Hopkins University Applied Physics Laboratory / Carnegie Institution of Washington . Edited version of Image:Mercury in color - Prockter07.jpg by Papa Lima Whiskey .",
       "licenceUrl": null,
-      "caption": "première planète du système solaire",
+      "caption": "Mercure est la planète la plus proche du Soleil et la moins massive du Système solaire.",
       "date": null,
       "place": "système solaire interne",
       "infoUrl": "https://fr.wikipedia.org/wiki/Mercure_(plan%C3%A8te)"
@@ -57,7 +57,7 @@
       "height": 1096,
       "author": "NASA/JPL-Caltech",
       "licenceUrl": null,
-      "caption": "deuxième planète du Système solaire",
+      "caption": "Vénus est la deuxième planète du Système solaire par ordre d'éloignement au Soleil, et la sixième plus grosse aussi bien par la masse que par le diamètre.",
       "date": null,
       "place": "système solaire interne",
       "infoUrl": "https://fr.wikipedia.org/wiki/V%C3%A9nus_(plan%C3%A8te)"
@@ -87,7 +87,7 @@
       "height": 1558,
       "author": "Kevin Gill from Los Angeles, CA, United States",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "quatrième planète du Système solaire",
+      "caption": "Mars (prononcé en français : /maʁs/) est la quatrième planète du Système solaire par ordre croissant de la distance au Soleil et la deuxième par ordre croissant de la taille et de la masse.",
       "date": null,
       "place": "système solaire interne",
       "infoUrl": "https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)"
@@ -106,7 +106,7 @@
       "height": 1639,
       "author": "NASA/STSCI (S.T.A.R.S)",
       "licenceUrl": null,
-      "caption": "cinquième planète du Système solaire",
+      "caption": "Jupiter est la cinquième planète du Système solaire par ordre d'éloignement au Soleil, et la plus grande par la taille et la masse devant Saturne, qui est comme elle une planète géante gazeuse.",
       "date": null,
       "place": "système solaire externe",
       "infoUrl": "https://fr.wikipedia.org/wiki/Jupiter_(plan%C3%A8te)"
@@ -125,7 +125,7 @@
       "height": 1024,
       "author": "Credit: NASA/JPL-Caltech/SSI",
       "licenceUrl": null,
-      "caption": "sixième planète du Système solaire",
+      "caption": "Saturne est la sixième planète du Système solaire par ordre d'éloignement au Soleil, et la deuxième plus grande par la taille et la masse après Jupiter.",
       "date": null,
       "place": "système solaire externe",
       "infoUrl": "https://fr.wikipedia.org/wiki/Saturne_(plan%C3%A8te)"
@@ -144,7 +144,7 @@
       "height": 830,
       "author": "Ardenau4",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "septième planète du Système solaire par ordre d'éloignement du Soleil",
+      "caption": "Uranus est la septième planète du Système solaire par ordre d'éloignement du Soleil.",
       "date": null,
       "place": "système solaire externe",
       "infoUrl": "https://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te)"
@@ -163,7 +163,7 @@
       "height": 1200,
       "author": "NASA / Voyager 2 / PDS / OPUS / Ardenau4",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "huitième et dernière planète du système solaire",
+      "caption": "Neptune est la huitième planète par ordre d'éloignement du Soleil et la plus éloignée de l'étoile dans le Système solaire qui soit connue.",
       "date": null,
       "place": "système solaire externe",
       "infoUrl": "https://fr.wikipedia.org/wiki/Neptune_(plan%C3%A8te)"
@@ -182,7 +182,7 @@
       "height": 8000,
       "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker",
       "licenceUrl": null,
-      "caption": "planète naine du Système solaire",
+      "caption": "Pluton, officiellement désignée par (134340) Pluton (désignation internationale : (134340) Pluto), est une planète naine, la plus volumineuse connue dans le Système solaire (2 372 km de diamètre,…",
       "date": null,
       "place": "système solaire externe",
       "infoUrl": "https://fr.wikipedia.org/wiki/Pluton_(plan%C3%A8te_naine)"
@@ -201,7 +201,7 @@
       "height": 836,
       "author": "Justin Cowart",
       "licenceUrl": null,
-      "caption": "planète naine du système solaire, située dans la ceinture d'astéroïdes",
+      "caption": "(1) Cérès (désignation internationale (1) Ceres) est un astéroïde et une planète naine du Système solaire.",
       "date": null,
       "place": "ceinture d'astéroïdes",
       "infoUrl": "https://fr.wikipedia.org/wiki/(1)_C%C3%A9r%C3%A8s"
@@ -220,7 +220,7 @@
       "height": 2452,
       "author": "Gregory H. Revera",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "satellite naturel de la Terre",
+      "caption": "La Lune, ou Terre I, est l'unique satellite naturel permanent de la planète Terre.",
       "date": null,
       "place": "système solaire interne",
       "infoUrl": "https://fr.wikipedia.org/wiki/Lune"
@@ -239,7 +239,7 @@
       "height": 1655,
       "author": "NASA / SWRI / MSSS / Jason Perry",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "satellite de Jupiter",
+      "caption": "Io, ou Jupiter I, est un satellite naturel de Jupiter.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Io_(lune)"
@@ -258,7 +258,7 @@
       "height": 913,
       "author": "NASA/JPL/DLR",
       "licenceUrl": null,
-      "caption": "satellite de Jupiter",
+      "caption": "Europe, ou Jupiter II, est un satellite naturel de Jupiter.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Europe_(lune)"
@@ -277,7 +277,7 @@
       "height": 3445,
       "author": "NASA/JPL-Caltech/SwRI/MSSS/Kevin M. Gill",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "satellite de Jupiter",
+      "caption": "Ganymède, de nom international Jupiter III Ganymede, est un satellite naturel de Jupiter.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Ganym%C3%A8de_(lune)"
@@ -296,7 +296,7 @@
       "height": 1655,
       "author": "Kevin Gill from Los Angeles, CA, United States",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "satellite de Jupiter",
+      "caption": "Callisto, ou Jupiter IV, est un satellite naturel de la planète Jupiter, découvert en 1610 par Galilée.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Callisto_(lune)"
@@ -315,7 +315,7 @@
       "height": 750,
       "author": "NASA/JPL-Caltech/SSI/Kevin M. Gill",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "satellite de Saturne",
+      "caption": "Titan, aussi appelé Saturne VI, est le plus grand satellite naturel de Saturne.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Titan_(lune)"
@@ -334,7 +334,7 @@
       "height": 1020,
       "author": "National Aeronautics and Space Administration (NASA) / Jet Propulsion Laboratory (JPL)",
       "licenceUrl": null,
-      "caption": "satellite de Saturne",
+      "caption": "Encelade (S II Enceladus) est un satellite naturel de Saturne, découvert par William Herschel en 1789.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Encelade_(lune)"
@@ -353,7 +353,7 @@
       "height": 3300,
       "author": "NASA / JPL-Caltech / University of Arizona",
       "licenceUrl": null,
-      "caption": "satellite de Mars",
+      "caption": "Phobos, ou Mars I (en dénomination systématique), est le plus grand des deux satellites naturels de Mars (l'autre étant Déimos).",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Phobos_(lune)"
@@ -372,7 +372,7 @@
       "height": 1954,
       "author": "Kevin Gill from Los Angeles, CA, United States",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "anticyclone de l'atmosphère de Jupiter",
+      "caption": "La Grande Tache rouge (en anglais : Great Red Spot, GRS) est un gigantesque anticyclone de l'atmosphère de Jupiter situé à 22° sud de latitude.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Grande_Tache_rouge"
@@ -391,7 +391,7 @@
       "height": 1883,
       "author": "Image by NASA , modifications by Seddon",
       "licenceUrl": null,
-      "caption": "volcan de la planète Mars",
+      "caption": "Olympus Mons, nom latin pour « mont Olympe », est un volcan bouclier de la planète Mars situé par 18,4° N et 226° E, dans les quadrangles d'Amazonis et de Tharsis.",
       "date": null,
       "place": "quadrangle d'Amazonis",
       "infoUrl": "https://fr.wikipedia.org/wiki/Olympus_Mons"
@@ -410,7 +410,7 @@
       "height": 1716,
       "author": "Mars_Valles_Marineris.jpeg : NASA picture derivative work: Lošmi ( talk )",
       "licenceUrl": null,
-      "caption": "vallis sur Mars",
+      "caption": "Valles Marineris (« les vallées de Mariner », en latin, en mémoire de sa découverte en 1971 par la sonde spatiale Mariner 9) est un vaste système de canyons à proximité de l'équateur de la planète…",
       "date": null,
       "place": "Quadrangle de Coprates",
       "infoUrl": "https://fr.wikipedia.org/wiki/Valles_Marineris"
@@ -429,7 +429,7 @@
       "height": 1036,
       "author": "NASA/W. Liller",
       "licenceUrl": null,
-      "caption": "comète du système solaire",
+      "caption": "La comète de Halley, dont la désignation officielle est 1P/Halley, est la plus connue de toutes les comètes.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Com%C3%A8te_de_Halley"
@@ -448,7 +448,7 @@
       "height": 1500,
       "author": "E. Kolmhofer, H. Raab; Johannes-Kepler-Observatory, Linz, Austria ( https://sternwarte.at )",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "comète du système solaire",
+      "caption": "La comète Hale-Bopp (désignation officielle : C/1995 O1) est l'une des comètes les plus brillantes du XXe siècle.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/C%2F1995_O1_(Hale-Bopp)"
@@ -467,7 +467,7 @@
       "height": 1944,
       "author": "Flickr user: Gunnar Hildonen https://www.flickr.com/people/48746111@N04/",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "caption": "phénomène lumineux caractérisé par des voiles extrêmement colorés dans le ciel nocturne",
+      "caption": "L’aurore polaire, également appelée « aurore boréale » dans l'hémisphère nord et « aurore australe » dans l'hémisphère sud, est un phénomène lumineux atmosphérique caractérisé par des voiles…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Aurore_polaire"
@@ -486,7 +486,7 @@
       "height": 3489,
       "author": "Luc Viatour",
       "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "caption": "phénomène qui se produit lorsque la Lune se place devant le Soleil",
+      "caption": "Une éclipse solaire (ou plus exactement une occultation solaire) se produit lorsque la Lune se place devant le Soleil, occultant totalement ou partiellement l’image du Soleil depuis la Terre.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/%C3%89clipse_solaire"
@@ -505,7 +505,7 @@
       "height": 1920,
       "author": "National Map Seamless Server",
       "licenceUrl": null,
-      "caption": "cratère d'impact en Arizona",
+      "caption": "Meteor Crater est un cratère d'impact situé environ 60 km à l'est de Flagstaff, en Arizona (ouest des États-Unis).",
       "date": null,
       "place": "comté de Coconino, États-Unis",
       "infoUrl": "https://fr.wikipedia.org/wiki/Meteor_Crater"
@@ -524,7 +524,7 @@
       "height": 5600,
       "author": "NASA/JPL-Caltech/ESO/R. Hurt",
       "licenceUrl": null,
-      "caption": "galaxie spirale qui comprend de 200 à 400 milliards d'étoiles dont le Soleil",
+      "caption": "La Voie lactée, aussi nommée la Galaxie (avec une majuscule), est une galaxie spirale barrée qui comprend entre 200 et 400 milliards d'étoiles, et au moins autant de planètes.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Voie_lact%C3%A9e"
@@ -543,7 +543,7 @@
       "height": 5395,
       "author": "Lviatour",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-      "caption": "galaxie spirale de la constellation d'Andromède, membre du Groupe local",
+      "caption": "La galaxie d'Andromède, également désignée M31 dans le Catalogue de Messier et NGC 224, est une galaxie spirale située à environ 2,55 millions d'années-lumière du Soleil, dans la constellation…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Galaxie_d'Androm%C3%A8de"
@@ -562,7 +562,7 @@
       "height": 2000,
       "author": "S. Beckwith (STScI), Hubble Heritage Team, (STScI/AURA), ESA, NASA, Additional Processing: Robert Gendler",
       "licenceUrl": null,
-      "caption": "galaxie spirale de la constellation des Chiens de Chasse",
+      "caption": "M51 (NGC 5194), aussi surnommée la galaxie du Tourbillon, est une galaxie spirale relativement rapprochée située à environ 7,225 ± 2,126 Mpc (∼23,6 millions d'al), selon des mesures non basées sur le…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/M51_(galaxie)"
@@ -581,7 +581,7 @@
       "height": 2904,
       "author": "NASA/JPL-Caltech",
       "licenceUrl": null,
-      "caption": "galaxie spirale de la constellation du Triangle et membre du Groupe local",
+      "caption": "La galaxie du Triangle, également appelée M33, est une galaxie spirale de type SA(s)cd appartenant au Groupe local et située dans la constellation du Triangle.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Galaxie_du_Triangle"
@@ -600,7 +600,7 @@
       "height": 6429,
       "author": "NASA/ESA and The Hubble Heritage Team (STScI/AURA)",
       "licenceUrl": null,
-      "caption": "galaxie de la constellation de la Vierge",
+      "caption": "M104 (NGC 4594, aussi surnommée la galaxie du Sombrero) est une galaxie spirale vue par la tranche située dans la constellation de la Vierge à une distance d'environ 9,6 ± 0,3 Mpc (∼31,3 millions…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/M104_(galaxie)"
@@ -619,7 +619,7 @@
       "height": 512,
       "author": "NASA/Ames Research Center",
       "licenceUrl": null,
-      "caption": "galaxie",
+      "caption": "Le Grand Nuage de Magellan (souvent abrégé par son sigle anglais LMC dans la littérature, en référence à Large Magellanic Cloud), est une galaxie naine de type SB(s)m appartenant au Groupe local et…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Grand_Nuage_de_Magellan"
@@ -638,7 +638,7 @@
       "height": 12132,
       "author": "Image: National Aeronautics and Space Administration (a U.S. federal government agency; https://www.nasa.gov/ ) European space agency ( https://www.esa.int/ ), Canadian Space Agency ( https://www.asc-csa.gc.ca/eng/ ) Space Telescope Science Institute ( https://www.stsci.edu/ , science operations cen",
       "licenceUrl": null,
-      "caption": "groupement visuel de galaxies",
+      "caption": "Le Quintette de Stephan est un regroupement visuel de galaxies situé à environ 90,2 ± 6,3 Mpc (∼294 millions d'al) de la Terre, dans la constellation de Pégase.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Quintette_de_Stephan"
@@ -657,7 +657,7 @@
       "height": 3515,
       "author": "NASA, ESA, AURA/Caltech, Palomar Observatory The science team consists of: D. Soderblom and E. Nelan (STScI), F. Benedict and B. Arthur (U. Texas), and B. Jones (Lick Obs.)",
       "licenceUrl": null,
-      "caption": "amas ouvert de la constellation du Taureau",
+      "caption": "L'amas des Pléiades, les Pléiades ou amas M45, est un amas ouvert d'étoiles qui s'observe depuis les deux hémisphères, dans la constellation du Taureau.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Pl%C3%A9iades_(astronomie)"
@@ -676,7 +676,7 @@
       "height": 7560,
       "author": "ESO",
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-      "caption": "amas globulaire de la constellation du Centaure",
+      "caption": "Omega Centauri (ω Cen, NGC 5139 ou Caldwell 80) est un amas globulaire situé dans la constellation du Centaure.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Omega_Centauri"
@@ -695,7 +695,7 @@
       "height": 3716,
       "author": "NASA's Marshall Space Flight Center",
       "licenceUrl": null,
-      "caption": "rémanent de supernova situé dans la constellation du Taureau",
+      "caption": "La nébuleuse du Crabe (M1, NGC 1952, Taurus A, Taurus X-1, Sh2-244) est une nébuleuse de vent de pulsar (plérion) et un rémanent de supernova de la constellation du Taureau, du bras de Persée de la…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_du_Crabe"
@@ -714,7 +714,7 @@
       "height": 18000,
       "author": "NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team",
       "licenceUrl": null,
-      "caption": "nébuleuse diffuse et en réflexion de la constellation d'Orion",
+      "caption": "La nébuleuse d'Orion ou Grande Nébuleuse d'Orion ou Messier 42 (M42 du catalogue de Messier) ou Sh2-281 ou LBN 974 ou NGC 1976 est une nébuleuse diffuse qui brille en émission et en réflexion au cœur…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_d'Orion"
@@ -741,7 +741,7 @@
       "height": 2264,
       "author": "Giuseppe Donatiello",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "grande nébuleuse faisant partie de la constellation de la Carène",
+      "caption": "La nébuleuse de la Carène (ou Grande nébuleuse de la Carène, NGC 3372) est une nébuleuse en émission et une nébuleuse par réflexion située dans la constellation de la Carène.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_Car%C3%A8ne"
@@ -760,7 +760,7 @@
       "height": 2968,
       "author": "Ken Crawford",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "caption": "nébuleuse obscure dans la constellation d'Orion",
+      "caption": "La nébuleuse de la Tête de Cheval, officiellement connue sous le nom de Barnard 33 (IC 434 désigne la nébuleuse émissive à l'arrière-plan), est une nébuleuse obscure dans la constellation d'Orion.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_T%C3%AAte_de_Cheval"
@@ -779,7 +779,7 @@
       "height": 3923,
       "author": "Urtzi Odriozola",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "vaste région HII",
+      "caption": "La nébuleuse de la Rosette, aussi connue comme NGC 2237 ainsi que Caldwell 49, est une vaste région HII située à quelque 4 700 années-lumière du Système solaire en direction de la constellation de la…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_Rosette"
@@ -798,7 +798,7 @@
       "height": 3200,
       "author": "NASA, NOAO, ESA, the Hubble Helix Nebula Team, M. Meixner (STScI), and T.A. Rector (NRAO)",
       "licenceUrl": null,
-      "caption": "nébuleuse planétaire située dans la constellation du Verseau, à proximité du Poisson austral",
+      "caption": "La nébuleuse de l'Hélice ou NGC 7293 ou Caldwell 63 (C63 du catalogue de Caldwell) est une nébuleuse planétaire de la constellation du Verseau, à proximité du Poisson austral.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/NGC_7293"
@@ -817,7 +817,7 @@
       "height": 1417,
       "author": "NASA, ESA, HEIC, and The Hubble Heritage Team (STScI/AURA)",
       "licenceUrl": null,
-      "caption": "nébuleuse planétaire",
+      "caption": "La nébuleuse de l'Œil de Chat ou NGC 6543 ou Caldwell 6 (C6 du catalogue de Caldwell) est une nébuleuse planétaire de la constellation du Dragon.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_l'%C5%92il_de_Chat"
@@ -836,7 +836,7 @@
       "height": 1000,
       "author": "The Hubble Heritage Team (AURA/STScI/NASA)",
       "licenceUrl": null,
-      "caption": "nébuleuse planétaire de la constellation de la Lyre",
+      "caption": "La nébuleuse de la Lyre ou nébuleuse de l'Anneau, aussi connue sous les matricules Messier 57 (M57 du catalogue de Messier) et NGC 6720, est une nébuleuse planétaire située à environ 787 ± 37 pc (∼2…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/N%C3%A9buleuse_de_la_Lyre"
@@ -855,7 +855,7 @@
       "height": 7379,
       "author": "NASA, ESA, and the Hubble Heritage (STScI/AURA)-ESA/Hubble Collaboration. Acknowledgement: Robert A. Fesen (Dartmouth College, USA) and James Long (ESA/Hubble)",
       "licenceUrl": null,
-      "caption": "rémanent d'une supernova dans la constellation de Cassiopée",
+      "caption": "Cassiopée A est une source radio, la plus forte du ciel après le Soleil, située à une distance d'environ 11 000 années-lumière.",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Cassiop%C3%A9e_A"
@@ -874,7 +874,7 @@
       "height": 1448,
       "author": "Kazunori Akiyama, Antxon Alberdi, Walter Alef, Juan Carlos Algaba, Richard Anantua, Keiichi Asada, Rebecca Azulay, Uwe Bach, Anne-Kathrin Baczko, David Ball",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "trou noir supermassif au centre de la Voie Lactée",
+      "caption": "Sagittarius A* ou Sgr A* (abrégé) (du latin Sagittaire, lu « Sagittarius A étoile ») est un trou noir supermassif du centre galactique de la Voie Lactée (galaxie spirale), d'environ 4,3 millions de…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Sagittarius_A*"
@@ -893,7 +893,7 @@
       "height": 6750,
       "author": "Harrison Schmitt / Apollo 17",
       "licenceUrl": null,
-      "caption": "photographie de la Terre prise par l'équipage d'Apollo 17",
+      "caption": "La Bille bleue (en anglais : « The Blue Marble ») est une photographie célèbre de la Terre, prise le 7 décembre 1972 par l'astronaute Harrison Schmitt de l'équipage américain d'Apollo 17 de la NASA,…",
       "date": "1972",
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/La_Bille_bleue"
@@ -912,7 +912,7 @@
       "height": 4166,
       "author": "NASA/Bill Anders",
       "licenceUrl": null,
-      "caption": "photographie de William Anders",
+      "caption": "Lever de Terre (Earthrise en anglais), identifiée et classée sous le code « AS8-14-2383HR » par la NASA, est une photographie prise par William Anders le 24 décembre 1968, durant la mission d'Apollo…",
       "date": "1968",
       "place": "National Aeronautics and Space Administration",
       "infoUrl": "https://fr.wikipedia.org/wiki/Lever_de_Terre"
@@ -942,7 +942,7 @@
       "height": 2064,
       "author": "Tempe",
       "licenceUrl": null,
-      "caption": "mission spatiale soviétique de 1961",
+      "caption": "Vostok 1 (en russe : Восток 1) est le premier vol spatial habité de l'histoire spatiale et la première mission du programme Vostok.",
       "date": null,
       "place": "Union soviétique",
       "infoUrl": "https://fr.wikipedia.org/wiki/Vostok_1"
@@ -961,7 +961,7 @@
       "height": 3300,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "11e mission du programme spatial américain Apollo (premiers pas de l'homme sur la Lune)",
+      "caption": "Apollo 11 est une mission du programme spatial américain Apollo au cours de laquelle, pour la première fois, des hommes se sont posés sur la Lune, le lundi 21 juillet 1969.",
       "date": null,
       "place": "États-Unis",
       "infoUrl": "https://fr.wikipedia.org/wiki/Apollo_11"
@@ -980,7 +980,7 @@
       "height": 2362,
       "author": "Neil Armstrong",
       "licenceUrl": null,
-      "caption": "véhicule spatial",
+      "caption": "Le module lunaire ou LEM (pour Lunar Excursion Module) ou LM (pour Lunar Module) est le véhicule spatial utilisé dans le cadre du programme spatial américain Apollo (1961-1972) pour débarquer des…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Module_lunaire_Apollo"
@@ -999,7 +999,7 @@
       "height": 1088,
       "author": "NASA/Dave Scott; cropped by User:Bubba73",
       "licenceUrl": null,
-      "caption": "Astromobile d'exploration lunaire à pilotage humain utilisé à partir de 1971",
+      "caption": "Le rover lunaire Apollo ou LRV (Lunar Roving Vehicle en anglais, soit « Véhicule Itinérant Lunaire ») est une astromobile fabriquée à quatre exemplaires pour l'agence spatiale américaine (NASA),…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Rover_lunaire_Apollo"
@@ -1018,7 +1018,7 @@
       "height": 3000,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "lanceur spatial américain",
+      "caption": "Saturn V est un lanceur spatial super lourd de la famille Saturn, développé dans les années 1960 par l'agence spatiale américaine, la NASA, pour le programme lunaire Apollo.",
       "replaces": "https://commons.wikimedia.org/wiki/File:Saturn_V_launches.jpg",
       "date": null,
       "place": null,
@@ -1038,7 +1038,7 @@
       "height": 2400,
       "author": "DLR German Aerospace Center",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "lanceur spatial européen",
+      "caption": "Ariane 5 est un lanceur spatial moyen à lourd développé par l'Agence spatiale européenne (ESA), construit par la société ArianeGroup, commercialisé par Arianespace, et opéré par le Centre national…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Ariane_5"
@@ -1057,7 +1057,7 @@
       "height": 800,
       "author": "Official SpaceX Photos",
       "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-      "caption": "lanceur moyen à lourd partiellement réutilisable développé par SpaceX",
+      "caption": "Falcon 9 est un lanceur spatial moyen à lourd partiellement réutilisable développé et opéré par la société américaine SpaceX avec une capacité de 22,8 tonnes en orbite basse ou de 8,3 tonnes en…",
       "date": null,
       "place": "États-Unis",
       "infoUrl": "https://fr.wikipedia.org/wiki/Falcon_9"
@@ -1076,7 +1076,7 @@
       "height": 2956,
       "author": "NASA; edited by jjron (tilt corrected)",
       "licenceUrl": null,
-      "caption": "vaisseau spatial réutilisable",
+      "caption": "La navette spatiale américaine (en anglais : Space shuttle ; officiellement Space Transportation System ou STS) est un lanceur et un véhicule spatial conçu et opéré par l'agence spatiale américaine…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Navette_spatiale_am%C3%A9ricaine"
@@ -1095,7 +1095,7 @@
       "height": 3820,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "Station spatiale en orbite terrestre basse assemblée à partir de 1998 développée par les Etats-Unis, la Russie, l'Europe et le Japon",
+      "caption": "La Station spatiale internationale (abrégée en SSI, surtout au Canada francophone, ou ISS d'après le nom anglais : International Space Station) est une station spatiale placée en orbite terrestre…",
       "date": "1998",
       "place": "orbite terrestre basse",
       "infoUrl": "https://fr.wikipedia.org/wiki/Station_spatiale_internationale"
@@ -1114,7 +1114,7 @@
       "height": 2010,
       "author": "Original image: NASA/Crew of STS-91 Retouched image: Thegreenj",
       "licenceUrl": null,
-      "caption": "station spatiale soviétique puis russe ayant orbité autour de la Terre de 1986 à 2001",
+      "caption": "Mir (du russe Мир signifiant « Paix » et « Monde ») est une station spatiale russe placée en orbite terrestre basse par l'Union soviétique.",
       "date": "1986",
       "place": "Union soviétique",
       "infoUrl": "https://fr.wikipedia.org/wiki/Mir_(station_spatiale)"
@@ -1133,7 +1133,7 @@
       "height": 1576,
       "author": "NASA (Crew of Skylab 4 )",
       "licenceUrl": null,
-      "caption": "Station spatiale orbitale américaine, 1973-1974",
+      "caption": "Skylab (abréviation de Sky Laboratory, « Laboratoire du ciel » en français) est la première station spatiale lancée par l'agence spatiale américaine, la NASA. Elle est développée dans le cadre du…",
       "date": null,
       "place": "États-Unis",
       "infoUrl": "https://fr.wikipedia.org/wiki/Skylab"
@@ -1152,7 +1152,7 @@
       "height": 2847,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "télescope spatial américain de la NASA",
+      "caption": "Hubble (en anglais : Hubble Space Telescope, en abrégé HST ou, rarement en français, TSH) est un télescope spatial conçu par la NASA avec une participation de l'Agence spatiale européenne,…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Hubble_(t%C3%A9lescope_spatial)"
@@ -1171,7 +1171,7 @@
       "height": 1735,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "télescope spatial de la NASA, l'ESA et l'ASC",
+      "caption": "James Webb (JWST, pour l'anglais James Webb Space Telescope, ou parfois TSJW selon son nom français) est un télescope spatial servant d'observatoire et fonctionnant principalement dans l'infrarouge,…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/James_Webb_(t%C3%A9lescope_spatial)"
@@ -1190,7 +1190,7 @@
       "height": 2494,
       "author": "NASA/JPL",
       "licenceUrl": null,
-      "caption": "sonde spatiale",
+      "caption": "Voyager 1 est une sonde spatiale, jumelle de Voyager 2, du programme spatial Voyager de la NASA. Lancée le 5 septembre 1977, elle est destinée à l'étude des planètes externes du Système solaire, qui…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Voyager_1"
@@ -1209,7 +1209,7 @@
       "height": 3000,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "mission d'exploration spatiale",
+      "caption": "Cassini-Huygens est une mission d'exploration spatiale du système saturnien au moyen d'une sonde spatiale développée par l'agence spatiale américaine, la NASA, avec des participations importantes de…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Cassini-Huygens"
@@ -1228,7 +1228,7 @@
       "height": 2400,
       "author": "Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
       "licenceUrl": null,
-      "caption": "sonde spatiale américaine",
+      "caption": "New Horizons (« Nouveaux Horizons » en français) est une sonde de l'agence spatiale américaine (NASA) dont l'objectif principal est l'étude de la planète naine Pluton et de ses satellites, ce qui a…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/New_Horizons"
@@ -1247,7 +1247,7 @@
       "height": 1500,
       "author": "ESA/ATG medialab",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "caption": "sonde spatiale de l'ESA",
+      "caption": "Rosetta est une mission spatiale de l'Agence spatiale européenne (ASE/ESA) dont l'objectif principal est de recueillir des données sur la composition du noyau de la comète…",
       "date": null,
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Rosetta_(sonde_spatiale)"
@@ -1266,7 +1266,7 @@
       "height": 5550,
       "author": "NASA/JPL-Caltech/MSSS",
       "licenceUrl": null,
-      "caption": "rover d'exploration robotique de la mission Mars Science Laboratory",
+      "caption": "Curiosity est une astromobile (rover en anglais) déployée à Aeolis Palus sur Mars en 2012 via la mission Mars Science Laboratory.",
       "date": null,
       "place": "Gale",
       "infoUrl": "https://fr.wikipedia.org/wiki/Curiosity_(astromobile)"
@@ -1296,7 +1296,7 @@
       "height": 2400,
       "author": "NASA/JPL/Cornell University, Maas Digital LLC",
       "licenceUrl": null,
-      "caption": "ancien rover de la NASA",
+      "caption": "Opportunity (en français : « Opportunité, Occasion »), alias MER-B (Mars Exploration Rover - B), est la deuxième astromobile de la mission Mars Exploration Rover de l'agence spatiale américaine, la…",
       "date": null,
       "place": "Quadrangle de Margaritifer Sinus",
       "infoUrl": "https://fr.wikipedia.org/wiki/Opportunity"
@@ -1315,7 +1315,7 @@
       "height": 2118,
       "author": "В. Жихаренко / ТАСС Обработка: Roman Kubanskiy",
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-      "caption": "pilote et astronaute soviétique, premier humain dans l'espace (1934–1968)",
+      "caption": "Youri Alekseïevitch Gagarine (en russe : Ю́рий Гага́рин, prononcé / ˈjʉrʲɪj ɡɐˈɡarʲɪn/), né le 9 mars 1934 et mort le 27 mars 1968, est un pilote et cosmonaute soviétique, premier être humain à avoir…",
       "date": "1934–1968",
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Youri_Gagarine"
@@ -1334,7 +1334,7 @@
       "height": 2921,
       "author": "duma.gov.ru",
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-      "caption": "cosmonaute et femme politique russe, première femme dans l'espace",
+      "caption": "Valentina Vladimirovna Terechkova (en russe : Валентина Владимировна Терешкова, /vɐlʲɪnʲˈtʲinə vlɐˈdʲimʲɪrəvnə tʲɪrʲɪʂˈkovə/ ), surnommée la Mouette, née le 6 mars 1937 à Maslennikovo (raïon de…",
       "date": "née en 1937",
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Valentina_Terechkova"
@@ -1353,7 +1353,7 @@
       "height": 4125,
       "author": "Unknown author Unknown author",
       "licenceUrl": null,
-      "caption": "astronaute américain, premier homme ayant marché sur la Lune",
+      "caption": "Neil Alden Armstrong, né le 5 août 1930 à Wapakoneta dans l'Ohio, aux États-Unis, et mort le 25 août 2012 à Cincinnati dans le même État, est un astronaute américain, pilote d'essai, aviateur de…",
       "date": "1930–2012",
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Neil_Armstrong"
@@ -1372,7 +1372,7 @@
       "height": 8123,
       "author": "NASA",
       "licenceUrl": null,
-      "caption": "astronaute américain",
+      "caption": "Buzz Aldrin, né Edwin Eugene Aldrin Jr.",
       "date": "né en 1930",
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Buzz_Aldrin"
@@ -1391,7 +1391,7 @@
       "height": 3487,
       "author": "NASA; retouched by Coffeeandcrumbs",
       "licenceUrl": null,
-      "caption": "astronaute américaine et physicienne (1951–2012)",
+      "caption": "Sally Kristen Ride, née le 26 mai 1951 à Los Angeles et morte le 23 juillet 2012 à La Jolla, est une astrophysicienne et astronaute américaine.",
       "date": "1951–2012",
       "place": null,
       "infoUrl": "https://fr.wikipedia.org/wiki/Sally_Ride"
@@ -1410,7 +1410,7 @@
       "height": 2000,
       "author": "Mariordo (Mario Roberto Durán Ortiz)",
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "caption": "ancien radiotélescope à Porto Rico",
+      "caption": "Le radiotélescope d’Arecibo était situé à Arecibo sur la côte nord de l’île de Porto Rico.",
       "date": null,
       "place": "Arecibo, Porto Rico",
       "infoUrl": "https://fr.wikipedia.org/wiki/Radiot%C3%A9lescope_d'Arecibo"
@@ -1429,7 +1429,7 @@
       "height": 2152,
       "author": "ESO/G. Hüdepohl ( atacamaphoto.com )",
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-      "caption": "ensemble de plusieurs télescopes situé dans le désert d'Atacama au Chili",
+      "caption": "Le Très Grand Télescope (parfois précisé très grand télescope de l'ESO), en anglais Very Large Telescope (VLT), est un ensemble de quatre télescopes principaux (aussi appelés UT pour Unit Telescope)…",
       "date": "1998",
       "place": "Région d'Antofagasta, Chili",
       "infoUrl": "https://fr.wikipedia.org/wiki/Tr%C3%A8s_Grand_T%C3%A9lescope"
@@ -1448,7 +1448,7 @@
       "height": 1714,
       "author": "elisabetta_monaco from Munich, Germany",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-      "caption": "base de lancement française et européenne, située près de Kourou en Guyane française",
+      "caption": "Le Centre spatial guyanais, en abrégé CSG, est une base de lancement française située en Guyane (Amérique du Sud) sur les territoires des communes de Kourou et de Sinnamary.",
       "date": "1964",
       "place": "Kourou, France",
       "infoUrl": "https://fr.wikipedia.org/wiki/Centre_spatial_guyanais"
