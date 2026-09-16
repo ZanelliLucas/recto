@@ -17,4 +17,6 @@ export interface ResultLocationState {
   difficulty: Difficulty;
   /** Images de la partie, revues après coup ; absentes d'un historique antérieur à leur ajout. */
   cards?: CardImage[];
+  /** Images d'au moins une paire manquée : celles que la mémoire a laissé filer (EF-7.3). */
+  missed?: string[];
 }

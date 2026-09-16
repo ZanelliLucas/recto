@@ -239,6 +239,10 @@ export const fr = {
   'result.shareCopied': 'Texte et lien copiés : collez-les où vous voulez.',
   'result.shareFailed': 'Le partage n’a pas abouti.',
   'result.cards': 'Les cartes de la partie',
+  'result.missed': 'Les paires qui vous ont résisté',
+  'result.missedHint': '{count} images que vous avez cherchées plus d’une fois.',
+  'result.missedNone': 'Aucune hésitation : chaque paire trouvée du premier coup.',
+  'result.cardsAll': 'Toutes les cartes de la partie',
   'result.cardsCredits': 'Auteurs et licences des images',
   'result.cardsMore': 'en savoir plus sur Wikipédia (nouvel onglet)',
 

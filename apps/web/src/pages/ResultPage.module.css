@@ -144,3 +144,9 @@
 .cardsCredits a {
   color: var(--accent-strong);
 }
+
+.reviewHint {
+  margin: -0.4rem 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

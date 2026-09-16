@@ -12,7 +12,7 @@ import { config } from '../../src/config';
 import { SqlContentRepository } from '../../src/content/contentRepository';
 import { openDatabase } from '../../src/db/client';
 import { lockDir, type LockFile } from './lock';
-import { wikidataFacts } from './wikimedia';
+import { wikidataFacts, wikipediaLeadSentences } from './wikimedia';
 
 const wanted = process.argv.slice(2);
 const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
@@ -25,6 +25,9 @@ for (const file of lockFiles) {
   const lock = JSON.parse(await readFile(lockFile, 'utf8')) as LockFile;
   const ids = [...new Set(lock.items.flatMap((item) => (item.status === 'ok' && item.wikidata ? [item.wikidata] : [])))];
   const facts = await wikidataFacts(ids);
+  // La description Wikidata ne distingue qu'un élément d'un autre (« espèce de champignons ») :
+  // la première phrase de l'article, elle, apprend quelque chose au joueur (EF-7.3).
+  const sentences = await wikipediaLeadSentences(lock.items.filter((item) => item.status === 'ok').map((item) => item.article));
 
   // Valeurs de l'enrichissement précédent : en base, elles peuvent être remplacées ; toute autre
   // valeur a été saisie au back-office et prévaut.
@@ -40,6 +43,10 @@ for (const file of lockFiles) {
     item.date = found.date;
     item.place = found.place;
     item.infoUrl = found.infoUrl;
+  }
+  for (const item of lock.items) {
+    const sentence = sentences.get(item.article);
+    if (sentence) item.caption = sentence;
   }
   await writeFile(lockFile, `${JSON.stringify(lock, null, 2)}\n`);
 
@@ -72,7 +79,8 @@ for (const file of lockFiles) {
   const withDate = lock.items.filter((item) => item.date).length;
   const withPlace = lock.items.filter((item) => item.place).length;
   const withArticle = lock.items.filter((item) => item.infoUrl).length;
+  const withSentence = lock.items.filter((item) => sentences.has(item.article)).length;
   console.log(
-    `${lock.name} : ${withDate} date(s), ${withPlace} lieu(x), ${withArticle} article(s) relevés ; ${updated} image(s) mise(s) à jour en base.`,
+    `${lock.name} : ${withSentence} définition(s), ${withDate} date(s), ${withPlace} lieu(x), ${withArticle} article(s) relevés ; ${updated} image(s) mise(s) à jour en base.`,
   );
 }

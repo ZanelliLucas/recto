@@ -1,6 +1,11 @@
 /** Accès aux API publiques de Wikipédia, Wikidata et Wikimedia Commons (lecture seule). */
 
-export const USER_AGENT = 'RECTO-content-import/0.1 (jeu de memoire ; import ponctuel de contenus libres)';
+/**
+ * Wikimedia demande un agent descriptif offrant un moyen de contacter l'opérateur : l'adresse du
+ * dépôt public y répond, sans exposer d'adresse personnelle. Un agent anonyme est bridé plus tôt.
+ */
+export const USER_AGENT =
+  'RECTO-content-import/0.1 (https://github.com/ZanelliLucas/recto ; import ponctuel de contenus libres)';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -102,6 +107,45 @@ interface Claim {
  * Image d'en-tête de l'article de fr.wikipedia, utilisée quand Wikidata n'a pas d'image
  * principale (P18) ou que celle-ci se révèle inexploitable. Renvoie le nom du fichier Commons.
  */
+/** Coupe une phrase trop longue pour une légende de carte, à la frontière d'un mot. */
+function shorten(text: string, max = 200): string {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  return `${cut.slice(0, cut.lastIndexOf(' '))}…`;
+}
+
+/**
+ * Première phrase de l'article de fr.wikipedia : une définition écrite pour un lecteur, là où la
+ * description Wikidata ne sert qu'à distinguer deux éléments (« espèce de champignons »).
+ */
+export async function wikipediaLeadSentences(titles: readonly string[]): Promise<Map<string, string>> {
+  const result = new Map<string, string>();
+  for (const batch of chunks(titles, 20)) {
+    const data = await query<{
+      query?: TitleMappings & { pages: { title: string; extract?: string }[] };
+    }>('fr.wikipedia.org', {
+      action: 'query',
+      prop: 'extracts',
+      exintro: '1',
+      explaintext: '1',
+      exsentences: '1',
+      exlimit: '20',
+      redirects: '1',
+      titles: batch.join('|'),
+    });
+    const q = data.query;
+    if (!q) continue;
+    const byTitle = new Map(q.pages.map((page) => [page.title, page.extract]));
+    for (const title of batch) {
+      const extract = byTitle.get(follow(title, q))?.trim();
+      // Une page d'homonymie décrit la page, pas le sujet : sa phrase n'apprendrait rien.
+      if (extract && extract.length > 15 && !/homonymie/i.test(extract)) result.set(title, shorten(extract));
+    }
+  }
+  return result;
+}
+
 export async function wikipediaLeadImages(titles: readonly string[]): Promise<Map<string, string>> {
   const result = new Map<string, string>();
   for (const batch of chunks(titles, 50)) {

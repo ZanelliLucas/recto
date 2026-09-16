@@ -1,4 +1,4 @@
-import { MISMATCH_DELAY_MS, pickImageUrl, type FinishGameResponse } from '@recto/shared';
+import { MISMATCH_DELAY_MS, pickImageUrl, type FinishGameResponse, type Move } from '@recto/shared';
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { ApiError, api, isTransient } from '../api/client';
@@ -65,6 +65,23 @@ function describe(event: FlipEvent | null, deck: readonly string[], faces: Reado
     case 'miss':
       return t('game.announceMiss', { a: title(a), b: title(b) });
   }
+}
+
+/**
+ * Images d'au moins une tentative infructueuse : deux positions retournées qui ne portaient pas
+ * la même image. Ce sont les paires que le joueur a cherchées, donc celles qu'il gagne à revoir.
+ */
+export function missedImages(moves: readonly Move[], deck: readonly string[]): string[] {
+  const missed = new Set<string>();
+  for (const [a, b] of moves) {
+    const first = deck[a];
+    const second = deck[b];
+    if (first && second && first !== second) {
+      missed.add(first);
+      missed.add(second);
+    }
+  }
+  return [...missed];
 }
 
 function GameSession({ game, categoryName }: GameLocationState) {
@@ -163,6 +180,7 @@ function GameSession({ game, categoryName }: GameLocationState) {
           categoryName,
           difficulty: game.difficulty,
           cards: game.images,
+          missed: missedImages(engine.moves, game.deck),
         };
         navigate(`/partie/${game.gameId}/resultat`, { replace: true, state });
       },

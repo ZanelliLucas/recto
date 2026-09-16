@@ -113,7 +113,7 @@ export function ResultPage() {
         </div>
       )}
 
-      {state.cards && state.cards.length > 0 && <CardsReview cards={state.cards} />}
+      {state.cards && state.cards.length > 0 && <CardsReview cards={state.cards} missed={state.missed} />}
     </section>
   );
 }
@@ -122,11 +122,27 @@ export function ResultPage() {
  * « Chaque carte vous apprend quelque chose » : les images de la partie, avec leurs métadonnées
  * pédagogiques quand elles existent (EF-7.3). Préfigure les fiches pédagogiques de la version 2.
  */
-function CardsReview({ cards }: { cards: CardImage[] }) {
+function CardsReview({ cards, missed }: { cards: CardImage[]; missed?: string[] }) {
+  // Les paires cherchées plusieurs fois d'abord : c'est là que la mémoire a besoin d'un second tour.
+  const missedSet = new Set(missed ?? []);
+  const resisted = missed ? cards.filter((card) => missedSet.has(card.id)) : [];
+  const knewThem = missed !== undefined && resisted.length === 0;
+
   return (
     <section className={styles.review} aria-labelledby="result-cards">
+      {resisted.length > 0 && (
+        <>
+          <h2 id="result-missed" className={styles.reviewTitle}>
+            {t('result.missed')}
+          </h2>
+          <p className={styles.reviewHint}>{t('result.missedHint', { count: resisted.length })}</p>
+          <CardGallery cards={resisted} />
+        </>
+      )}
+      {knewThem && <p className={styles.reviewHint}>{t('result.missedNone')}</p>}
+
       <h2 id="result-cards" className={styles.reviewTitle}>
-        {t('result.cards')}
+        {resisted.length > 0 ? t('result.cardsAll') : t('result.cards')}
       </h2>
       <CardGallery cards={cards} />
       <p className={styles.cardsCredits}>

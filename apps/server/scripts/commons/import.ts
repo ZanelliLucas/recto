@@ -19,8 +19,12 @@ import { fetchWithRetry, licenceLabel } from './wikimedia';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-/** Une image par seconde : au-delà, upload.wikimedia.org répond 429 et demande dix minutes. */
-const RATE_LIMIT_MS = 1000;
+/**
+ * upload.wikimedia.org bride encore un client anonyme à une image par seconde : il répond 429
+ * en demandant dix minutes, et renvoie à ses recommandations d'accès en nombre. Une image
+ * toutes les trois secondes passe ; une catégorie entière demande alors quatre minutes.
+ */
+const RATE_LIMIT_MS = 3000;
 
 const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
 const admin = new AdminService(content, new LocalMediaStorage(config.mediaDir));
@@ -64,6 +68,8 @@ for (const file of lockFiles) {
         infoUrl: item.infoUrl ?? null,
         visualGroup: item.visualGroup,
       });
+      // Deux sujets peuvent viser le même fichier : sans cela, le second serait importé en double.
+      known.add(item.sourceUrl);
       added++;
       process.stdout.write('.');
       // Remplacement : l'ancienne image n'est retirée qu'une fois la nouvelle en place, pour ne

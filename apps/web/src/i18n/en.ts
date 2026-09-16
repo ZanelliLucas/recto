@@ -244,6 +244,10 @@ export const en: Messages = {
   'result.shareCopied': 'Text and link copied: paste them anywhere.',
   'result.shareFailed': 'Sharing did not work.',
   'result.cards': 'The cards of this game',
+  'result.missed': 'The pairs that resisted you',
+  'result.missedHint': '{count} pictures you looked for more than once.',
+  'result.missedNone': 'Not one hesitation: every pair found first try.',
+  'result.cardsAll': 'All the cards from this game',
   'result.cardsCredits': 'Picture authors and licences',
   'result.cardsMore': 'learn more on Wikipedia, in French (new tab)',
 
