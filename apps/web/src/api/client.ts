@@ -4,6 +4,7 @@ import type {
   AdminImage,
   ApiErrorBody,
   AudienceSummary,
+  CardImage,
   CategoryInput,
   CategoryPatch,
   CategorySummary,
@@ -86,6 +87,7 @@ export const isTransient = (error: unknown) => error instanceof ApiError && (err
 
 export const api = {
   categories: () => request<CategorySummary[]>('/categories'),
+  categoryCards: (slug: string) => request<CardImage[]>(`/categories/${encodeURIComponent(slug)}/cards`),
   credits: () => request<CreditsCategory[]>('/credits'),
   createGame: (body: CreateGameRequest) => request<CreateGameResponse>('/games', { body }),
   startGame: (id: string, token: string) => request<StartGameResponse>(game(id, 'start'), { body: { token } }),

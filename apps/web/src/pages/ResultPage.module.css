@@ -135,61 +135,6 @@
   text-align: center;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 0.6rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.cardItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.55rem;
-  border-radius: 12px;
-  background: var(--surface-2);
-}
-
-.cardImage {
-  flex: none;
-  width: 64px;
-  height: 64px;
-  border-radius: 8px;
-  background: var(--card-face);
-  object-fit: contain;
-}
-
-.cardText {
-  display: grid;
-  gap: 0.15rem;
-  min-width: 0;
-}
-
-.cardText p {
-  margin: 0;
-}
-
-.cardTitle {
-  font-weight: 700;
-  overflow-wrap: anywhere;
-}
-
-/* Titre souligné : le lien « En savoir plus » ne repose pas sur la seule couleur. */
-.cardTitle a {
-  color: var(--accent-strong);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.cardMeta,
-.cardCaption {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
 .cardsCredits {
   margin: 0;
   font-size: 0.85rem;

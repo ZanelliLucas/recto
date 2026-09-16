@@ -2,7 +2,7 @@ import type { CardImage } from '@recto/shared';
 import { useState } from 'react';
 import { Link, Navigate, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthContext';
-import { Picture } from '../components/Picture';
+import { CardGallery } from '../components/CardGallery';
 import type { ResultLocationState } from '../game/navigation';
 import { useStartGame } from '../game/useStartGame';
 import { difficultyLabel, t } from '../i18n';
@@ -123,36 +123,12 @@ export function ResultPage() {
  * pédagogiques quand elles existent (EF-7.3). Préfigure les fiches pédagogiques de la version 2.
  */
 function CardsReview({ cards }: { cards: CardImage[] }) {
-  const sorted = [...cards].sort((a, b) => a.title.localeCompare(b.title, 'fr'));
   return (
     <section className={styles.review} aria-labelledby="result-cards">
       <h2 id="result-cards" className={styles.reviewTitle}>
         {t('result.cards')}
       </h2>
-      <ul className={styles.cards}>
-        {sorted.map((card) => {
-          const meta = [card.date, card.place].filter(Boolean).join(' · ');
-          return (
-            <li key={card.id} className={styles.cardItem}>
-              <Picture className={styles.cardImage} sources={card.sources} size={200} alt="" />
-              <div className={styles.cardText}>
-                <p className={styles.cardTitle}>
-                  {card.infoUrl ? (
-                    <a href={card.infoUrl} target="_blank" rel="noopener noreferrer">
-                      {card.title}
-                      <span className="visually-hidden"> — {t('result.cardsMore')}</span>
-                    </a>
-                  ) : (
-                    card.title
-                  )}
-                </p>
-                {meta && <p className={styles.cardMeta}>{meta}</p>}
-                {card.caption && <p className={styles.cardCaption}>{card.caption}</p>}
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <CardGallery cards={cards} />
       <p className={styles.cardsCredits}>
         <Link to="/credits">{t('result.cardsCredits')}</Link>
       </p>

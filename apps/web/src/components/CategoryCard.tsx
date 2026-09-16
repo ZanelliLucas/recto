@@ -22,7 +22,7 @@ export function CategoryCard({ category, pending, onPlay, headingLevel = 3 }: Ca
   return (
     <article className={styles.card}>
       <Link to={`/jouer/${category.slug}`} className={styles.head}>
-        <Picture className={styles.thumb} sources={category.thumbnail} size={200} alt="" />
+        <Picture className={styles.thumb} sources={category.thumbnail} size={400} alt="" />
         <span className={styles.heading}>
           <Heading className={styles.name}>{category.name}</Heading>
           <span className={styles.count}>{t('categories.images', { count: category.imageCount })}</span>

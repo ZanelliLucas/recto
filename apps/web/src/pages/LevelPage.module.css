@@ -17,29 +17,54 @@
   color: var(--text);
 }
 
+/* Bandeau : la catégorie s'annonce par son image, comme sur la grille d'accueil. */
 .header {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 1.1rem;
+  align-items: flex-end;
+  min-height: 200px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
 }
 
-.thumb {
-  flex: none;
-  width: 88px;
-  height: 88px;
-  padding: 6px;
-  border-radius: 14px;
-  background: var(--card-face);
-  object-fit: contain;
+.header picture {
+  position: absolute;
+  inset: 0;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Voile dégradé : le titre reste lisible sur n'importe quelle image (WCAG 1.4.3). */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.headerText {
+  position: relative;
+  z-index: 1;
+  padding: 1.2rem 1.4rem;
 }
 
 .header h1 {
+  color: #ffffff;
   font-size: clamp(1.8rem, 5vw, 2.6rem);
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.55);
 }
 
 .header p {
   margin: 0.3rem 0 0;
-  color: var(--muted);
+  max-width: 60ch;
+  color: rgb(255 255 255 / 0.85);
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.55);
 }
 
 .subtitle {
@@ -79,14 +104,17 @@
   font: inherit;
   text-align: left;
   cursor: pointer;
+  box-shadow: var(--shadow);
   transition:
     border-color 150ms,
+    box-shadow 150ms,
     transform 150ms;
 }
 
 .level:hover:not(:disabled),
 .level[aria-busy='true'] {
   border-color: var(--accent);
+  box-shadow: var(--shadow-lifted);
   transform: translateY(-2px);
 }
 
@@ -127,4 +155,43 @@
   height: 7px;
   border-radius: 2px;
   background: var(--line-strong);
+}
+
+/* Galerie des cartes, repliée par défaut sous le choix du niveau. */
+.gallery {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.gallerySummary {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gallerySummary:hover {
+  color: var(--accent-strong);
+}
+
+.galleryBody {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0 1rem 1rem;
+}
+
+.galleryBody p {
+  margin: 0;
+}
+
+.galleryCredits {
+  font-size: 0.85rem;
+}
+
+.galleryCredits a {
+  color: var(--accent-strong);
 }

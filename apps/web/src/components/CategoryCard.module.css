@@ -1,51 +1,96 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  padding: 1.1rem;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    border-color 160ms,
+    box-shadow 160ms,
+    transform 160ms;
 }
 
+.card:hover,
+.card:focus-within {
+  border-color: var(--card-edge);
+  box-shadow: var(--shadow-lifted);
+  transform: translateY(-2px);
+}
+
+/* Bandeau d'image : le jeu parle d'images, la grille doit en montrer. */
 .head {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  border-radius: 10px;
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  background: var(--surface-2);
   text-decoration: none;
 }
 
-.head:hover .name {
-  color: var(--accent-strong);
+/* Hors flux : sans cela, une vignette carrée impose sa hauteur et le format 16/10 saute. */
+.head picture {
+  position: absolute;
+  inset: 0;
+  display: block;
 }
 
 .thumb {
-  flex: none;
-  width: 64px;
-  height: 64px;
-  padding: 4px;
-  border-radius: 10px;
-  background: var(--card-face);
-  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Une vignette en attente ne doit pas apparaître d'un coup une fois la carte posée. */
+  transition: transform 260ms;
+}
+
+.card:hover .thumb {
+  transform: scale(1.03);
+}
+
+/* Voile dégradé : le titre reste lisible sur n'importe quelle image (WCAG 1.4.3). */
+.head::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
 }
 
 .heading {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.75rem 0.9rem;
 }
 
 .name {
-  font-size: 1.2rem;
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.5);
 }
 
 .count {
-  color: var(--muted);
-  font-size: 0.9rem;
+  color: rgb(255 255 255 / 0.82);
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.5);
+}
+
+.head:hover .name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .description {
   margin: 0;
+  padding: 0.85rem 1.1rem 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -55,7 +100,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   margin: 0;
-  padding: 0;
+  padding: 0.85rem 1.1rem 1.1rem;
   list-style: none;
 }
 
@@ -82,6 +127,7 @@
 .level:hover:not(:disabled),
 .level[aria-busy='true'] {
   border-color: var(--accent);
+  background: var(--surface);
 }
 
 .level:disabled {
@@ -102,4 +148,20 @@
   color: var(--muted);
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .thumb {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+
+  .card:hover .thumb {
+    transform: none;
+  }
 }

@@ -1,7 +1,9 @@
-import { DIFFICULTIES, DIFFICULTY_ORDER } from '@recto/shared';
-import type { CSSProperties } from 'react';
+import { DIFFICULTIES, DIFFICULTY_ORDER, type CardImage } from '@recto/shared';
+import { useState, type CSSProperties } from 'react';
 import { Link, useParams } from 'react-router';
+import { api } from '../api/client';
 import { useCategories } from '../api/useCategories';
+import { CardGallery } from '../components/CardGallery';
 import { Picture } from '../components/Picture';
 import { useBestTimes } from '../game/bestTimes';
 import { useStartGame } from '../game/useStartGame';
@@ -38,8 +40,8 @@ export function LevelPage() {
         ← {t('level.back')}
       </Link>
       <header className={styles.header}>
-        <Picture className={styles.thumb} sources={category.thumbnail} size={200} alt="" />
-        <div>
+        <Picture className={styles.banner} sources={category.thumbnail} size={800} alt="" />
+        <div className={styles.headerText}>
           <h1>{category.name}</h1>
           <p>
             {category.description} {t('categories.images', { count: category.imageCount })}.
@@ -88,6 +90,50 @@ export function LevelPage() {
           );
         })}
       </ul>
+
+      <CategoryGallery key={category.slug} slug={category.slug} count={category.imageCount} />
     </section>
+  );
+}
+
+type GalleryState = { status: 'idle' } | { status: 'loading' } | { status: 'error' } | { status: 'ready'; cards: CardImage[] };
+
+/**
+ * Cartes de la catégorie, consultables avant de jouer (EF-7.3). Repliée par défaut : la page reste
+ * tournée vers le choix du niveau, et les images ne sont chargées qu'à l'ouverture.
+ */
+function CategoryGallery({ slug, count }: { slug: string; count: number }) {
+  const [state, setState] = useState<GalleryState>({ status: 'idle' });
+
+  const load = () => {
+    if (state.status === 'loading' || state.status === 'ready') return;
+    setState({ status: 'loading' });
+    api.categoryCards(slug).then(
+      (cards) => setState({ status: 'ready', cards }),
+      () => setState({ status: 'error' }),
+    );
+  };
+
+  return (
+    <details
+      className={styles.gallery}
+      onToggle={(event) => {
+        if (event.currentTarget.open) load();
+      }}
+    >
+      <summary className={styles.gallerySummary}>{t('level.gallery', { count })}</summary>
+      <div className={styles.galleryBody}>
+        {state.status === 'loading' && <p role="status">{t('level.galleryLoading')}</p>}
+        {state.status === 'error' && <p role="alert">{t('level.galleryError')}</p>}
+        {state.status === 'ready' && (
+          <>
+            <CardGallery cards={state.cards} />
+            <p className={styles.galleryCredits}>
+              <Link to="/credits">{t('result.cardsCredits')}</Link>
+            </p>
+          </>
+        )}
+      </div>
+    </details>
   );
 }
