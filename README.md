@@ -9,7 +9,10 @@ Le cahier des charges de référence est [docs/RECTO_Cahier-des-charges_v1.1.pdf
 npm install
 cp apps/server/.env.example apps/server/.env   # puis renseigner AUTH_SECRET (32 caractères minimum)
 npm run db:seed                                # catégorie Drapeaux
-npm run content:commons:import                 # Monuments, Histoire, Faune, Espace (téléchargement depuis Commons)
+npm run content:commons:import                 # Monuments, Histoire, Faune, Espace, Merveilles naturelles, Peinture,
+                                               # Instruments, Fruits et légumes, Champignons, Minéraux et gemmes,
+                                               # Fleurs, Arbres, Cuisine du monde, Véhicules, Sports, Costumes
+                                               # (téléchargement depuis Commons)
 npm run dev
 ```
 
@@ -42,6 +45,7 @@ non versionnées : les commandes ci-dessus les reconstruisent à partir des sour
 | `npm run content:commons:resolve` | Relève fichiers, auteurs et licences Commons, sans téléchargement d'image ; `"--only=Article"` ne relève que les sujets cités |
 | `npm run content:commons:import` | Télécharge et traite les images des listes verrouillées |
 | `npm run content:commons:enrich` | Complète dates et lieux depuis Wikidata (métadonnées seules), sans écraser une saisie du back-office |
+| `npm run content:commons:reframe` | Reprend le cadrage des images déjà importées dont la source est très allongée |
 | `npm run user:role -- <adresse> <admin\|joueur>` | Attribue un rôle à un compte existant |
 | `npm run check:launch [-- --env]` | Contrôle préalable à la mise en ligne : pages légales, puis variables d'environnement |
 
@@ -170,7 +174,8 @@ deploy                     Composition Docker et Caddy pour un serveur unique
 - Écran de résultat : revue des cartes de la partie, avec légende, date et lieu (métadonnées complétées depuis
   Wikidata par `content:commons:enrich`) ; chaque titre mène à l'article de Wikipédia correspondant (« En savoir
   plus », champ modifiable au back-office).
-- Cinquième catégorie, Espace (74 images de la NASA, de l'ESA et de Commons) ; images du cobra royal et de la pieuvre
+- Cinq nouvelles catégories : Espace (NASA, ESA et Commons), Merveilles naturelles, Peinture (œuvres du domaine public,
+  distinctes de celles d'Histoire), Instruments de musique, Fruits et légumes — neuf catégories en tout ; images du cobra royal et de la pieuvre
   remplacées, Cité de Carcassonne ajoutée. Un sujet peut désormais imposer son fichier Commons (`file` dans
   `scripts/commons/subjects.ts`) ; l'import retire l'ancienne image une fois la nouvelle en place.
 - Interface disponible en anglais depuis les paramètres (pages légales, back-office et contenu des cartes restent en
@@ -178,11 +183,21 @@ deploy                     Composition Docker et Caddy pour un serveur unique
 - Application installable (manifeste, icônes, service worker) avec page hors ligne ; courriels de service en HTML et en
   texte.
 - Clôture de partie rejouable sur réseau instable ; pause automatique quand l'onglet est quitté.
-- Tests de bout en bout Playwright (`npm run test:e2e`).
+- Tests de bout en bout Playwright (`npm run test:e2e`), dont un audit axe-core (WCAG 2.1 A/AA) des pages principales.
+- Page de chaque catégorie : galerie repliable de ses cartes et de leurs fiches, avant de jouer ; titres des cartes
+  servis avec la page pour le référencement.
 - Partage du résultat (feuille native du téléphone, sinon texte et lien copiés) ; drapeaux complétés de leur
   capitale et de leur continent (les dates d'adoption de Wikidata, trop hétérogènes, sont écartées).
 - Intégration continue prête (`.github/workflows/ci.yml` : types, tests, build), active dès que le dépôt est publié
   sur GitHub.
+- Huit nouvelles catégories : Champignons, Minéraux et gemmes, Fleurs, Arbres et feuilles, Cuisine du monde,
+  Véhicules de légende, Sports, Costumes traditionnels — dix-sept catégories en tout.
+- Liste des catégories cherchable et triable (recherche insensible à la casse et aux accents, portant aussi sur la
+  description ; tri par sélection, nom ou nombre d'images), affichée à partir de huit catégories.
+- Relevé Commons : à défaut d'image principale sur Wikidata (P18), le relevé se rabat sur l'image d'en-tête de
+  l'article de Wikipédia, ce qui a récupéré une centaine de sujets.
+- Traitement des images : une source très allongée (au-delà de 1,8:1) est désormais intégrée en entier dans la carte
+  carrée, sur un fond repris de l'image, au lieu d'être recadrée sur une bande.
 
 Restent à décider avant l'ouverture publique : hébergeur, prestataire SMTP, nom de domaine et identité de l'éditeur
 (voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-13 sur l'environnement de recette

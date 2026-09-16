@@ -42,8 +42,9 @@ chronomètre pendant l'hésitation du joueur.
 
 `npm run test:e2e` (Playwright) rejoue sur le build de production, en format bureau et mobile : une partie complète au
 clavier jusqu'à l'écran de résultat et la revue des cartes, l'abandon confirmé dans la page, la pause automatique quand
-l'onglet est quitté, la grille Difficile sur mobile (cartes de 56 px au moins, sans défilement horizontal) et la
-présence des liens légaux sur toutes les pages. Aucun navigateur n'est téléchargé : `RECTO_E2E_BROWSER` désigne un
+l'onglet est quitté, la grille Difficile sur mobile (cartes de 56 px au moins, sans défilement horizontal), la galerie
+des cartes d'une catégorie, le passage à l'anglais, l'installation de l'application, la présence des liens légaux sur
+toutes les pages, et un audit axe-core sans aucune violation WCAG 2.1 A/AA sur les pages principales. Aucun navigateur n'est téléchargé : `RECTO_E2E_BROWSER` désigne un
 Chromium installé, Microsoft Edge à défaut.
 
 ## Vérifications complémentaires

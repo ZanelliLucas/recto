@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { expect, test, type Page, type Response } from '@playwright/test';
 
 /** Partie créée par l'interface : on relit sa grille pour la jouer comme un joueur parfait. */
@@ -121,6 +123,61 @@ test.describe('mobile', () => {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(overflow).toBeLessThanOrEqual(0);
   });
+});
+
+test('aucune violation d’accessibilité WCAG 2.1 A/AA sur les pages principales (axe-core)', async ({ page }) => {
+  const axeSource = readFileSync(path.resolve('node_modules/axe-core/axe.min.js'), 'utf8');
+  const audit = async () => {
+    // Évalué par Playwright : la politique de sécurité de contenu du site refuse, à juste titre,
+    // tout script injecté dans la page.
+    await page.evaluate(axeSource);
+    return page.evaluate(async () => {
+      const axe = (window as unknown as { axe: { run: (context: Document, options: object) => Promise<{ violations: { id: string; nodes: unknown[] }[] }> } }).axe;
+      const result = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] } });
+      return result.violations.map((violation) => `${violation.id} (${violation.nodes.length})`);
+    });
+  };
+
+  for (const url of ['/', '/categories', '/comment-jouer', '/parametres', '/credits', '/mentions-legales', '/confidentialite', '/contact']) {
+    await page.goto(url);
+    await expect(page.locator('main')).not.toBeEmpty();
+    expect(await audit(), url).toEqual([]);
+  }
+
+  // Page de catégorie, galerie des cartes ouverte.
+  await page.goto('/jouer/monuments');
+  await page.locator('details').getByText(/^Découvrir les \d+ cartes$/).click();
+  await expect(page.locator('details').getByRole('listitem').first()).toBeVisible();
+  expect(await audit(), '/jouer/monuments').toEqual([]);
+});
+
+test('la page d’une catégorie présente ses cartes avant de jouer (EF-7.3)', async ({ page }) => {
+  await page.goto('/jouer/monuments');
+  const gallery = page.locator('details');
+  await gallery.getByText(/^Découvrir les \d+ cartes$/).click();
+  await expect(gallery.getByRole('listitem').first()).toBeVisible();
+  expect(await gallery.getByRole('listitem').count()).toBeGreaterThanOrEqual(60);
+  await expect(gallery.getByRole('link', { name: /^Tour Eiffel/ })).toHaveAttribute('href', /fr\.wikipedia\.org/);
+});
+
+test('la page des catégories se cherche et se trie (EF-3.2)', async ({ page }) => {
+  await page.goto('/categories');
+  const cards = page.getByRole('heading', { level: 2 });
+  const total = await cards.count();
+  expect(total).toBeGreaterThanOrEqual(8);
+
+  // La recherche ignore les accents et porte aussi sur la description.
+  await page.getByLabel('Rechercher une catégorie').fill('drapeau');
+  await expect(cards).toHaveCount(1);
+  await expect(page.getByRole('heading', { level: 2, name: 'Drapeaux' })).toBeVisible();
+  await expect(page.getByText(/1 catégorie sur \d+/)).toBeVisible();
+
+  await page.getByRole('button', { name: 'Effacer la recherche' }).click();
+  await expect(cards).toHaveCount(total);
+
+  await page.getByLabel('Trier par').selectOption('name');
+  const names = await cards.allInnerTexts();
+  expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, 'fr')));
 });
 
 test('l’interface passe en anglais depuis les paramètres, puis revient au français (EF-8.4)', async ({ page }) => {
