@@ -15,7 +15,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { lockDir, lockPath, type LockFile, type LockItem } from './lock';
 import { SUBJECT_LISTS, type Subject } from './subjects';
 import { MIN_SOURCE_SIZE } from '../../src/media/pipeline';
-import { assessRights, commonsFiles, wikidataEntities, wikidataIds } from './wikimedia';
+import { assessRights, commonsFiles, wikidataEntities, wikidataIds, wikipediaLeadImages } from './wikimedia';
 
 const args = process.argv.slice(2);
 const only = new Set(args.filter((arg) => arg.startsWith('--only=')).flatMap((arg) => arg.slice('--only='.length).split('|')));
@@ -25,14 +25,31 @@ await mkdir(lockDir, { recursive: true });
 
 const defaultTitle = (article: string) => article.replace(/\s*\([^)]*\)\s*$/, '');
 
+/**
+ * Certaines descriptions Wikidata parlent de la page et non du sujet (« page d'homonymie de
+ * Wikimédia ») : elles n'apprendraient rien au joueur et sont écartées de la légende.
+ */
+const usableCaption = (description: string | null | undefined) =>
+  description && !/homonymie|wikimedia|wikimédia|page de liste/i.test(description) ? description : null;
+
 for (const list of lists) {
   const subjects = only.size > 0 ? list.subjects.filter((subject) => only.has(subject.article)) : list.subjects;
   if (subjects.length === 0) continue;
   const ids = await wikidataIds(subjects.map((subject) => subject.article));
   const entities = await wikidataEntities([...new Set(ids.values())]);
-  // Fichier imposé par la liste des sujets, sinon image principale de l'élément Wikidata.
-  const imageOf = (subject: Subject) => subject.file ?? entities.get(ids.get(subject.article) ?? '')?.image ?? null;
-  const files = [...new Set(subjects.map(imageOf).filter((file): file is string => file !== null))];
+  const leads = await wikipediaLeadImages(subjects.filter((subject) => !subject.file).map((subject) => subject.article));
+  /**
+   * Fichiers envisagés, dans l'ordre : celui qu'impose la liste des sujets, sinon l'image
+   * principale de l'élément Wikidata (P18), puis l'image d'en-tête de l'article. Ce repli
+   * rattrape les sujets sans P18 et ceux dont l'image de Wikidata est trop petite ou mal licenciée.
+   */
+  const candidatesOf = (subject: Subject) => {
+    if (subject.file) return [subject.file];
+    const wikidata = entities.get(ids.get(subject.article) ?? '')?.image ?? null;
+    const lead = leads.get(subject.article) ?? null;
+    return [...new Set([wikidata, lead].filter((file): file is string => file !== null))];
+  };
+  const files = [...new Set(subjects.flatMap(candidatesOf))];
   const infos = await commonsFiles(files);
 
   const resolved: LockItem[] = subjects.map((subject) => {
@@ -42,29 +59,43 @@ for (const list of lists) {
     const wikidata = ids.get(subject.article);
     if (!wikidata) return reject('article introuvable sur fr.wikipedia');
     const entity = entities.get(wikidata);
-    const image = imageOf(subject);
-    if (!image) return { ...reject('aucune image principale (P18) sur Wikidata'), wikidata };
-    const info = infos.get(image);
-    if (!info) return { ...reject('fichier Commons introuvable'), wikidata, file: image };
-    const found = { wikidata, file: image, sourceUrl: info.descriptionUrl, licence: info.licence };
-    // Le fichier téléchargé est la vignette de 1280 px de large : un panorama y devient trop bas.
-    const scale = Math.min(1, 1280 / info.width);
-    const [width, height] = [Math.round(info.width * scale), Math.round(info.height * scale)];
-    if (Math.min(width, height) < MIN_SOURCE_SIZE) return { ...reject(`image trop petite (${width} × ${height})`), ...found };
-    const rights = assessRights(info);
-    if (!rights.ok) return { ...reject(rights.reason), ...found };
+    const candidates = candidatesOf(subject);
+    if (candidates.length === 0) return { ...reject('aucune image principale (P18) sur Wikidata'), wikidata };
 
-    return {
-      ...base,
-      status: 'ok',
-      ...found,
-      downloadUrl: info.thumbUrl,
-      width: info.width,
-      height: info.height,
-      author: rights.author,
-      licenceUrl: info.licenceUrl,
-      caption: entity?.description ?? null,
-    };
+    let refused: LockItem | null = null;
+    for (const image of candidates) {
+      const info = infos.get(image);
+      if (!info) {
+        refused ??= { ...reject('fichier Commons introuvable'), wikidata, file: image };
+        continue;
+      }
+      const found = { wikidata, file: image, sourceUrl: info.descriptionUrl, licence: info.licence };
+      // Le fichier téléchargé est la vignette de 1280 px de large : un panorama y devient trop bas.
+      const scale = Math.min(1, 1280 / info.width);
+      const [width, height] = [Math.round(info.width * scale), Math.round(info.height * scale)];
+      if (Math.min(width, height) < MIN_SOURCE_SIZE) {
+        refused ??= { ...reject(`image trop petite (${width} × ${height})`), ...found };
+        continue;
+      }
+      const rights = assessRights(info);
+      if (!rights.ok) {
+        refused ??= { ...reject(rights.reason), ...found };
+        continue;
+      }
+
+      return {
+        ...base,
+        status: 'ok',
+        ...found,
+        downloadUrl: info.thumbUrl,
+        width: info.width,
+        height: info.height,
+        author: rights.author,
+        licenceUrl: info.licenceUrl,
+        caption: usableCaption(entity?.description),
+      };
+    }
+    return refused ?? { ...reject('aucune image exploitable'), wikidata };
   });
 
   // Relevé ciblé : les autres sujets de la liste verrouillée restent intacts.

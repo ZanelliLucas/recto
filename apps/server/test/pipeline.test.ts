@@ -28,6 +28,35 @@ describe('processImage', () => {
     expect(avif400.data.length).toBeLessThanOrEqual(25_000);
   }, 20_000);
 
+  it('intègre une image très allongée en entier au lieu de la recadrer (EF-3.10)', async () => {
+    const processed = await processImage(await sampleJpeg(2400, 600), 'image/jpeg');
+    const webp400 = processed.files.find((file) => file.suffix === '-400.webp')!;
+    const square = sharp(webp400.data);
+    expect((await square.metadata()).width).toBe(400);
+
+    // Le sujet occupe une bande centrale de 100 px ; au-dessus, le fond flouté est plus sombre.
+    const { data, info } = await square.raw().toBuffer({ resolveWithObject: true });
+    const luminance = (x: number, y: number) => {
+      const at = (y * info.width + x) * info.channels;
+      return (data[at]! + data[at + 1]! + data[at + 2]!) / 3;
+    };
+    let darker = 0;
+    for (let x = 20; x < 380; x += 20) if (luminance(x, 30) < luminance(x, 200)) darker += 1;
+    expect(darker).toBeGreaterThan(12);
+  }, 20_000);
+
+  it("garde la transparence d'une image détourée allongée", async () => {
+    const wide = await sharp({
+      create: { width: 2000, height: 500, channels: 4, background: { r: 200, g: 40, b: 40, alpha: 1 } },
+    })
+      .png()
+      .toBuffer();
+    const processed = await processImage(wide, 'image/png');
+    const webp200 = processed.files.find((file) => file.suffix === '-200.webp')!;
+    const { data, info } = await sharp(webp200.data).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    expect(data[(10 * info.width + 100) * info.channels + 3]).toBe(0);
+  }, 20_000);
+
   it('refuse une image trop petite', async () => {
     await expect(processImage(await sampleJpeg(300, 300), 'image/jpeg')).rejects.toBeInstanceOf(ImageRejectedError);
   });

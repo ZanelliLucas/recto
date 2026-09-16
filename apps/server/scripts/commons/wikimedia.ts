@@ -4,13 +4,34 @@ export const USER_AGENT = 'RECTO-content-import/0.1 (jeu de memoire ; import pon
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-/** Requête polie envers les serveurs Wikimedia : réessais espacés, en respectant Retry-After. */
+/** Une connexion muette ne doit pas figer un import de plusieurs centaines d'images. */
+const REQUEST_TIMEOUT_MS = 60_000;
+/** Pause maximale acceptée sur demande du serveur ; au-delà, l'import renonce au sujet. */
+const MAX_RETRY_AFTER_MS = 900_000;
+const MAX_ATTEMPTS = 6;
+
+/**
+ * Requête polie envers les serveurs Wikimedia : réessais espacés, en respectant Retry-After.
+ * Chaque tentative est bornée dans le temps, et une coupure réseau est réessayée comme un 5xx.
+ */
 export async function fetchWithRetry(url: string): Promise<Response> {
   for (let attempt = 0; ; attempt++) {
-    const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT, 'Api-User-Agent': USER_AGENT } });
-    if ((response.status === 429 || response.status >= 500) && attempt < 6) {
-      const retryAfter = Number(response.headers.get('retry-after'));
-      await sleep(Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 5000 * 2 ** attempt);
+    const backoff = 5000 * 2 ** attempt;
+    let response: Response;
+    try {
+      response = await fetch(url, {
+        headers: { 'User-Agent': USER_AGENT, 'Api-User-Agent': USER_AGENT },
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+      });
+    } catch (error) {
+      if (attempt >= MAX_ATTEMPTS - 1) throw error;
+      await sleep(backoff);
+      continue;
+    }
+    if ((response.status === 429 || response.status >= 500) && attempt < MAX_ATTEMPTS) {
+      const retryAfter = Number(response.headers.get('retry-after')) * 1000;
+      const wait = Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter, MAX_RETRY_AFTER_MS) : backoff;
+      await sleep(wait);
       continue;
     }
     if (!response.ok) throw new Error(`HTTP ${response.status} pour ${url.slice(0, 120)}…`);
@@ -75,6 +96,34 @@ export interface EntitySummary {
 interface Claim {
   rank: 'preferred' | 'normal' | 'deprecated';
   mainsnak: { datavalue?: { value: unknown } };
+}
+
+/**
+ * Image d'en-tête de l'article de fr.wikipedia, utilisée quand Wikidata n'a pas d'image
+ * principale (P18) ou que celle-ci se révèle inexploitable. Renvoie le nom du fichier Commons.
+ */
+export async function wikipediaLeadImages(titles: readonly string[]): Promise<Map<string, string>> {
+  const result = new Map<string, string>();
+  for (const batch of chunks(titles, 50)) {
+    const data = await query<{
+      query?: TitleMappings & { pages: { title: string; pageimage?: string }[] };
+    }>('fr.wikipedia.org', {
+      action: 'query',
+      prop: 'pageimages',
+      piprop: 'name',
+      pilimit: '50',
+      redirects: '1',
+      titles: batch.join('|'),
+    });
+    const q = data.query;
+    if (!q) continue;
+    const byTitle = new Map(q.pages.map((page) => [page.title, page.pageimage]));
+    for (const title of batch) {
+      const file = byTitle.get(follow(title, q));
+      if (file) result.set(title, file.replace(/_/g, ' '));
+    }
+  }
+  return result;
 }
 
 export async function wikidataEntities(ids: readonly string[]): Promise<Map<string, EntitySummary>> {

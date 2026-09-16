@@ -19,6 +19,9 @@ import { fetchWithRetry, licenceLabel } from './wikimedia';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/** Une image par seconde : au-delà, upload.wikimedia.org répond 429 et demande dix minutes. */
+const RATE_LIMIT_MS = 1000;
+
 const content = new SqlContentRepository(await openDatabase(config.databaseUrl, config.migrationsDir, config.databaseAuthToken));
 const admin = new AdminService(content, new LocalMediaStorage(config.mediaDir));
 
@@ -73,7 +76,7 @@ for (const file of lockFiles) {
     } catch (error) {
       failures.push(`${item.title} — ${error instanceof Error ? error.message : String(error)}`);
     }
-    await sleep(250);
+    await sleep(RATE_LIMIT_MS);
   }
 
   const detail = await admin.getCategory(category.id);

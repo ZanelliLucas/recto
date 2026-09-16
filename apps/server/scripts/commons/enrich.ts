@@ -1,7 +1,8 @@
 /**
  * Complète les métadonnées pédagogiques (EF-7.3) des listes verrouillées : date et lieu relevés
  * dans Wikidata, sans aucun téléchargement d'image. Met à jour les fichiers verrouillés, puis les
- * images déjà importées (reconnues à leur source) — sans écraser une valeur saisie au back-office.
+ * images déjà importées (reconnues à leur source) — légende comprise, et sans écraser une valeur
+ * saisie au back-office.
  *
  * Usage : npm run content:commons:enrich [-- monuments histoire faune]
  */
@@ -28,7 +29,10 @@ for (const file of lockFiles) {
   // Valeurs de l'enrichissement précédent : en base, elles peuvent être remplacées ; toute autre
   // valeur a été saisie au back-office et prévaut.
   const previous = new Map(
-    lock.items.map((item) => [item.sourceUrl, { date: item.date ?? null, place: item.place ?? null, infoUrl: item.infoUrl ?? null }]),
+    lock.items.map((item) => [
+      item.sourceUrl,
+      { caption: item.caption ?? null, date: item.date ?? null, place: item.place ?? null, infoUrl: item.infoUrl ?? null },
+    ]),
   );
   for (const item of lock.items) {
     const found = item.wikidata ? facts.get(item.wikidata) : undefined;
@@ -48,11 +52,19 @@ for (const file of lockFiles) {
     if (!item) continue;
     const before = previous.get(image.sourceUrl);
     const update = {
+      // La légende vient du relevé : une description Wikidata écartée depuis doit disparaître.
+      caption: replaceable(image.caption, before?.caption) ? (item.caption ?? null) : image.caption,
       date: replaceable(image.date, before?.date) ? (item.date ?? null) : image.date,
       place: replaceable(image.place, before?.place) ? (item.place ?? null) : image.place,
       infoUrl: replaceable(image.infoUrl, before?.infoUrl) ? (item.infoUrl ?? null) : image.infoUrl,
     };
-    if (update.date === image.date && update.place === image.place && update.infoUrl === image.infoUrl) continue;
+    if (
+      update.caption === image.caption &&
+      update.date === image.date &&
+      update.place === image.place &&
+      update.infoUrl === image.infoUrl
+    )
+      continue;
     await content.updateImage(image.id, update);
     updated++;
   }

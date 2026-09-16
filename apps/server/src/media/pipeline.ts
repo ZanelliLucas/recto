@@ -31,12 +31,20 @@ export async function processImage(data: Buffer, mimeType: string): Promise<Proc
   throw new ImageRejectedError('Format non pris en charge : JPEG, PNG, WebP, AVIF ou SVG attendu.');
 }
 
+/**
+ * Au-delà de ce rapport, un recadrage carré jetterait plus de la moitié de l'image : une
+ * trompette de 3:1 ne laisserait qu'un morceau de tube. Ces images sont alors intégrées en
+ * entier dans le carré (EF-3.10) sur un fond tiré de l'image elle-même.
+ */
+const LETTERBOX_RATIO = 1.8;
+
 /** EF-3.10 et EF-3.11 — recadrage carré centré sur la zone d'intérêt, trois résolutions. */
 async function processRaster(input: Buffer): Promise<ProcessedImage['files']> {
   let width = 0;
   let height = 0;
+  let hasAlpha = false;
   try {
-    ({ width = 0, height = 0 } = await sharp(input).metadata());
+    ({ width = 0, height = 0, hasAlpha = false } = await sharp(input).metadata());
   } catch {
     throw new ImageRejectedError('Fichier image illisible.');
   }
@@ -44,16 +52,36 @@ async function processRaster(input: Buffer): Promise<ProcessedImage['files']> {
     throw new ImageRejectedError(`Image trop petite (${width} × ${height} px) : ${MIN_SOURCE_SIZE} px de côté au minimum.`);
   }
 
+  const elongated = Math.max(width, height) / Math.min(width, height) >= LETTERBOX_RATIO;
   const files: ProcessedImage['files'] = [];
   for (const size of IMAGE_SIZES) {
-    const square = sharp(input)
-      .rotate()
-      .resize(size, size, { fit: 'cover', position: sharp.strategy.attention });
+    const square = elongated ? sharp(await letterbox(input, size, hasAlpha)) : crop(input, size);
     for (const format of ['avif', 'webp'] as const) {
       files.push({ suffix: variantSuffix(size, format), data: await encodeWithinBudget(square, format, BUDGET[size]) });
     }
   }
   return files;
+}
+
+const crop = (input: Buffer, size: number) =>
+  sharp(input).rotate().resize(size, size, { fit: 'cover', position: sharp.strategy.attention });
+
+/**
+ * Sujet entier au centre du carré. Le fond reprend l'image, floutée et assombrie, pour que la
+ * carte reste pleine ; une image déjà détourée garde sa transparence et le fond de la carte.
+ */
+async function letterbox(input: Buffer, size: number, hasAlpha: boolean): Promise<Buffer> {
+  const transparent = { r: 0, g: 0, b: 0, alpha: 0 };
+  if (hasAlpha) {
+    return sharp(input).rotate().resize(size, size, { fit: 'contain', background: transparent }).png().toBuffer();
+  }
+  const subject = await sharp(input).rotate().resize(size, size, { fit: 'inside' }).png().toBuffer();
+  return crop(input, size)
+    .blur(size / 24)
+    .modulate({ brightness: 0.55 })
+    .composite([{ input: subject, gravity: 'centre' }])
+    .png()
+    .toBuffer();
 }
 
 async function encodeWithinBudget(image: Sharp, format: RasterFormat, budget: number): Promise<Buffer> {
