@@ -12,7 +12,7 @@
     "build": "npm run build -w @recto/web && npm run build -w @recto/server",
     "start": "npm run start -w @recto/server",
     "test": "npm run test --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc --noEmit -p api/tsconfig.json",
     "content:drapeaux": "npm run content:drapeaux -w @recto/server",
     "content:drapeaux:enrich": "npm run content:drapeaux:enrich -w @recto/server",
     "content:commons:resolve": "npm run content:commons:resolve -w @recto/server --",

@@ -53,6 +53,11 @@ export interface AppDependencies {
   version?: string;
   /** Sonde de disponibilité : lève une erreur si une dépendance (la base) est hors service. */
   checkHealth?: () => Promise<void>;
+  /**
+   * Entretien déclenché de l'extérieur, pour un hébergement sans processus durable : la tâche
+   * planifiée appelle GET /api/entretien avec le jeton `secret` en en-tête Authorization.
+   */
+  maintenance?: { run: () => Promise<void>; secret: string };
 }
 
 const sendImage = (res: Response, image: Buffer) => {
@@ -104,6 +109,21 @@ export function createApp(deps: AppDependencies): Express {
   api.use(cookieParser());
   api.use(sameOrigin(deps.appUrl));
   // Avant toute identification : une vue de page ne lit ni ne dépose aucun cookie (ENF-6.4).
+  // Tâche planifiée : hors processus durable, les purges et clôtures sont déclenchées par appel.
+  if (deps.maintenance) {
+    const { run, secret } = deps.maintenance;
+    api.get('/entretien', (req, res, next) => {
+      if (req.headers.authorization !== `Bearer ${secret}`) {
+        res.status(401).set('Cache-Control', 'no-store').json({ code: 'non_autorise' });
+        return;
+      }
+      run().then(
+        () => res.set('Cache-Control', 'no-store').json({ status: 'ok' }),
+        (error: unknown) => next(error),
+      );
+    });
+  }
+
   api.use(telemetryRouter(deps.audience));
   api.use(currentUser(deps.sessions, deps.users));
   api.use(playerIdentity(deps.secureCookies ?? false));

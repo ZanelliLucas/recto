@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build -w @recto/web",
+  "outputDirectory": "apps/web/dist",
+  "functions": {
+    "api/index.ts": {
+      "memory": 1024,
+      "maxDuration": 30,
+      "includeFiles": "{apps/server/drizzle/**,apps/web/dist/**}"
+    }
+  },
+  "rewrites": [{ "source": "/((?!assets/|icons/|og/).*)", "destination": "/api" }],
+  "crons": [{ "path": "/api/entretien", "schedule": "17 * * * *" }]
+}

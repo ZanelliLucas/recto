@@ -17,11 +17,18 @@ interface MaintenanceDependencies {
 
 const MINUTE_MS = 60 * 1000;
 
+export interface MaintenanceJobs {
+  /** Clôture des parties laissées en plan. */
+  expire: () => Promise<void>;
+  /** Purges aux durées annoncées, et sauvegarde quotidienne si elle est active. */
+  hourly: () => Promise<void>;
+}
+
 /**
- * Tâches périodiques d'une instance unique : clôture des parties laissées en plan, purges aux durées
- * annoncées par la politique de confidentialité, sauvegarde quotidienne (§ 7.5). Renvoie l'arrêt.
+ * Les mêmes tâches que `startMaintenance`, exposées à l'appel : un hébergement sans processus
+ * durable (fonctions sans serveur) les déclenche depuis une tâche planifiée plutôt qu'un minuteur.
  */
-export function startMaintenance({ db, games, audience, config }: MaintenanceDependencies): () => void {
+export function maintenanceJobs({ db, games, audience, config }: MaintenanceDependencies): MaintenanceJobs {
   const expire = async () => {
     try {
       await games.expireUnfinished(Date.now() - config.gameRetentionMs);
@@ -51,6 +58,15 @@ export function startMaintenance({ db, games, audience, config }: MaintenanceDep
     }
   };
 
+  return { expire, hourly };
+}
+
+/**
+ * Tâches périodiques d'une instance unique : clôture des parties laissées en plan, purges aux durées
+ * annoncées par la politique de confidentialité, sauvegarde quotidienne (§ 7.5). Renvoie l'arrêt.
+ */
+export function startMaintenance(deps: MaintenanceDependencies): () => void {
+  const { expire, hourly } = maintenanceJobs(deps);
   const timers = [
     setInterval(() => void expire(), 10 * MINUTE_MS),
     setInterval(() => void hourly(), 60 * MINUTE_MS),

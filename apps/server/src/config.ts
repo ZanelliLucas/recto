@@ -60,7 +60,8 @@ export const config = {
   mediaDir: process.env.MEDIA_DIR ? path.resolve(process.env.MEDIA_DIR) : fromRoot('storage/media'),
   /** Sources du contenu versionnées (drapeaux générés, listes Commons verrouillées). */
   contentDir: fromRoot('content'),
-  webDistDir: fileURLToPath(new URL('../../web/dist/', import.meta.url)),
+  /** Interface compilée ; surchargeable quand l'hébergeur range le paquet ailleurs. */
+  webDistDir: process.env.WEB_DIST_DIR ? path.resolve(process.env.WEB_DIST_DIR) : fileURLToPath(new URL('../../web/dist/', import.meta.url)),
   /** Signature des jetons de session. */
   authSecret: authSecret(),
   /** Adresse publique de l'interface : liens des courriels, adresses canoniques, plan du site. */

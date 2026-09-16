@@ -199,7 +199,35 @@ deploy                     Composition Docker et Caddy pour un serveur unique
 - Traitement des images : une source très allongée (au-delà de 1,8:1) est désormais intégrée en entier dans la carte
   carrée, sur un fond repris de l'image, au lieu d'être recadrée sur une bande.
 
-Restent à décider avant l'ouverture publique : hébergeur, prestataire SMTP, nom de domaine et identité de l'éditeur
+## Mise en ligne sur Vercel
+
+L'application garde son serveur Express : `api/index.ts` le sert comme fonction, `vercel.json` y
+redirige tout ce qui n'est pas un fichier statique, et la tâche planifiée appelle `/api/entretien`
+toutes les heures. Deux dépendances doivent sortir du disque, que l'hébergement ne conserve pas.
+
+| Variable | Rôle |
+| --- | --- |
+| `DATABASE_URL`, `DATABASE_AUTH_TOKEN` | Base libSQL distante (Turso). Sans elles, le serveur écrit dans un fichier que la fonction perd. |
+| `BLOB_READ_WRITE_TOKEN` | Magasin Vercel Blob des images. Absent, le serveur retombe sur le disque local. |
+| `AUTH_SECRET` | Signature des sessions, 32 caractères minimum. |
+| `APP_URL` | Adresse publique : liens des courriels, adresses canoniques, contrôle d'origine. |
+| `CRON_SECRET` | Jeton attendu par `/api/entretien` ; Vercel le joint à ses appels planifiés. |
+| `BACKUPS=off` | Les sauvegardes quotidiennes sur disque n'ont pas lieu d'être : c'est le fournisseur de la base qui les assure. |
+
+Le contenu se transporte ensuite depuis le poste, une fois les listes importées localement :
+
+```bash
+BLOB_READ_WRITE_TOKEN=… npm run deploy:media       # 4 389 fichiers, 140 Mo, relançable
+DEPLOY_DATABASE_URL=… DEPLOY_DATABASE_AUTH_TOKEN=… npm run deploy:database
+```
+
+`deploy:database` ne copie que les catégories et les images : comptes, parties et records restent
+locaux, la base distante démarre vierge de toute donnée personnelle.
+
+L'autre voie reste possible et plus simple : `deploy/compose.yaml` et son `Caddyfile` font tourner
+la même application sur une machine à volume persistant, sans rien porter.
+
+Restent à décider avant l'ouverture publique : prestataire SMTP, nom de domaine et identité de l'éditeur
 (voir « Avant la première mise en ligne »), puis la recette des critères CA-01 à CA-13 sur l'environnement de recette
 et sur des terminaux réels. Le procès-verbal de la recette locale et la liste des vérifications restantes figurent dans
 [docs/recette.md](docs/recette.md).
