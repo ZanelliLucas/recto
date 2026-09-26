@@ -14,7 +14,7 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { lockDir, lockPath, type LockFile, type LockItem } from './lock';
 import { SUBJECT_LISTS, type Subject } from './subjects';
-import { MIN_SOURCE_SIZE } from '../../src/media/pipeline';
+import { MIN_SOURCE_SIZE, SUPPORTED_TYPES } from '../../src/media/pipeline';
 import { assessRights, commonsFiles, wikidataEntities, wikidataIds, wikipediaLeadImages } from './wikimedia';
 
 const args = process.argv.slice(2);
@@ -70,6 +70,11 @@ for (const list of lists) {
         continue;
       }
       const found = { wikidata, file: image, sourceUrl: info.descriptionUrl, licence: info.licence };
+      // Un GIF animé passerait tous les autres contrôles pour échouer à l'import : autant le dire ici.
+      if (!SUPPORTED_TYPES.has(info.mime)) {
+        refused ??= { ...reject(`format non pris en charge (${info.mime})`), ...found };
+        continue;
+      }
       // Le fichier téléchargé est la vignette de 1280 px de large : un panorama y devient trop bas.
       const scale = Math.min(1, 1280 / info.width);
       const [width, height] = [Math.round(info.width * scale), Math.round(info.height * scale)];

@@ -1,12 +1,15 @@
 # Recette de la version 1 — critères d'acceptation (§ 11)
 
 Recette menée le 13 septembre 2026 sur le build de production servi en local (`NODE_ENV=production`), avec la base
-de développement (quatre catégories publiées), et par la suite de tests automatisés (`npm test` : 110 tests).
+de développement (quatre catégories publiées), et par la suite de tests automatisés.
+
+Reprise le 26 septembre 2026 : dix-sept catégories publiées et 1 256 images, 151 tests automatisés (31 partagés,
+90 serveur, 30 web) et 16 tests de bout en bout Playwright sur les projets bureau et mobile, audit axe-core compris.
 
 | Critère | Résultat | Méthode et constat |
 | --- | --- | --- |
 | CA-01 — partie lancée en trois clics au plus depuis l'accueil | Conforme | Navigateur : les cartes de catégorie de l'accueil portent les boutons de niveau ; **un clic** ouvre la partie. |
-| CA-02 — quatre catégories d'au moins 60 images sourcées et créditées | Conforme | Base : Monuments 70, Histoire 70, Drapeaux 75, Faune 64, et Espace 74 ajoutée depuis ; aucun auteur, source ou licence manquant. Test `content.test.ts`. |
+| CA-02 — quatre catégories d'au moins 60 images sourcées et créditées | Conforme, largement dépassé | Base : dix-sept catégories, de 64 à 85 images chacune, 1 256 en tout ; aucun auteur, source ou licence manquant. Test `content.test.ts`. |
 | CA-03 — trois niveaux jouables et lisibles sur mobile et écran large | Conforme en émulation | Difficile (60 cartes) : 110 px à 1366 × 900, grille entière visible (90–120 px exigés) ; 70 px à 820 px (tablette, 70–90 px) ; 69 px à 375 px, 5 colonnes, défilement vertical seul (56 px minimum, A-7). **Reste : essais sur terminaux réels** (risque R-2). |
 | CA-04 — record enregistré, restitué et retrouvé depuis un autre terminal | Conforme | Test `me.test.ts` : record établi, déconnexion, connexion depuis un second client, record restitué et partie suivante comparée à lui. |
 | CA-05 — jamais deux tirages identiques consécutifs | Conforme | Test `games.test.ts` (EF-1.8). |

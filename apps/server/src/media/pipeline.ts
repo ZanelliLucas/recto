@@ -25,6 +25,9 @@ const QUALITIES: Record<RasterFormat, number[]> = { avif: [52, 44, 36, 30], webp
 
 const RASTER_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/tiff']);
 
+/** Types acceptés par la chaîne : le relevé s'y réfère pour ne pas retenir un fichier qu'elle refusera. */
+export const SUPPORTED_TYPES: ReadonlySet<string> = new Set([...RASTER_TYPES, 'image/svg+xml']);
+
 export async function processImage(data: Buffer, mimeType: string): Promise<ProcessedImage> {
   if (mimeType === 'image/svg+xml') return { kind: 'vector', files: [{ suffix: VECTOR_SUFFIX, data: checkSvg(data) }] };
   if (RASTER_TYPES.has(mimeType)) return { kind: 'raster', files: await processRaster(data) };
