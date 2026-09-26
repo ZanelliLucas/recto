@@ -31,7 +31,13 @@ export const site = {
   publicationDirector: A_COMPLETER,
   /** Adresse de contact publique : questions, exercice des droits, signalement d'une image. */
   contactEmail: A_COMPLETER,
-  host: { name: A_COMPLETER, address: A_COMPLETER, country: A_COMPLETER } satisfies Provider,
+  /** Hébergement retenu : Vercel, avec une base libSQL et un magasin d'images chez le même. */
+  host: {
+    name: 'Vercel Inc.',
+    address: '340 S Lemon Ave #4133, Walnut, CA 91789',
+    country: 'États-Unis',
+    url: 'https://vercel.com',
+  } satisfies Provider,
   /** Prestataire d'envoi des courriels de service (vérification d'adresse, réinitialisation). */
   mailProvider: { name: A_COMPLETER, address: A_COMPLETER, country: A_COMPLETER } satisfies Provider,
   /** Date de dernière mise à jour de la politique de confidentialité (AAAA-MM-JJ). */

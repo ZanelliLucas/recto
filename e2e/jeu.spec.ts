@@ -160,6 +160,32 @@ test('la page d’une catégorie présente ses cartes avant de jouer (EF-7.3)', 
   await expect(gallery.getByRole('link', { name: /^Tour Eiffel/ })).toHaveAttribute('href', /fr\.wikipedia\.org/);
 });
 
+test('le défi du jour propose la même grille à deux joueurs (§ 3.3)', async ({ page, browser }) => {
+  // Le panneau annonce la catégorie du jour dans son premier paragraphe, sous le titre.
+  const categorieDuJour = async (ouverte: Page) => {
+    const panneau = ouverte.getByRole('region', { name: 'Défi du jour' });
+    await expect(panneau).toBeVisible();
+    return (await panneau.locator('p').first().innerText()).trim();
+  };
+
+  await page.goto('/');
+  const categorie = await categorieDuJour(page);
+  expect(categorie.length).toBeGreaterThan(0);
+
+  await page.getByRole('button', { name: /^(Jouer|Rejouer) le défi$/ }).click();
+  await expect(page).toHaveURL(/\/partie\//);
+  await expect(page.getByRole('button', { name: 'Pause' })).toBeEnabled({ timeout: 20_000 });
+  // Quinze paires : le défi ne dépend pas du niveau choisi ailleurs.
+  await expect(page.getByRole('button', { name: /^Carte \d+, face cachée$/ })).toHaveCount(30);
+
+  // Un second joueur, sans rien en commun avec le premier, reçoit la même catégorie.
+  const autre = await browser.newContext();
+  const secondePage = await autre.newPage();
+  await secondePage.goto('/');
+  expect(await categorieDuJour(secondePage)).toBe(categorie);
+  await autre.close();
+});
+
 test('la page des catégories se cherche et se trie (EF-3.2)', async ({ page }) => {
   await page.goto('/categories');
   const cards = page.getByRole('heading', { level: 2 });
