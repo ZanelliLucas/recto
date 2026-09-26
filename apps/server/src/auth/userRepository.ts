@@ -1,7 +1,7 @@
 import type { Avatar } from '@recto/shared';
 import { and, eq, inArray } from 'drizzle-orm';
 import type { Database } from '../db/client';
-import { emailTokens, games, personalBests, users } from '../db/schema';
+import { dailyScores, emailTokens, games, personalBests, users } from '../db/schema';
 
 export type UserRecord = typeof users.$inferSelect;
 export type TokenPurpose = (typeof emailTokens.$inferSelect)['purpose'];
@@ -44,6 +44,8 @@ export class SqlUserRepository {
     await this.db.batch([
       this.db.delete(emailTokens).where(eq(emailTokens.userId, id)),
       this.db.delete(personalBests).where(eq(personalBests.userId, id)),
+      // Le classement du défi nomme le joueur : il part avec le compte (ENF-6.3).
+      this.db.delete(dailyScores).where(eq(dailyScores.userId, id)),
       this.db.delete(games).where(eq(games.userId, id)),
       this.db.delete(users).where(eq(users.id, id)),
     ]);

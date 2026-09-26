@@ -1,6 +1,6 @@
 import type { CreateGameResponse, DailyChallenge, FinishGameResponse } from '@recto/shared';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { perfectMoves, register, setup, type Context } from './helpers';
+import { PASSWORD, perfectMoves, register, setup, type Context } from './helpers';
 
 let ctx: Context;
 
@@ -76,6 +76,21 @@ describe('défi du jour', () => {
     expect(challenge.leaderboard.map((entry) => entry.rank)).toEqual([1, 2]);
     expect(challenge.leaderboard[0]!.mine).toBe(true);
     expect(challenge.mine).toMatchObject({ rank: 1, pseudo: 'Rapide' });
+  });
+
+  it('rend le défi dans l’export du compte, et l’efface avec lui (ENF-6.2, ENF-6.3)', async () => {
+    const joueur = ctx.newAgent();
+    await register(joueur, { email: 'export@recto.test', pseudo: 'Export' });
+    await playDaily(joueur, 60_000);
+
+    const { body: donnees } = await joueur.get('/api/me/export').expect(200);
+    expect(donnees.dailyChallenges).toHaveLength(1);
+    expect(donnees.dailyChallenges[0]).toMatchObject({ moves: expect.any(Number), durationMs: expect.any(Number) });
+
+    await joueur.post('/api/me/delete').send({ password: PASSWORD }).expect(204);
+    const { body } = await ctx.agent.get('/api/defi').expect(200);
+    expect((body as DailyChallenge).players).toBe(0);
+    expect((body as DailyChallenge).leaderboard).toEqual([]);
   });
 
   it('ne retient que la première partie du jour : rejouer n’améliore pas son rang', async () => {

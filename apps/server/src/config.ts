@@ -82,5 +82,7 @@ export const config = {
   retention: {
     guestGamesMs: 365 * DAY_MS,
     audienceMs: 760 * DAY_MS,
+    /** Classements du défi : un an d'archives, puis la ligne disparaît avec le reste. */
+    dailyScoresMs: 365 * DAY_MS,
   },
 };

@@ -1,9 +1,10 @@
 import { existsSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { createClient } from '@libsql/client';
+import { lt } from 'drizzle-orm';
 import { describe, expect, it } from 'vitest';
 import { backupDatabase, lastBackupDay, pruneBackups } from '../src/db/backup';
-import { games } from '../src/db/schema';
+import { dailyScores, games } from '../src/db/schema';
 import { SqlGameStore } from '../src/games/gameStore';
 import { playGame, register, setup, testDatabase } from './helpers';
 
@@ -50,5 +51,19 @@ describe('durées de conservation (politique de confidentialité)', () => {
     const remaining = await ctx.db.select().from(games);
     expect(remaining).toHaveLength(1);
     expect(remaining[0]!.userId).not.toBeNull();
+  });
+
+  it('purge les classements du défi passé leur durée annoncée', async () => {
+    const ctx = await setup();
+    const { db } = ctx;
+    await db.insert(dailyScores).values([
+      { day: '2024-01-01', userId: 'ancien', categoryId: 'test', durationMs: 1000, moves: 10, gameId: 'g1', finishedAt: 1_000 },
+      { day: '2026-09-16', userId: 'recent', categoryId: 'test', durationMs: 1000, moves: 10, gameId: 'g2', finishedAt: 9_000_000 },
+    ]);
+
+    await db.delete(dailyScores).where(lt(dailyScores.finishedAt, 5_000_000));
+
+    const remaining = await db.select().from(dailyScores);
+    expect(remaining.map((row) => row.userId)).toEqual(['recent']);
   });
 });

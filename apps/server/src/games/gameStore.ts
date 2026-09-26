@@ -23,6 +23,8 @@ export interface GameStore {
   dailyEntry(day: string, userId: string): Promise<(DailyEntry & { rank: number }) | undefined>;
   /** Nombre de comptes classés ce jour-là. */
   dailyPlayers(day: string): Promise<number>;
+  /** Défis d'un compte, pour l'export de ses données (ENF-6.2). */
+  dailyScoresOf(userId: string): Promise<{ day: string; durationMs: number; moves: number }[]>;
 }
 
 export interface DailyEntry {
@@ -116,6 +118,14 @@ export class SqlGameStore implements GameStore {
   async dailyPlayers(day: string): Promise<number> {
     const row = await this.db.select({ count: count() }).from(dailyScores).where(eq(dailyScores.day, day)).get();
     return row?.count ?? 0;
+  }
+
+  async dailyScoresOf(userId: string): Promise<{ day: string; durationMs: number; moves: number }[]> {
+    return this.db
+      .select({ day: dailyScores.day, durationMs: dailyScores.durationMs, moves: dailyScores.moves })
+      .from(dailyScores)
+      .where(eq(dailyScores.userId, userId))
+      .orderBy(asc(dailyScores.day));
   }
 
   /** Les parties laissées en plan sont classées abandonnées (EF-1.6) ; renvoie leur nombre. */

@@ -119,6 +119,7 @@ export async function setup(seeds: SeedCategory[] = [{ slug: 'test', count: 60 }
     categories: content,
     games: new GameService(content, store, media, records, { now: clock }),
     daily: new DailyService(content, media, store, users, clock),
+    gameStore: store,
     admin: new AdminService(content, media, clock),
     auth: new AuthService(users, mailer, { appUrl: 'https://recto.test', now: clock }),
     records,

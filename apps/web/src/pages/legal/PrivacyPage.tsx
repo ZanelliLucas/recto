@@ -52,6 +52,17 @@ export function PrivacyPage() {
               <td>Avec compte : jusqu’à sa suppression. Sans compte : 12 mois</td>
             </tr>
             <tr>
+              <th scope="row">Défi du jour</th>
+              <td>
+                Pour un compte seulement : pseudonyme, avatar, temps et nombre de coups de votre première partie du
+                jour. Un joueur sans compte n’y figure pas.
+              </td>
+              <td>
+                Établir le classement public du jour, que vous alimentez en jouant le défi (exécution du service)
+              </td>
+              <td>12 mois, ou jusqu’à la suppression du compte</td>
+            </tr>
+            <tr>
               <th scope="row">Courriels de service</th>
               <td>Adresse électronique, lien à usage unique (seule son empreinte est conservée)</td>
               <td>Confirmer l’adresse, réinitialiser le mot de passe (exécution du service)</td>

@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { toPublicUser, type AuthService } from '../auth/authService';
 import { requireUser, userOf } from '../auth/middleware';
+import type { GameStore } from '../games/gameStore';
 import type { SessionManager } from '../auth/sessions';
 import { guestKey } from '../http/playerIdentity';
 import { rateLimit } from '../http/rateLimit';
@@ -18,7 +19,7 @@ const changePasswordSchema = z.object({
 });
 
 /** /api/me — profil, statistiques, reprise du mode invité, portabilité et effacement. */
-export function meRouter(auth: AuthService, records: RecordService, sessions: SessionManager): Router {
+export function meRouter(auth: AuthService, records: RecordService, sessions: SessionManager, games?: GameStore): Router {
   const router = Router();
   router.use(requireUser);
 
@@ -73,6 +74,7 @@ export function meRouter(auth: AuthService, records: RecordService, sessions: Se
       totals: stats.totals,
       records: stats.records,
       games: await records.gamesOf(user.id),
+      dailyChallenges: (await games?.dailyScoresOf(user.id)) ?? [],
     });
   });
 

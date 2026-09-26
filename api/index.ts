@@ -50,6 +50,7 @@ async function build(): Promise<Handler> {
     media,
     audience,
   daily,
+  gameStore: games,
     mediaDir: config.mediaDir,
     appUrl: config.appUrl,
     webDistDir: config.webDistDir,

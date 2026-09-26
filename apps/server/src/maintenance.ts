@@ -4,7 +4,7 @@ import { isoDay, type AudienceService } from './audience/audienceService';
 import type { config as appConfig } from './config';
 import { backupDatabase, lastBackupDay } from './db/backup';
 import type { Database } from './db/client';
-import { lastDraws } from './db/schema';
+import { dailyScores, lastDraws } from './db/schema';
 import type { SqlGameStore } from './games/gameStore';
 import { logger } from './logger';
 
@@ -43,6 +43,8 @@ export function maintenanceJobs({ db, games, audience, config }: MaintenanceDepe
       const purged = await games.purgeGuestGames(now - config.retention.guestGamesMs);
       await db.delete(lastDraws).where(lt(lastDraws.updatedAt, now - config.retention.guestGamesMs));
       await audience.purge(now - config.retention.audienceMs);
+      // Le classement du défi nomme des joueurs : il vieillit comme le reste (ENF-6.3).
+      await db.delete(dailyScores).where(lt(dailyScores.finishedAt, now - config.retention.dailyScoresMs));
       if (purged > 0) logger.info('Parties invitées expirées supprimées', { count: purged });
     } catch (error) {
       logger.error('Purge des données expirées en échec', error);

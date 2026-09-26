@@ -24,6 +24,7 @@ import { adminRouter } from './routes/admin';
 import { authRouter } from './routes/auth';
 import { categoriesRouter, creditsRouter } from './routes/categories';
 import type { DailyService } from './games/dailyService';
+import type { GameStore } from './games/gameStore';
 import { gamesRouter } from './routes/games';
 import { meRouter } from './routes/me';
 import { telemetryRouter } from './routes/telemetry';
@@ -54,6 +55,8 @@ export interface AppDependencies {
   version?: string;
   /** Défi du jour : tirage commun et classement des comptes (§ 3.3). */
   daily?: DailyService;
+  /** Accès direct aux parties : export des défis d'un compte (ENF-6.2). */
+  gameStore?: GameStore;
   /** Sonde de disponibilité : lève une erreur si une dépendance (la base) est hors service. */
   checkHealth?: () => Promise<void>;
   /**
@@ -131,7 +134,7 @@ export function createApp(deps: AppDependencies): Express {
   api.use(currentUser(deps.sessions, deps.users));
   api.use(playerIdentity(deps.secureCookies ?? false));
   api.use('/auth', authRouter(deps.auth, deps.sessions));
-  api.use('/me', meRouter(deps.auth, deps.records, deps.sessions));
+  api.use('/me', meRouter(deps.auth, deps.records, deps.sessions, deps.gameStore));
   api.use('/admin', adminRouter(deps.admin, deps.audience));
   api.use('/categories', categoriesRouter(deps.categories, deps.media));
   api.use('/credits', creditsRouter(deps.categories));
